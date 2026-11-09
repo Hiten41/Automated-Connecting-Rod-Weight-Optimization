@@ -16,13 +16,16 @@ All new work is on `feature/phase3-converged-feasible-design`, created directly 
 - The grouped fine-mesh ML comparison is complete. Its validation-selected MLP has 208.86 MPa held-out stress MAE, 291.95 MPa RMSE, and R² 0.031 on three test geometry groups; near-constraint performance is also weak. The model is marked `EXPLORATORY_SCREENING_ONLY`. The optimizer API and UI reject this model, and no optimizer run or candidate acceptance is claimed.
 - Phase 3 app health is HTTP 200 on port 8504; Phase 2 remains HTTP 200 on port 8503. Visual browser capture is blocked by the Codex Work setting and is not claimed.
 
-## Local finalization checks
+## Validation and release checkpoint
 
 - Current full local suite: **70 passed**, including all three FreeCAD/CalculiX integration tests, in 49.08 seconds.
 - Ruff critical-error/undefined-name check (`--select E9,F`) on app, source, scripts, tests and workers: passed.
 - Phase 3 and preserved Phase 2 Streamlit health endpoints: HTTP 200 `ok` on ports 8504 and 8503 respectively.
 - Browser screenshot and narrow-screen inspection remain blocked by the Codex Work setting; no visual browser QA is claimed.
-- Remaining release steps: package and inspect the critical raw evidence ZIP, verify all branch refs/remotes, commit and push only this Phase 3 branch to the fork, then check the resulting GitHub Actions run. The final report will record the resulting commit and package hash.
+- The Phase 3 change set was committed on the isolated branch and pushed only to the verified fork ref. Phase 1, Phase 2, upstream `main`, and fork `main` retain their original hashes.
+- GitHub Actions workflow `Python tests` passed on implementation commit `23cffba5d42f3d4929d698cba99eef0eef313b5b`, run `42718606232`. A documentation-only release checkpoint follows; its push is checked before delivery.
+- The critical raw solver evidence is packaged under `outputs/phase3-solver-evidence.zip`. Its manifest records the source commit and per-artifact hashes; final archive integrity and critical-file inclusion are verified before delivery.
+- No merge, pull request, public deployment, or hardware qualification is claimed.
 
 ## Reproducibility references
 
