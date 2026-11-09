@@ -1,0 +1,31 @@
+{
+  "python": "3.13.4 (tags/v3.13.4:8a526ec, Jun  3 2025, 17:46:04) [MSC v.1943 64 bit (AMD64)]",
+  "configuration": {
+    "ccx": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\tools\\freecad\\FreeCAD_1.1.4-Windows-x86_64-py311\\bin\\ccx.exe",
+    "freecad_python": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\tools\\freecad\\FreeCAD_1.1.4-Windows-x86_64-py311\\bin\\python.exe"
+  },
+  "checks": {
+    "writable": true,
+    "freecad_fem": true,
+    "gmsh": true,
+    "ccx": true
+  },
+  "freecad": {
+    "status": "PREFLIGHT_SUCCESS",
+    "freecad_version": [
+      "1",
+      "1",
+      "4",
+      "20260928 (Git shallow)",
+      "Unknown",
+      "2026/09/28 13:46:34",
+      "(HEAD detached at 4fd3bf320)",
+      "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+    ],
+    "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]",
+    "fem_modules": true
+  },
+  "gmsh_version": "4.15.2",
+  "ccx_version": "This is Version 2.22",
+  "ready": true
+}

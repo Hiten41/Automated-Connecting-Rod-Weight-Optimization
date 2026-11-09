@@ -1,0 +1,246 @@
+{
+  "baseline": [
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000.0
+      },
+      "mesh": {
+        "size_mm": 6.0,
+        "order": 2
+      },
+      "node_count": 6423,
+      "element_count": 3211,
+      "max_von_mises_mpa": 199.15145328135125,
+      "max_displacement_mm": 0.059955536346075665,
+      "runtime_s": 2.563927100000001
+    },
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000.0
+      },
+      "mesh": {
+        "size_mm": 4.0,
+        "order": 2
+      },
+      "node_count": 17153,
+      "element_count": 9387,
+      "max_von_mises_mpa": 225.59727174827998,
+      "max_displacement_mm": 0.06065267850938873,
+      "runtime_s": 5.628456399997958
+    },
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000.0
+      },
+      "mesh": {
+        "size_mm": 2.5,
+        "order": 2
+      },
+      "node_count": 53417,
+      "element_count": 32186,
+      "max_von_mises_mpa": 241.87085898481868,
+      "max_displacement_mm": 0.0611966872062742,
+      "runtime_s": 25.84697199999937
+    },
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000
+      },
+      "mesh": {
+        "size_mm": 1.75,
+        "order": 2
+      },
+      "node_count": 134145,
+      "element_count": 85723,
+      "max_von_mises_mpa": 266.00570182673334,
+      "max_displacement_mm": 0.0613560075009071,
+      "runtime_s": 129.18576019999819
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000.0
+      },
+      "mesh": {
+        "size_mm": 6.0,
+        "order": 2
+      },
+      "node_count": 6445,
+      "element_count": 3221,
+      "max_von_mises_mpa": 128.11618993402521,
+      "max_displacement_mm": 0.03854172567074628,
+      "runtime_s": 2.3207031000019924
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000.0
+      },
+      "mesh": {
+        "size_mm": 4.0,
+        "order": 2
+      },
+      "node_count": 17155,
+      "element_count": 9387,
+      "max_von_mises_mpa": 145.03143161975024,
+      "max_displacement_mm": 0.038988212478684454,
+      "runtime_s": 5.356889099999535
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000.0
+      },
+      "mesh": {
+        "size_mm": 2.5,
+        "order": 2
+      },
+      "node_count": 53356,
+      "element_count": 32132,
+      "max_von_mises_mpa": 156.89595927085225,
+      "max_displacement_mm": 0.03934903756977131,
+      "runtime_s": 25.215820899997198
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000
+      },
+      "mesh": {
+        "size_mm": 1.75,
+        "order": 2
+      },
+      "node_count": 134645,
+      "element_count": 86145,
+      "max_von_mises_mpa": 170.99253895249475,
+      "max_displacement_mm": 0.03945008897441633,
+      "runtime_s": 124.2281808000007
+    }
+  ],
+  "guarded_candidate": [
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000.0
+      },
+      "mesh": {
+        "size_mm": 6.0,
+        "order": 2
+      },
+      "node_count": 5758,
+      "element_count": 2748,
+      "max_von_mises_mpa": 278.6224121129753,
+      "max_displacement_mm": 0.11564311326989642,
+      "runtime_s": 2.8568730000006326
+    },
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000.0
+      },
+      "mesh": {
+        "size_mm": 4.0,
+        "order": 2
+      },
+      "node_count": 11345,
+      "element_count": 5685,
+      "max_von_mises_mpa": 285.2765094583035,
+      "max_displacement_mm": 0.11630308144445009,
+      "runtime_s": 3.6540593999998237
+    },
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000.0
+      },
+      "mesh": {
+        "size_mm": 2.5,
+        "order": 2
+      },
+      "node_count": 33292,
+      "element_count": 18123,
+      "max_von_mises_mpa": 316.8515845660705,
+      "max_displacement_mm": 0.11704390957719382,
+      "runtime_s": 10.74440400000094
+    },
+    {
+      "load": {
+        "kind": "compression",
+        "force_n": 28000
+      },
+      "mesh": {
+        "size_mm": 1.75,
+        "order": 2
+      },
+      "node_count": 83466,
+      "element_count": 49003,
+      "max_von_mises_mpa": 352.9309148195747,
+      "max_displacement_mm": 0.11727914291507083,
+      "runtime_s": 35.66776540000137
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000.0
+      },
+      "mesh": {
+        "size_mm": 6.0,
+        "order": 2
+      },
+      "node_count": 5741,
+      "element_count": 2736,
+      "max_von_mises_mpa": 178.96761350076335,
+      "max_displacement_mm": 0.07431906860700777,
+      "runtime_s": 2.3786393999980646
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000.0
+      },
+      "mesh": {
+        "size_mm": 4.0,
+        "order": 2
+      },
+      "node_count": 11343,
+      "element_count": 5683,
+      "max_von_mises_mpa": 183.39463737766872,
+      "max_displacement_mm": 0.07476574915642589,
+      "runtime_s": 3.576570900000661
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000.0
+      },
+      "mesh": {
+        "size_mm": 2.5,
+        "order": 2
+      },
+      "node_count": 33199,
+      "element_count": 18051,
+      "max_von_mises_mpa": 206.33105619864395,
+      "max_displacement_mm": 0.07523378081492658,
+      "runtime_s": 10.425576999998157
+    },
+    {
+      "load": {
+        "kind": "tension",
+        "force_n": 18000
+      },
+      "mesh": {
+        "size_mm": 1.75,
+        "order": 2
+      },
+      "node_count": 83565,
+      "element_count": 49104,
+      "max_von_mises_mpa": 226.97379908912168,
+      "max_displacement_mm": 0.07539362802678766,
+      "runtime_s": 36.453940900002635
+    }
+  ]
+}

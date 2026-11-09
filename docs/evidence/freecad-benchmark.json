@@ -1,0 +1,8 @@
+{
+  "source": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\tools\\freecad\\FreeCAD_1.1.4-Windows-x86_64-py311\\Mod\\Fem\\femtest\\data\\calculix\\ccx_cantilever_faceload.inp",
+  "status": "SUCCESS",
+  "displacement_nodes": 228,
+  "stress_points": 316,
+  "max_displacement_mm": 87.30643401488824,
+  "scope": "Bundled FreeCAD reference deck; solver/field smoke check, not an independent accuracy proof"
+}

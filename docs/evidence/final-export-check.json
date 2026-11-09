@@ -1,0 +1,18 @@
+[
+  {
+    "case": "compression",
+    "single_body": true,
+    "watertight": true,
+    "stl_volume_relative_error": 0.00035323985538060487,
+    "exact_geometry_match": true,
+    "cad_mass_consistent": true
+  },
+  {
+    "case": "tension",
+    "single_body": true,
+    "watertight": true,
+    "stl_volume_relative_error": 0.00035323985538060487,
+    "exact_geometry_match": true,
+    "cad_mass_consistent": true
+  }
+]

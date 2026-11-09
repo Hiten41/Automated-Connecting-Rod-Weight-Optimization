@@ -1,0 +1,9 @@
+{
+  "expected_displacement_mm": 0.005,
+  "actual_displacement_mm": 0.005,
+  "expected_stress_mpa": 10.0,
+  "actual_stress_mpa": 10.000000000059206,
+  "passed": true,
+  "nodes": 2011,
+  "elements": 944
+}

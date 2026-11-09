@@ -1,0 +1,307 @@
+{
+  "model_version": "fea-1",
+  "selected_model": "mlp",
+  "dataset_sha256": "2b11b0471ddf51b157eba12721f8b0cdb3c5359ecbe93a4a0e897bf5fd07cf20",
+  "sample_count": 120,
+  "split_counts": {
+    "train": 72,
+    "validation": 24,
+    "test": 24
+  },
+  "groups_disjoint": true,
+  "comparisons": {
+    "ridge": {
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 25.607324303817933,
+          "RMSE": 32.845018860796806,
+          "R2": 0.9504264500492849
+        },
+        "max_displacement_mm": {
+          "MAE": 0.03840837171469538,
+          "RMSE": 0.05066852556035105,
+          "R2": 0.875023684900501
+        }
+      },
+      "selection_score": 0.21661849464910987,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 28.617515684412258,
+          "RMSE": 35.67529861568661,
+          "R2": 0.9264494276474429
+        },
+        "max_displacement_mm": {
+          "MAE": 0.039089656287292496,
+          "RMSE": 0.04845772455285434,
+          "R2": 0.7385637736539514
+        }
+      }
+    },
+    "extra_trees": {
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 77.88546717575572,
+          "RMSE": 93.43979921766605,
+          "R2": 0.5987871984226764
+        },
+        "max_displacement_mm": {
+          "MAE": 0.04213845061154925,
+          "RMSE": 0.05344560897355065,
+          "R2": 0.8609486396410013
+        }
+      },
+      "selection_score": 0.3963864345728277,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 68.40010445200038,
+          "RMSE": 76.02040934257201,
+          "R2": 0.6660270980777576
+        },
+        "max_displacement_mm": {
+          "MAE": 0.029271451616461604,
+          "RMSE": 0.036108633079854714,
+          "R2": 0.8548350300236134
+        }
+      }
+    },
+    "mlp": {
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 16.4027350679921,
+          "RMSE": 21.452536141112645,
+          "R2": 0.9788520500860289
+        },
+        "max_displacement_mm": {
+          "MAE": 0.00826265864176876,
+          "RMSE": 0.012226456598933658,
+          "R2": 0.992722999524755
+        }
+      },
+      "selection_score": 0.08132937520678246,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 15.653748047594355,
+          "RMSE": 21.723333964152435,
+          "R2": 0.9727288293867744
+        },
+        "max_displacement_mm": {
+          "MAE": 0.008638346368827337,
+          "RMSE": 0.011380627912603537,
+          "R2": 0.9855797702095203
+        }
+      }
+    }
+  },
+  "held_out_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 15.653748047594355,
+      "RMSE": 21.723333964152435,
+      "R2": 0.9727288293867744
+    },
+    "max_displacement_mm": {
+      "MAE": 0.008638346368827337,
+      "RMSE": 0.011380627912603537,
+      "R2": 0.9855797702095203
+    }
+  },
+  "near_constraint_test_count": 11,
+  "near_constraint_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 16.035868907104756,
+      "RMSE": 19.57776963539927,
+      "R2": 0.962253183513062
+    },
+    "max_displacement_mm": {
+      "MAE": 0.009854529380651905,
+      "RMSE": 0.0129916616776198,
+      "R2": 0.980866455014681
+    }
+  },
+  "residual_margin": [
+    50.00713800072174,
+    0.04627664003754384
+  ],
+  "margin_claim": "Observed validation maximum underprediction; not calibrated confidence",
+  "seed": 42,
+  "supported_min": [
+    145.0,
+    50.0,
+    24.0,
+    4.576029444408018,
+    15.027537324436434,
+    14.067740062026683,
+    2.1977955728034044,
+    2.5154606846952916,
+    15273.141918258782,
+    0.0,
+    71700.0,
+    0.29,
+    2.81e-06,
+    503.0
+  ],
+  "supported_max": [
+    145.0,
+    50.0,
+    24.0,
+    8.990007763211437,
+    27.948502271592954,
+    23.959222750140114,
+    5.971705828793943,
+    5.9692254460869325,
+    44363.8222598085,
+    1.0,
+    205000.0,
+    0.34,
+    7.85e-06,
+    880.0
+  ],
+  "features": [
+    "length_cc",
+    "big_end_id",
+    "small_end_id",
+    "ring_thickness",
+    "shank_width",
+    "beam_thickness",
+    "pocket_depth",
+    "flange_thickness",
+    "force_n",
+    "compression",
+    "youngs_modulus_mpa",
+    "poissons_ratio",
+    "density_kg_per_mm3",
+    "yield_strength_mpa"
+  ],
+  "targets": [
+    "max_von_mises_mpa",
+    "max_displacement_mm"
+  ],
+  "geometry_version": "rod-1-sharp-pocket",
+  "split_ids": {
+    "train": [
+      "4dbfe9c112a5af151b78",
+      "4ba7dfdf593e96731526",
+      "6c12f0e815b0c71477f3",
+      "173342da28e84d4ef450",
+      "9b210267e47f343a4989",
+      "e55e96a558e365fa2805",
+      "bc4d508e48010e2af407",
+      "415e1b680a784083fa21",
+      "49292ae965d7f77393b5",
+      "d7c756ea295eee5f7c8b",
+      "f54c94e2ab49964143ce",
+      "c06daefae325b8683543",
+      "05b6f6bedf0e61b76bbb",
+      "36cb168036eafc16bb06",
+      "d4d4f896f43aecec4bb2",
+      "a288fe76a956e55f8f2a",
+      "24838c841605c2e0683f",
+      "0109ff402b9d5d6ada99",
+      "8a466e0635f9eca92d55",
+      "7c4a7472f3778078b136",
+      "7bb57d917fec417707c1",
+      "203f0880d6e95b298024",
+      "d39b9c9f2d75d07517a8",
+      "4ecaa9e3031c89e872d2",
+      "bde081c7f7fedc8e10da",
+      "676eaf272bfc881d4ca8",
+      "4f0202ba9a204f5678a2",
+      "52ce693a8a77fb85a4b6",
+      "15a2cb3eec193f8d6454",
+      "563b5459a92019d84721",
+      "5a8e8b2ec02582f79909",
+      "f72f1e15a42e770099a9",
+      "e9940f9fbd2a5fd9e0ef",
+      "41f9345680924d6772a5",
+      "d4356c7d7d63deb66efa",
+      "c8e698be19ea7ca8fd0d",
+      "fa7eae6c9602fb277c4a",
+      "8dbb2a0494502628d6c3",
+      "34c6b275830f8db4744e",
+      "6e09d5f8f4900f8724a4",
+      "4a0b473c8d3912830f83",
+      "edbb3b9b04994d6b9425",
+      "01e05fcd1bd1cbd0cfc6",
+      "a5f31a135821e900fef6",
+      "f357a22b3eac214819ab",
+      "619ee168bc37b0dae70f",
+      "807fa794af3f20e166b8",
+      "5992b6697a230f94dda9",
+      "1bd0d39e4d9afeacdacb",
+      "18cd60de05476c77724d",
+      "016f03a4f97daaa238b6",
+      "26951ad7f38f625468c2",
+      "95f0cdd5d5611ca3f712",
+      "e0ec073a9cfba620882b",
+      "258048e9d6bdcea46267",
+      "7aa439efdc7e314ff14c",
+      "651ba6599b6097ddf1d2",
+      "7b4f3886d62b44ff577c",
+      "c7000ffc18fd4f59d1d5",
+      "96e17b6cc7500ee325eb",
+      "3c2b0e2b4dd80db9a9ba",
+      "1a0356f5036085ee3838",
+      "0ed263714153691d2062",
+      "8421bfcdabf6f1284a87",
+      "115d050d8d8a79629c0d",
+      "a2a0642312511d9f2f79",
+      "bbf8287b5e1786dcee78",
+      "0890f32abd457fb322a8",
+      "e6a4bd8a753067376264",
+      "b91b3211878f55a8f133",
+      "9b0ec6d8e64979d2fbbb",
+      "981e5ff9b4d29cfc3467"
+    ],
+    "validation": [
+      "4f8d216cf9620833c8f4",
+      "1e16fe44d286d958d032",
+      "d82a9eafe8b22d053965",
+      "451412ba216dcd303999",
+      "2c3c70317f610f4db497",
+      "4a3c0ea10b68c8d33ef2",
+      "6cb137de57adcb0bbaa1",
+      "1714214e13cba7ad1617",
+      "50c8c6081bde2daecdfc",
+      "87feede9cb326d54f58c",
+      "d2623f9296d9819ccd9a",
+      "114fc3ae018e7c8598ce",
+      "b00adace2988544a9fb3",
+      "0a55765045320d7abf12",
+      "8d709e7dde35dc66e57a",
+      "5ffba13ac4f79939e7ea",
+      "b9d1ce17d08b63b21529",
+      "44c8fffc03ac8c382e60",
+      "fac2e22a2d96182187f6",
+      "ab2e92aab4d28b083307",
+      "1f060a39fef01e46f568",
+      "c3f0c06bfe22d20aa496",
+      "1845c879b025d81e49af",
+      "b8200a1013b4860326e5"
+    ],
+    "test": [
+      "0057fb835ee02e6cf2f4",
+      "e34854fb71bd55ec43ea",
+      "f96a801e4d70e2bacd37",
+      "1d3d927d13ca1f22daf2",
+      "e66fc71c72b6ce99e6a6",
+      "24b97a1f0274e1d5a229",
+      "8f0681150d78e5c8e034",
+      "2c0ac2e3dc7dbaacf28c",
+      "d7843c1b875266eae085",
+      "a9620be24be3fffd8a3c",
+      "8176d17c66a41bdec228",
+      "1b2a29bbae22151518f2",
+      "0e4c958cdac93f2033e4",
+      "27dad11e4a0943299ee7",
+      "4ff642a947bc0833c02c",
+      "9167a5891ad45ab61971",
+      "70536bea860d4f927350",
+      "25594e65d8f6e0699618",
+      "be57a5538a530a6c971f",
+      "72bbe6fad74fea72d7d9",
+      "35cf38dd55c00fa9f821",
+      "a4239e6becfe64c10299",
+      "b5363ce11594f59ca4a7",
+      "9a1ec09a497adaf7e6bf"
+    ]
+  }
+}

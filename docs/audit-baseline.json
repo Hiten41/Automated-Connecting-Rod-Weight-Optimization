@@ -1,0 +1,22 @@
+{
+  "upstream": "Spectra6001/Automated-Connecting-Rod-Weight-Optimization",
+  "default_branch": "main",
+  "head": "11c3681a7bf49423950855f84a730b3843bce804",
+  "fork": "Hiten41/Automated-Connecting-Rod-Weight-Optimization",
+  "rows": 300,
+  "status_counts": {
+    "SUCCESS_CAD_VERIFIED": 300
+  },
+  "matching_analytical_columns": {
+    "mass_kg": 0,
+    "max_von_mises_mpa": 300,
+    "max_displacement_mm": 300,
+    "factor_of_safety": 300
+  },
+  "legacy_sha256": {
+    "connecting_rod_fea_dataset.csv": "1e47a73f17d13d974c43e6360ea028e36bc38c6ebcf67208c9f59e3550278fbb",
+    "nn_surrogate_model.pkl": "b4cc075d547437a2dc78426a91c38649da3fad4bad76f59aedecdcfea10b736f",
+    "optimized_connecting_rod.stl": "496ca18f461ade614dded883aacf10b9dd1c17e7c823bc0d2e82522d357e6f9c"
+  },
+  "tracked_environment_files": 17974
+}

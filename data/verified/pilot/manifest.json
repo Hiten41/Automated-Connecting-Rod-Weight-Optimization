@@ -1,0 +1,11 @@
+{
+  "geometries": 12,
+  "successful_analyses": 24,
+  "failed_analyses": 0,
+  "rejected_geometry_samples": 0,
+  "seed": 42,
+  "fixed_packaging": true,
+  "elapsed_s": 72.02408769999965,
+  "mesh_size_mm": 5,
+  "sampling_method": "Initial workflow experiment: sequential one-point scrambled draws, not a stratified batch LHS"
+}

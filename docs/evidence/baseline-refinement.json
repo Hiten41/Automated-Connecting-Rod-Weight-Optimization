@@ -1,0 +1,88 @@
+[
+  {
+    "load_case": "compression",
+    "levels": [
+      {
+        "mesh": {
+          "size_mm": 6.0,
+          "order": 2
+        },
+        "node_count": 6423,
+        "element_count": 3211,
+        "max_von_mises_mpa": 199.15145328135125,
+        "max_displacement_mm": 0.059955536346075665,
+        "runtime_s": 2.563927100000001
+      },
+      {
+        "mesh": {
+          "size_mm": 4.0,
+          "order": 2
+        },
+        "node_count": 17153,
+        "element_count": 9387,
+        "max_von_mises_mpa": 225.59727174827998,
+        "max_displacement_mm": 0.06065267850938873,
+        "runtime_s": 5.628456399997958
+      },
+      {
+        "mesh": {
+          "size_mm": 2.5,
+          "order": 2
+        },
+        "node_count": 53417,
+        "element_count": 32186,
+        "max_von_mises_mpa": 241.87085898481868,
+        "max_displacement_mm": 0.0611966872062742,
+        "runtime_s": 25.84697199999937
+      }
+    ],
+    "last_refinement_change_pct": {
+      "max_von_mises_mpa": 6.728213272505115,
+      "max_displacement_mm": 0.8889512189635275
+    },
+    "provisional_5pct_target_met": false
+  },
+  {
+    "load_case": "tension",
+    "levels": [
+      {
+        "mesh": {
+          "size_mm": 6.0,
+          "order": 2
+        },
+        "node_count": 6445,
+        "element_count": 3221,
+        "max_von_mises_mpa": 128.11618993402521,
+        "max_displacement_mm": 0.03854172567074628,
+        "runtime_s": 2.3207031000019924
+      },
+      {
+        "mesh": {
+          "size_mm": 4.0,
+          "order": 2
+        },
+        "node_count": 17155,
+        "element_count": 9387,
+        "max_von_mises_mpa": 145.03143161975024,
+        "max_displacement_mm": 0.038988212478684454,
+        "runtime_s": 5.356889099999535
+      },
+      {
+        "mesh": {
+          "size_mm": 2.5,
+          "order": 2
+        },
+        "node_count": 53356,
+        "element_count": 32132,
+        "max_von_mises_mpa": 156.89595927085225,
+        "max_displacement_mm": 0.03934903756977131,
+        "runtime_s": 25.215820899997198
+      }
+    ],
+    "last_refinement_change_pct": {
+      "max_von_mises_mpa": 7.562035189587047,
+      "max_displacement_mm": 0.9169858105095009
+    },
+    "provisional_5pct_target_met": false
+  }
+]

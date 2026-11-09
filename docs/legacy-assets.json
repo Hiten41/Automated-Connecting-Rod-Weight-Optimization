@@ -1,0 +1,28 @@
+{
+  "model_keys": [
+    "model",
+    "scaler_X",
+    "scaler_y",
+    "feature_cols",
+    "target_cols",
+    "metrics"
+  ],
+  "model_type": "<class 'sklearn.neural_network._multilayer_perceptron.MLPRegressor'>",
+  "model_metrics_legacy_only": {
+    "mass_kg": {
+      "R2": 0.9931,
+      "MAE": 0.0109
+    },
+    "max_von_mises_mpa": {
+      "R2": 0.7764,
+      "MAE": 45.439
+    },
+    "max_displacement_mm": {
+      "R2": 0.851,
+      "MAE": 0.0319
+    }
+  },
+  "stl_components": 5,
+  "stl_watertight": true,
+  "stl_volume_mm3": 52866.29143940853
+}

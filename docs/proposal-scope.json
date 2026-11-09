@@ -1,0 +1,13 @@
+{
+  "proposal_sha256": "97bc09f415d3f041bdadb73af6674326714298384334abdf2c7f63d42e77d81e",
+  "objectives": [
+    "Automated parametric FreeCAD variants",
+    "CalculiX stress/displacement under combustion and inertia loads",
+    "Simulation-trained ML lightweight optimization",
+    "Interactive Streamlit geometry and results"
+  ],
+  "contributors": [
+    "Bhagavat Pratim Das",
+    "Hiten Arora"
+  ]
+}

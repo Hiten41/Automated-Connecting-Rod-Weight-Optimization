@@ -1,0 +1,72 @@
+{
+  "sample_id": "fe9577939ad77ee9099d",
+  "geometry": {
+    "length_cc": 145.0,
+    "big_end_id": 50.0,
+    "small_end_id": 24.0,
+    "ring_thickness": 8.0,
+    "shank_width": 25.0,
+    "beam_thickness": 22.0,
+    "pocket_depth": 2.2,
+    "flange_thickness": 5.5
+  },
+  "material": {
+    "name": "Forged Steel (AISI 4340)",
+    "youngs_modulus_mpa": 205000.0,
+    "poissons_ratio": 0.29,
+    "density_kg_per_mm3": 7.85e-06,
+    "yield_strength_mpa": 710.0
+  },
+  "load": {
+    "kind": "compression",
+    "force_n": 28000.0
+  },
+  "mesh": {
+    "size_mm": 5.0,
+    "order": 2
+  },
+  "geometry_version": "rod-1-sharp-pocket",
+  "mode": "FEA",
+  "output_dir": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\runs\\first-rod-v2",
+  "data_source": "FreeCAD/Gmsh/CalculiX",
+  "timestamp": "2026-11-09T15:28:19.328664+00:00",
+  "cad": {
+    "status": "CAD_SUCCESS",
+    "volume_mm3": 93576.6740417537,
+    "valid_topology": true,
+    "solid_count": 1,
+    "bores": [
+      {
+        "face": 10,
+        "center_x_mm": 0,
+        "diameter_mm": 50.0,
+        "area_mm2": 3455.751918948772
+      },
+      {
+        "face": 11,
+        "center_x_mm": 145.0,
+        "diameter_mm": 24.0,
+        "area_mm2": 1658.7609210954108
+      }
+    ],
+    "web_thickness_mm": 17.6,
+    "flange_thickness_mm": 5.5,
+    "geometry_version": "rod-1-sharp-pocket",
+    "freecad_version": [
+      "1",
+      "1",
+      "4",
+      "20260928 (Git shallow)",
+      "Unknown",
+      "2026/09/28 13:46:34",
+      "(HEAD detached at 4fd3bf320)",
+      "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+    ],
+    "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "mass_kg": 0.7345768912277665,
+  "status": "FEA_FAILED",
+  "error": "Command failed (201); see C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\runs\\first-rod-v2\\solver.log",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\src\\conrod\\fea.py\", line 166, in solve\n    log=command([cfg['ccx'],'-i','job'],out,out/'solver.log',timeout=600)\n  File \"C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\src\\conrod\\fea.py\", line 25, in command\n    if result.returncode and not (str(args[-1])=='-v' and 'This is Version' in result.stdout): raise RuntimeError(f\"Command failed ({result.returncode}); see {log}\")\n                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Command failed (201); see C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\runs\\first-rod-v2\\solver.log\n",
+  "runtime_s": 2.061176200000773
+}

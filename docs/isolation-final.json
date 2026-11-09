@@ -1,0 +1,12 @@
+{
+  "upstream_default_branch": "main",
+  "upstream_head_before": "11c3681a7bf49423950855f84a730b3843bce804",
+  "upstream_head_after": "11c3681a7bf49423950855f84a730b3843bce804",
+  "original_local_head_after": "11c3681a7bf49423950855f84a730b3843bce804",
+  "unchanged": true,
+  "fork": "Hiten41/Automated-Connecting-Rod-Weight-Optimization",
+  "feature_branch": "feature/validated-rod-optimization",
+  "upstream_push_url": "DISABLED",
+  "pull_request_opened": false,
+  "merged": false
+}

@@ -1,0 +1,366 @@
+{
+  "model_version": "fea-1",
+  "software_versions": {
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "selected_model": "mlp",
+  "dataset_sha256": "ef2f8d2769ca7e8205429e5ef581dc4e48a5fa480021f85a08d8803c05c69fe1",
+  "supported_materials": [
+    "{\"density_kg_per_mm3\": 2.81e-06, \"name\": \"Forged Aluminum (7075-T6)\", \"poissons_ratio\": 0.33, \"yield_strength_mpa\": 503.0, \"youngs_modulus_mpa\": 71700.0}",
+    "{\"density_kg_per_mm3\": 7.85e-06, \"name\": \"Forged Steel (AISI 4340)\", \"poissons_ratio\": 0.29, \"yield_strength_mpa\": 710.0, \"youngs_modulus_mpa\": 205000.0}",
+    "{\"density_kg_per_mm3\": 4.43e-06, \"name\": \"Titanium Alloy (Ti-6Al-4V)\", \"poissons_ratio\": 0.34, \"yield_strength_mpa\": 880.0, \"youngs_modulus_mpa\": 113800.0}"
+  ],
+  "constraint_region": "FoS in [1.4,2.2] or displacement in [0.28,0.42] mm",
+  "sample_count": 120,
+  "split_counts": {
+    "train": 72,
+    "validation": 24,
+    "test": 24
+  },
+  "groups_disjoint": true,
+  "comparisons": {
+    "ridge": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 30.168994311249335,
+          "RMSE": 44.393132671636785,
+          "R2": 0.9250755846772282
+        },
+        "max_displacement_mm": {
+          "MAE": 0.037519244263187965,
+          "RMSE": 0.051654059970938804,
+          "R2": 0.8845628217616146
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 28.60070123217717,
+          "RMSE": 35.72397616596581,
+          "R2": 0.9246218779719013
+        },
+        "max_displacement_mm": {
+          "MAE": 0.040644969167803385,
+          "RMSE": 0.048576060649686226,
+          "R2": 0.8558189402380831
+        }
+      },
+      "selection_score": 0.2218478730153239,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 24.784765653170766,
+          "RMSE": 31.511621928781437,
+          "R2": 0.9522481541640024
+        },
+        "max_displacement_mm": {
+          "MAE": 0.039656018371644695,
+          "RMSE": 0.05155814331982513,
+          "R2": 0.8083698655524263
+        }
+      }
+    },
+    "extra_trees": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 17.749412089964885,
+          "RMSE": 25.7926410188523,
+          "R2": 0.9747079865328184
+        },
+        "max_displacement_mm": {
+          "MAE": 0.013243161802667387,
+          "RMSE": 0.019656715404362847,
+          "R2": 0.9832829871168652
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 51.232363522596266,
+          "RMSE": 65.41514490885588,
+          "R2": 0.7472551314556293
+        },
+        "max_displacement_mm": {
+          "MAE": 0.05091965454942344,
+          "RMSE": 0.06079421547549299,
+          "R2": 0.7741666140555297
+        }
+      },
+      "selection_score": 0.32541151932302753,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 48.588606516997935,
+          "RMSE": 64.54774032419154,
+          "R2": 0.7996401325790546
+        },
+        "max_displacement_mm": {
+          "MAE": 0.04548410685233276,
+          "RMSE": 0.0486083248327577,
+          "R2": 0.8296702243713143
+        }
+      }
+    },
+    "mlp": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 1.8559388964054477,
+          "RMSE": 2.4833836063672696,
+          "R2": 0.9997655342578726
+        },
+        "max_displacement_mm": {
+          "MAE": 0.001600743369019809,
+          "RMSE": 0.001996032310281578,
+          "R2": 0.9998276259397484
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 22.896885933454197,
+          "RMSE": 28.884415029508908,
+          "R2": 0.9507220214116773
+        },
+        "max_displacement_mm": {
+          "MAE": 0.014711197598716643,
+          "RMSE": 0.02625152102820962,
+          "R2": 0.9578912283738528
+        }
+      },
+      "selection_score": 0.1189721490300909,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 14.973619606415346,
+          "RMSE": 16.918739243230185,
+          "R2": 0.9862347328847676
+        },
+        "max_displacement_mm": {
+          "MAE": 0.007303827229041923,
+          "RMSE": 0.009402324206359162,
+          "R2": 0.993627061757271
+        }
+      }
+    }
+  },
+  "held_out_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 14.973619606415346,
+      "RMSE": 16.918739243230185,
+      "R2": 0.9862347328847676
+    },
+    "max_displacement_mm": {
+      "MAE": 0.007303827229041923,
+      "RMSE": 0.009402324206359162,
+      "R2": 0.993627061757271
+    }
+  },
+  "near_constraint_test_count": 9,
+  "near_constraint_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 12.958601494211653,
+      "RMSE": 15.356900405589592,
+      "R2": 0.9267748912828164
+    },
+    "max_displacement_mm": {
+      "MAE": 0.007294494200267591,
+      "RMSE": 0.009340089008928902,
+      "R2": 0.991524971581352
+    }
+  },
+  "residual_margin": [
+    38.0113494644483,
+    0.06592155413447892
+  ],
+  "margin_claim": "Observed validation maximum underprediction; not calibrated confidence",
+  "seed": 42,
+  "training_configuration": {
+    "ridge_alpha": 1.0,
+    "trees": 150,
+    "tree_min_samples_leaf": 2,
+    "mlp_hidden": [
+      32,
+      16
+    ],
+    "mlp_solver": "lbfgs",
+    "mlp_alpha": 0.1,
+    "mlp_max_iter": 1500,
+    "scaling": "StandardScaler X for Ridge/MLP; StandardScaler y for all"
+  },
+  "supported_min": [
+    145.0,
+    50.0,
+    24.0,
+    4.5711900402206345,
+    15.183056684099746,
+    14.023441086266994,
+    2.01316025966677,
+    2.5663220754784426,
+    15410.827447928968,
+    0.0,
+    71700.0,
+    0.29,
+    2.81e-06,
+    503.0
+  ],
+  "supported_max": [
+    145.0,
+    50.0,
+    24.0,
+    8.934140601195436,
+    27.91950540231437,
+    23.9587142932633,
+    5.877578637920921,
+    5.898524773846255,
+    44689.81242583202,
+    1.0,
+    205000.0,
+    0.34,
+    7.85e-06,
+    880.0
+  ],
+  "features": [
+    "length_cc",
+    "big_end_id",
+    "small_end_id",
+    "ring_thickness",
+    "shank_width",
+    "beam_thickness",
+    "pocket_depth",
+    "flange_thickness",
+    "force_n",
+    "compression",
+    "youngs_modulus_mpa",
+    "poissons_ratio",
+    "density_kg_per_mm3",
+    "yield_strength_mpa"
+  ],
+  "targets": [
+    "max_von_mises_mpa",
+    "max_displacement_mm"
+  ],
+  "geometry_version": "rod-1-sharp-pocket",
+  "split_ids": {
+    "train": [
+      "0b784404788e129eb2ae",
+      "321aaa33edd8c50e33fe",
+      "d1907b0cad7de08a65f5",
+      "eb11ce014ae81f609def",
+      "924fd25f786138d80f38",
+      "6e69d4ea92373b98fe73",
+      "74a93581fb59c4f6e645",
+      "6397eb9cb03c268113c0",
+      "79810a9dbfc753d7dbba",
+      "8c3d65520f4c07732ff0",
+      "07d669eb2da6d5c32c5f",
+      "9955fb412075fff8ffcf",
+      "37f54c3a126ef7293147",
+      "6792b67f87c68b498908",
+      "b2d66bcfb195b1161fc5",
+      "ab7db6e923d30236bece",
+      "3533658ece4b9f5c6a98",
+      "0d900abd1c4ec6fb8002",
+      "7322a8bc33e51eaa2a3a",
+      "a40505f46074fa3bb20d",
+      "75e229c9468f11b7f04b",
+      "141c22c74532cdafae4a",
+      "1a72744b86a8eaae433e",
+      "aac1e15620b97792dbb2",
+      "46fd423867271f0ed189",
+      "e19a14937ea0349a59df",
+      "5d7f69bd443b0492b790",
+      "5ef0dffa0de6c3d9f8b0",
+      "1e6391b850ba6694015c",
+      "a4f0280fbeacd9bf04ea",
+      "6014e146f0c2cfc1953a",
+      "7f7986de40bd7d84d70c",
+      "f30212e6a19e0d320b7a",
+      "c4aaafd65e1b690a0467",
+      "2690f5b7cfdcf59f083e",
+      "4afc1d205cb9d09e3c0e",
+      "5c9dca02e0fa6cc76326",
+      "eca85d56b2517d0ee03a",
+      "b897ee3853d99ded4365",
+      "ed4003719ff2dbfd0a81",
+      "c2f08e6f0e1b3cc1cfcd",
+      "7032af9f675a2ea543d9",
+      "96e77cb8bdfa3c94c3af",
+      "bbd54376fab6a47b2053",
+      "41190086a8849e359f41",
+      "18afa2e5bd0ad5e07993",
+      "6cea1450dafdd6ea708b",
+      "695cc437f78a78bf930c",
+      "f9ba4853b40b56b4d9aa",
+      "6b0a7e843d651a5d207b",
+      "ec03b82a0d9d75c6123e",
+      "1438067ca72fe5a4415b",
+      "07c7d9248767fe53be2d",
+      "226dafb51536691fca9a",
+      "81f5d4ef36eb2f5a0ee9",
+      "672e65184731dc982861",
+      "d81ca916b9b93ff23c98",
+      "d257a87fb6c662bf1efc",
+      "0ef46b0301f29a3789ae",
+      "2a6e796f219ae9df761a",
+      "6121e6d6f9cf33540aac",
+      "79a07c2e158c4b83aac9",
+      "fe313f460c3a99c960a4",
+      "6ed7ad5a1e5774489585",
+      "e43268d41db25abbf385",
+      "2100e9e783bb0eb27286",
+      "42cb6763f738a0ce85cc",
+      "ba587a7a21e2a22b8fda",
+      "6cb14c816a1c924b0f27",
+      "ccc70ddb5b74844f32a0",
+      "43557545a075f6d6149b",
+      "91666d9841fd5bbeb7ee"
+    ],
+    "validation": [
+      "48594767f3b64b8a9397",
+      "e538c9ae6d67ed047041",
+      "57c22113c26941726933",
+      "6d2f368808246978d6fb",
+      "a806a8a2bc358c90cdec",
+      "964346f24be158110ad4",
+      "e07b3f87b9e3cb1f36e7",
+      "9d1815f990170b89ae7f",
+      "ccb8f6b8be573ec8e9f6",
+      "0b3b3c25778093d8cb2a",
+      "f6fb906b153cf26e65c6",
+      "1776431569180998a7af",
+      "b05a77b26498faeb5da2",
+      "02a974a338fe72327943",
+      "e9bab4028aeb2d738907",
+      "134ae063916e6e5365c0",
+      "8918f413c464f0a665c8",
+      "1180b422a4135eff300c",
+      "f3f31f22d47bcf1d029c",
+      "2bc38377725ec939bb5d",
+      "5878cd9bba3980b52590",
+      "1e42c03113db84b6b0f3",
+      "dacce787cf63fdf1adb4",
+      "b77e41faaecda3ffe41e"
+    ],
+    "test": [
+      "9b12a1601af5af4cfa0c",
+      "65645c9ad7e8824b0efd",
+      "bd414b07111f18f0e5e6",
+      "debb4e2be91c6ab1f17b",
+      "6a46bc6d71d30d7d61b3",
+      "6d17f8617c56ef7ce8e1",
+      "9a8289798d726eaa4092",
+      "3237e41c20befb5ef15f",
+      "e29554f85ef88830a292",
+      "fe5a3890844262eb952b",
+      "222b4037f7040faef93b",
+      "f9a482ae629f45a7e6d1",
+      "590a984b32b5038d538d",
+      "e5fb4e31b06a6dd25be2",
+      "779694443a59909c5e32",
+      "97e9bf4cadcf5b99af8a",
+      "ceae7458e4058d002583",
+      "203ae0b7f757eb969ed3",
+      "b74118469bec69ce1e0e",
+      "08f4955a0a66cbf001c4",
+      "8ee7e4f57fff04c1f719",
+      "7b917e0cf4f71d0bf7c9",
+      "497bb48dc3d03efd8353",
+      "bbbdc89327decc414ea6"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "initial": true,
+  "background_cad_submit_and_completion": true,
+  "final_reference_render": true,
+  "exports_render": true,
+  "actual_field_plot": true,
+  "browser_visual_review": false,
+  "reason": "Local browser use disabled in Work settings"
+}

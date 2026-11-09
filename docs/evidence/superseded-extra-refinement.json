@@ -1,0 +1,108 @@
+{
+  "sample_id": "6949f0126117f8b451c8",
+  "geometry": {
+    "length_cc": 145.0,
+    "big_end_id": 50.0,
+    "small_end_id": 24.0,
+    "ring_thickness": 6.160806057337689,
+    "shank_width": 27.91950540231437,
+    "beam_thickness": 14.023441086266994,
+    "pocket_depth": 5.261548085962754,
+    "flange_thickness": 2.5663220754784426
+  },
+  "material": {
+    "name": "Forged Steel (AISI 4340)",
+    "youngs_modulus_mpa": 205000.0,
+    "poissons_ratio": 0.29,
+    "density_kg_per_mm3": 7.85e-06,
+    "yield_strength_mpa": 710.0
+  },
+  "load": {
+    "kind": "compression",
+    "force_n": 28000
+  },
+  "mesh": {
+    "size_mm": 1.75,
+    "order": 2
+  },
+  "geometry_version": "rod-1-sharp-pocket",
+  "mode": "FEA",
+  "mesh_configuration": {
+    "size_min_mm": 0.7875,
+    "size_max_mm": 1.75,
+    "curvature_points": 12,
+    "quadratic_curved": true,
+    "high_order_optimization": true,
+    "threads": 2
+  },
+  "solver_configuration": {
+    "analysis": "linear static",
+    "threads": 2,
+    "timeout_s": 600
+  },
+  "output_dir": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\runs\\refinement-optimized\\1.75-compression",
+  "data_source": "FreeCAD/Gmsh/CalculiX",
+  "timestamp": "2026-11-09T15:49:39.911605+00:00",
+  "cad": {
+    "status": "CAD_SUCCESS",
+    "measured_web_thickness_mm": 3.500344914341487,
+    "measured_flange_thicknesses_mm": [
+      2.566322075478439,
+      2.5663220754784426
+    ],
+    "volume_mm3": 38863.56661051116,
+    "valid_topology": true,
+    "solid_count": 1,
+    "bores": [
+      {
+        "face": 10,
+        "center_x_mm": 0,
+        "diameter_mm": 50.0,
+        "area_mm2": 2202.7969747332822
+      },
+      {
+        "face": 11,
+        "center_x_mm": 145.0,
+        "diameter_mm": 24.0,
+        "area_mm2": 1057.3425478719757
+      }
+    ],
+    "web_thickness_mm": 3.500344914341486,
+    "flange_thickness_mm": 2.5663220754784426,
+    "geometry_version": "rod-1-sharp-pocket",
+    "freecad_version": [
+      "1",
+      "1",
+      "4",
+      "20260928 (Git shallow)",
+      "Unknown",
+      "2026/09/28 13:46:34",
+      "(HEAD detached at 4fd3bf320)",
+      "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+    ],
+    "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "mass_kg": 0.3050789978925126,
+  "status": "FEA_SUCCESS",
+  "max_von_mises_mpa": 392.310610709375,
+  "max_displacement_mm": 0.14946173545501573,
+  "factor_of_safety": 1.8097904584231863,
+  "node_count": 70401,
+  "element_count": 39872,
+  "boundary_conditions": {
+    "resultant_n": [
+      -28000.0,
+      0.0,
+      0.0
+    ],
+    "fixed_node_count": 3866,
+    "loaded_node_count": 1367,
+    "model": "All big-bore translations fixed; uniform axial traction over full small bore",
+    "limitations": "Academic clamp/traction model; not pin contact. Full bore permits tensile traction."
+  },
+  "gmsh_version": "4.15.2",
+  "solver_version": "This is Version 2.22",
+  "fields_path": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\validated-rod\\runs\\refinement-optimized\\1.75-compression\\fields.json",
+  "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+  "runtime_s": 25.46135080000022
+}

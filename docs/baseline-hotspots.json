@@ -1,0 +1,62 @@
+[
+  {
+    "case": "2.5-compression",
+    "peak_element": 36114,
+    "peak_element_centroid_mm": [
+      130.0972245468035,
+      11.853293230751065,
+      3.4195835037096876
+    ],
+    "peak_stress_mpa": 241.87085898481868
+  },
+  {
+    "case": "2.5-tension",
+    "peak_element": 40200,
+    "peak_element_centroid_mm": [
+      130.20185838923408,
+      12.000914550855946,
+      1.0592272689563802
+    ],
+    "peak_stress_mpa": 156.89595927085225
+  },
+  {
+    "case": "4.0-compression",
+    "peak_element": 13948,
+    "peak_element_centroid_mm": [
+      130.0889588414019,
+      11.813564945410754,
+      1.5752964862913426
+    ],
+    "peak_stress_mpa": 225.59727174827998
+  },
+  {
+    "case": "4.0-tension",
+    "peak_element": 13952,
+    "peak_element_centroid_mm": [
+      130.0889588414019,
+      11.813564945410754,
+      1.5752964862913426
+    ],
+    "peak_stress_mpa": 145.03143161975024
+  },
+  {
+    "case": "6.0-compression",
+    "peak_element": 4583,
+    "peak_element_centroid_mm": [
+      129.27425680297125,
+      11.631115518901716,
+      2.3574142459854297
+    ],
+    "peak_stress_mpa": 199.15145328135125
+  },
+  {
+    "case": "6.0-tension",
+    "peak_element": 4840,
+    "peak_element_centroid_mm": [
+      129.27425680297122,
+      -11.631115518901716,
+      2.3574142459854297
+    ],
+    "peak_stress_mpa": 128.11618993402521
+  }
+]
