@@ -1,0 +1,197 @@
+{
+  "method": "unadjusted Spearman rank association across valid Latin-hypercube cases",
+  "sample_count": 35,
+  "interpretation": "Exploratory association only; geometry variables co-vary and this is not a causal or global sensitivity analysis.",
+  "responses": {
+    "compression_stress_mpa": [
+      {
+        "parameter": "ring_thickness",
+        "spearman_rho": -0.7156862745098039,
+        "unadjusted_p_value": 1.347154546063218e-06,
+        "sample_count": 35
+      },
+      {
+        "parameter": "transition_radius_mm",
+        "spearman_rho": -0.48319327731092443,
+        "unadjusted_p_value": 0.0032789644858303114,
+        "sample_count": 35
+      },
+      {
+        "parameter": "beam_thickness",
+        "spearman_rho": -0.45742296918767517,
+        "unadjusted_p_value": 0.005731793721764129,
+        "sample_count": 35
+      },
+      {
+        "parameter": "shank_width",
+        "spearman_rho": -0.43221288515406164,
+        "unadjusted_p_value": 0.00951675325512715,
+        "sample_count": 35
+      },
+      {
+        "parameter": "flange_thickness",
+        "spearman_rho": -0.08263305322128851,
+        "unadjusted_p_value": 0.6369853121199377,
+        "sample_count": 35
+      },
+      {
+        "parameter": "pocket_depth",
+        "spearman_rho": 0.05434173669467787,
+        "unadjusted_p_value": 0.7565278308663413,
+        "sample_count": 35
+      }
+    ],
+    "tension_stress_mpa": [
+      {
+        "parameter": "ring_thickness",
+        "spearman_rho": -0.8089635854341737,
+        "unadjusted_p_value": 4.08449051136635e-09,
+        "sample_count": 35
+      },
+      {
+        "parameter": "transition_radius_mm",
+        "spearman_rho": -0.4529411764705883,
+        "unadjusted_p_value": 0.00628970857728758,
+        "sample_count": 35
+      },
+      {
+        "parameter": "beam_thickness",
+        "spearman_rho": -0.4431372549019608,
+        "unadjusted_p_value": 0.007674560758877857,
+        "sample_count": 35
+      },
+      {
+        "parameter": "shank_width",
+        "spearman_rho": -0.20392156862745098,
+        "unadjusted_p_value": 0.2399951038999474,
+        "sample_count": 35
+      },
+      {
+        "parameter": "flange_thickness",
+        "spearman_rho": -0.08207282913165267,
+        "unadjusted_p_value": 0.6392786076814199,
+        "sample_count": 35
+      },
+      {
+        "parameter": "pocket_depth",
+        "spearman_rho": -0.008123249299719889,
+        "unadjusted_p_value": 0.9630606577446679,
+        "sample_count": 35
+      }
+    ],
+    "mass_g": [
+      {
+        "parameter": "beam_thickness",
+        "spearman_rho": 0.753781512605042,
+        "unadjusted_p_value": 1.7200560445067622e-07,
+        "sample_count": 35
+      },
+      {
+        "parameter": "shank_width",
+        "spearman_rho": 0.4773109243697479,
+        "unadjusted_p_value": 0.003738843107303034,
+        "sample_count": 35
+      },
+      {
+        "parameter": "ring_thickness",
+        "spearman_rho": 0.4366946778711485,
+        "unadjusted_p_value": 0.008719977188463892,
+        "sample_count": 35
+      },
+      {
+        "parameter": "transition_radius_mm",
+        "spearman_rho": 0.2647058823529412,
+        "unadjusted_p_value": 0.12436534379969603,
+        "sample_count": 35
+      },
+      {
+        "parameter": "pocket_depth",
+        "spearman_rho": -0.23529411764705888,
+        "unadjusted_p_value": 0.17362204236684267,
+        "sample_count": 35
+      },
+      {
+        "parameter": "flange_thickness",
+        "spearman_rho": 0.21848739495798322,
+        "unadjusted_p_value": 0.20732833923431054,
+        "sample_count": 35
+      }
+    ],
+    "compression_displacement_mm": [
+      {
+        "parameter": "ring_thickness",
+        "spearman_rho": -0.8523809523809525,
+        "unadjusted_p_value": 8.17714225985498e-11,
+        "sample_count": 35
+      },
+      {
+        "parameter": "shank_width",
+        "spearman_rho": -0.41904761904761906,
+        "unadjusted_p_value": 0.012224174410794523,
+        "sample_count": 35
+      },
+      {
+        "parameter": "beam_thickness",
+        "spearman_rho": -0.33193277310924374,
+        "unadjusted_p_value": 0.05140846213342709,
+        "sample_count": 35
+      },
+      {
+        "parameter": "transition_radius_mm",
+        "spearman_rho": -0.230812324929972,
+        "unadjusted_p_value": 0.18220123447274436,
+        "sample_count": 35
+      },
+      {
+        "parameter": "flange_thickness",
+        "spearman_rho": -0.0442577030812325,
+        "unadjusted_p_value": 0.8006958417410899,
+        "sample_count": 35
+      },
+      {
+        "parameter": "pocket_depth",
+        "spearman_rho": 0.04257703081232493,
+        "unadjusted_p_value": 0.8081206890692816,
+        "sample_count": 35
+      }
+    ],
+    "tension_displacement_mm": [
+      {
+        "parameter": "ring_thickness",
+        "spearman_rho": -0.9366946778711485,
+        "unadjusted_p_value": 1.337673904054629e-16,
+        "sample_count": 35
+      },
+      {
+        "parameter": "beam_thickness",
+        "spearman_rho": -0.29971988795518206,
+        "unadjusted_p_value": 0.08025012505726092,
+        "sample_count": 35
+      },
+      {
+        "parameter": "shank_width",
+        "spearman_rho": -0.26386554621848746,
+        "unadjusted_p_value": 0.12560972794852815,
+        "sample_count": 35
+      },
+      {
+        "parameter": "transition_radius_mm",
+        "spearman_rho": -0.25490196078431376,
+        "unadjusted_p_value": 0.13946411813710358,
+        "sample_count": 35
+      },
+      {
+        "parameter": "pocket_depth",
+        "spearman_rho": -0.052100840336134456,
+        "unadjusted_p_value": 0.7662829449908739,
+        "sample_count": 35
+      },
+      {
+        "parameter": "flange_thickness",
+        "spearman_rho": -0.0008403361344537815,
+        "unadjusted_p_value": 0.9961773997948424,
+        "sample_count": 35
+      }
+    ]
+  }
+}

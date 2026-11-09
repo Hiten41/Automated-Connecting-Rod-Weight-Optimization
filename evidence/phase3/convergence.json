@@ -1,11 +1,43 @@
 {
   "compression": {
-    "status": "INSUFFICIENT COMPUTE / VALIDATION",
-    "count": 2
+    "status": "CONVERGED",
+    "relative_changes": {
+      "max_von_mises_mpa": [
+        0.04822016629165755,
+        0.03702943041157646
+      ],
+      "max_displacement_mm": [
+        0.001042291554854537,
+        0.00016210158831589697
+      ]
+    },
+    "tolerance": 0.05,
+    "mesh_sizes_mm": [
+      0.75,
+      0.5,
+      0.35
+    ],
+    "rule": "Both peak stress and maximum displacement change <5% in two successive refinements; limited to this geometry/configuration"
   },
   "tension": {
-    "status": "INSUFFICIENT COMPUTE / VALIDATION",
-    "count": 2
+    "status": "CONVERGED",
+    "relative_changes": {
+      "max_von_mises_mpa": [
+        0.025247068857444172,
+        0.038518235051107776
+      ],
+      "max_displacement_mm": [
+        0.0006880849555630244,
+        0.0005366952390396028
+      ]
+    },
+    "tolerance": 0.05,
+    "mesh_sizes_mm": [
+      0.75,
+      0.5,
+      0.35
+    ],
+    "rule": "Both peak stress and maximum displacement change <5% in two successive refinements; limited to this geometry/configuration"
   },
   "method_limit": "Independently generated nonnested meshes. No Richardson or GCI estimate for an unsuitable/nonmonotonic sequence. Local maxima supplement unaveraged global peak."
 }

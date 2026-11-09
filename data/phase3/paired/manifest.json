@@ -1,0 +1,84 @@
+{
+  "simulation_version": "phase3-deterministic-bearing-v1",
+  "sampling_seed": 7301,
+  "selection_method": "nearest coarse stress boundary followed by maximin in normalized geometry space",
+  "selected_geometry_ids": [
+    4,
+    36,
+    23,
+    20,
+    17,
+    18,
+    0,
+    39,
+    26,
+    3,
+    30,
+    5
+  ],
+  "fidelity_order": [
+    "coarse",
+    "intermediate",
+    "fine"
+  ],
+  "records_per_geometry_per_fidelity": 2,
+  "coarse_source": "data/phase3/feasibility/candidates.json successful 6 mm compression/tension results; no duplicate solver runs",
+  "coarse_source_sha256": "7d6d510ea138e3537ae2b03294b5887ffe96548c8a33bc15fa7fdfdd1d43445a",
+  "fidelity_datasets": {
+    "coarse": {
+      "path": "data/phase3/paired/coarse.jsonl",
+      "sha256": "377174416f86c2010ecbd00e3d168e26f3194a58ea91c680bccb6a348bc25274",
+      "analysis_count": 24,
+      "geometry_group_count": 12,
+      "loads": [
+        "compression",
+        "tension"
+      ],
+      "mesh": {
+        "size_mm": 6,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": null,
+        "refinement_region": "all_features"
+      }
+    },
+    "intermediate": {
+      "path": "data/phase3/paired/intermediate.jsonl",
+      "sha256": "32d6a8319e0c04c960f6eec5387995ab064e5c310684cf38d04b6f804962359a",
+      "analysis_count": 24,
+      "geometry_group_count": 12,
+      "loads": [
+        "compression",
+        "tension"
+      ],
+      "mesh": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": 1.25,
+        "refinement_region": "big_end_transition"
+      }
+    },
+    "fine": {
+      "path": "data/phase3/paired/fine.jsonl",
+      "sha256": "ff3a0bf2fad26f1e2bf3c89634d66b06264ca529e3b87fde55143eb6349d2fb7",
+      "analysis_count": 24,
+      "geometry_group_count": 12,
+      "loads": [
+        "compression",
+        "tension"
+      ],
+      "mesh": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": 0.75,
+        "refinement_region": "big_end_transition"
+      }
+    }
+  },
+  "interpretation": "mesh-level response dataset; the 0.75 mm fine label is not a universal convergence-qualified truth"
+}

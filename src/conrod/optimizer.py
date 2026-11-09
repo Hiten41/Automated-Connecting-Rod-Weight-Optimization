@@ -6,7 +6,7 @@ import queue
 from pathlib import Path
 from dataclasses import replace
 import numpy as np
-from scipy.optimize import minimize
+from scipy.optimize import minimize, differential_evolution
 from .schemas import (
     Geometry,
     Constraints,
@@ -108,6 +108,7 @@ def optimize(
     mass_function=None,
     solver=solve,
     stress_guard_factor=1.2,
+    global_search=True,
 ) -> OptimizationResult:
     g.validate()
     m.validate()
@@ -124,12 +125,25 @@ def optimize(
     out = Path(output)
     out.mkdir(parents=True, exist_ok=True)
     start = time.perf_counter()
-    if (
-        hasattr(surrogate, "metadata")
-        and surrogate.metadata.get("mesh_configuration", {}).get("boundary_mode")
-        != mesh.boundary_mode
-    ):
-        raise ValueError("Surrogate and verification boundary conditions differ")
+    if hasattr(surrogate, "metadata"):
+        metadata = surrogate.metadata
+        if (
+            metadata.get("mesh_configuration", {}).get("boundary_mode")
+            != mesh.boundary_mode
+        ):
+            raise ValueError("Surrogate and verification boundary conditions differ")
+        if (
+            metadata.get("model_version", "").startswith("fea-3-")
+            and metadata.get("mesh_configuration") != mesh.to_dict()
+        ):
+            raise ValueError("Phase 3 surrogate and verification mesh differ")
+        if (
+            metadata.get("model_version", "").startswith("fea-3-")
+            and metadata.get("model_use") != "ACCEPTED_FOR_OPTIMIZATION"
+        ):
+            raise ValueError(
+                "Phase 3 surrogate is exploratory only; held-out evidence does not authorize optimization"
+            )
     own_mass = mass_function is None
     mass = mass_function or CADMass(m)
     diagnostics = []
@@ -182,7 +196,7 @@ def optimize(
             raise ValueError("Empty supported optimization domain")
         # Fail early with a useful out-of-domain message for fixed inputs.
         for load in loads:
-            surrogate.predict(geometry(np.full(5, 0.5)), m, load)
+            surrogate.predict(geometry(np.full(len(OPT_KEYS), 0.5)), m, load)
         baseline = mass(g)
         rng = np.random.default_rng(seed)
         seeds = []
@@ -190,18 +204,61 @@ def optimize(
             np.clip(
                 (np.array([getattr(g, k) for k in OPT_KEYS]) - lo) / (hi - lo), 0, 1
             ),
-            *[rng.uniform(0, 1, 5) for _ in range(300)],
+            *[rng.uniform(0, 1, len(OPT_KEYS)) for _ in range(300)],
         ]:
             if np.all(cons(z) >= 0):
                 seeds.append(z)
             if len(seeds) >= starts:
                 break
         if not seeds:
-            trial = [rng.uniform(0, 1, 5) for _ in range(100)]
+            trial = [rng.uniform(0, 1, len(OPT_KEYS)) for _ in range(100)]
             seeds = sorted(
                 trial, key=lambda z: float(np.sum(np.minimum(cons(z), 0) ** 2))
             )[:starts]
-        for start_index, z in enumerate(seeds):
+        global_record = None
+        if global_search:
+
+            def global_objective(z):
+                margins = cons(z)
+                violation = np.minimum(margins, 0)
+                try:
+                    value = mass(geometry(z)) / baseline
+                except (ValueError, RuntimeError):
+                    value = 10.0
+                return value + 1e3 * float(violation @ violation)
+
+            de = differential_evolution(
+                global_objective,
+                [(0.0, 1.0)] * len(OPT_KEYS),
+                seed=seed,
+                maxiter=max(3, min(8, starts + 2)),
+                popsize=5,
+                tol=0.01,
+                polish=False,
+                workers=1,
+                updating="immediate",
+                init="latinhypercube",
+            )
+            z = np.asarray(de.x, dtype=float)
+            global_record = dict(
+                method="Differential Evolution",
+                success=bool(de.success),
+                message=str(de.message),
+                evaluations=int(de.nfev),
+                objective=float(de.fun),
+                scaled_margins=cons(z).tolist(),
+                geometry=geometry(z).to_dict(),
+                seed=seed,
+            )
+            if np.all(cons(z) >= 0):
+                seeds.insert(0, z)
+            print(
+                f"Differential Evolution: {de.message}; evaluations={de.nfev}",
+                flush=True,
+            )
+        for start_index, z in enumerate(
+            seeds[: max(starts, len(seeds) if not global_search else starts + 1)]
+        ):
             print(f"Optimization start {start_index + 1}/{len(seeds)}", flush=True)
 
             def objective(z):
@@ -214,7 +271,7 @@ def optimize(
                 objective,
                 z,
                 method="SLSQP",
-                bounds=[(0.0, 1.0)] * 5,
+                bounds=[(0.0, 1.0)] * len(OPT_KEYS),
                 constraints=[dict(type="ineq", fun=cons)],
                 options=dict(maxiter=60, ftol=1e-7, eps=1e-5),
             )
@@ -302,6 +359,7 @@ def optimize(
             optimization_runtime_s=time.perf_counter() - start,
             seed=seed,
             rounding="None: full precision exported; manufacturing rounding requires reverification",
+            global_search=global_record,
         )
         if final:
             report["optimized_mass_kg"] = final["fea"][0]["mass_kg"]

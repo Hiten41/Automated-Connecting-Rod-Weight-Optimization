@@ -196,7 +196,21 @@ def train(dataset, output, seed=42):
         ]
     )
     report = dict(
-        model_version="fea-2-bearing-physics-scaled",
+        model_version=(
+            "fea-3-deterministic-bearing-physics-scaled"
+            if rows[0]["simulation_version"] == "phase3-deterministic-bearing-v1"
+            else "fea-2-bearing-physics-scaled"
+        ),
+        model_use=(
+            "EXPLORATORY_SCREENING_ONLY"
+            if rows[0]["simulation_version"] == "phase3-deterministic-bearing-v1"
+            else "HISTORICAL_COARSE_SCREENING_ONLY"
+        ),
+        optimization_eligibility_note=(
+            "This dataset's small number of geometry groups is insufficient to establish broad fine-mesh generalization; use actual FEA for structural decisions."
+            if rows[0]["simulation_version"] == "phase3-deterministic-bearing-v1"
+            else "Historical 8 mm labels are not converged-stress targets and are not accepted for Phase 3 optimization."
+        ),
         software_versions=dict(
             numpy=np.__version__, sklearn=__import__("sklearn").__version__
         ),
@@ -208,7 +222,16 @@ def train(dataset, output, seed=42):
         ),
         constraint_region="FoS in [1.4,2.2] or displacement in [0.28,0.42] mm",
         sample_count=len(rows),
+        geometry_group_count=len(set(groups)),
         split_counts=dict(train=len(train_idx), validation=len(val), test=len(test)),
+        split_geometry_groups={
+            name: len(set(groups[idx]))
+            for name, idx in [
+                ("train", train_idx),
+                ("validation", val),
+                ("test", test),
+            ]
+        },
         groups_disjoint=not (
             set(groups[train_idx]) & set(groups[val])
             or set(groups[train_idx]) & set(groups[test])

@@ -1,5 +1,883 @@
 [
   {
+    "sample_id": "70aa21035ac222c00eca",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 4,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true,
+      "hotspot_size_mm": 0.25,
+      "refinement_region": "big_end_transition"
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase3-deterministic-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.25,
+      "size_max_mm": 4,
+      "curvature_points": 0,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 1,
+      "random_seed": 42,
+      "algorithm_2d": 6,
+      "algorithm_3d": 1
+    },
+    "output_dir": "runs/phase3-refinement/0.25-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T19:12:05.721087+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "center_of_mass_mm": [
+        62.6508258119077,
+        -1.8953206212195475e-15,
+        10.999999999999995
+      ],
+      "equivalent_small_end_mass_fraction": 0.43207466077177725,
+      "mass_partition_note": "Uniform-density CAD center of mass, not measured reference engine rod data; end lumping does not preserve full inertia tensor",
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "node_count": 319295,
+    "element_count": 223926,
+    "mesh_quality": {
+      "minSICN_min": 0.03059870717965443,
+      "minSICN_p01": 0.3620874829979648,
+      "element_count": 223926
+    },
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase3-rod\\src\\conrod\\fea.py\", line 489, in solve\n            else \"unavailable\",\n                ^^^^^^^^^^^^^^^\n        ),\n        ^^\n    )\n    ^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 37.96093370000017
+  },
+  {
+    "sample_id": "66b0c2cca9afa1d0bcea",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 4,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true,
+      "hotspot_size_mm": 0.35,
+      "refinement_region": "big_end_transition"
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase3-deterministic-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.35,
+      "size_max_mm": 4,
+      "curvature_points": 0,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 1,
+      "random_seed": 42,
+      "algorithm_2d": 6,
+      "algorithm_3d": 1
+    },
+    "output_dir": "runs/phase3-refinement/0.35-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T19:01:11.470488+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "center_of_mass_mm": [
+        62.6508258119077,
+        -1.8953206212195475e-15,
+        10.999999999999995
+      ],
+      "equivalent_small_end_mass_fraction": 0.43207466077177725,
+      "mass_partition_note": "Uniform-density CAD center of mass, not measured reference engine rod data; end lumping does not preserve full inertia tensor",
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "node_count": 179366,
+    "element_count": 121674,
+    "mesh_quality": {
+      "minSICN_min": 0.031729555747635245,
+      "minSICN_p01": 0.35636779374610816,
+      "element_count": 121674
+    },
+    "status": "FEA_SUCCESS",
+    "max_von_mises_mpa": 566.7176274580186,
+    "max_displacement_mm": 0.09908715953128197,
+    "factor_of_safety": 1.2528285085901893,
+    "boundary_conditions": {
+      "model": "COSINE_BEARING",
+      "resultant_n": [
+        -28000.000000000007,
+        4.547473508864641e-13,
+        0.0
+      ],
+      "opposite_bore": {
+        "resultant_n": [
+          28000.000000000007,
+          5.267786207241443e-12,
+          0.0
+        ],
+        "moment_n_mm": [
+          5.5493387662863825e-12,
+          -1.4722445484949276e-11,
+          -1.5862745145200918e-12
+        ],
+        "max_relative_quadrature_correction": 0.0006144067883282693,
+        "minimum_pressure_weight_n": 0.02294145951375533,
+        "loaded_node_count": 652
+      },
+      "loaded_bore": {
+        "resultant_n": [
+          -28000.000000000007,
+          4.547473508864641e-13,
+          0.0
+        ],
+        "moment_n_mm": [
+          -4.092726157978177e-12,
+          -5.5706550483591855e-12,
+          -9.716116800007057e-13
+        ],
+        "max_relative_quadrature_correction": 0.001586722790957523,
+        "minimum_pressure_weight_n": 0.5508932156811025,
+        "loaded_node_count": 205
+      },
+      "total_applied_n": [
+        0.0,
+        5.722533558127907e-12,
+        0.0
+      ],
+      "gauges": [
+        [
+          1066,
+          1
+        ],
+        [
+          1066,
+          2
+        ],
+        [
+          1066,
+          3
+        ],
+        [
+          1046,
+          1
+        ],
+        [
+          1046,
+          3
+        ],
+        [
+          1611,
+          1
+        ]
+      ],
+      "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+      "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+      "equilibrium": {
+        "applied_total_n": [
+          -4.5374079604698636e-08,
+          1.8783938848798698e-08,
+          0.0
+        ],
+        "reaction_total_n": [
+          4.643546000000001e-08,
+          -1.988623e-08,
+          -9.814799999999981e-10
+        ],
+        "balance_residual_n": [
+          1.0613803953013768e-09,
+          -1.1022911512013027e-09,
+          -9.814799999999981e-10
+        ],
+        "balance_moment_n_mm": [
+          1.0446441778791916e-06,
+          2.5627428666171536e-07,
+          -9.647238985048498e-07
+        ],
+        "reaction_dof_norm_fraction": 4.2375659310475184e-12,
+        "force_balance_fraction": 6.49261463866909e-14,
+        "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+      }
+    },
+    "gmsh_version": "4.15.2",
+    "solver_version": "This is Version 2.22",
+    "fields_path": "runs/phase3-refinement/0.35-compression/fields.json",
+    "hotspot": {
+      "element_id": 112448,
+      "integration_point": 1,
+      "coordinates_mm": [
+        30.755319231908317,
+        -12.567639825928623,
+        11.868017159138875
+      ],
+      "region": "big-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 210.61398486458955,
+      "local_2mm_point_count": 9059,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    },
+    "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+    "runtime_s": 346.83646150000277,
+    "regional_stress": {
+      "raw_ip_peak_mpa": 566.7176274580186,
+      "element_mean_tensor_vm_max_mpa": 511.91327491611486,
+      "regions": {
+        "big_end_transition": {
+          "count": 199508,
+          "peak_mpa": 566.7176274580186,
+          "xyz_mm": [
+            30.755319231908317,
+            -12.567639825928623,
+            11.868017159138875
+          ],
+          "element": 112448,
+          "ip": 1,
+          "components_mpa": [
+            -521.24,
+            -133.3715,
+            -160.718,
+            -245.3433,
+            1.376013,
+            -0.274501
+          ],
+          "corner_edge_lengths_mm": [
+            0.3383851629780865,
+            0.3332709358560843,
+            0.3452167554349867,
+            0.5095002089350166,
+            0.35629037748634323,
+            0.35748689665111605
+          ],
+          "peak_element_minSICN": 0.6999304683155531
+        },
+        "small_end_transition": {
+          "count": 2338,
+          "peak_mpa": 123.35607976556348,
+          "xyz_mm": [
+            130.51720583687052,
+            -12.376499142778622,
+            1.1076297644711062
+          ],
+          "element": 117927,
+          "ip": 1,
+          "components_mpa": [
+            -130.4349,
+            -4.506885,
+            -15.35829,
+            11.97681,
+            7.649562,
+            -0.7574133
+          ],
+          "corner_edge_lengths_mm": [
+            1.6923076923076872,
+            1.9663360703005563,
+            1.0012852819857407,
+            0.9391242846937701,
+            0.9391242846937701,
+            1.5352863868017863
+          ],
+          "peak_element_minSICN": 0.3112388973430696
+        },
+        "big_bore_2mm": {
+          "count": 4850,
+          "peak_mpa": 255.8785723931811,
+          "xyz_mm": [
+            23.950368722357435,
+            -8.013635885726579,
+            4.915615340511945
+          ],
+          "element": 134794,
+          "ip": 2,
+          "components_mpa": [
+            4.42461,
+            225.8415,
+            30.08965,
+            84.42955,
+            -0.5269674,
+            5.369788
+          ],
+          "corner_edge_lengths_mm": [
+            2.8989781899752525,
+            2.9317996806931785,
+            3.264455632978337,
+            2.481663205191447,
+            2.3560771487744003,
+            2.9847904172257738
+          ],
+          "peak_element_minSICN": 0.9270802563105786
+        },
+        "small_bore_2mm": {
+          "count": 1972,
+          "peak_mpa": 163.89326523597083,
+          "xyz_mm": [
+            132.86396434271725,
+            1.4879098287925514,
+            11.132158508341167
+          ],
+          "element": 110823,
+          "ip": 2,
+          "components_mpa": [
+            -62.6813,
+            120.078,
+            18.3534,
+            23.82704,
+            -0.1628304,
+            0.004088031
+          ],
+          "corner_edge_lengths_mm": [
+            3.9494152579124893,
+            3.9518217307991272,
+            3.9501888360782145,
+            3.2966259062588543,
+            5.422139623944658,
+            3.148122107285931
+          ],
+          "peak_element_minSICN": 0.48301421951757656
+        },
+        "pocket_shank": {
+          "count": 171097,
+          "peak_mpa": 147.48374381358158,
+          "xyz_mm": [
+            35.01830149781914,
+            -12.34882871066904,
+            7.651395013135101
+          ],
+          "element": 37811,
+          "ip": 3,
+          "components_mpa": [
+            -146.8921,
+            0.2469224,
+            0.6464086,
+            -2.856701,
+            2.453902,
+            0.1592183
+          ],
+          "corner_edge_lengths_mm": [
+            0.826797703163083,
+            0.767923745671285,
+            0.842606853737702,
+            1.6324665102099762,
+            1.4997359158049888,
+            1.1862576452362774
+          ],
+          "peak_element_minSICN": 0.6872073562547754
+        }
+      },
+      "nodal_extrapolation": "NOT IMPLEMENTED; no extrapolated-stress claim",
+      "acceptance_measure": "Maximum unaveraged IP stress; regional maxima supplement, never replace it",
+      "region_definition": "Transitions: x within 2mm of nominal seam and |y| within 2mm of half-width, full thickness; bores: 2mm radial band; pocket: axial span"
+    }
+  },
+  {
+    "sample_id": "166a9ef7e84f0b2d5427",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 4,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true,
+      "hotspot_size_mm": 0.35,
+      "refinement_region": "big_end_transition"
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase3-deterministic-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.35,
+      "size_max_mm": 4,
+      "curvature_points": 0,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 1,
+      "random_seed": 42,
+      "algorithm_2d": 6,
+      "algorithm_3d": 1
+    },
+    "output_dir": "runs/phase3-refinement/0.35-tension",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T19:06:58.445481+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "center_of_mass_mm": [
+        62.6508258119077,
+        -1.8953206212195475e-15,
+        10.999999999999995
+      ],
+      "equivalent_small_end_mass_fraction": 0.43207466077177725,
+      "mass_partition_note": "Uniform-density CAD center of mass, not measured reference engine rod data; end lumping does not preserve full inertia tensor",
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "node_count": 179366,
+    "element_count": 121674,
+    "mesh_quality": {
+      "minSICN_min": 0.02966690503225666,
+      "minSICN_p01": 0.35676699580287075,
+      "element_count": 121674
+    },
+    "status": "FEA_SUCCESS",
+    "max_von_mises_mpa": 770.1385959162053,
+    "max_displacement_mm": 0.17607778175285438,
+    "factor_of_safety": 0.9219119828104958,
+    "boundary_conditions": {
+      "model": "COSINE_BEARING",
+      "resultant_n": [
+        18000.0,
+        2.5579538487363607e-13,
+        0.0
+      ],
+      "opposite_bore": {
+        "resultant_n": [
+          -17999.999999999985,
+          8.704148513061227e-13,
+          0.0
+        ],
+        "moment_n_mm": [
+          -2.6290081223123707e-12,
+          -2.0605739337042905e-13,
+          -9.442811116366912e-13
+        ],
+        "max_relative_quadrature_correction": 0.0005149078279567006,
+        "minimum_pressure_weight_n": 0.1250116877030837,
+        "loaded_node_count": 428
+      },
+      "loaded_bore": {
+        "resultant_n": [
+          18000.0,
+          2.5579538487363607e-13,
+          0.0
+        ],
+        "moment_n_mm": [
+          1.3642420526593924e-12,
+          -4.547473508864641e-13,
+          8.260365505621577e-14
+        ],
+        "max_relative_quadrature_correction": 0.0017209065745175311,
+        "minimum_pressure_weight_n": 0.007537252295250969,
+        "loaded_node_count": 221
+      },
+      "total_applied_n": [
+        1.4551915228366852e-11,
+        1.1262102361797588e-12,
+        0.0
+      ],
+      "gauges": [
+        [
+          1066,
+          1
+        ],
+        [
+          1066,
+          2
+        ],
+        [
+          1066,
+          3
+        ],
+        [
+          1046,
+          1
+        ],
+        [
+          1046,
+          3
+        ],
+        [
+          1611,
+          1
+        ]
+      ],
+      "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+      "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+      "equilibrium": {
+        "applied_total_n": [
+          -2.919622410502143e-08,
+          -6.908074112743634e-10,
+          0.0
+        ],
+        "reaction_total_n": [
+          2.4094546000000003e-08,
+          5.749219e-09,
+          2.1452216e-09
+        ],
+        "balance_residual_n": [
+          -5.101678105021426e-09,
+          5.058411588725637e-09,
+          2.1452216e-09
+        ],
+        "balance_moment_n_mm": [
+          -9.369725356388042e-08,
+          -3.006842638487021e-07,
+          -2.6780843526820113e-06
+        ],
+        "reaction_dof_norm_fraction": 4.594683028782828e-12,
+        "force_balance_fraction": 4.1654302980973314e-13,
+        "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+      }
+    },
+    "gmsh_version": "4.15.2",
+    "solver_version": "This is Version 2.22",
+    "fields_path": "runs/phase3-refinement/0.35-tension/fields.json",
+    "hotspot": {
+      "element_id": 111407,
+      "integration_point": 2,
+      "coordinates_mm": [
+        30.57393750745017,
+        12.672796464182658,
+        12.847204105066124
+      ],
+      "region": "big-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 281.3962835983055,
+      "local_2mm_point_count": 9325,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    },
+    "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+    "runtime_s": 307.1490518999999,
+    "regional_stress": {
+      "raw_ip_peak_mpa": 770.1385959162053,
+      "element_mean_tensor_vm_max_mpa": 694.763163480446,
+      "regions": {
+        "big_end_transition": {
+          "count": 199508,
+          "peak_mpa": 770.1385959162053,
+          "xyz_mm": [
+            30.57393750745017,
+            12.672796464182658,
+            12.847204105066124
+          ],
+          "element": 111407,
+          "ip": 2,
+          "components_mpa": [
+            579.5129,
+            336.553,
+            224.7167,
+            -405.9542,
+            -1.351841,
+            -0.9882197
+          ],
+          "corner_edge_lengths_mm": [
+            0.349128912570749,
+            0.32869960545835303,
+            0.33078671568522966,
+            0.5117350360635865,
+            0.381122574256839,
+            0.36587343478960493
+          ],
+          "peak_element_minSICN": 0.8129820361564047
+        },
+        "small_end_transition": {
+          "count": 2338,
+          "peak_mpa": 274.0925725541429,
+          "xyz_mm": [
+            130.69931720160986,
+            12.331200648790576,
+            10.999999999999984
+          ],
+          "element": 119151,
+          "ip": 1,
+          "components_mpa": [
+            287.6089,
+            33.19996,
+            71.16445,
+            78.76995,
+            1.403612,
+            0.0492817
+          ],
+          "corner_edge_lengths_mm": [
+            0.9391242846940883,
+            0.9391242846940899,
+            1.6923076923076952,
+            1.7444589627317255,
+            1.7444589627317226,
+            1.7444589627317235
+          ],
+          "peak_element_minSICN": 0.3857762352040282
+        },
+        "big_bore_2mm": {
+          "count": 4850,
+          "peak_mpa": 300.67515872614064,
+          "xyz_mm": [
+            2.001586011887536,
+            25.304284175613773,
+            1.9729228139555015
+          ],
+          "element": 132961,
+          "ip": 4,
+          "components_mpa": [
+            306.9825,
+            9.691825,
+            8.339433,
+            -23.15927,
+            -1.106996,
+            -1.548274
+          ],
+          "corner_edge_lengths_mm": [
+            3.473404824330285,
+            3.485048724899832,
+            3.9265751129218573,
+            4.378625253276992,
+            3.877869192348536,
+            3.924697182361473
+          ],
+          "peak_element_minSICN": 0.9406689076208097
+        },
+        "small_bore_2mm": {
+          "count": 1972,
+          "peak_mpa": 220.8571001618478,
+          "xyz_mm": [
+            144.86772959216623,
+            -12.420957318652372,
+            3.1002463178755284
+          ],
+          "element": 129242,
+          "ip": 2,
+          "components_mpa": [
+            233.9368,
+            8.499261,
+            18.23117,
+            -0.2158295,
+            4.27362,
+            0.1538751
+          ],
+          "corner_edge_lengths_mm": [
+            4.02782729945787,
+            3.9918928555627873,
+            3.995431582916243,
+            5.256617234551318,
+            3.9644109561052336,
+            3.9644109561052274
+          ],
+          "peak_element_minSICN": 0.8824908556362828
+        },
+        "pocket_shank": {
+          "count": 171095,
+          "peak_mpa": 139.27403265241105,
+          "xyz_mm": [
+            35.00193802009595,
+            12.169539251439007,
+            13.898317798233922
+          ],
+          "element": 59195,
+          "ip": 3,
+          "components_mpa": [
+            134.6295,
+            0.7629987,
+            -8.014933,
+            -7.186482,
+            4.826562,
+            -0.1519187
+          ],
+          "corner_edge_lengths_mm": [
+            1.3303422131178242,
+            0.6736980092804273,
+            1.5131998382135015,
+            1.3896979711099686,
+            1.235874486323955,
+            1.5989345377205897
+          ],
+          "peak_element_minSICN": 0.700662204613333
+        }
+      },
+      "nodal_extrapolation": "NOT IMPLEMENTED; no extrapolated-stress claim",
+      "acceptance_measure": "Maximum unaveraged IP stress; regional maxima supplement, never replace it",
+      "region_definition": "Transitions: x within 2mm of nominal seam and |y| within 2mm of half-width, full thickness; bores: 2mm radial band; pocket: axial span"
+    }
+  },
+  {
     "sample_id": "5a5a8380a7728ae17b0f",
     "geometry": {
       "length_cc": 145.0,
@@ -245,6 +1123,14 @@
             2.63067,
             -5.827564
           ],
+          "corner_edge_lengths_mm": [
+            0.5891387544236121,
+            0.5085596553045825,
+            0.40403953852513497,
+            0.5285552007271274,
+            0.7512333297283763,
+            0.5554733692688613
+          ],
           "peak_element_minSICN": 0.691461048971247
         },
         "small_end_transition": {
@@ -264,6 +1150,14 @@
             -7.658257,
             -6.270381,
             -0.1609195
+          ],
+          "corner_edge_lengths_mm": [
+            1.692307692307697,
+            0.9391242846940883,
+            0.9391242846940916,
+            1.0017767743199248,
+            1.9665863904264762,
+            1.535753204665159
           ],
           "peak_element_minSICN": 0.3111129962183532
         },
@@ -285,6 +1179,14 @@
             -0.6993496,
             0.3105599
           ],
+          "corner_edge_lengths_mm": [
+            3.499605431161259,
+            3.1865767841510735,
+            2.0268711073873367,
+            3.1865767841510744,
+            4.066460246869822,
+            3.099037702814263
+          ],
           "peak_element_minSICN": 0.7243679966827778
         },
         "small_bore_2mm": {
@@ -305,6 +1207,14 @@
             -0.8875591,
             0.5923132
           ],
+          "corner_edge_lengths_mm": [
+            3.9422889579881124,
+            3.9076497546012137,
+            3.9095776735233927,
+            5.165762525327079,
+            3.2803586439887615,
+            3.5028071745356986
+          ],
           "peak_element_minSICN": 0.6902558712879213
         },
         "pocket_shank": {
@@ -324,6 +1234,14 @@
             2.870453,
             -1.816659,
             0.1882651
+          ],
+          "corner_edge_lengths_mm": [
+            0.7270006131158139,
+            0.9203354485929267,
+            1.0631899483306535,
+            1.563786620505835,
+            1.7907904202678757,
+            1.1907926094937915
           ],
           "peak_element_minSICN": 0.688996926599862
         }
@@ -586,6 +1504,14 @@
             2.645934,
             9.789786
           ],
+          "corner_edge_lengths_mm": [
+            0.5772816460244704,
+            0.40343884478684244,
+            0.513418258545733,
+            0.511927781296448,
+            0.6303501362841496,
+            0.5111372153427611
+          ],
           "peak_element_minSICN": 0.9110732897704183
         },
         "small_end_transition": {
@@ -605,6 +1531,14 @@
             -79.80051,
             4.97138,
             -0.5217638
+          ],
+          "corner_edge_lengths_mm": [
+            0.9391242846937728,
+            1.6923076923076916,
+            0.9391242846937712,
+            1.7404748527752774,
+            1.7404748527752745,
+            1.7404748527752767
           ],
           "peak_element_minSICN": 0.3856825174565541
         },
@@ -626,6 +1560,14 @@
             0.8525724,
             -1.163065
           ],
+          "corner_edge_lengths_mm": [
+            3.8859756817119684,
+            4.395212466521195,
+            3.51849032003668,
+            4.054211246332941,
+            3.8938554876598173,
+            6.096592788334514
+          ],
           "peak_element_minSICN": 0.6725074603608777
         },
         "small_bore_2mm": {
@@ -646,6 +1588,14 @@
             3.967708,
             0.2895125
           ],
+          "corner_edge_lengths_mm": [
+            3.9502701667376066,
+            3.950270166737609,
+            3.9502701667375932,
+            5.282869311102295,
+            3.9709347174229968,
+            3.9709347174230003
+          ],
           "peak_element_minSICN": 0.8763057080722277
         },
         "pocket_shank": {
@@ -665,6 +1615,14 @@
             8.132104,
             3.226973,
             0.008379974
+          ],
+          "corner_edge_lengths_mm": [
+            1.8622530742513133,
+            1.0657288297108523,
+            1.537002972629515,
+            1.7653136828122016,
+            1.375734685873157,
+            1.4202608067227513
           ],
           "peak_element_minSICN": 0.8347713472456258
         }
@@ -920,6 +1878,14 @@
             -1.943979,
             5.178613
           ],
+          "corner_edge_lengths_mm": [
+            0.6811182318692699,
+            0.7333430859466405,
+            0.6780669960360832,
+            1.0552656544911658,
+            0.7640628738304476,
+            0.8429595077207442
+          ],
           "peak_element_minSICN": 0.7786574523141834
         },
         "small_end_transition": {
@@ -939,6 +1905,14 @@
             11.82707,
             7.058275,
             -0.7707325
+          ],
+          "corner_edge_lengths_mm": [
+            1.6923076923076872,
+            1.9634531445302357,
+            0.9956118346634399,
+            0.9391242846937701,
+            0.9391242846937701,
+            1.5290220562209815
           ],
           "peak_element_minSICN": 0.3143716810480636
         },
@@ -960,6 +1934,14 @@
             0.7400647,
             -1.722659
           ],
+          "corner_edge_lengths_mm": [
+            2.571304364320497,
+            2.817774326259594,
+            3.2233806564109675,
+            2.4705911872466673,
+            2.8494001010821517,
+            3.0166501777543773
+          ],
           "peak_element_minSICN": 0.9585786749045971
         },
         "small_bore_2mm": {
@@ -980,6 +1962,14 @@
             -0.1737876,
             0.3093593
           ],
+          "corner_edge_lengths_mm": [
+            5.413028849620506,
+            4.5762909266003495,
+            3.952334148069229,
+            3.22007019770862,
+            3.9521502637293855,
+            3.9497433610676604
+          ],
           "peak_element_minSICN": 0.7322729996000114
         },
         "pocket_shank": {
@@ -999,6 +1989,14 @@
             -3.003195,
             2.225394,
             0.2480505
+          ],
+          "corner_edge_lengths_mm": [
+            1.171966003445167,
+            1.1358233957460546,
+            1.2016997318386187,
+            1.3136395007319193,
+            1.8458272454363762,
+            1.7520312212617322
           ],
           "peak_element_minSICN": 0.8318664866800426
         }
@@ -1254,6 +2252,14 @@
             4.160884,
             -5.276329
           ],
+          "corner_edge_lengths_mm": [
+            0.6811182318692699,
+            0.7333430859466405,
+            0.6780669960360832,
+            1.0552656544911658,
+            0.7640628738304476,
+            0.8429595077207442
+          ],
           "peak_element_minSICN": 0.7786574523141834
         },
         "small_end_transition": {
@@ -1273,6 +2279,14 @@
             115.8761,
             0.6316192,
             1.335605
+          ],
+          "corner_edge_lengths_mm": [
+            1.6923076923076952,
+            0.9391242846937474,
+            0.9391242846937491,
+            2.054324171855716,
+            2.054324171855717,
+            2.054324171855718
           ],
           "peak_element_minSICN": 0.3789395273991244
         },
@@ -1294,6 +2308,14 @@
             2.781838,
             0.9999454
           ],
+          "corner_edge_lengths_mm": [
+            3.7435389000877044,
+            3.6435648883255283,
+            4.890570740042883,
+            5.503320063676838,
+            4.420624506975804,
+            4.802497111871328
+          ],
           "peak_element_minSICN": 0.7811887466390676
         },
         "small_bore_2mm": {
@@ -1314,6 +2336,14 @@
             4.270232,
             0.1291225
           ],
+          "corner_edge_lengths_mm": [
+            4.02782729945787,
+            3.9918928555627873,
+            3.995431582916243,
+            5.256617234551318,
+            3.9644109561052336,
+            3.9644109561052274
+          ],
           "peak_element_minSICN": 0.8824908556362828
         },
         "pocket_shank": {
@@ -1333,6 +2363,14 @@
             -10.41863,
             -2.428384,
             0.02418108
+          ],
+          "corner_edge_lengths_mm": [
+            1.153821900752567,
+            2.0373820344756357,
+            1.8829081263055283,
+            1.7667968400548808,
+            2.261345323429985,
+            1.7878072680206778
           ],
           "peak_element_minSICN": 0.6636328810567274
         }

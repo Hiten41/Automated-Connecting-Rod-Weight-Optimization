@@ -1,23 +1,31 @@
 # Phase 3 execution checkpoint
 
-Active branch: feature/phase3-converged-feasible-design. Exact parent: 5e480349ba11255f6fc44e709788c542d203a096. Previous worktrees are read-only inputs.
+## Isolation and scope
 
-## Budget and sequence
+All new work is on `feature/phase3-converged-feasible-design`, created directly from Phase 2 commit `5e480349ba11255f6fc44e709788c542d203a096`. The Phase 1, Phase 2 and upstream `main` branches are inputs only. No merge, pull request or public deployment is performed.
 
-Historical raw DAT and JSON fields were found, and all eight focused-refinement peaks/displacements reproduced directly. No historical cases were rerun. The actual nearest CAD faces are 1mm-radius cylinders, rather than gauge constraints. Coordinate movement along the fillet and element edges comparable to its radius motivate full-thickness local refinement.
+## Engineering evidence completed
 
-Meshing uses a single thread, fixed seed42 and explicit algorithms. Repeatability pilot has identical connectivity; maximum coordinate difference6.46e-9mm, so bitwise reproducibility is NOT claimed. Mesh and topology hashes are retained. Refinement levels are independently regenerated and not nested. Richardson/GCI estimates are not presently justified.
+- Historical Phase 2 raw fields were found; all eight focused-refinement peaks and displacements were reproduced from original DAT data. No historical solver cases were rerun.
+- New fixed-CAD baseline runs at 0.75, 0.50 and 0.35 mm local transition target completed for both loads. Successive peak-stress changes meet the provisional <5% two-step screen; the independently regenerated unstructured meshes are nonnested, so no Richardson/GCI or continuum error bound is claimed. The 0.25 mm mesh exceeded the 250,000-node cap before solver execution.
+- Actual integration-point global and fixed-region hotspot records include coordinates, components, element/IP IDs, CAD BREP face/radius distances, local edge sizes and element quality. Interactive HTML views use actual retained fields and state their display decimation/deformation scale.
+- Three flat frictionless contact patch cases agree with analytical force/compliance within 0.15%. The separate curved pin/ring benchmark balances reactions but remains sensitive to mesh and penalty stiffness; it is not qualified for rod integration. The rod keeps COSINE_BEARING as an equivalent-pressure approximation.
+- The Ricardo Hydra reference calculation preserves source and digitized-plot limitations. It is not raw cylinder-pressure evidence or experimentally validated combustion loading and does not replace 28 kN compression / 18 kN tension design requirements.
+- The 40-point feasibility study evaluated 35 valid CAD geometries with both 6 mm load cases; five were invalid and no valid sample passed the stress screen. The nearest candidate was refined at 0.75 mm for both loads and fails tension.
+- Paired Phase 3 data are complete: 12 geometries × 2 loads at 6 mm coarse, 1.25 mm intermediate and 0.75 mm fine. The 24 coarse records are reused from feasibility; all 48 new intermediate/fine solver runs succeeded. JSONL data and fidelity/source hashes are in `data/phase3/paired/manifest.json`.
+- The grouped fine-mesh ML comparison is complete. Its validation-selected MLP has 208.86 MPa held-out stress MAE, 291.95 MPa RMSE, and R² 0.031 on three test geometry groups; near-constraint performance is also weak. The model is marked `EXPLORATORY_SCREENING_ONLY`. The optimizer API and UI reject this model, and no optimizer run or candidate acceptance is claimed.
+- Phase 3 app health is HTTP 200 on port 8504; Phase 2 remains HTTP 200 on port 8503. Visual browser capture is blocked by the Codex Work setting and is not claimed.
 
-Structural sequence: local0.75/0.50/0.35/0.25mm; fixed physical big-end transition regions, full thickness. Preserve bulk4mm, reference geometry/material and28kN compression/18kN tension. Enforce250000nodes and600seconds per solver; stop on first failure to inspect before further expense. Raw fields/DAT/FRD retained.
+## Local finalization checks
 
-Contact: three actual surface-to-surface flat patch runs pass reaction balance and analytical force within0.15%. This does NOT validate curved pin contact, separation, sliding or pin-bearing pressure. Retain cosine bearing as an equivalent-pressure approximation pending further validation.
+- Current full local suite: **70 passed**, including all three FreeCAD/CalculiX integration tests, in 49.08 seconds.
+- Ruff critical-error/undefined-name check (`--select E9,F`) on app, source, scripts, tests and workers: passed.
+- Phase 3 and preserved Phase 2 Streamlit health endpoints: HTTP 200 `ok` on ports 8504 and 8503 respectively.
+- Browser screenshot and narrow-screen inspection remain blocked by the Codex Work setting; no visual browser QA is claimed.
+- Remaining release steps: package and inspect the critical raw evidence ZIP, verify all branch refs/remotes, commit and push only this Phase 3 branch to the fork, then check the resulting GitHub Actions run. The final report will record the resulting commit and package hash.
 
-Next: inspect complete refinement results, fixed-region stresses and resource cap; finish engine mass documentation; run staged reproducible feasibility exploration (initial pilot then40 distinct attempted geometries), paired fidelity selected from results; assess surrogate and optimization only against actual evidence.
+## Reproducibility references
 
-Final completion is not yet claimed. No feasible Phase3 candidate is yet established. No previous weight-reduction claim is carried forward.
-
-## Primary technical references
-
-- Gmsh4.15.2 documentation: https://gmsh.info/doc/texinfo/
-- CalculiX2.22 user manual, contact pair/contact print/surface behavior: https://www.dhondt.de/ccx_2.22.pdf
-- Material heat-treatment dependence: https://atlassteels.com.au/wp-content/uploads/2021/09/Through-Hardening-Low-Alloy-Steel-Bar-4340-Grade-Data-Sheet-10-09-21-1.pdf
+- Gmsh 4.15.2 documentation: https://gmsh.info/doc/texinfo/
+- CalculiX 2.22 user manual, contact pair and surface behavior: https://www.dhondt.de/ccx_2.22.pdf
+- AISI 4340 heat-treatment dependence: https://atlassteels.com.au/wp-content/uploads/2021/09/Through-Hardening-Low-Alloy-Steel-Bar-4340-Grade-Data-Sheet-10-09-21-1.pdf

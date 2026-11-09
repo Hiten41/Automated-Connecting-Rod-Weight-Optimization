@@ -15,7 +15,7 @@ BOUNDS = dict(
     flange_thickness=(2.5, 6.0),
     transition_radius_mm=(0.5, 3.0),
 )
-OPT_KEYS = tuple(list(BOUNDS)[3:8])
+OPT_KEYS = tuple(list(BOUNDS)[3:])
 
 
 class Mode(str, Enum):

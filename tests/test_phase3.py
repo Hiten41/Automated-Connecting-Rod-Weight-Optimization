@@ -19,6 +19,13 @@ def test_mixed_simulation_versions_rejected(tmp_path):
         load_verified(p)
 
 
+def test_optimizer_searches_fillets_in_full_precision():
+    from conrod.schemas import OPT_KEYS
+
+    assert len(OPT_KEYS) == 6
+    assert OPT_KEYS[-1] == "transition_radius_mm"
+
+
 def test_constant_tensor_recovery_and_duplicate_rejection():
     corners = np.array(
         [[30, 12, 0], [31, 12, 0], [30, 13, 0], [30, 12, 1]], dtype=float

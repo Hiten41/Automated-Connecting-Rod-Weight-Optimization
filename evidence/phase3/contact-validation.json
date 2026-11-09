@@ -111,7 +111,23 @@
       ],
       "equilibrium_fraction": 3.143921044796044e-08,
       "peak_contact_pressure_mpa": 1182.748,
-      "active_contact_samples": 398
+      "minimum_normal_contact_displacement_mm": -0.001182748,
+      "maximum_normal_contact_displacement_mm": -3.53166e-05,
+      "active_contact_samples": 398,
+      "raw_files": {
+        "job.inp": {
+          "path": "runs\\phase3-pin-benchmark\\n32-k1e+06\\job.inp",
+          "sha256": "af91c2d04937327e4dda4b77e753308a8854f7c8da2a754754e6b53bfff6c0ad"
+        },
+        "job.dat": {
+          "path": "runs\\phase3-pin-benchmark\\n32-k1e+06\\job.dat",
+          "sha256": "048448008e25aac9329812d7e8448f38c286546681208fe4e137ba7a3bc13868"
+        },
+        "solver.log": {
+          "path": "runs\\phase3-pin-benchmark\\n32-k1e+06\\solver.log",
+          "sha256": "337d2d73423ae2cff7c1d4cc451dabd1b957543aad61993eaa66e1fd0d925d50"
+        }
+      }
     },
     {
       "angular_elements": 64,
@@ -129,7 +145,23 @@
       ],
       "equilibrium_fraction": 7.341507486267393e-08,
       "peak_contact_pressure_mpa": 896.6715,
-      "active_contact_samples": 952
+      "minimum_normal_contact_displacement_mm": -0.0008966715,
+      "maximum_normal_contact_displacement_mm": -1.300901e-05,
+      "active_contact_samples": 952,
+      "raw_files": {
+        "job.inp": {
+          "path": "runs\\phase3-pin-benchmark\\n64-k1e+06\\job.inp",
+          "sha256": "be01746b49a50e23ebd4b56188d6ae30b052a74b53a33eaf4342436083bb2487"
+        },
+        "job.dat": {
+          "path": "runs\\phase3-pin-benchmark\\n64-k1e+06\\job.dat",
+          "sha256": "1bd67fd2615f63c41412d868a97c9a4234d71ec2460f71d2b0c1ce2bd9830d7d"
+        },
+        "solver.log": {
+          "path": "runs\\phase3-pin-benchmark\\n64-k1e+06\\solver.log",
+          "sha256": "d239bdaa870282d933d340c781952b9e26c15dd87952ee5f63f6dd0da58e5b23"
+        }
+      }
     },
     {
       "angular_elements": 96,
@@ -147,7 +179,23 @@
       ],
       "equilibrium_fraction": 2.1949370313443585e-08,
       "peak_contact_pressure_mpa": 777.1206,
-      "active_contact_samples": 1520
+      "minimum_normal_contact_displacement_mm": -0.0007771206,
+      "maximum_normal_contact_displacement_mm": -1.556673e-06,
+      "active_contact_samples": 1520,
+      "raw_files": {
+        "job.inp": {
+          "path": "runs\\phase3-pin-benchmark\\n96-k1e+06\\job.inp",
+          "sha256": "14aefa14c761045c9881b2720eb8279f3f9bcb9fefe13e58aa3c1a8e4592c38f"
+        },
+        "job.dat": {
+          "path": "runs\\phase3-pin-benchmark\\n96-k1e+06\\job.dat",
+          "sha256": "5bca641cd7b40afec0a467e480581419c5a5292a379199c5c762294e7be7531a"
+        },
+        "solver.log": {
+          "path": "runs\\phase3-pin-benchmark\\n96-k1e+06\\solver.log",
+          "sha256": "df52aacdcd6c2d18ac572d4a764da6b095fe68e0ca081e46cd59fdccfbd29404"
+        }
+      }
     },
     {
       "angular_elements": 96,
@@ -165,10 +213,67 @@
       ],
       "equilibrium_fraction": 4.365558089548944e-08,
       "peak_contact_pressure_mpa": 2251.179,
-      "active_contact_samples": 848
+      "minimum_normal_contact_displacement_mm": -0.0002251179,
+      "maximum_normal_contact_displacement_mm": -2.372854e-06,
+      "active_contact_samples": 848,
+      "raw_files": {
+        "job.inp": {
+          "path": "runs\\phase3-pin-benchmark\\n96-k1e+07\\job.inp",
+          "sha256": "7555c9997f5b2dc407ad1cb5b4acd604b1d02cded4297e486a9b88fd75541c5f"
+        },
+        "job.dat": {
+          "path": "runs\\phase3-pin-benchmark\\n96-k1e+07\\job.dat",
+          "sha256": "d4b10994934ba103e1acae599bd81ab730ed3d85571ea3dbbe6dc8c856a2fca4"
+        },
+        "solver.log": {
+          "path": "runs\\phase3-pin-benchmark\\n96-k1e+07\\solver.log",
+          "sha256": "9dac09ac76b69d44bcef392a0c1d651ad9deace5e4acd7c52a0871a22bb2740f"
+        }
+      }
     }
   ],
   "pin_status": "NOT VALIDATED FOR ROD INTEGRATION",
   "primary_model": "COSINE_BEARING equivalent-pressure approximation",
-  "reason": "Angular refinement changes peak pressure from1182.748 to777.121MPa; tenfold penalty change at96 sectors changes peak to2251.179MPa and resultant from8312.071 to9003.596N. Equilibrium passes but contact pressure and penalty independence do not. No integrated rod-contact claim."
+  "benchmark_definition": {
+    "solver": "CalculiX 2.22",
+    "elements": "C3D8 full-integration bricks",
+    "angular_sectors": [
+      32,
+      64,
+      96
+    ],
+    "radial_elements_per_body": 3,
+    "axial_layers": 1,
+    "pin_outer_radius_mm": 9.99,
+    "ring_bore_radius_mm": 10.0,
+    "radial_clearance_mm": 0.01,
+    "ring_outer_radius_mm": 14.0,
+    "thickness_mm": 1.0,
+    "imposed_pin_translation_mm": 0.02,
+    "normal_penalties_mpa_per_mm": [
+      1000000.0,
+      10000000.0
+    ],
+    "friction": "frictionless; no tangential law",
+    "pin_motion": "all pin nodes are prescribed to the same rigid translation; no reference-node coupling",
+    "contact_faces": "pin outer C3D8 S4 slave; ring bore C3D8 S6 master"
+  },
+  "checks": {
+    "max_relative_reaction_imbalance": 7.341507486267393e-08,
+    "reaction_equilibrium_passed": true,
+    "peak_pressure_relative_change_32_to_96": 0.342953359464569,
+    "peak_pressure_relative_change_penalty_1e6_to_1e7_at_96": 1.89682064791488,
+    "resultant_force_relative_change_penalty_1e6_to_1e7_at_96": 0.08319528306402968,
+    "provisional_change_target": 0.05,
+    "pressure_sensitivity_passed": false
+  },
+  "conclusion": "Reaction equilibrium is excellent, and the measured face-level pressure is consistent with the specified linear penalty and signed penetration. Peak pressure remains sensitive to angular mesh and penalty stiffness; this benchmark is not qualified for integration into the connecting-rod model.",
+  "limitations": [
+    "This is an idealized rigid-translation pin and ring benchmark, not a connecting rod.",
+    "The ring outer boundary is fixed and the thickness direction is constrained.",
+    "The pin is kinematically prescribed at all nodes rather than attached to a reference node.",
+    "The study does not establish a converged contact-pressure field or validate bore stress in a rod.",
+    "Failed surface-selection and input-format attempts are retained under runs/phase3-failed-attempts and excluded from the measurements above."
+  ],
+  "source": "CalculiX 2.22 User's Manual, *SURFACE C3D8 face numbering and contact sections 6.7, 7.22\u20137.23: https://www.dhondt.de/ccx_2.22.pdf"
 }

@@ -1,0 +1,364 @@
+{
+  "seed": 7301,
+  "keys": [
+    "ring_thickness",
+    "shank_width",
+    "beam_thickness",
+    "pocket_depth",
+    "flange_thickness",
+    "transition_radius_mm"
+  ],
+  "bounds": {
+    "ring_thickness": [
+      4.5,
+      9.0
+    ],
+    "shank_width": [
+      15.0,
+      28.0
+    ],
+    "beam_thickness": [
+      14.0,
+      24.0
+    ],
+    "pocket_depth": [
+      2.0,
+      6.0
+    ],
+    "flange_thickness": [
+      2.5,
+      6.0
+    ],
+    "transition_radius_mm": [
+      0.5,
+      3.0
+    ]
+  },
+  "fixed_packaging": {
+    "length_cc": 145,
+    "big_end_id": 50,
+    "small_end_id": 24
+  },
+  "designs": [
+    {
+      "ring_thickness": 7.990150602782842,
+      "shank_width": 15.10628022147925,
+      "beam_thickness": 17.0234654681147,
+      "pocket_depth": 4.666590154123961,
+      "flange_thickness": 4.915596349210858,
+      "transition_radius_mm": 0.6893704559452876
+    },
+    {
+      "ring_thickness": 5.707281446542231,
+      "shank_width": 20.99867204603318,
+      "beam_thickness": 16.592084351486353,
+      "pocket_depth": 3.486364620090085,
+      "flange_thickness": 2.8662543884472873,
+      "transition_radius_mm": 2.899049572704368
+    },
+    {
+      "ring_thickness": 5.89311254728768,
+      "shank_width": 16.749506830264146,
+      "beam_thickness": 17.849863338788573,
+      "pocket_depth": 4.3773293774997555,
+      "flange_thickness": 2.6147214251565694,
+      "transition_radius_mm": 1.1098675099623936
+    },
+    {
+      "ring_thickness": 5.046654754115163,
+      "shank_width": 27.69894303358669,
+      "beam_thickness": 20.81416627595504,
+      "pocket_depth": 2.016556278519453,
+      "flange_thickness": 3.554834997858241,
+      "transition_radius_mm": 1.3917782498063287
+    },
+    {
+      "ring_thickness": 8.59595777563405,
+      "shank_width": 25.75521530077109,
+      "beam_thickness": 21.927079402198643,
+      "pocket_depth": 4.588713135823201,
+      "flange_thickness": 2.6772636316932985,
+      "transition_radius_mm": 2.4456659459556764
+    },
+    {
+      "ring_thickness": 8.530928603534257,
+      "shank_width": 24.25065147955977,
+      "beam_thickness": 18.753003775004945,
+      "pocket_depth": 2.5991381036342887,
+      "flange_thickness": 5.560922514129139,
+      "transition_radius_mm": 1.7016969137518716
+    },
+    {
+      "ring_thickness": 5.500950852373531,
+      "shank_width": 16.21189176778612,
+      "beam_thickness": 16.853500390185786,
+      "pocket_depth": 3.882715846225266,
+      "flange_thickness": 4.9685559630645395,
+      "transition_radius_mm": 2.058482193630442
+    },
+    {
+      "ring_thickness": 4.635888463831803,
+      "shank_width": 27.135122871811923,
+      "beam_thickness": 17.462628904563445,
+      "pocket_depth": 2.315951571341204,
+      "flange_thickness": 4.106605557499607,
+      "transition_radius_mm": 1.4844340027036647
+    },
+    {
+      "ring_thickness": 4.725249800865227,
+      "shank_width": 25.118200343406926,
+      "beam_thickness": 14.381434275044997,
+      "pocket_depth": 4.1045459551338626,
+      "flange_thickness": 3.689258417958184,
+      "transition_radius_mm": 2.558598822311687
+    },
+    {
+      "ring_thickness": 5.839411309606489,
+      "shank_width": 24.918025905663526,
+      "beam_thickness": 19.23193517147891,
+      "pocket_depth": 3.107702985293376,
+      "flange_thickness": 5.775808007091266,
+      "transition_radius_mm": 1.7644887135186254
+    },
+    {
+      "ring_thickness": 7.44781640887682,
+      "shank_width": 19.6238454773786,
+      "beam_thickness": 15.835839518505388,
+      "pocket_depth": 3.3682445722129906,
+      "flange_thickness": 3.3230880985720495,
+      "transition_radius_mm": 2.094349781300245
+    },
+    {
+      "ring_thickness": 7.84090157951716,
+      "shank_width": 21.264752943776113,
+      "beam_thickness": 19.483831956801595,
+      "pocket_depth": 4.268714553936338,
+      "flange_thickness": 3.481643335814728,
+      "transition_radius_mm": 0.9107764778151979
+    },
+    {
+      "ring_thickness": 7.929436184370269,
+      "shank_width": 19.358321452189408,
+      "beam_thickness": 22.213333047614178,
+      "pocket_depth": 5.163981102121246,
+      "flange_thickness": 3.7361690568109003,
+      "transition_radius_mm": 2.8265234797757692
+    },
+    {
+      "ring_thickness": 6.200605210743204,
+      "shank_width": 22.10152594759304,
+      "beam_thickness": 20.084110848450795,
+      "pocket_depth": 5.513274502707603,
+      "flange_thickness": 5.8679820221658305,
+      "transition_radius_mm": 1.3462436711517263
+    },
+    {
+      "ring_thickness": 7.3355913381956785,
+      "shank_width": 20.380461170162448,
+      "beam_thickness": 19.535958832390893,
+      "pocket_depth": 3.564921098457976,
+      "flange_thickness": 5.329536133990976,
+      "transition_radius_mm": 2.647008674126502
+    },
+    {
+      "ring_thickness": 7.225789510266592,
+      "shank_width": 26.79660826907335,
+      "beam_thickness": 17.729835595436697,
+      "pocket_depth": 3.064248299560798,
+      "flange_thickness": 3.385736460704318,
+      "transition_radius_mm": 0.649243895771797
+    },
+    {
+      "ring_thickness": 7.689226246490234,
+      "shank_width": 23.447919011246945,
+      "beam_thickness": 20.28867270948251,
+      "pocket_depth": 4.896090030090731,
+      "flange_thickness": 5.934450404861028,
+      "transition_radius_mm": 1.8703013450983632
+    },
+    {
+      "ring_thickness": 7.0327066499913595,
+      "shank_width": 25.649814151535534,
+      "beam_thickness": 15.26435510767484,
+      "pocket_depth": 2.8470338389953405,
+      "flange_thickness": 2.814282384824196,
+      "transition_radius_mm": 0.8703597148446824
+    },
+    {
+      "ring_thickness": 7.6169103807341045,
+      "shank_width": 18.677156982741955,
+      "beam_thickness": 21.605686352543376,
+      "pocket_depth": 3.7823741195158362,
+      "flange_thickness": 5.3887883862868575,
+      "transition_radius_mm": 2.9725526388966297
+    },
+    {
+      "ring_thickness": 6.503508334034049,
+      "shank_width": 18.26073553701348,
+      "beam_thickness": 22.49034536019635,
+      "pocket_depth": 2.704844183494097,
+      "flange_thickness": 4.32891226117869,
+      "transition_radius_mm": 2.43355311713137
+    },
+    {
+      "ring_thickness": 6.54319855624809,
+      "shank_width": 15.509124616233539,
+      "beam_thickness": 22.626352222309073,
+      "pocket_depth": 3.62558064663834,
+      "flange_thickness": 2.548044678836462,
+      "transition_radius_mm": 1.1474556492241599
+    },
+    {
+      "ring_thickness": 5.179624729455726,
+      "shank_width": 23.75924905621398,
+      "beam_thickness": 15.09068885561043,
+      "pocket_depth": 5.906296667069683,
+      "flange_thickness": 4.787992745536917,
+      "transition_radius_mm": 0.806612448182987
+    },
+    {
+      "ring_thickness": 6.0502558954371395,
+      "shank_width": 24.04964583333058,
+      "beam_thickness": 14.625371270388762,
+      "pocket_depth": 4.439065151761326,
+      "flange_thickness": 3.124874539568426,
+      "transition_radius_mm": 1.0230885982738416
+    },
+    {
+      "ring_thickness": 4.881771240160264,
+      "shank_width": 24.7125788732528,
+      "beam_thickness": 22.976186200715603,
+      "pocket_depth": 4.031060539296137,
+      "flange_thickness": 5.0442292400745234,
+      "transition_radius_mm": 0.5829962786672265
+    },
+    {
+      "ring_thickness": 5.539560107526171,
+      "shank_width": 20.079011553472917,
+      "beam_thickness": 23.960159141333214,
+      "pocket_depth": 4.793153535557097,
+      "flange_thickness": 4.0293545533471224,
+      "transition_radius_mm": 1.9633223353552456
+    },
+    {
+      "ring_thickness": 6.802668158490524,
+      "shank_width": 22.278085400965843,
+      "beam_thickness": 21.467793345749094,
+      "pocket_depth": 3.2526442050625546,
+      "flange_thickness": 5.58944659282483,
+      "transition_radius_mm": 2.2399117682171306
+    },
+    {
+      "ring_thickness": 8.81078014968153,
+      "shank_width": 27.547421030585006,
+      "beam_thickness": 18.645627669542456,
+      "pocket_depth": 5.3539146993835045,
+      "flange_thickness": 5.2373151576379104,
+      "transition_radius_mm": 2.3711829704464984
+    },
+    {
+      "ring_thickness": 5.151513279378848,
+      "shank_width": 17.246821228940245,
+      "beam_thickness": 18.22138836033845,
+      "pocket_depth": 5.687083975245022,
+      "flange_thickness": 4.395459642966185,
+      "transition_radius_mm": 0.5115972768573492
+    },
+    {
+      "ring_thickness": 8.114849737820553,
+      "shank_width": 17.35023993263746,
+      "beam_thickness": 16.148737437309357,
+      "pocket_depth": 5.2605743952960085,
+      "flange_thickness": 3.9788878752751113,
+      "transition_radius_mm": 0.9442614271053211
+    },
+    {
+      "ring_thickness": 6.960936823083103,
+      "shank_width": 21.656036178753368,
+      "beam_thickness": 16.414080785713228,
+      "pocket_depth": 5.006259187158984,
+      "flange_thickness": 4.670001653915014,
+      "transition_radius_mm": 2.176189469926276
+    },
+    {
+      "ring_thickness": 5.3729420998388155,
+      "shank_width": 20.753642880534038,
+      "beam_thickness": 23.49749197505028,
+      "pocket_depth": 5.895633452800409,
+      "flange_thickness": 5.674183084601646,
+      "transition_radius_mm": 1.892438357541745
+    },
+    {
+      "ring_thickness": 8.400124913674395,
+      "shank_width": 26.5218723460153,
+      "beam_thickness": 19.940700149725984,
+      "pocket_depth": 5.460645675386274,
+      "flange_thickness": 2.9398619032190814,
+      "transition_radius_mm": 1.2289315135331458
+    },
+    {
+      "ring_thickness": 6.32948832246713,
+      "shank_width": 17.693346263630325,
+      "beam_thickness": 20.520608087826353,
+      "pocket_depth": 2.2384513906935153,
+      "flange_thickness": 4.461626532093256,
+      "transition_radius_mm": 1.2815316050954968
+    },
+    {
+      "ring_thickness": 8.94046801760016,
+      "shank_width": 18.20923489285646,
+      "beam_thickness": 23.2369939701354,
+      "pocket_depth": 2.1191165881591143,
+      "flange_thickness": 5.14469118450533,
+      "transition_radius_mm": 2.5716487707019287
+    },
+    {
+      "ring_thickness": 7.100307370857361,
+      "shank_width": 22.753165243105634,
+      "beam_thickness": 23.69332941031511,
+      "pocket_depth": 2.666275197969587,
+      "flange_thickness": 4.689582017734788,
+      "transition_radius_mm": 1.5272728102133535
+    },
+    {
+      "ring_thickness": 8.756128015982565,
+      "shank_width": 19.22372717693251,
+      "beam_thickness": 18.369266044243048,
+      "pocket_depth": 5.7524908322794435,
+      "flange_thickness": 4.182663246335323,
+      "transition_radius_mm": 1.6648830646483828
+    },
+    {
+      "ring_thickness": 4.60416969590655,
+      "shank_width": 15.653969879274023,
+      "beam_thickness": 15.677038881504036,
+      "pocket_depth": 4.999051109590892,
+      "flange_thickness": 4.540110318921812,
+      "transition_radius_mm": 2.298779971366548
+    },
+    {
+      "ring_thickness": 6.683509371606599,
+      "shank_width": 16.579261465471948,
+      "beam_thickness": 14.795351528786101,
+      "pocket_depth": 2.4476564247590757,
+      "flange_thickness": 3.8171537108758358,
+      "transition_radius_mm": 2.737897186542016
+    },
+    {
+      "ring_thickness": 8.322226326409165,
+      "shank_width": 26.323521719578146,
+      "beam_thickness": 21.213175769419237,
+      "pocket_depth": 2.964456850298924,
+      "flange_thickness": 3.2156848994424685,
+      "transition_radius_mm": 1.587229919428131
+    },
+    {
+      "ring_thickness": 6.159683577541189,
+      "shank_width": 22.94688315450147,
+      "beam_thickness": 14.119985680598324,
+      "pocket_depth": 3.9422158710536204,
+      "flange_thickness": 3.060266749452537,
+      "transition_radius_mm": 2.80626310874035
+    }
+  ]
+}

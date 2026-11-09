@@ -1,0 +1,12 @@
+{
+  "fields_sha256": "47cf7275da26f3a55df44a63dd7290f9142f8ee861c497aa0a3537b7bd18226a",
+  "mesh_sha256": "b3dfdc55dbaa4407b90055562381b599a02fd77833d9c7206f3f53de99222aa5",
+  "result_sample_id": "166a9ef7e84f0b2d5427",
+  "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+  "units": {
+    "coordinates": "mm",
+    "stress": "MPa",
+    "displacement": "mm"
+  },
+  "point_display": "deterministically decimated; global maximum uses all solver values"
+}

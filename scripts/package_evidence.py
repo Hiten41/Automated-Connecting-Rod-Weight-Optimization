@@ -26,7 +26,7 @@ def portable(value):
     return value
 
 
-def package(destination, include_fields=False):
+def package(destination, include_fields=False, critical_phase3_fields=False):
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
     entries = []
@@ -54,16 +54,49 @@ def package(destination, include_fields=False):
         "runs/phase2-optimization",
         "runs/phase2-diagnostic-verification",
         "runs/reference-engine",
+        "runs/phase3-refinement",
+        "runs/phase3-contact-benchmark",
+        "runs/phase3-pin-benchmark",
+        "runs/phase3-failed-attempts",
+        "data/phase3",
         "data/phase2",
         "models",
         "evidence/phase2",
+        "evidence/phase3",
         "data/reference_engine",
         "docs",
     ]:
         for source in (ROOT / directory).rglob("*"):
-            if not source.is_file() or source.suffix.lower() not in suffixes:
+            if not source.is_file():
                 continue
-            if source.name == "fields.json" and not include_fields:
+            relative = source.relative_to(ROOT).as_posix()
+            critical_case = relative.startswith(
+                (
+                    "runs/phase3-refinement/0.35-compression/",
+                    "runs/phase3-refinement/0.35-tension/",
+                    "data/phase3/near-boundary/4/",
+                    "data/phase3/paired/cases/4/fine/",
+                )
+            )
+            contact_raw_case = relative.startswith(
+                (
+                    "runs/phase3-contact-benchmark/",
+                    "runs/phase3-pin-benchmark/",
+                )
+            )
+            allowed = source.suffix.lower() in suffixes
+            if (
+                critical_phase3_fields
+                and (critical_case or contact_raw_case)
+                and source.suffix.lower() in {".dat", ".frd", ".msh"}
+            ):
+                allowed = True
+            if not allowed:
+                continue
+            include_this_fields = include_fields or (
+                critical_phase3_fields and critical_case
+            )
+            if source.name == "fields.json" and not include_this_fields:
                 h = hashlib.sha256()
                 with source.open("rb") as handle:
                     for block in iter(lambda: handle.read(1024 * 1024), b""):
@@ -73,11 +106,10 @@ def package(destination, include_fields=False):
                         path=source.relative_to(ROOT).as_posix(),
                         sha256=h.hexdigest(),
                         bytes=source.stat().st_size,
-                        available="original local run folder; use --fields to include",
+                        available="original local run folder; use --fields or --critical-phase3-fields to include",
                     )
                 )
                 continue
-            relative = source.relative_to(ROOT).as_posix()
             raw = source.read_bytes()
             target = destination / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -100,13 +132,14 @@ def package(destination, include_fields=False):
                 )
             )
     manifest = dict(
-        schema="phase2-portable-evidence-v1",
+        schema="engineering-portable-evidence-v2",
         git_commit=subprocess.check_output(
             ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
         ).strip(),
         entries=entries,
         omitted_fields=omitted_fields,
         includes_fields=include_fields,
+        includes_critical_phase3_fields=critical_phase3_fields,
         note="Raw records remain unchanged; exported JSON paths are relative to project root. Hashes distinguish raw and portable copies.",
     )
     (destination / "manifest.json").write_text(
@@ -119,9 +152,10 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("destination")
     p.add_argument("--fields", action="store_true")
+    p.add_argument("--critical-phase3-fields", action="store_true")
     p.add_argument("--zip", action="store_true")
     a = p.parse_args()
-    manifest = package(a.destination, a.fields)
+    manifest = package(a.destination, a.fields, a.critical_phase3_fields)
     if a.zip:
         with zipfile.ZipFile(
             str(a.destination) + ".zip", "w", zipfile.ZIP_DEFLATED

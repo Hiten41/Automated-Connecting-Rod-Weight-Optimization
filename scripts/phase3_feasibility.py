@@ -21,10 +21,8 @@ KEYS = [
 def designs(count=40):
     # Fixed bore sizes and center distance define the installation envelope.
     samples = qmc.LatinHypercube(d=len(KEYS), seed=7301).random(count)
-    return [
-        dict(zip(KEYS, qmc.scale(samples, *zip(*(BOUNDS[k] for k in KEYS)))[i]))
-        for i in range(count)
-    ]
+    scaled = qmc.scale(samples, *zip(*(BOUNDS[k] for k in KEYS)))
+    return [{k: float(v) for k, v in zip(KEYS, row)} for row in scaled]
 
 
 def assess(results):

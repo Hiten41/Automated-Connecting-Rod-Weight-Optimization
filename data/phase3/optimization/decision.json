@@ -1,0 +1,38 @@
+{
+  "status": "NOT_RUN",
+  "optimizer_executed": false,
+  "reason": [
+    "No feasible starting design was found among 35 valid CAD/FEA geometries in the 40-point coarse feasibility study.",
+    "The closest sampled candidate failed the 0.75 mm tension stress requirement.",
+    "The validation-selected Phase 3 MLP has only three held-out geometry groups and held-out stress MAE 208.855 MPa, RMSE 291.950 MPa and R2 0.031; its metadata is EXPLORATORY_SCREENING_ONLY."
+  ],
+  "feasibility_study": {
+    "seed": 7301,
+    "attempted_geometries": 40,
+    "valid_cad_and_coarse_fea": 35,
+    "invalid_geometry": 5,
+    "coarse_stress_screen_passes": 0
+  },
+  "nearest_sampled_candidate": {
+    "index": 4,
+    "mass_kg": 0.6902471410656007,
+    "fine_mesh_mm": 0.75,
+    "compression_stress_mpa": 374.86613281273844,
+    "tension_stress_mpa": 501.3579630583474,
+    "tension_factor_of_safety": 1.4161537210837007,
+    "status": "REJECTED_TENSION_STRESS"
+  },
+  "phase3_model": {
+    "artifact": "models/phase3_surrogate.joblib",
+    "model_version": "fea-3-deterministic-bearing-physics-scaled",
+    "model_use": "EXPLORATORY_SCREENING_ONLY",
+    "selected_model": "mlp",
+    "fine_analysis_count": 24,
+    "geometry_group_count": 12,
+    "held_out_geometry_groups": 3,
+    "test_stress_mae_mpa": 208.85513429996408,
+    "test_stress_rmse_mpa": 291.94969386343274,
+    "test_stress_r2": 0.03110530006742529
+  },
+  "conclusion": "No optimized candidate, no accepted weight reduction, and no proof that the full bounded domain is infeasible."
+}

@@ -5,10 +5,13 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 runs/
+outputs/
 .env
 local_config.json
 data/verified/*/cases/
 
 data/phase2/*/cases/
 data/phase3/*/cases/
+data/phase3/near-boundary/*/compression/
+data/phase3/near-boundary/*/tension/
 evidence/phase3/*.html

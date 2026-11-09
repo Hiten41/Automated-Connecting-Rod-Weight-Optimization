@@ -7,14 +7,17 @@ opening and angular/penalty sensitivity before any proposed rod integration.
 
 import json
 import math
+
 import numpy as np
-from conrod.fea import ROOT, configuration, command
+
+from conrod.fea import ROOT, command, configuration
 
 
 def deck(n, k):
     nodes = {}
     elements = []
     pin = []
+    pin_outer = []
     outer = []
     ring = []
     master = []
@@ -31,6 +34,8 @@ def deck(n, k):
                     nodes[tag] = (radius * math.cos(angle), radius * math.sin(angle), z)
                     if body == 0:
                         pin.append(tag)
+                        if radial == 3:
+                            pin_outer.append(tag)
                     else:
                         ring.append(tag)
                         if radial == 3:
@@ -62,7 +67,11 @@ def deck(n, k):
     ]
     for name, ids in [("PIN", pin), ("OUTER", outer), ("RING", ring)]:
         lines += ["*NSET,NSET=" + name] + [str(i) for i in ids]
+    # For the connectivity below, C3D8 face 6 (nodes 4-8-5-1) is the inner
+    # radial face. Face 4 is outer radial and faces 1/2 are the axial ends.
     lines += ["*SURFACE,NAME=BORE,TYPE=ELEMENT"] + [f"{i},S6" for i in master]
+    # The pin's outer radial face is C3D8 S4 for this connectivity. A nodal
+    # slave surface with this face-to-face contact formulation is not valid.
     lines += ["*SURFACE,NAME=PIN_SURFACE,TYPE=ELEMENT"] + [f"{i},S4" for i in slave]
     lines += [
         "*MATERIAL,NAME=STEEL",
@@ -106,7 +115,7 @@ def run():
         out = root / f"n{n}-k{k:g}"
         out.mkdir(exist_ok=True)
         (out / "job.inp").write_text(deck(n, k), encoding="utf-8")
-        row = dict(angular_elements=n, penalty=k)
+        row = {"angular_elements": n, "penalty": k}
         try:
             log = command(
                 [configuration()["ccx"], "-i", "job"],
@@ -136,6 +145,9 @@ def run():
                     blocks[state].append([float(x) for x in v])
             pin = np.asarray(blocks["pin"])[:, 1:].sum(axis=0)
             outer = np.asarray(blocks["outer"])[:, 1:].sum(axis=0)
+            gap = np.asarray(blocks["gap"])[:, 2]
+            # Face-level rows are slave element, face, pressure, tangential-1,
+            # tangential-2. This benchmark uses surface-to-surface output.
             pressure = np.asarray(blocks["pressure"])[:, 2]
             row.update(
                 status="COMPLETED_UNQUALIFIED_PIN_BENCHMARK",
@@ -145,9 +157,11 @@ def run():
                     np.linalg.norm(pin + outer) / np.linalg.norm(pin)
                 ),
                 peak_contact_pressure_mpa=float(pressure.max()),
+                minimum_normal_contact_displacement_mm=float(gap.min()),
+                maximum_normal_contact_displacement_mm=float(gap.max()),
                 active_contact_samples=int(np.sum(pressure > 0)),
             )
-        except Exception as exc:
+        except (IndexError, KeyError, OSError, RuntimeError, ValueError) as exc:
             row.update(status="FAILED", error=str(exc))
         rows.append(row)
         print(row, flush=True)

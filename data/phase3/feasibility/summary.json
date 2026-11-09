@@ -1,0 +1,29 @@
+{
+  "attempted_geometries": 40,
+  "planned_geometries": 40,
+  "counts": {
+    "INFEASIBLE_ON_TESTED_MESH": 35,
+    "INVALID_GEOMETRY_OR_CAD_FAILURE": 5
+  },
+  "actual_fea_geometries": 35,
+  "coarse_screen_passes": 0,
+  "feasibility_conclusion": "INCONCLUSIVE: NO FEASIBLE CANDIDATE FOUND IN 40 SAMPLED GEOMETRIES",
+  "qualification": "40 actual CAD/LHS geometries screened using 6mm local FEA; the nearest sampled candidate was refined at 0.75mm and still failed tension. This does not prove the full bounded domain infeasible.",
+  "verified_feasible_candidates": 0,
+  "refined_near_boundary": [
+    {
+      "candidate_id": 4,
+      "status": "REFINED_SCREEN_ONLY",
+      "loads_completed": 2,
+      "stress_mpa": {
+        "compression": 374.8661317698518,
+        "tension": 501.35800191004546
+      },
+      "displacement_mm": {
+        "compression": 0.09355459356764438,
+        "tension": 0.1477429814913679
+      }
+    }
+  ],
+  "exploratory_variable_associations": "sensitivity.json"
+}

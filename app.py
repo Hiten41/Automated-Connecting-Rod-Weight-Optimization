@@ -1,4 +1,4 @@
-"""Phase 2 engineering workspace. Expensive work only on explicit submission."""
+"""Phase 3 engineering workspace. Expensive work only on explicit submission."""
 
 import io
 import json
@@ -58,7 +58,7 @@ sections = [
     "Reports & Downloads",
 ]
 section = st.sidebar.radio("Workspace", sections)
-st.sidebar.caption("Phase 2 · Filleted geometry · Cosine bearing pressure")
+st.sidebar.caption("Phase 3 · Feasibility and mesh evidence")
 if "geometry" not in st.session_state:
     st.session_state.geometry = Geometry().to_dict()
 if "loads" not in st.session_state:
@@ -68,7 +68,7 @@ if "loads" not in st.session_state:
     ]
 if "load_provenance" not in st.session_state:
     st.session_state.load_provenance = "MANUAL_REFERENCE_FORCES"
-model_path = ROOT / "models/phase2_surrogate.json"
+model_path = ROOT / "models/phase3_surrogate.json"
 
 
 def read(path):
@@ -85,7 +85,7 @@ def launch(action, mesh, material, constraints=Constraints()):
         constraints.validate()
         g = Geometry(**st.session_state.geometry).validate()
         loads = [LoadCase(**x).validate() for x in st.session_state.loads]
-        out = ROOT / "runs/ui-phase2" / uuid.uuid4().hex[:12]
+        out = ROOT / "runs/ui-phase3" / uuid.uuid4().hex[:12]
         out.mkdir(parents=True)
         job = dict(
             action=action,
@@ -163,17 +163,30 @@ if section == "Dashboard":
         GEOMETRY_VERSION
         + " | Prescribed compressive pressure, not a nonlinear contact solution."
     )
-    data = ROOT / "data/phase2/coarse/manifest.json"
+    data = ROOT / "data/phase3/feasibility/summary.json"
     if data.exists():
         st.json(read(data))
     st.info(
-        "Phase 1 historical result: 734.577 g → 384.418 g (47.668%). Sharp pockets, clamped bore, manual loads and mesh-dependent verification. This is not a Phase 2 optimum."
+        "Phase 1 historical result: 734.577 g → 384.418 g (47.668%). Sharp pockets, clamped bore, manual loads and mesh-dependent verification. This is not a Phase 3 optimum."
     )
-    conv = ROOT / "runs/focused-refinement/convergence.json"
+    conv = ROOT / "evidence/phase3/convergence.json"
     if conv.exists():
         st.json(read(conv))
+        st.caption(
+            "Baseline-specific provisional 5% criterion through 0.35 mm. The 0.25 mm mesh exceeded the compute budget. Mesh convergence does not imply design feasibility."
+        )
     else:
         st.warning("Peak-stress convergence has not been established.")
+    feasibility = ROOT / "data/phase3/feasibility/summary.json"
+    if feasibility.exists():
+        study = read(feasibility)
+        st.subheader("Phase 3 design-space search")
+        st.metric(
+            "Executed geometries",
+            f"{study.get('attempted_geometries', 0)} / {study.get('planned_geometries', 40)}",
+        )
+        st.write(study.get("feasibility_conclusion", "Study in progress"))
+        st.json(study.get("counts", {}))
     pilot = ROOT / "runs/bearing-pilot/geometry.stl"
     if not pilot.exists():
         pilot = ROOT / "evidence/phase2/baseline.stl"
@@ -350,6 +363,10 @@ elif section == "Engine Loading":
 
 elif section in ("Simulation", "AI Optimization"):
     optimization = section == "AI Optimization"
+    model_metadata = read(model_path) if model_path.exists() else {}
+    model_eligible = (
+        model_metadata.get("model_use") == "ACCEPTED_FOR_OPTIMIZATION"
+    )
     st.subheader(
         "Constrained CAD-mass optimization"
         if optimization
@@ -361,7 +378,7 @@ elif section in ("Simulation", "AI Optimization"):
         material = st.selectbox("Material", list(MATERIALS))
         a, b = st.columns(2)
         size = a.selectbox(
-            "Maximum mesh size (mm)", [4.0, 2.5, 1.75, 1.25, 1.0, 5.0, 6.0]
+            "Maximum mesh size (mm)", [4.0, 2.5, 1.75, 1.25, 1.0, 0.75, 5.0, 6.0]
         )
         bc = b.selectbox(
             "Boundary conditions", ["COSINE_BEARING", "LEGACY_CLAMPED_BORE"]
@@ -371,13 +388,17 @@ elif section in ("Simulation", "AI Optimization"):
         )
         strategy = st.selectbox(
             "Local mesh strategy",
-            ["Focused junctions and pocket corners", "All CAD curves"],
+            [
+                "Full-thickness big-end transition",
+                "Focused junctions and pocket corners",
+                "All CAD curves",
+            ],
         )
         local_size = st.number_input(
             "Focused target size (mm)",
             min_value=0.25,
             max_value=float(size),
-            value=min(1.25, float(size)),
+            value=min(0.75, float(size)),
             step=0.25,
         )
         st.caption(
@@ -388,25 +409,38 @@ elif section in ("Simulation", "AI Optimization"):
             disp = b.number_input(
                 "Maximum displacement (mm)", min_value=0.001, value=0.35
             )
-            st.warning(
-                "Observed residual allowance plus a labelled heuristic 1.2 stress guard. Local multistart SLSQP is not a global optimum certificate. Final FEA pass remains provisional until convergence is established."
-            )
+            if not model_path.exists():
+                st.warning("Train and evaluate a compatible Phase 3 model first.")
+            elif not model_eligible:
+                st.warning(
+                    model_metadata.get(
+                        "optimization_eligibility_note",
+                        "The current Phase 3 model is exploratory only; optimizer runs are disabled until held-out evidence supports them.",
+                    )
+                )
+            else:
+                st.warning(
+                    "The surrogate can screen candidates, not certify them. Any feasible result requires actual FEA and geometry-specific convergence review."
+                )
             st.caption(
                 "Model: "
                 + (
                     read(model_path)["selected_model"]
                     if model_path.exists()
-                    else "Phase 2 model unavailable"
+                    else "Phase 3 model unavailable"
                 )
             )
         else:
             selection = st.selectbox("Load cases", ["Both", "compression", "tension"])
         submitted = st.form_submit_button(
-            "Run Optimization" if optimization else "Run FEA"
+            "Run Optimization" if optimization else "Run FEA",
+            disabled=optimization and not model_eligible,
         )
     if submitted:
         if optimization and not model_path.exists():
-            st.error("Train the compatible Phase 2 model first.")
+            st.error(
+                "A compatible Phase 3 model and completed feasibility study are required first."
+            )
         else:
             original = st.session_state.loads
             if not optimization and selection != "Both":
@@ -418,8 +452,11 @@ elif section in ("Simulation", "AI Optimization"):
                     boundary_mode=bc,
                     local_refinement=local,
                     hotspot_size_mm=local_size
-                    if local and strategy.startswith("Focused")
+                    if local and not strategy.startswith("All")
                     else None,
+                    refinement_region="big_end_transition"
+                    if strategy.startswith("Full")
+                    else "all_features",
                 ),
                 MATERIALS[material],
                 Constraints(fos, disp) if optimization else Constraints(),
@@ -428,8 +465,8 @@ elif section in ("Simulation", "AI Optimization"):
 
 elif section == "Results & Comparison":
     st.subheader("Solver evidence, not surrogate contours")
-    paths = (
-        sorted((ROOT / "runs").rglob("result.json")) if (ROOT / "runs").exists() else []
+    paths = sorted((ROOT / "runs").rglob("result.json")) + sorted(
+        (ROOT / "data/phase3").rglob("result.json")
     )
     if paths:
         selected = st.selectbox(
@@ -519,6 +556,23 @@ elif section == "Results & Comparison":
                 if stl.exists():
                     st.plotly_chart(cad_figure(stl), width="stretch", key=str(stl))
                 st.json(read(path).get("geometry", {}))
+    ui_jobs = sorted((ROOT / "runs/ui-phase3").rglob("ui-result.json"))
+    if ui_jobs:
+        st.subheader("Submitted application jobs")
+        selected_job = st.selectbox(
+            "Application job",
+            ui_jobs,
+            format_func=lambda p: str(p.parent.relative_to(ROOT)),
+        )
+        job_result = read(selected_job)
+        st.write("Status: " + job_result.get("status", "UNKNOWN"))
+        st.caption("Load provenance: " + job_result.get("load_provenance", "unknown"))
+        if job_result.get("results"):
+            st.dataframe(pd.DataFrame(job_result["results"]))
+        elif job_result.get("verification_attempts"):
+            st.json(job_result["verification_attempts"])
+        elif job_result.get("error"):
+            st.error(job_result["error"])
     experiment = ROOT / "runs/focused-refinement/results.json"
     if experiment.exists():
         rows = [
@@ -551,9 +605,41 @@ elif section == "Results & Comparison":
                 ]
             )
         )
-    optimization = ROOT / "runs/phase2-optimization/optimization.json"
-    if optimization.exists():
-        st.subheader("New optimization outcome")
+    feasibility = ROOT / "data/phase3/feasibility/summary.json"
+    if feasibility.exists():
+        study = read(feasibility)
+        st.subheader("Phase 3 feasibility screening")
+        st.metric(
+            "Geometries evaluated",
+            f"{study['attempted_geometries']} / {study['planned_geometries']}",
+        )
+        st.write(study["feasibility_conclusion"])
+        fcsv = ROOT / "data/phase3/feasibility/feasibility.csv"
+        if fcsv.exists():
+            frame = pd.read_csv(fcsv)
+            st.dataframe(frame)
+            if "tension_stress_mpa" in frame:
+                st.plotly_chart(
+                    px.scatter(
+                        frame,
+                        x="mass_g",
+                        y="tension_stress_mpa",
+                        color="status",
+                        hover_data=["index"],
+                        title="Actual 6mm FEA screening; coarse results require refinement",
+                    ),
+                    width="stretch",
+                )
+    optimizations = sorted(
+        (ROOT / "data/phase3/optimization").rglob("optimization.json")
+    ) + sorted((ROOT / "runs/ui-phase3").rglob("optimization.json"))
+    if optimizations:
+        st.subheader("Phase 3 optimization outcome")
+        optimization = st.selectbox(
+            "Optimization record",
+            optimizations,
+            format_func=lambda p: str(p.parent.relative_to(ROOT)),
+        )
         outcome = read(optimization)
         st.write("Status: " + outcome["status"])
         if outcome.get("optimized_mass_kg") is not None:
@@ -599,7 +685,7 @@ elif section == "Results & Comparison":
             )
         with st.expander("Constraints, candidate FEA, margins and full diagnostics"):
             st.json(outcome)
-        diagnostic = ROOT / "runs/phase2-diagnostic-verification/verification.json"
+        diagnostic = ROOT / "runs/phase3-diagnostic-verification/verification.json"
         if diagnostic.exists():
             checks = read(diagnostic)
             st.subheader("Independent checks of rejected search points")
@@ -623,6 +709,12 @@ elif section == "Results & Comparison":
                     ]
                 )
             )
+    historical = ROOT / "runs/phase2-optimization/optimization.json"
+    if historical.exists():
+        with st.expander("Historical Phase 2 failed optimization"):
+            prior = read(historical)
+            st.write(f"Status: {prior['status']}; this is not a Phase 3 result.")
+            st.json(prior)
 
 elif section == "Model Analytics":
     st.subheader("Geometry-grouped held-out evaluation")
@@ -675,14 +767,18 @@ elif section == "Model Analytics":
             )
         )
     else:
-        st.info("No compatible Phase 2 model trained yet. Phase 1 labels are excluded.")
+        st.info(
+            "No compatible Phase 3 model trained yet. Historical labels remain separate."
+        )
     multifidelity = ROOT / "data/phase2/multifidelity.json"
     if multifidelity.exists():
         st.json(read(multifidelity))
 
 elif section == "Reports & Downloads":
     st.subheader("Reproduce and inspect")
-    docs = sorted((ROOT / "docs").glob("*.md"))
+    docs = sorted((ROOT / "docs/final").glob("*.md")) + sorted(
+        (ROOT / "docs").glob("*.md")
+    )
     document = st.selectbox("Engineering report", docs, format_func=lambda p: p.name)
     st.markdown(document.read_text(encoding="utf-8"))
     st.download_button(

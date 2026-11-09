@@ -4,6 +4,7 @@ The fine label describes mesh configuration, never an automatic convergence clai
 """
 
 import argparse
+import hashlib
 import json
 import numpy as np
 from conrod.fea import ROOT, solve
@@ -58,7 +59,14 @@ def run(groups=12, limit=12):
             "Selection changed: freeze the completed feasibility study before paired generation"
         )
     selection.write_text(json.dumps(ids), encoding="utf-8")
-    allrows = []
+    # The selected geometries already have successful 6 mm compression/tension
+    # results in the frozen feasibility study. Carry those records forward so
+    # each geometry has three paired fidelity levels without rerunning coarse FEA.
+    allrows = [
+        dict(geometry_group=candidate["index"], fidelity="coarse", result=result)
+        for candidate in selected[:limit]
+        for result in candidate["results"]
+    ]
     for candidate in selected[:limit]:
         g = Geometry(**candidate["parameters"])
         for fidelity, h in [("intermediate", 1.25), ("fine", 0.75)]:
@@ -99,15 +107,36 @@ def run(groups=12, limit=12):
                 )
                 if r["status"] != "FEA_SUCCESS":
                     return
-    for fidelity in ["intermediate", "fine"]:
+    datasets = {}
+    for fidelity in ["coarse", "intermediate", "fine"]:
         valid = [
             validate_record(r["result"], "phase3-deterministic-bearing-v1")
             for r in allrows
             if r["fidelity"] == fidelity
         ]
-        (root / (fidelity + ".jsonl")).write_text(
-            "".join(json.dumps(r) + "\n" for r in valid), encoding="utf-8"
-        )
+        path = root / (fidelity + ".jsonl")
+        path.write_text("".join(json.dumps(r) + "\n" for r in valid), encoding="utf-8")
+        datasets[fidelity] = {
+            "path": path.relative_to(ROOT).as_posix(),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            "analysis_count": len(valid),
+            "geometry_group_count": len({r["geometry_group"] for r in allrows if r["fidelity"] == fidelity}),
+            "loads": sorted({r["load"]["kind"] for r in valid}),
+            "mesh": valid[0]["mesh"] if valid else None,
+        }
+    manifest = {
+        "simulation_version": "phase3-deterministic-bearing-v1",
+        "sampling_seed": 7301,
+        "selection_method": "nearest coarse stress boundary followed by maximin in normalized geometry space",
+        "selected_geometry_ids": ids,
+        "fidelity_order": ["coarse", "intermediate", "fine"],
+        "records_per_geometry_per_fidelity": 2,
+        "coarse_source": "data/phase3/feasibility/candidates.json successful 6 mm compression/tension results; no duplicate solver runs",
+        "coarse_source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+        "fidelity_datasets": datasets,
+        "interpretation": "mesh-level response dataset; the 0.75 mm fine label is not a universal convergence-qualified truth",
+    }
+    (root / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
 
 if __name__ == "__main__":

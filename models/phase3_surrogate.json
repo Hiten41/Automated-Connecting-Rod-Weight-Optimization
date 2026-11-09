@@ -1,0 +1,304 @@
+{
+  "model_version": "fea-3-deterministic-bearing-physics-scaled",
+  "model_use": "EXPLORATORY_SCREENING_ONLY",
+  "optimization_eligibility_note": "This dataset's small number of geometry groups is insufficient to establish broad fine-mesh generalization; use actual FEA for structural decisions.",
+  "software_versions": {
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "target_physics_scaling": "Learn stress/F and displacement*E/F; restore dimensional responses at prediction",
+  "selected_model": "mlp",
+  "dataset_sha256": "ff3a0bf2fad26f1e2bf3c89634d66b06264ca529e3b87fde55143eb6349d2fb7",
+  "supported_materials": [
+    "{\"density_kg_per_mm3\": 7.85e-06, \"name\": \"Forged Steel (AISI 4340)\", \"poissons_ratio\": 0.29, \"yield_strength_mpa\": 710.0, \"youngs_modulus_mpa\": 205000.0}"
+  ],
+  "constraint_region": "FoS in [1.4,2.2] or displacement in [0.28,0.42] mm",
+  "sample_count": 24,
+  "geometry_group_count": 12,
+  "split_counts": {
+    "train": 12,
+    "validation": 6,
+    "test": 6
+  },
+  "split_geometry_groups": {
+    "train": 6,
+    "validation": 3,
+    "test": 3
+  },
+  "groups_disjoint": true,
+  "comparisons": {
+    "ridge": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 163.03799857582,
+          "RMSE": 193.3032990527361,
+          "R2": 0.8666865741487988
+        },
+        "max_displacement_mm": {
+          "MAE": 0.10925416003895781,
+          "RMSE": 0.13835947458316997,
+          "R2": 0.7476178708979806
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 119.59361534171359,
+          "RMSE": 154.83509276715344,
+          "R2": 0.6942224535324493
+        },
+        "max_displacement_mm": {
+          "MAE": 0.1474888145752013,
+          "RMSE": 0.19831287127926162,
+          "R2": -1.1614432587435104
+        }
+      },
+      "selection_score": 0.38070958833763685,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 313.61335992317487,
+          "RMSE": 394.1941047800681,
+          "R2": -0.76636634731245
+        },
+        "max_displacement_mm": {
+          "MAE": 0.1264727368531793,
+          "RMSE": 0.1562858073095745,
+          "R2": -0.026418802910595174
+        }
+      }
+    },
+    "extra_trees": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 113.82635530353916,
+          "RMSE": 134.00617107870318,
+          "R2": 0.9359314413790845
+        },
+        "max_displacement_mm": {
+          "MAE": 0.0732227949105444,
+          "RMSE": 0.1182662764486524,
+          "R2": 0.8155992689382205
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 121.02981591490975,
+          "RMSE": 130.971093994674,
+          "R2": 0.7812149186976873
+        },
+        "max_displacement_mm": {
+          "MAE": 0.07141592262930206,
+          "RMSE": 0.08045861101691687,
+          "R2": 0.6442154409278318
+        }
+      },
+      "selection_score": 0.24395749874097564,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 354.5830832192901,
+          "RMSE": 360.4329382977058,
+          "R2": -0.4767584902838866
+        },
+        "max_displacement_mm": {
+          "MAE": 0.09858525637121225,
+          "RMSE": 0.10124497477110617,
+          "R2": 0.5692428734191057
+        }
+      }
+    },
+    "mlp": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 10.288086692726969,
+          "RMSE": 12.774905202552018,
+          "R2": 0.9994177483485754
+        },
+        "max_displacement_mm": {
+          "MAE": 0.006931365626371442,
+          "RMSE": 0.008780502329434423,
+          "R2": 0.9989835652217726
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 79.75446419684646,
+          "RMSE": 94.0788120854119,
+          "R2": 0.8871113071478548
+        },
+        "max_displacement_mm": {
+          "MAE": 0.05001892624120963,
+          "RMSE": 0.07778671710246604,
+          "R2": 0.6674530874970279
+        }
+      },
+      "selection_score": 0.16613028263328505,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 208.85513429996408,
+          "RMSE": 291.94969386343274,
+          "R2": 0.03110530006742529
+        },
+        "max_displacement_mm": {
+          "MAE": 0.06572215087226352,
+          "RMSE": 0.09772897484888458,
+          "R2": 0.5986417405768856
+        }
+      }
+    },
+    "analytical_nominal_screening": {
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 733.9111131434206,
+          "RMSE": 795.0893406981561,
+          "R2": -6.186085732316908
+        },
+        "max_displacement_mm": {
+          "MAE": 0.24096427342770008,
+          "RMSE": 0.2900161580086634,
+          "R2": -2.534515643439127
+        }
+      },
+      "note": "Nominal beam response, not a local stress predictor; excluded from learned-model selection"
+    }
+  },
+  "held_out_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 208.85513429996408,
+      "RMSE": 291.94969386343274,
+      "R2": 0.03110530006742529
+    },
+    "max_displacement_mm": {
+      "MAE": 0.06572215087226352,
+      "RMSE": 0.09772897484888458,
+      "R2": 0.5986417405768856
+    }
+  },
+  "near_constraint_test_count": 2,
+  "near_constraint_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 56.292755039359065,
+      "RMSE": 77.32269192822426,
+      "R2": -0.4946825652190683
+    },
+    "max_displacement_mm": {
+      "MAE": 0.03111044665104127,
+      "RMSE": 0.03217288653568905,
+      "R2": -0.41002943195612507
+    }
+  },
+  "residual_margin": [
+    142.30235043046218,
+    0.03952358755681534
+  ],
+  "margin_claim": "Observed validation maximum underprediction; not calibrated confidence",
+  "seed": 42,
+  "training_configuration": {
+    "ridge_alpha": 1.0,
+    "trees": 150,
+    "tree_min_samples_leaf": 2,
+    "mlp_hidden": [
+      32,
+      16
+    ],
+    "mlp_solver": "lbfgs",
+    "mlp_alpha": 0.1,
+    "mlp_max_iter": 1500,
+    "scaling": "StandardScaler X for Ridge/MLP; StandardScaler y for all"
+  },
+  "supported_min": [
+    145.0,
+    50.0,
+    24.0,
+    4.60416969590655,
+    15.10628022147925,
+    15.677038881504036,
+    3.62558064663834,
+    2.548044678836462,
+    0.5829962786672265,
+    18000.0,
+    0.0,
+    205000.0,
+    0.29,
+    7.85e-06,
+    710.0
+  ],
+  "supported_max": [
+    145.0,
+    50.0,
+    24.0,
+    8.81078014968153,
+    27.547421030585006,
+    22.976186200715603,
+    5.3539146993835045,
+    5.3887883862868575,
+    2.9725526388966297,
+    28000.0,
+    1.0,
+    205000.0,
+    0.29,
+    7.85e-06,
+    710.0
+  ],
+  "features": [
+    "length_cc",
+    "big_end_id",
+    "small_end_id",
+    "ring_thickness",
+    "shank_width",
+    "beam_thickness",
+    "pocket_depth",
+    "flange_thickness",
+    "transition_radius_mm",
+    "force_n",
+    "compression",
+    "youngs_modulus_mpa",
+    "poissons_ratio",
+    "density_kg_per_mm3",
+    "yield_strength_mpa"
+  ],
+  "targets": [
+    "max_von_mises_mpa",
+    "max_displacement_mm"
+  ],
+  "geometry_version": "rod-2-filleted-pocket",
+  "mesh_configuration": {
+    "size_mm": 4,
+    "order": 2,
+    "boundary_mode": "COSINE_BEARING",
+    "local_refinement": true,
+    "hotspot_size_mm": 0.75,
+    "refinement_region": "big_end_transition"
+  },
+  "simulation_version": "phase3-deterministic-bearing-v1",
+  "split_ids": {
+    "train": [
+      "0aadb673c7c8207fa494",
+      "c9c9f0b2065ecb074604",
+      "8c59aab0a5bf48805f61",
+      "b92ae08ce299beb0caa5",
+      "3aca45293897874d026f",
+      "7397077246b643f84fd7",
+      "10692524c37126408493",
+      "ca552dccab4fe1ff2003",
+      "c4203cd125167f1e7c6b",
+      "1467eac903b8c5391c2b",
+      "15678b7dad163c2eab25",
+      "179cbbdf8f1a9da91219"
+    ],
+    "validation": [
+      "408c244b067a320a0c88",
+      "ca5741a01d9a25cda1b7",
+      "5023b4d12c9d320a6338",
+      "630ca87aa1fe9b456fe7",
+      "1b273c1550ac38fca1b4",
+      "94a95fd535065be2ec93"
+    ],
+    "test": [
+      "9b690ea0ffff137c69de",
+      "671bd1c99046f42593f6",
+      "c06ed7e612cf8ec75f5e",
+      "cee899f2de7fbe8a95f8",
+      "d4863da44b48ad27dc46",
+      "03fabeb0601b142f5dfc"
+    ]
+  }
+}

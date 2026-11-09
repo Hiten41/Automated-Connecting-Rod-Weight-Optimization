@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 g,
                 m,
                 loads,
-                Surrogate(ROOT / "models/phase2_surrogate.joblib"),
+                Surrogate(ROOT / "models/phase3_surrogate.joblib"),
                 out,
                 Constraints(**job["constraints"]),
                 mesh,
