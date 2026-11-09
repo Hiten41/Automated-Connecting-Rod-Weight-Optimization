@@ -3,7 +3,7 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 import math
 
-GEOMETRY_VERSION = "rod-1-sharp-pocket"
+GEOMETRY_VERSION = "rod-2-filleted-pocket"
 BOUNDS = dict(
     length_cc=(125.0, 165.0),
     big_end_id=(44.0, 56.0),
@@ -13,8 +13,9 @@ BOUNDS = dict(
     beam_thickness=(14.0, 24.0),
     pocket_depth=(2.0, 6.0),
     flange_thickness=(2.5, 6.0),
+    transition_radius_mm=(0.5, 3.0),
 )
-OPT_KEYS = tuple(list(BOUNDS)[3:])
+OPT_KEYS = tuple(list(BOUNDS)[3:8])
 
 
 class Mode(str, Enum):
@@ -33,6 +34,7 @@ class Geometry:
     beam_thickness: float = 22.0
     pocket_depth: float = 2.2
     flange_thickness: float = 5.5
+    transition_radius_mm: float = 1.0
 
     def validate(self):
         for key, (lo, hi) in BOUNDS.items():
@@ -41,6 +43,12 @@ class Geometry:
                 raise ValueError(f"{key} must be finite and in [{lo}, {hi}] mm")
         if self.web_thickness < 3.5 or self.pocket_width < 4:
             raise ValueError("Require web >= 3.5 mm and pocket width >= 4 mm")
+        if self.transition_radius_mm >= min(
+            self.pocket_depth, self.pocket_width / 2, self.ring_thickness / 2
+        ):
+            raise ValueError(
+                "Fillet radius must be smaller than pocket depth, half width and half ring wall"
+            )
         if self.pocket_length <= 5:
             raise ValueError("Pockets must lie between the ends")
         return self
@@ -120,8 +128,18 @@ class LoadCase:
 class MeshSettings:
     size_mm: float = 5.0
     order: int = 2
+    boundary_mode: str = "COSINE_BEARING"
+    local_refinement: bool = True
+    hotspot_size_mm: float | None = None
 
     def validate(self):
+        if self.hotspot_size_mm is not None and (
+            not math.isfinite(self.hotspot_size_mm)
+            or not 0 < self.hotspot_size_mm <= self.size_mm
+        ):
+            raise ValueError("Local size must be positive and <= global size")
+        if self.boundary_mode not in ("COSINE_BEARING", "LEGACY_CLAMPED_BORE"):
+            raise ValueError("Unknown boundary condition")
         if not math.isfinite(self.size_mm) or self.size_mm <= 0 or self.order != 2:
             raise ValueError("Positive mesh size and quadratic tetrahedra required")
         return self

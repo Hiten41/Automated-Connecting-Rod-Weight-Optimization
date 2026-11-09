@@ -8,3 +8,5 @@ runs/
 .env
 local_config.json
 data/verified/*/cases/
+
+data/phase2/*/cases/

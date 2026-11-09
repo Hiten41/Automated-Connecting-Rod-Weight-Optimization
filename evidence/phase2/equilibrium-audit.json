@@ -1,0 +1,5210 @@
+[
+  {
+    "path": "runs/focused-refinement/0.75-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.808509063674137e-11,
+        3.980574092565803e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.99048e-09,
+        -8.496022e-09,
+        4.4721999999999797e-10
+      ],
+      "balance_residual_n": [
+        5.952394909363259e-09,
+        -4.515447907434196e-09,
+        4.4721999999999797e-10
+      ],
+      "balance_moment_n_mm": [
+        3.1081347729115744e-08,
+        -4.313897855334455e-08,
+        -4.7070694926468404e-07
+      ],
+      "reaction_dof_norm_fraction": 2.6890903315061968e-12,
+      "force_balance_fraction": 2.673096325533806e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/0.75-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.3528671793938685e-08,
+        3.4278886396066355e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.4552099999999999e-08,
+        -6.563772e-09,
+        5.716540000000002e-10
+      ],
+      "balance_residual_n": [
+        1.0234282060613143e-09,
+        -3.1358833603933647e-09,
+        5.716540000000002e-10
+      ],
+      "balance_moment_n_mm": [
+        7.971449787679951e-08,
+        -6.855862093698588e-08,
+        -4.063380464912647e-07
+      ],
+      "reaction_dof_norm_fraction": 4.626751611540262e-12,
+      "force_balance_fraction": 1.8599049191373839e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/1.0-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        -8.383736371797568e-08,
+        -2.6437113831434544e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        7.681223999999998e-08,
+        2.540953e-08,
+        -5.163383e-10
+      ],
+      "balance_residual_n": [
+        -7.025123717975693e-09,
+        -1.0275838314345448e-09,
+        -5.163383e-10
+      ],
+      "balance_moment_n_mm": [
+        3.797551433498673e-08,
+        -6.578765464046678e-08,
+        -1.9338854838667995e-07
+      ],
+      "reaction_dof_norm_fraction": 4.011157926607295e-12,
+      "force_balance_fraction": 2.54236795614458e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/1.0-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.9943229290220188e-08,
+        1.4340246767829967e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.1889586000000006e-08,
+        -3.565862e-10,
+        -3.295462e-09
+      ],
+      "balance_residual_n": [
+        -8.053643290220182e-09,
+        1.0774384767829968e-09,
+        -3.295462e-09
+      ],
+      "balance_moment_n_mm": [
+        6.989488962514544e-08,
+        2.139337784610707e-07,
+        -4.434273968924241e-07
+      ],
+      "reaction_dof_norm_fraction": 5.0387931004662746e-12,
+      "force_balance_fraction": 4.871247010941499e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/1.25-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.507972223815159e-08,
+        -6.5706728946679505e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.81664647e-08,
+        9.569342e-09,
+        -5.978600000000015e-10
+      ],
+      "balance_residual_n": [
+        -3.0867424618484106e-09,
+        2.998669105332049e-09,
+        -5.978600000000015e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.748220571635053e-08,
+        4.1143514244689394e-08,
+        2.806362754970095e-07
+      ],
+      "reaction_dof_norm_fraction": 1.5501948524994448e-12,
+      "force_balance_fraction": 1.5517202439193558e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/1.25-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.0110113635164453e-08,
+        -1.7555732423346626e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.8652979999999995e-08,
+        2.34891e-09,
+        8.422452000000001e-10
+      ],
+      "balance_residual_n": [
+        -8.542866364835543e-09,
+        5.933367576653373e-10,
+        8.422452000000001e-10
+      ],
+      "balance_moment_n_mm": [
+        -1.4311023765367032e-08,
+        -3.663843582800343e-07,
+        -1.0016433264841273e-07
+      ],
+      "reaction_dof_norm_fraction": 2.8423220609355687e-12,
+      "force_balance_fraction": 4.780425339189744e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/1.75-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.2298272622501827e-08,
+        3.048008423434112e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.644295e-08,
+        -2.786056e-08,
+        1.1217999999999909e-10
+      ],
+      "balance_residual_n": [
+        -4.144677377498174e-09,
+        2.6195242343411213e-09,
+        1.1217999999999909e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.444042129333622e-08,
+        -8.732155889482197e-09,
+        1.6960874630356496e-07
+      ],
+      "reaction_dof_norm_fraction": 6.113160509735298e-12,
+      "force_balance_fraction": 1.751560606267817e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/focused-refinement/1.75-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.966416776776896e-09,
+        -1.1152678780490533e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        -7.070700000000001e-10,
+        6.524928e-09,
+        -2.141636e-09
+      ],
+      "balance_residual_n": [
+        6.259346776776896e-09,
+        6.4134012121950946e-09,
+        -2.141636e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.0027607065628485e-07,
+        2.489225707521641e-07,
+        1.592507095685558e-07
+      ],
+      "reaction_dof_norm_fraction": 4.311730185555906e-12,
+      "force_balance_fraction": 5.118887259032758e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/phase2-experiments/COSINE_BEARING-4.0-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        9.907822118293552e-09,
+        -7.468639040553171e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.5273379999999996e-08,
+        -2.008988e-09,
+        -5.892000000000004e-11
+      ],
+      "balance_residual_n": [
+        -5.365557881706444e-09,
+        -2.755851904055317e-09,
+        -5.892000000000004e-11
+      ],
+      "balance_moment_n_mm": [
+        3.2076149811457365e-08,
+        -2.2793516862048198e-08,
+        -6.594729355536722e-08
+      ],
+      "reaction_dof_norm_fraction": 7.198516859747804e-12,
+      "force_balance_fraction": 2.1543561311858335e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/phase2-experiments/COSINE_BEARING-4.0-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.0707354053683957e-08,
+        -2.0007888679174357e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.0042200000000007e-08,
+        7.581374e-09,
+        1.5854720000000001e-09
+      ],
+      "balance_residual_n": [
+        -1.066515405368395e-08,
+        5.5805851320825646e-09,
+        1.5854720000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        1.8274320931497086e-08,
+        -7.760908478148729e-08,
+        2.985176239966174e-07
+      ],
+      "reaction_dof_norm_fraction": 4.835544318467218e-12,
+      "force_balance_fraction": 6.744960690200548e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/001280a77e74601e1049/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.2629271850528312e-08,
+        4.2933862687277724e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.7290138999999993e-08,
+        -4.438612e-08,
+        -1.3067e-09
+      ],
+      "balance_residual_n": [
+        -4.660867149471681e-09,
+        -1.452257312722279e-09,
+        -1.3067e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.038681099663114e-08,
+        9.326175567725507e-08,
+        -1.6757888155435245e-07
+      ],
+      "reaction_dof_norm_fraction": 1.5054575296301233e-11,
+      "force_balance_fraction": 2.780949586302446e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/011c1e378d8464b14c9d/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.1076224382122746e-09,
+        -2.179004354729841e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.577555000000001e-09,
+        1.894373e-08,
+        6.071899999999994e-10
+      ],
+      "balance_residual_n": [
+        -2.4699325617877265e-09,
+        -2.8463135472984093e-09,
+        6.071899999999994e-10
+      ],
+      "balance_moment_n_mm": [
+        1.8181175543127156e-08,
+        -9.211814706330947e-08,
+        1.3779880243155484e-07
+      ],
+      "reaction_dof_norm_fraction": 1.7224257559466797e-12,
+      "force_balance_fraction": 1.956633325590381e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/0121900f52e83f54f368/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.9905005400651135e-09,
+        -8.18345711195434e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.4973389999999993e-08,
+        4.065439e-08,
+        -4.7548220000000006e-09
+      ],
+      "balance_residual_n": [
+        -1.898288945993488e-08,
+        -4.11801811195434e-08,
+        -4.7548220000000006e-09
+      ],
+      "balance_moment_n_mm": [
+        4.0015233016194103e-07,
+        5.437457256860752e-07,
+        -2.7478321935145958e-06
+      ],
+      "reaction_dof_norm_fraction": 3.726278462975056e-12,
+      "force_balance_fraction": 1.0132421917117111e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/03082f92994ae19387d4/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.612851339265035e-08,
+        3.452001351433864e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.1903389999999999e-07,
+        3.974887e-09,
+        1.3299041e-08
+      ],
+      "balance_residual_n": [
+        6.290538660734964e-08,
+        3.8494900514338645e-08,
+        1.3299041e-08
+      ],
+      "balance_moment_n_mm": [
+        -4.6625077080249264e-07,
+        -5.1431825595994e-07,
+        2.898077406652055e-06
+      ],
+      "reaction_dof_norm_fraction": 9.204458216806868e-12,
+      "force_balance_fraction": 1.7574681056667467e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/03308367d1c2958ffe7a/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.9875301404681522e-08,
+        -6.78241462992446e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.3617999999999994e-08,
+        6.108378e-09,
+        -2.087158e-09
+      ],
+      "balance_residual_n": [
+        3.742698595318471e-09,
+        -6.740366299244606e-10,
+        -2.087158e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.001091384730824e-08,
+        -5.320944919880461e-08,
+        2.133459332184136e-07
+      ],
+      "reaction_dof_norm_fraction": 1.0177395460155181e-11,
+      "force_balance_fraction": 1.0321528221957956e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/08996a2d186d9ac10cca/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.747738095531531e-08,
+        4.6797126174169534e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        7.734921e-08,
+        -3.501033e-08,
+        1.7928010000000002e-09
+      ],
+      "balance_residual_n": [
+        -1.2817095531531732e-10,
+        1.1786796174169535e-08,
+        1.7928010000000002e-09
+      ],
+      "balance_moment_n_mm": [
+        -7.99076044855911e-08,
+        -1.4921297491469038e-07,
+        6.603264847707201e-07
+      ],
+      "reaction_dof_norm_fraction": 1.6495941739202947e-11,
+      "force_balance_fraction": 3.3561305026914936e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/0ab2de4988c1cc37a5d8/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.4433290946035413e-09,
+        -6.569237598341715e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.1329790000000009e-09,
+        4.805753e-09,
+        -1.490197e-09
+      ],
+      "balance_residual_n": [
+        3.576308094603542e-09,
+        -1.763484598341715e-09,
+        -1.490197e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.0500172177072225e-08,
+        1.237173936506839e-07,
+        -2.751280658851423e-07
+      ],
+      "reaction_dof_norm_fraction": 2.7718637008813545e-12,
+      "force_balance_fraction": 2.4384696561925823e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/0d0533def90b434ac19e/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.967041723422881e-07,
+        1.98831315856296e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.8270401e-07,
+        -1.620017e-08,
+        -4.97915e-09
+      ],
+      "balance_residual_n": [
+        -1.4000162342288077e-08,
+        3.682961585629598e-09,
+        -4.97915e-09
+      ],
+      "balance_moment_n_mm": [
+        -9.775531247522284e-08,
+        4.629594158246587e-07,
+        -1.50047476094349e-07
+      ],
+      "reaction_dof_norm_fraction": 5.433604430958572e-12,
+      "force_balance_fraction": 3.42557790538977e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/108ed4369a4fe2b3fa5a/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.870947130555578e-08,
+        1.309490471612662e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.027347000000001e-08,
+        -6.288259e-09,
+        -5.265379999999999e-10
+      ],
+      "balance_residual_n": [
+        1.5639986944442294e-09,
+        6.806645716126621e-09,
+        -5.265379999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        -6.280806349528297e-08,
+        8.69298216022286e-08,
+        5.110127274646884e-07
+      ],
+      "reaction_dof_norm_fraction": 4.817509327180557e-12,
+      "force_balance_fraction": 3.220477915132272e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/114f5a9769b5cf0b0144/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.2153650408872636e-08,
+        -3.787283731071511e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.2350320000000004e-08,
+        3.689796e-08,
+        -2.2158099999999988e-09
+      ],
+      "balance_residual_n": [
+        1.9803330408872632e-08,
+        -9.74877310715115e-10,
+        -2.2158099999999988e-09
+      ],
+      "balance_moment_n_mm": [
+        9.035700112732938e-08,
+        -7.64618354138321e-08,
+        1.8460904295206406e-08
+      ],
+      "reaction_dof_norm_fraction": 2.762563444028425e-12,
+      "force_balance_fraction": 7.311226305441112e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/1239bdbdb1c4096b8f10/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.309630068950355e-09,
+        -1.7506067706563044e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.872740000000013e-10,
+        2.702393e-10,
+        -8.349599999999977e-10
+      ],
+      "balance_residual_n": [
+        -4.422356068950354e-09,
+        -1.4803674706563044e-09,
+        -8.349599999999977e-10
+      ],
+      "balance_moment_n_mm": [
+        2.189196099467461e-08,
+        3.8096669416201594e-08,
+        -8.424067803449091e-08
+      ],
+      "reaction_dof_norm_fraction": 1.4075548354773921e-12,
+      "force_balance_fraction": 2.2845232515214916e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/15354308beb256f236e8/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.878751269643544e-08,
+        3.682806948290818e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.319313999999998e-08,
+        -4.649324e-08,
+        -2.1734400000000003e-09
+      ],
+      "balance_residual_n": [
+        4.405627303564535e-09,
+        -9.665170517091825e-09,
+        -2.1734400000000003e-09
+      ],
+      "balance_moment_n_mm": [
+        6.580483569129872e-08,
+        1.9529265670239614e-07,
+        -7.105530280817705e-07
+      ],
+      "reaction_dof_norm_fraction": 8.76115043541831e-12,
+      "force_balance_fraction": 2.6182381172549164e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/16af8e1ec6afc0d95905/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.2492449741330347e-07,
+        7.698176318626793e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.2478414999999998e-07,
+        -3.986797e-09,
+        -4.1749401e-09
+      ],
+      "balance_residual_n": [
+        -1.4034741330349434e-10,
+        3.7113793186267924e-09,
+        -4.1749401e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.451356800600527e-08,
+        4.1343473762907257e-07,
+        6.263080067671424e-07
+      ],
+      "reaction_dof_norm_fraction": 6.512920290754637e-12,
+      "force_balance_fraction": 1.2600053659145014e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/16c12aebd5e0572b7f20/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.7779198941146888e-08,
+        2.899946593970526e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.4092599999999997e-08,
+        -2.464205e-08,
+        3.01656e-09
+      ],
+      "balance_residual_n": [
+        1.368659894114689e-08,
+        4.357415939705261e-09,
+        3.01656e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.534183476415288e-08,
+        1.750400153692564e-07,
+        6.210025522606384e-07
+      ],
+      "reaction_dof_norm_fraction": 1.2072757805268589e-11,
+      "force_balance_fraction": 3.972013524082822e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/16de044c53ca5dafb4b2/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.3046103219949146e-07,
+        3.391765091009802e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.3000466e-07,
+        -3.515651e-08,
+        -6.500880000000001e-09
+      ],
+      "balance_residual_n": [
+        -4.5637219949146634e-10,
+        -1.2388590899019794e-09,
+        -6.500880000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        1.2083401431806956e-07,
+        2.9260259050214976e-07,
+        -9.012330936967266e-07
+      ],
+      "reaction_dof_norm_fraction": 8.11393280939655e-12,
+      "force_balance_fraction": 1.5428682153927832e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/17f23e4366616183fc10/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.0009062495773833e-07,
+        6.548532383021666e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.00962144e-07,
+        -7.335803e-09,
+        2.0653400000000015e-09
+      ],
+      "balance_residual_n": [
+        8.715190422616617e-10,
+        -7.872706169783346e-10,
+        2.0653400000000015e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.2687883089805914e-08,
+        -1.9914485439162632e-07,
+        -7.52649471046678e-09
+      ],
+      "reaction_dof_norm_fraction": 3.4895520077409833e-12,
+      "force_balance_fraction": 5.460131327987401e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/182ee2f225a41cdb1f5a/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.306789426143041e-09,
+        -7.663237511223997e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.4692450000000001e-08,
+        5.53604e-08,
+        2.3810249999999996e-09
+      ],
+      "balance_residual_n": [
+        -1.238566057385696e-08,
+        -2.1271975112239967e-08,
+        2.3810249999999996e-09
+      ],
+      "balance_moment_n_mm": [
+        1.5410913623751753e-07,
+        -2.1398034222743177e-09,
+        -2.038334306243846e-06
+      ],
+      "reaction_dof_norm_fraction": 5.373687935661883e-12,
+      "force_balance_fraction": 7.215761569651345e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/1b3615c92252f4360804/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.426138067170626e-08,
+        -2.0985595483580255e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        6.171214000000002e-08,
+        2.607648e-08,
+        5.4272199999999986e-09
+      ],
+      "balance_residual_n": [
+        1.745075932829376e-08,
+        5.090884516419744e-09,
+        5.4272199999999986e-09
+      ],
+      "balance_moment_n_mm": [
+        3.14212308828515e-08,
+        -1.280538416166648e-07,
+        -9.05318181795238e-08
+      ],
+      "reaction_dof_norm_fraction": 1.1567868930050904e-11,
+      "force_balance_fraction": 4.2955019356189137e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/1c5ec920ba7e1579c632/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.671739937592065e-07,
+        -3.355115296699296e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.82779774e-07,
+        2.636123e-08,
+        -9.895000000000368e-11
+      ],
+      "balance_residual_n": [
+        1.5605780240793504e-08,
+        -7.189922966992958e-09,
+        -9.895000000000368e-11
+      ],
+      "balance_moment_n_mm": [
+        1.1058668607746819e-07,
+        1.0764318066687409e-07,
+        -3.7555639008257284e-08
+      ],
+      "reaction_dof_norm_fraction": 3.820019455161022e-12,
+      "force_balance_fraction": 4.581612304186921e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/1e26d23eb11784c0eb02/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.669813336022344e-08,
+        6.797989726692322e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.959435000000001e-08,
+        8.951559e-10,
+        -3.5557000000000025e-09
+      ],
+      "balance_residual_n": [
+        2.8962166397765757e-09,
+        7.693145626692323e-09,
+        -3.5557000000000025e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.170153301186631e-07,
+        3.9283757105140674e-07,
+        3.4690547788461144e-07
+      ],
+      "reaction_dof_norm_fraction": 1.026957152673978e-11,
+      "force_balance_fraction": 3.833452335069777e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/1e6cfb2169e9e36dac94/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.190151834862263e-07,
+        2.6101304229086963e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.3111384650000002e-07,
+        -8.067204e-09,
+        -4.256290000000002e-09
+      ],
+      "balance_residual_n": [
+        -1.2098663013773712e-08,
+        1.8034100229086963e-08,
+        -4.256290000000002e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.6022350336741197e-07,
+        1.1163099056337357e-07,
+        1.035420888730002e-06
+      ],
+      "reaction_dof_norm_fraction": 6.632631369964633e-12,
+      "force_balance_fraction": 5.033711927030917e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/1f48c099ddc8eff724e8/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.167722807338123e-07,
+        3.242145396598062e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.0647421000000004e-07,
+        -2.925876e-08,
+        -5.130480000000001e-09
+      ],
+      "balance_residual_n": [
+        -1.0298070733812257e-08,
+        3.1626939659806174e-09,
+        -5.130480000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        -6.793668091788925e-10,
+        4.0858092898111154e-07,
+        -2.2953597611388034e-07
+      ],
+      "reaction_dof_norm_fraction": 7.99944159489787e-12,
+      "force_balance_fraction": 3.1069749660722375e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/20d5ddf36fd33d886490/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.8224397990707075e-08,
+        5.2844029596599285e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.1070809999999997e-08,
+        -4.450822e-08,
+        -2.8632399999999993e-10
+      ],
+      "balance_residual_n": [
+        2.284641200929292e-08,
+        8.335809596599283e-09,
+        -2.8632399999999993e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.7897378834856913e-07,
+        3.3120888229560484e-07,
+        1.555214436218423e-06
+      ],
+      "reaction_dof_norm_fraction": 1.947242005243929e-12,
+      "force_balance_fraction": 7.72916039352698e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/22122768e155deadc4da/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.273342307792305e-08,
+        -7.057963102852227e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.171564000000002e-08,
+        -3.73676e-09,
+        -8.056900000000012e-10
+      ],
+      "balance_residual_n": [
+        -1.0177830779230308e-09,
+        -4.442556310285223e-09,
+        -8.056900000000012e-10
+      ],
+      "balance_moment_n_mm": [
+        5.185493064483138e-08,
+        6.248059574987303e-08,
+        -2.078007395057551e-07
+      ],
+      "reaction_dof_norm_fraction": 7.969834914738928e-12,
+      "force_balance_fraction": 2.2581411062827836e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/26bb1357a475a0009691/result.json",
+    "audit": {
+      "applied_total_n": [
+        -6.481292302851216e-08,
+        -5.6217373867184506e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.921873e-08,
+        5.134853e-08,
+        -9.485810000000002e-09
+      ],
+      "balance_residual_n": [
+        -1.559419302851216e-08,
+        -4.868843867184505e-09,
+        -9.485810000000002e-09
+      ],
+      "balance_moment_n_mm": [
+        5.777945159042368e-08,
+        7.520127432190844e-07,
+        -6.986415367190047e-07
+      ],
+      "reaction_dof_norm_fraction": 2.861670034041392e-12,
+      "force_balance_fraction": 5.546530931571269e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/274aded8421d2c8c7a1a/result.json",
+    "audit": {
+      "applied_total_n": [
+        9.756149665918201e-09,
+        -2.3065808818500955e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -9.496268e-09,
+        3.575142e-08,
+        -2.3158000000000345e-11
+      ],
+      "balance_residual_n": [
+        2.598816659182007e-10,
+        1.2685611181499047e-08,
+        -2.3158000000000345e-11
+      ],
+      "balance_moment_n_mm": [
+        -1.2836651655002002e-07,
+        9.10770494966618e-08,
+        8.469511053813711e-07
+      ],
+      "reaction_dof_norm_fraction": 4.025584646180918e-12,
+      "force_balance_fraction": 6.989292608519565e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/27fbf27177210832a6e7/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.141333758729161e-08,
+        2.134680698873126e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -6.293613e-08,
+        -2.289e-08,
+        -1.1982099999999993e-09
+      ],
+      "balance_residual_n": [
+        -1.152279241270839e-08,
+        -1.543193011268739e-09,
+        -1.1982099999999993e-09
+      ],
+      "balance_moment_n_mm": [
+        -6.47399389875623e-09,
+        8.272654807320294e-08,
+        4.664363486703817e-08
+      ],
+      "reaction_dof_norm_fraction": 1.4470364469785396e-11,
+      "force_balance_fraction": 4.0835089404835016e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/28ca0e0cfdadd210db69/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.0214508228709747e-08,
+        -9.120242339122342e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.734254999999999e-08,
+        4.667914e-09,
+        5.223803999999999e-10
+      ],
+      "balance_residual_n": [
+        1.2871958228709756e-08,
+        -4.452328339122342e-09,
+        5.223803999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        9.460578309919821e-08,
+        -4.940462915717534e-08,
+        1.227950490607268e-07
+      ],
+      "reaction_dof_norm_fraction": 8.44688213263804e-12,
+      "force_balance_fraction": 5.127055561286887e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/2acb5f4086fabfcd272d/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.252044050190307e-08,
+        -1.624641754460754e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.040255e-08,
+        1.885559e-08,
+        1.60666e-09
+      ],
+      "balance_residual_n": [
+        2.1178905019030706e-09,
+        2.60917245539246e-09,
+        1.60666e-09
+      ],
+      "balance_moment_n_mm": [
+        -8.64084776794466e-08,
+        -1.2129858576431368e-07,
+        3.2272743342744224e-07
+      ],
+      "reaction_dof_norm_fraction": 7.47958031356275e-12,
+      "force_balance_fraction": 1.2036452177368675e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/2d25dfec6ff7818a9048/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.7513204865244916e-08,
+        -2.4409359866695013e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.1491125000000004e-08,
+        2.400237e-08,
+        -2.7090168e-09
+      ],
+      "balance_residual_n": [
+        6.022079865244911e-09,
+        -4.0698986669501196e-10,
+        -2.7090168e-09
+      ],
+      "balance_moment_n_mm": [
+        1.706605693989675e-08,
+        2.975354671047746e-07,
+        -2.471131395952748e-07
+      ],
+      "reaction_dof_norm_fraction": 4.9194503530297245e-12,
+      "force_balance_fraction": 1.8086056858394233e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/3067e510811f3b11490b/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.774728606411372e-08,
+        -7.497710896586796e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        6.075638000000001e-08,
+        7.127266e-08,
+        -9.308499999999987e-10
+      ],
+      "balance_residual_n": [
+        3.0090939358862838e-09,
+        -3.7044489658679526e-09,
+        -9.308499999999987e-10
+      ],
+      "balance_moment_n_mm": [
+        3.027879508295904e-08,
+        1.6447344380542075e-07,
+        -1.0720695185358996e-07
+      ],
+      "reaction_dof_norm_fraction": 5.776787630587984e-12,
+      "force_balance_fraction": 1.227635622371142e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/308227c50cdcdb21c1f3/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.685285155872407e-08,
+        -2.2071901639719727e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.1353269999999996e-08,
+        7.081163e-09,
+        6.993320000000001e-10
+      ],
+      "balance_residual_n": [
+        -1.4500418441275927e-08,
+        -1.499073863971973e-08,
+        6.993320000000001e-10
+      ],
+      "balance_moment_n_mm": [
+        1.8897982940616522e-07,
+        -8.135888081192936e-08,
+        -1.369562719082896e-06
+      ],
+      "reaction_dof_norm_fraction": 8.789024929451223e-12,
+      "force_balance_fraction": 7.695738283061951e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/31f9e7de634762344b80/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.5626173788827487e-08,
+        1.0337178224517629e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.058392000000001e-08,
+        -2.886623e-08,
+        7.54171e-10
+      ],
+      "balance_residual_n": [
+        -1.4957746211172526e-08,
+        -1.852905177548237e-08,
+        7.54171e-10
+      ],
+      "balance_moment_n_mm": [
+        1.3747378703771943e-07,
+        -2.767423592750376e-07,
+        -1.2929957044582252e-06
+      ],
+      "reaction_dof_norm_fraction": 5.753960661488537e-12,
+      "force_balance_fraction": 7.763795286094795e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/332224fa9c0d21625913/result.json",
+    "audit": {
+      "applied_total_n": [
+        -9.590235094947275e-08,
+        4.6430272959696595e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.685939000000001e-08,
+        -5.089767e-09,
+        1.418893e-09
+      ],
+      "balance_residual_n": [
+        -9.042960949472739e-09,
+        -4.467397040303403e-10,
+        1.418893e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.226795538793639e-08,
+        -1.6288192789428832e-07,
+        1.520157777373239e-07
+      ],
+      "reaction_dof_norm_fraction": 6.230399799387441e-12,
+      "force_balance_fraction": 4.701310359489984e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/33bf3cbad47c21b4bd02/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.401962007070324e-08,
+        6.286068554572921e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.5537840000000015e-08,
+        -7.384693e-09,
+        3.2171399999999933e-10
+      ],
+      "balance_residual_n": [
+        1.518219929296775e-09,
+        -1.098624445427079e-09,
+        3.2171399999999933e-10
+      ],
+      "balance_moment_n_mm": [
+        1.7641482067606458e-08,
+        2.9784352281702727e-08,
+        -1.7989280959929702e-07
+      ],
+      "reaction_dof_norm_fraction": 1.0229881678946996e-11,
+      "force_balance_fraction": 1.170975608630361e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/34dd203084c61c5dd2a8/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.486183514616158e-08,
+        -3.6699589145428035e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.139762e-08,
+        3.449139e-08,
+        5.603670000000001e-09
+      ],
+      "balance_residual_n": [
+        6.535784853838417e-09,
+        -2.208199145428036e-09,
+        5.603670000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        -2.277471788273893e-08,
+        -5.581996979555247e-07,
+        -1.226800418776965e-06
+      ],
+      "reaction_dof_norm_fraction": 3.9047925595035926e-12,
+      "force_balance_fraction": 4.827244451146824e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/36463e63b46094f327ab/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.856588813912822e-08,
+        5.8297445093558053e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.14344e-08,
+        -5.589747e-08,
+        4.586099999999991e-10
+      ],
+      "balance_residual_n": [
+        2.2868511860871776e-08,
+        2.399975093558055e-09,
+        4.586099999999991e-10
+      ],
+      "balance_moment_n_mm": [
+        -7.080271333269868e-08,
+        2.1032283983713248e-07,
+        5.318394818370978e-07
+      ],
+      "reaction_dof_norm_fraction": 5.201835079271661e-12,
+      "force_balance_fraction": 6.540714207512463e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/375f67191e7451f9d7f3/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.654745732248557e-08,
+        1.9957724362029694e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.415527e-08,
+        1.022819e-08,
+        -4.238838e-09
+      ],
+      "balance_residual_n": [
+        1.2392187322485573e-08,
+        1.222396243620297e-08,
+        -4.238838e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.8852984706511834e-07,
+        2.405612012238748e-07,
+        3.0315505087766665e-07
+      ],
+      "reaction_dof_norm_fraction": 3.898636581134626e-12,
+      "force_balance_fraction": 5.589415719546257e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/37b93ebcae09a141b6c6/result.json",
+    "audit": {
+      "applied_total_n": [
+        7.794194750720962e-08,
+        9.204100592796749e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -9.51362e-08,
+        1.836871e-08,
+        -5.905650000000001e-09
+      ],
+      "balance_residual_n": [
+        -1.7194252492790378e-08,
+        2.757281059279675e-08,
+        -5.905650000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        -3.3404771456483034e-07,
+        1.6274663918249265e-07,
+        1.6720573735489234e-06
+      ],
+      "reaction_dof_norm_fraction": 5.585123594376589e-12,
+      "force_balance_fraction": 8.781550829953136e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/38158e9efb2efca5fdef/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.6796210401444114e-08,
+        1.0989623433488305e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -6.685100000000001e-08,
+        -3.37991e-09,
+        -1.4267030000000002e-09
+      ],
+      "balance_residual_n": [
+        -1.0054789598555894e-08,
+        7.609713433488304e-09,
+        -1.4267030000000002e-09
+      ],
+      "balance_moment_n_mm": [
+        4.828732616552341e-08,
+        -5.498286576253156e-09,
+        -1.6884071272587066e-07
+      ],
+      "reaction_dof_norm_fraction": 6.809374591081808e-12,
+      "force_balance_fraction": 5.507849258293962e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/3c48b7d387f0f18f23bf/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.846686690347269e-09,
+        -1.669175375695886e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        7.313439999999982e-09,
+        1.831544e-08,
+        -4.090599999999998e-11
+      ],
+      "balance_residual_n": [
+        1.466753309652713e-09,
+        1.6236862430411399e-09,
+        -4.090599999999998e-11
+      ],
+      "balance_moment_n_mm": [
+        3.3617290112405476e-09,
+        -1.0045037327445425e-08,
+        1.1008139217502365e-07
+      ],
+      "reaction_dof_norm_fraction": 1.344975703353414e-11,
+      "force_balance_fraction": 1.3316980045656999e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/3cca15ece5069e825a48/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.2005886635433356e-08,
+        -2.385361241863393e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.2330416999999993e-08,
+        -2.713847e-08,
+        -4.797299999999983e-10
+      ],
+      "balance_residual_n": [
+        9.675469635433363e-09,
+        -2.9523831241863392e-08,
+        -4.797299999999983e-10
+      ],
+      "balance_moment_n_mm": [
+        2.323470078724014e-07,
+        3.3179489086712567e-07,
+        -2.4474266441511057e-06
+      ],
+      "reaction_dof_norm_fraction": 8.320524665206214e-12,
+      "force_balance_fraction": 1.040533053733344e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/3ec10ddcb1469f10fe1d/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.5292693978969965e-08,
+        -6.872990709894111e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -8.816184e-08,
+        8.447442e-08,
+        1.2300000000016594e-12
+      ],
+      "balance_residual_n": [
+        -3.286914602103003e-08,
+        1.5744512901058882e-08,
+        1.2300000000016594e-12
+      ],
+      "balance_moment_n_mm": [
+        -2.757871079940155e-07,
+        -6.89879557054212e-07,
+        1.8135412747710118e-06
+      ],
+      "reaction_dof_norm_fraction": 6.126899530698843e-12,
+      "force_balance_fraction": 1.1999132169856865e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/43f3dd66bc7d76b8eda0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.0206609601937089e-07,
+        5.6052371633086295e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        9.464521999999999e-08,
+        -5.476726e-08,
+        2.484377999999999e-09
+      ],
+      "balance_residual_n": [
+        -7.4208760193709e-09,
+        1.2851116330862952e-09,
+        2.484377999999999e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.6333625748758208e-08,
+        -2.7624961719249437e-07,
+        4.5813494104528695e-07
+      ],
+      "reaction_dof_norm_fraction": 1.457988259287135e-11,
+      "force_balance_fraction": 1.8375431316685314e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/44342a2144779d587879/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.393616220317199e-09,
+        6.740457081377826e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.3164900000000034e-09,
+        -5.045627e-09,
+        -7.102199999999984e-11
+      ],
+      "balance_residual_n": [
+        -7.712622031719547e-11,
+        1.694830081377826e-09,
+        -7.102199999999984e-11
+      ],
+      "balance_moment_n_mm": [
+        -3.13932795827084e-08,
+        4.313801101621029e-08,
+        2.44035281922794e-07
+      ],
+      "reaction_dof_norm_fraction": 3.3585061155514093e-12,
+      "force_balance_fraction": 6.440327039287498e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/44898c3bce52f11ad3c0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.6929212165450735e-07,
+        1.5390604346521286e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.7123275e-07,
+        -1.965757e-08,
+        -8.88441e-09
+      ],
+      "balance_residual_n": [
+        1.940628345492647e-09,
+        -4.2669656534787156e-09,
+        -8.88441e-09
+      ],
+      "balance_moment_n_mm": [
+        7.259158055674142e-08,
+        7.919591985593971e-07,
+        -2.8468977078925043e-07
+      ],
+      "reaction_dof_norm_fraction": 5.586784573788004e-12,
+      "force_balance_fraction": 2.4418360228469773e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/44dd75628667cebb91bd/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.4806289527768968e-09,
+        3.4199949539015506e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.852069999999996e-09,
+        -3.386165e-08,
+        -1.584250000000003e-10
+      ],
+      "balance_residual_n": [
+        -2.3714410472230994e-09,
+        3.3829953901550946e-10,
+        -1.584250000000003e-10
+      ],
+      "balance_moment_n_mm": [
+        -7.169155434357843e-09,
+        -4.6814119439183823e-08,
+        -1.988253182937894e-08
+      ],
+      "reaction_dof_norm_fraction": 5.269003824068532e-12,
+      "force_balance_fraction": 1.1438946990949298e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/458c639f3a1b54c6bae8/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.969306495652745e-08,
+        -1.2038881891385245e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.1019359999999994e-08,
+        1.622476e-08,
+        4.021257e-09
+      ],
+      "balance_residual_n": [
+        2.1326295043472543e-08,
+        4.185878108614756e-09,
+        4.021257e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.588669377211801e-08,
+        -9.062456361160626e-08,
+        2.3686884194635704e-07
+      ],
+      "reaction_dof_norm_fraction": 1.0079952483671887e-11,
+      "force_balance_fraction": 8.638837277313474e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/45e193ca13e6b8f0758d/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.0616017220854701e-07,
+        5.739894959333469e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.1239184e-07,
+        -4.980876e-08,
+        -4.0161230000000005e-09
+      ],
+      "balance_residual_n": [
+        6.231667791452983e-09,
+        7.590189593334689e-09,
+        -4.0161230000000005e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.0429268534505775e-08,
+        2.0291038010064886e-07,
+        6.087280644854534e-07
+      ],
+      "reaction_dof_norm_fraction": 4.3609840064495056e-12,
+      "force_balance_fraction": 3.009027916313304e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/46c6812a8d0babc128d1/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.685018785086868e-08,
+        3.320232622172625e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.6721783999999994e-08,
+        -4.118088e-08,
+        -1.0693000000000008e-09
+      ],
+      "balance_residual_n": [
+        -2.9871596149131315e-08,
+        -7.978553778273745e-09,
+        -1.0693000000000008e-09
+      ],
+      "balance_moment_n_mm": [
+        -7.266484242890689e-08,
+        -3.173839821045989e-07,
+        1.576628647445362e-07
+      ],
+      "reaction_dof_norm_fraction": 3.126531483016835e-12,
+      "force_balance_fraction": 1.0554121304014616e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/47970143eeb5be88e934/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.030945425867685e-08,
+        -1.500984581070952e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.542198000000003e-08,
+        -1.495642e-08,
+        6.5765859999999995e-09
+      ],
+      "balance_residual_n": [
+        1.5112525741323178e-08,
+        -2.996626581070952e-08,
+        6.5765859999999995e-09
+      ],
+      "balance_moment_n_mm": [
+        2.426604561644738e-07,
+        -5.951614858677713e-07,
+        -2.4064743208890273e-06
+      ],
+      "reaction_dof_norm_fraction": 1.1081141221076785e-11,
+      "force_balance_fraction": 1.0171555801750652e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/47fe7874ddcc09204eb0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -9.010048529489723e-08,
+        2.949856536815787e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.524996000000003e-08,
+        -3.251192e-08,
+        -5.894500000000007e-10
+      ],
+      "balance_residual_n": [
+        -4.8505252948972e-09,
+        -3.0133546318421315e-09,
+        -5.894500000000007e-10
+      ],
+      "balance_moment_n_mm": [
+        3.080571466269143e-08,
+        7.475202660789834e-08,
+        3.440132820037705e-07
+      ],
+      "reaction_dof_norm_fraction": 6.1025812992932565e-12,
+      "force_balance_fraction": 1.5059558857052803e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/48a515fa6e5b930d792f/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.228475809966767e-07,
+        1.6946160030784085e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.0832653e-07,
+        1.008709e-10,
+        5.94024e-10
+      ],
+      "balance_residual_n": [
+        1.4521050996676694e-08,
+        1.7954869030784085e-09,
+        5.94024e-10
+      ],
+      "balance_moment_n_mm": [
+        -1.0401716015334094e-08,
+        2.7133794174406586e-07,
+        1.2100017660857198e-07
+      ],
+      "reaction_dof_norm_fraction": 7.326556099893103e-12,
+      "force_balance_fraction": 4.491678463712338e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4befb8544559e131131c/result.json",
+    "audit": {
+      "applied_total_n": [
+        -6.969685273361392e-09,
+        -1.165341245723539e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.688787999999998e-09,
+        1.177015e-08,
+        -2.2196799999999966e-09
+      ],
+      "balance_residual_n": [
+        1.7191027266386055e-09,
+        1.1673754276461003e-10,
+        -2.2196799999999966e-09
+      ],
+      "balance_moment_n_mm": [
+        1.3145190410276844e-07,
+        4.180246571282839e-07,
+        -2.3580105594782695e-07
+      ],
+      "reaction_dof_norm_fraction": 2.594693037188438e-12,
+      "force_balance_fraction": 7.361813499721909e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4d19deed37eef703ca40/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.85834643229299e-08,
+        -2.4124931385927084e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.2314653e-08,
+        2.542265e-08,
+        1.990109999999992e-10
+      ],
+      "balance_residual_n": [
+        -3.731188677070101e-09,
+        1.2977186140729155e-09,
+        1.990109999999992e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.783436169386224e-08,
+        -7.478621945280477e-08,
+        8.681453922488563e-08
+      ],
+      "reaction_dof_norm_fraction": 3.4093003463256494e-12,
+      "force_balance_fraction": 2.2321844696665682e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4d38f11fa3d2e0e4cd8f/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.912180884275585e-09,
+        3.649989821497002e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.1492899999999905e-09,
+        -3.890147e-08,
+        3.600450000000007e-10
+      ],
+      "balance_residual_n": [
+        -1.762890884275595e-09,
+        -2.401571785029986e-09,
+        3.600450000000007e-10
+      ],
+      "balance_moment_n_mm": [
+        1.6755487172791876e-08,
+        -7.205063958642833e-09,
+        -3.1974739404387446e-07
+      ],
+      "reaction_dof_norm_fraction": 5.058552540991112e-12,
+      "force_balance_fraction": 9.589718088905354e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4db8ab6be3d5f7a52036/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.711819823199903e-09,
+        -5.5691238287636224e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        9.879430000000003e-09,
+        7.645109e-09,
+        8.035269999999999e-10
+      ],
+      "balance_residual_n": [
+        1.4591249823199906e-08,
+        2.0759851712363775e-09,
+        8.035269999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        -6.292420633821268e-08,
+        9.368371455524042e-08,
+        -7.921219395072068e-08
+      ],
+      "reaction_dof_norm_fraction": 7.18663942404219e-12,
+      "force_balance_fraction": 6.389530620094095e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4eb777f80380efcc9970/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.524967050529739e-08,
+        -8.449731581094966e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.93308133e-08,
+        1.105977e-08,
+        -2.546174000000001e-09
+      ],
+      "balance_residual_n": [
+        -1.591885720529739e-08,
+        2.6100384189050348e-09,
+        -2.546174000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.071190247482891e-08,
+        2.2379969290858736e-07,
+        4.1315914021019486e-07
+      ],
+      "reaction_dof_norm_fraction": 1.1563129598500163e-12,
+      "force_balance_fraction": 5.807164964141722e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4f27f42b4ba56caec5d8/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.424205547413294e-08,
+        3.4996592290781336e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.942213999999998e-08,
+        -1.806209e-09,
+        -3.205299999999991e-10
+      ],
+      "balance_residual_n": [
+        4.819915474132961e-09,
+        1.6934502290781336e-09,
+        -3.205299999999991e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.732599091000931e-08,
+        5.176399465033487e-08,
+        1.196623066984613e-07
+      ],
+      "reaction_dof_norm_fraction": 9.938008458571067e-12,
+      "force_balance_fraction": 2.1276926766482322e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/4fae845dfcea98689649/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.034196869426523e-08,
+        -1.095202151191188e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.8698941e-08,
+        1.949947e-08,
+        -1.518452e-09
+      ],
+      "balance_residual_n": [
+        -1.1643027694265234e-08,
+        1.840426784880881e-08,
+        -1.518452e-09
+      ],
+      "balance_moment_n_mm": [
+        -2.4391676557651243e-07,
+        -8.136158490172328e-08,
+        1.6310898270542198e-06
+      ],
+      "reaction_dof_norm_fraction": 3.0026397451249098e-12,
+      "force_balance_fraction": 1.3660006989770939e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/506b688bf6096c79446f/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.2279529332536185e-08,
+        -6.980911848586402e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.21370000000002e-09,
+        4.06748e-10,
+        3.553741e-09
+      ],
+      "balance_residual_n": [
+        -1.4065829332536165e-08,
+        -6.574163848586402e-09,
+        3.553741e-09
+      ],
+      "balance_moment_n_mm": [
+        3.1289202827983575e-08,
+        -4.3894955133872806e-07,
+        3.332412408821735e-07
+      ],
+      "reaction_dof_norm_fraction": 8.418437753872714e-12,
+      "force_balance_fraction": 7.645212550344864e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/534adb48f56b3b445d02/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.4792614062316716e-09,
+        4.248605023349228e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.2177800000000004e-08,
+        3.922499e-08,
+        1.2170907842e-08
+      ],
+      "balance_residual_n": [
+        -2.6657061406231676e-08,
+        4.347359502334923e-08,
+        1.2170907842e-08
+      ],
+      "balance_moment_n_mm": [
+        -5.062026058993888e-07,
+        -1.1308758060714777e-06,
+        1.901181714292108e-06
+      ],
+      "reaction_dof_norm_fraction": 2.8708648877280928e-12,
+      "force_balance_fraction": 1.8278156661958354e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/564e6b29ea207ea8f394/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.7125736323796446e-08,
+        -8.960796549217775e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.0404710000000014e-08,
+        2.072885e-08,
+        3.5624621999999996e-09
+      ],
+      "balance_residual_n": [
+        -2.3278973676203568e-08,
+        1.983277034507822e-08,
+        3.5624621999999996e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.23362796229222e-07,
+        -5.148132077584448e-07,
+        1.006404559397402e-06
+      ],
+      "reaction_dof_norm_fraction": 4.888444265718111e-12,
+      "force_balance_fraction": 7.23031889946816e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/570766c571fce3ab521c/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.2733750054394477e-08,
+        3.179966512334431e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.24407e-09,
+        -3.401004e-08,
+        1.0562480000000001e-09
+      ],
+      "balance_residual_n": [
+        -7.489680054394477e-09,
+        -2.210374876655686e-09,
+        1.0562480000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        5.415256880979496e-08,
+        -2.0633863852166463e-07,
+        -2.1860863817020852e-07
+      ],
+      "reaction_dof_norm_fraction": 8.371113217269446e-12,
+      "force_balance_fraction": 3.513296837277456e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5826bd7aea4c37adc4e5/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.04583522847679e-08,
+        -3.213784793842933e-11,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.5475989999999996e-08,
+        -1.600957e-09,
+        2.596379999999999e-10
+      ],
+      "balance_residual_n": [
+        1.4982362284767902e-08,
+        -1.6330948479384294e-09,
+        2.596379999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        8.846560871001152e-09,
+        2.1395723457273897e-07,
+        -3.245217558378321e-07
+      ],
+      "reaction_dof_norm_fraction": 3.887600281037068e-12,
+      "force_balance_fraction": 4.561295549549119e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/58e01f9315f8fbf4846f/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.836865568653593e-08,
+        -3.9531755646748934e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.4762200000000005e-08,
+        6.123023e-08,
+        -4.6335719999999996e-09
+      ],
+      "balance_residual_n": [
+        3.3606455686535926e-08,
+        2.1698474353251066e-08,
+        -4.6335719999999996e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.7129595438691331e-07,
+        4.3322118610447423e-07,
+        2.185868445279471e-06
+      ],
+      "reaction_dof_norm_fraction": 6.643245706652706e-12,
+      "force_balance_fraction": 1.2315353127154044e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/59214f4a0788a621d7e3/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.7992200557491742e-08,
+        1.1379242437214998e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.9772513999999995e-08,
+        -1.041801e-08,
+        -7.846879999999999e-10
+      ],
+      "balance_residual_n": [
+        -1.7803134425082532e-09,
+        9.612324372149988e-10,
+        -7.846879999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        -4.4859023699285965e-09,
+        9.763108496779117e-08,
+        9.886751796813328e-09
+      ],
+      "reaction_dof_norm_fraction": 2.8257042851589666e-12,
+      "force_balance_fraction": 8.146144340402334e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5960f994678aecd7d689/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.92021695713629e-09,
+        -3.64816514775157e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.1611220000000008e-08,
+        2.650995e-08,
+        1.7394530000000004e-09
+      ],
+      "balance_residual_n": [
+        -1.4531436957136298e-08,
+        -9.971701477515696e-09,
+        1.7394530000000004e-09
+      ],
+      "balance_moment_n_mm": [
+        1.230123108943558e-07,
+        -2.806522434498625e-07,
+        -7.408421211109927e-07
+      ],
+      "reaction_dof_norm_fraction": 9.856755419789057e-12,
+      "force_balance_fraction": 5.159931008653134e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5aac563c83b98d75984d/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.332637111772783e-09,
+        -7.564466386611457e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        9.553172999999992e-09,
+        -9.336574e-09,
+        1.2569500000000098e-10
+      ],
+      "balance_residual_n": [
+        8.220535888227209e-09,
+        -1.6901040386611456e-08,
+        1.2569500000000098e-10
+      ],
+      "balance_moment_n_mm": [
+        1.7781851111247937e-07,
+        3.82638356723515e-08,
+        -1.4090115044925143e-06
+      ],
+      "reaction_dof_norm_fraction": 6.491939848982013e-12,
+      "force_balance_fraction": 5.163821326245992e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5c086829487ee2d0af1c/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.004434910915734e-08,
+        6.134462893214732e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.444018999999997e-08,
+        -6.06099e-08,
+        -9.802489999999995e-10
+      ],
+      "balance_residual_n": [
+        -4.395840890842633e-09,
+        7.3472893214731e-10,
+        -9.802489999999995e-10
+      ],
+      "balance_moment_n_mm": [
+        -4.33570452516836e-08,
+        9.53927546106527e-08,
+        1.278551603115915e-07
+      ],
+      "reaction_dof_norm_fraction": 1.9426711998800575e-11,
+      "force_balance_fraction": 1.8446358731303404e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5ce1bdec2e2b8c2a12f3/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.8414368696539896e-08,
+        6.909161243129347e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.5696575000000005e-08,
+        -2.90653e-09,
+        7.1198933e-10
+      ],
+      "balance_residual_n": [
+        2.7177936965398906e-09,
+        4.002631243129347e-09,
+        7.1198933e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.841187517112453e-08,
+        5.545839210759877e-09,
+        2.567387949304526e-08
+      ],
+      "reaction_dof_norm_fraction": 4.20169551720326e-12,
+      "force_balance_fraction": 3.143938135127632e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5d0e492c7ea430517103/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.4502785461445455e-07,
+        -1.4421999594560475e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.3616860000000004e-07,
+        1.991806e-08,
+        -4.222682999999999e-10
+      ],
+      "balance_residual_n": [
+        -8.859254614454517e-09,
+        5.496060405439524e-09,
+        -4.222682999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        -4.2957470866397645e-08,
+        -5.634463158522354e-08,
+        4.979471490874913e-07
+      ],
+      "reaction_dof_norm_fraction": 6.775168030100144e-12,
+      "force_balance_fraction": 2.47457467859163e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/5ecfb913f7e2252d222d/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.4786593283133698e-08,
+        -3.304636919665427e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.9656140000000006e-08,
+        3.570842e-08,
+        1.7825744999999998e-10
+      ],
+      "balance_residual_n": [
+        4.869546716866308e-09,
+        2.662050803345731e-09,
+        1.7825744999999998e-10
+      ],
+      "balance_moment_n_mm": [
+        -2.054027742865394e-08,
+        3.57211924046767e-08,
+        2.2537778855108122e-07
+      ],
+      "reaction_dof_norm_fraction": 8.925248795498972e-12,
+      "force_balance_fraction": 3.0266958245266353e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/63a2824738aa843e8240/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.851837959700788e-08,
+        -3.42314905310559e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.8690648e-08,
+        3.349074e-08,
+        8.117099999999995e-10
+      ],
+      "balance_residual_n": [
+        -1.0172268402992124e-08,
+        -7.407505310558953e-10,
+        8.117099999999995e-10
+      ],
+      "balance_moment_n_mm": [
+        -5.556931156647298e-09,
+        -1.808711499221517e-07,
+        1.5783096798650258e-07
+      ],
+      "reaction_dof_norm_fraction": 3.439320615012674e-12,
+      "force_balance_fraction": 6.251044774226665e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/66afb8cca38c6f9ef19e/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.5291512883995892e-08,
+        1.9207249124519876e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.189589999999999e-09,
+        1.186764e-08,
+        3.579179000000001e-09
+      ],
+      "balance_residual_n": [
+        2.848110288399589e-08,
+        3.107488912451988e-08,
+        3.579179000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        -3.372752376646872e-07,
+        6.378013430516731e-07,
+        1.5158303312353945e-06
+      ],
+      "reaction_dof_norm_fraction": 4.24038007527223e-12,
+      "force_balance_fraction": 1.860821605860315e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/66b8be504706fb51ac50/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.156601107752067e-08,
+        5.276302772472263e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.599620000000001e-08,
+        -4.914903e-08,
+        -2.13140775e-09
+      ],
+      "balance_residual_n": [
+        5.569811077520659e-09,
+        3.6139977247226313e-09,
+        -2.13140775e-09
+      ],
+      "balance_moment_n_mm": [
+        -9.845201912360543e-09,
+        3.1085040379689626e-07,
+        3.7222363012982767e-07
+      ],
+      "reaction_dof_norm_fraction": 1.2350120233687324e-11,
+      "force_balance_fraction": 2.6321831444633826e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/67040772f5a710a0a187/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.4524305192462634e-08,
+        5.265263780529494e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.9788460000000003e-08,
+        -1.173695e-08,
+        1.0250600000000002e-09
+      ],
+      "balance_residual_n": [
+        4.7358451924626315e-09,
+        -6.471686219470506e-09,
+        1.0250600000000002e-09
+      ],
+      "balance_moment_n_mm": [
+        1.1393377660830677e-07,
+        2.1512529947530178e-08,
+        -3.544862648329077e-07
+      ],
+      "reaction_dof_norm_fraction": 2.9902156163687456e-12,
+      "force_balance_fraction": 1.9279246245634846e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/677f8deb8fcc1bd72ae0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.5154910215642303e-08,
+        -9.912469067785423e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.1987050000000013e-08,
+        8.934981e-09,
+        -2.4271794e-09
+      ],
+      "balance_residual_n": [
+        2.683213978435771e-08,
+        -9.77488067785424e-10,
+        -2.4271794e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.5452447794902932e-08,
+        3.239693279327137e-07,
+        -6.918795643751967e-08
+      ],
+      "reaction_dof_norm_fraction": 8.51408649524311e-12,
+      "force_balance_fraction": 6.696405350544765e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/69101e55ee501c76361c/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.3100349128289963e-09,
+        -2.304147983522853e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        7.668199999999984e-10,
+        2.464282e-08,
+        -3.7824000000000005e-09
+      ],
+      "balance_residual_n": [
+        -2.543214912828998e-09,
+        1.601340164771471e-09,
+        -3.7824000000000005e-09
+      ],
+      "balance_moment_n_mm": [
+        -9.383068976424437e-09,
+        2.4388719506144603e-07,
+        -2.4825714427217306e-07
+      ],
+      "reaction_dof_norm_fraction": 4.3685336138884225e-12,
+      "force_balance_fraction": 2.888730530240611e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/6ac0a50754dcddde961b/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.095782747346675e-08,
+        3.642021795258188e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.09029e-08,
+        -5.069667e-08,
+        2.3541600000000005e-09
+      ],
+      "balance_residual_n": [
+        -2.994507252653325e-08,
+        -1.4276452047418122e-08,
+        2.3541600000000005e-09
+      ],
+      "balance_moment_n_mm": [
+        6.376499814673153e-08,
+        -5.157530648574618e-07,
+        -2.167507783765406e-06
+      ],
+      "reaction_dof_norm_fraction": 9.187713544656884e-12,
+      "force_balance_fraction": 8.936131134260353e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/6d04ac6295a07055c0c4/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.634176742346341e-08,
+        3.761288525083728e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.321219999999976e-09,
+        -4.203962e-08,
+        -1.354111e-08
+      ],
+      "balance_residual_n": [
+        4.102054742346343e-08,
+        -4.426734749162722e-09,
+        -1.354111e-08
+      ],
+      "balance_moment_n_mm": [
+        -2.1206063544314936e-07,
+        9.603321673992694e-07,
+        2.1549527963461104e-06
+      ],
+      "reaction_dof_norm_fraction": 6.7344471007004796e-12,
+      "force_balance_fraction": 1.0430774951172896e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/6eade13a44f823dd0de1/result.json",
+    "audit": {
+      "applied_total_n": [
+        7.109989041964582e-09,
+        3.179584950885328e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.503330000000003e-09,
+        -3.310602e-08,
+        8.197200000000001e-10
+      ],
+      "balance_residual_n": [
+        2.6066590419645784e-09,
+        -1.3101704911467186e-09,
+        8.197200000000001e-10
+      ],
+      "balance_moment_n_mm": [
+        2.0152526801527038e-08,
+        -5.604008936661579e-08,
+        -1.61269140165803e-07
+      ],
+      "reaction_dof_norm_fraction": 1.1145237766423022e-11,
+      "force_balance_fraction": 1.2205630864871599e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/6f9078729edcbe2cef0b/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.308805839376873e-09,
+        -3.799889469746631e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.717794999999961e-09,
+        4.075867e-08,
+        -9.783699999999994e-10
+      ],
+      "balance_residual_n": [
+        5.910108393769126e-10,
+        2.7597753025336897e-09,
+        -9.783699999999994e-10
+      ],
+      "balance_moment_n_mm": [
+        -2.0030661847832616e-08,
+        1.7912214643760492e-08,
+        4.0454392997723976e-07
+      ],
+      "reaction_dof_norm_fraction": 1.081273676669529e-11,
+      "force_balance_fraction": 7.504689648654444e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/6fab9bcb971f061784f6/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.064656084461603e-08,
+        -3.5589494018495316e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.5860400000000016e-08,
+        3.222595e-08,
+        6.435010000000001e-09
+      ],
+      "balance_residual_n": [
+        4.786160844616017e-09,
+        -3.3635440184953182e-09,
+        6.435010000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        1.2799674164993899e-07,
+        -5.979503123828769e-07,
+        -1.0525380891023162e-06
+      ],
+      "reaction_dof_norm_fraction": 1.1909711371576533e-11,
+      "force_balance_fraction": 2.0880773567009168e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/72810bcba39093e9e26b/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.9893507164379116e-08,
+        2.072556526400149e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.670965e-08,
+        -5.859725e-08,
+        3.4954300000000006e-09
+      ],
+      "balance_residual_n": [
+        -1.3183857164379116e-08,
+        -3.787168473599851e-08,
+        3.4954300000000006e-09
+      ],
+      "balance_moment_n_mm": [
+        3.2984700451745083e-07,
+        -1.1056713007026698e-07,
+        -3.480676384838424e-06
+      ],
+      "reaction_dof_norm_fraction": 2.4261227121143583e-12,
+      "force_balance_fraction": 9.32328688668851e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/7288278ab16b34873843/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.0124909977093921e-07,
+        -1.9915034954465227e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.020701e-07,
+        1.911377e-08,
+        -4.91622e-09
+      ],
+      "balance_residual_n": [
+        8.210002290607951e-10,
+        -8.012649544652261e-10,
+        -4.91622e-09
+      ],
+      "balance_moment_n_mm": [
+        5.052678833231618e-08,
+        4.937586548463896e-07,
+        1.794376823239931e-07
+      ],
+      "reaction_dof_norm_fraction": 1.291602822033843e-11,
+      "force_balance_fraction": 1.508885883305248e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/740a019a76a2c7df32ba/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.8259530533177895e-09,
+        -5.259047952677065e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.0587309999999974e-08,
+        4.515457e-08,
+        2.3255999999999945e-11
+      ],
+      "balance_residual_n": [
+        -4.761356946682184e-09,
+        -7.435909526770652e-09,
+        2.3255999999999945e-11
+      ],
+      "balance_moment_n_mm": [
+        8.533542512168639e-08,
+        -8.712743881266563e-08,
+        -4.655183147525466e-07
+      ],
+      "reaction_dof_norm_fraction": 7.531044609793743e-12,
+      "force_balance_fraction": 3.4704027716569194e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/74a1301ba4c90b259b0f/result.json",
+    "audit": {
+      "applied_total_n": [
+        -8.518472327523341e-08,
+        2.3000495730229886e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        7.814246000000001e-08,
+        -5.388234e-08,
+        4.325659999999999e-09
+      ],
+      "balance_residual_n": [
+        -7.042263275233396e-09,
+        -3.0881844269770115e-08,
+        4.325659999999999e-09
+      ],
+      "balance_moment_n_mm": [
+        3.697474651703329e-07,
+        -3.6397406768801763e-07,
+        -2.6177705035714686e-06
+      ],
+      "reaction_dof_norm_fraction": 3.330372725578877e-12,
+      "force_balance_fraction": 7.78548312220212e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/7881ce84d14e11ff37f1/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.647514963487033e-08,
+        -1.0596357569170323e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -6.903813e-08,
+        -8.35051e-09,
+        8.440100000000007e-10
+      ],
+      "balance_residual_n": [
+        -2.56298036512966e-09,
+        -1.8946867569170325e-08,
+        8.440100000000007e-10
+      ],
+      "balance_moment_n_mm": [
+        1.1000584670078438e-07,
+        -1.0236120639888344e-06,
+        -1.6247524361969213e-06
+      ],
+      "reaction_dof_norm_fraction": 4.019539008157489e-12,
+      "force_balance_fraction": 6.870098153415059e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/788c907808a89dc558e4/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.8387325440016866e-08,
+        -3.2800187454995466e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.2419350000000016e-08,
+        3.675133e-08,
+        1.4097047399999999e-08
+      ],
+      "balance_residual_n": [
+        6.080667544001688e-08,
+        3.9511425450045356e-09,
+        1.4097047399999999e-08
+      ],
+      "balance_moment_n_mm": [
+        -1.4646209801420554e-08,
+        -6.649512703981707e-07,
+        -1.4187485313682777e-06
+      ],
+      "reaction_dof_norm_fraction": 4.129525522153647e-12,
+      "force_balance_fraction": 1.612906527612537e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/796e45cb728e73ff8f6b/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.868281967494113e-08,
+        -1.8249608046971844e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.910136e-08,
+        1.678452e-08,
+        -8.170099999999998e-10
+      ],
+      "balance_residual_n": [
+        -4.185403250588702e-10,
+        -1.4650880469718433e-09,
+        -8.170099999999998e-10
+      ],
+      "balance_moment_n_mm": [
+        1.2990977528357722e-08,
+        6.202334800576405e-09,
+        -9.797626571873746e-08
+      ],
+      "reaction_dof_norm_fraction": 6.587872596280535e-12,
+      "force_balance_fraction": 7.5394830257267e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/7b85a3f35cd6cc98480b/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.384419120626262e-08,
+        -3.51158178091282e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.727463e-08,
+        2.965334e-08,
+        2.601632000000001e-09
+      ],
+      "balance_residual_n": [
+        -1.656956120626262e-08,
+        -5.462477809128202e-09,
+        2.601632000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        2.318530467202916e-08,
+        -5.417333407654068e-07,
+        -6.517022223152213e-07
+      ],
+      "reaction_dof_norm_fraction": 4.7074813175409336e-12,
+      "force_balance_fraction": 8.863517549131461e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/7ca2cfba7eaf77688342/result.json",
+    "audit": {
+      "applied_total_n": [
+        -6.379214201324146e-08,
+        8.483524993607716e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        7.914717000000001e-08,
+        9.246109e-10,
+        -5.25935e-09
+      ],
+      "balance_residual_n": [
+        1.535502798675855e-08,
+        1.7729633993607717e-09,
+        -5.25935e-09
+      ],
+      "balance_moment_n_mm": [
+        -3.354766963567069e-08,
+        7.304852097393192e-07,
+        -4.471426559269291e-07
+      ],
+      "reaction_dof_norm_fraction": 6.25352687245253e-12,
+      "force_balance_fraction": 6.134557044525815e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/8061a9bd88c88cb517ac/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.0508772397297435e-08,
+        4.330730973833852e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.630555000000001e-08,
+        -3.296079e-08,
+        -7.962100000000001e-10
+      ],
+      "balance_residual_n": [
+        1.4203222397297425e-08,
+        1.0346519738338518e-08,
+        -7.962100000000001e-10
+      ],
+      "balance_moment_n_mm": [
+        -8.308501808673063e-08,
+        8.228397915342546e-07,
+        2.221076889714836e-06
+      ],
+      "reaction_dof_norm_fraction": 5.01409296900174e-12,
+      "force_balance_fraction": 6.170213873033472e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/80840b09924a3b73bf0d/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.924328785207763e-08,
+        -7.399449941658531e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.7219749999999998e-08,
+        2.954113e-09,
+        5.221679999999999e-09
+      ],
+      "balance_residual_n": [
+        2.0235378520776307e-09,
+        -4.445336941658531e-09,
+        5.221679999999999e-09
+      ],
+      "balance_moment_n_mm": [
+        4.134010010547092e-08,
+        -4.923446369989667e-07,
+        -4.935743081514141e-07
+      ],
+      "reaction_dof_norm_fraction": 4.229856691678475e-12,
+      "force_balance_fraction": 4.063726060384185e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/8241fc9e290ccbb2565e/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.58506247519108e-08,
+        -1.618943201719958e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.53337e-08,
+        -3.024678e-09,
+        -2.858850000000001e-09
+      ],
+      "balance_residual_n": [
+        1.9483075248089198e-08,
+        -1.9214110017199578e-08,
+        -2.858850000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        1.6389109202578856e-07,
+        6.38069388467875e-07,
+        -1.0416365740866881e-06
+      ],
+      "reaction_dof_norm_fraction": 8.509316357748103e-12,
+      "force_balance_fraction": 8.62311250026783e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/860a51f4f1749b5bb6e1/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.035690537307346e-08,
+        -3.5954897725787305e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.0565620000000005e-08,
+        4.023049e-08,
+        -6.059700000000026e-10
+      ],
+      "balance_residual_n": [
+        -2.0871462692654586e-10,
+        4.275592274212696e-09,
+        -6.059700000000026e-10
+      ],
+      "balance_moment_n_mm": [
+        -6.883250783884897e-08,
+        8.853001067576807e-08,
+        4.5873431774319816e-07
+      ],
+      "reaction_dof_norm_fraction": 6.7288494450651815e-12,
+      "force_balance_fraction": 9.838837609126964e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/889b9da1259cf56198d0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.0373415660942555e-08,
+        8.569878673370113e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.926196000000001e-08,
+        -8.873218e-08,
+        7.454199999999993e-10
+      ],
+      "balance_residual_n": [
+        -1.111455660942547e-09,
+        -3.033393266298868e-09,
+        7.454199999999993e-10
+      ],
+      "balance_moment_n_mm": [
+        2.382518629239681e-09,
+        -1.4117952626618272e-07,
+        -1.7006858647827254e-07
+      ],
+      "reaction_dof_norm_fraction": 7.71028664868828e-12,
+      "force_balance_fraction": 1.027255249587005e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/88e8127d4d5c268cd25c/result.json",
+    "audit": {
+      "applied_total_n": [
+        7.1479515639794045e-09,
+        3.402975323751889e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.007400000000008e-09,
+        -3.70617e-08,
+        -1.0360599999999994e-09
+      ],
+      "balance_residual_n": [
+        2.1405515639793963e-09,
+        -3.0319467624811122e-09,
+        -1.0360599999999994e-09
+      ],
+      "balance_moment_n_mm": [
+        2.0532293930216763e-08,
+        6.833885870375328e-08,
+        -3.9275377182949596e-07
+      ],
+      "reaction_dof_norm_fraction": 5.0786126728932726e-12,
+      "force_balance_fraction": 1.6198144993961282e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/897b4f6ee4f5a5a31bae/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.0914327159005097e-08,
+        -5.5761731232450984e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.507311999999998e-09,
+        3.983201e-08,
+        -4.4535819e-09
+      ],
+      "balance_residual_n": [
+        -1.2407015159005099e-08,
+        -1.5929721232450985e-08,
+        -4.4535819e-09
+      ],
+      "balance_moment_n_mm": [
+        3.5228653186274684e-08,
+        5.39794509081608e-07,
+        -1.099470229288309e-06
+      ],
+      "reaction_dof_norm_fraction": 2.1681130716104448e-12,
+      "force_balance_fraction": 6.944276259844489e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/9262a902acb102ede92d/result.json",
+    "audit": {
+      "applied_total_n": [
+        -8.099280535134312e-08,
+        1.7293814380536787e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.754823999999998e-08,
+        -2.196292e-08,
+        1.0545380000000001e-09
+      ],
+      "balance_residual_n": [
+        6.555434648656859e-09,
+        -4.669105619463213e-09,
+        1.0545380000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        1.774273136561897e-08,
+        -3.282215505439194e-08,
+        -3.817376721896379e-07
+      ],
+      "reaction_dof_norm_fraction": 3.98807060992693e-12,
+      "force_balance_fraction": 2.6965007458179256e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/93d10808fcf3b2039c36/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.149095479353491e-08,
+        -1.5660134522477165e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.1661441e-08,
+        1.472825e-08,
+        1.407015e-09
+      ],
+      "balance_residual_n": [
+        -1.704862064650885e-10,
+        -9.31884522477165e-10,
+        1.407015e-09
+      ],
+      "balance_moment_n_mm": [
+        9.084496603446326e-09,
+        -2.9506299393558095e-08,
+        5.616391556791564e-07
+      ],
+      "reaction_dof_norm_fraction": 2.191197316604562e-12,
+      "force_balance_fraction": 8.731772522267867e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/95da76f3154e3da6c9b6/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.539645376804401e-08,
+        -5.130533509145607e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.875814e-08,
+        4.26968e-08,
+        2.0200000000000075e-10
+      ],
+      "balance_residual_n": [
+        -3.3616862319559887e-09,
+        -8.608535091456075e-09,
+        2.0200000000000075e-10
+      ],
+      "balance_moment_n_mm": [
+        8.113192240995582e-08,
+        -1.0199766969650815e-07,
+        -5.372130678717523e-07
+      ],
+      "reaction_dof_norm_fraction": 8.863413943119617e-12,
+      "force_balance_fraction": 3.5696968079278173e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/97ff6fcf74da82667a83/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.4839241247187616e-08,
+        4.8317732037617134e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.1662071e-08,
+        -3.943937e-08,
+        -1.2382509999999998e-09
+      ],
+      "balance_residual_n": [
+        -6.822829752812386e-09,
+        8.878362037617135e-09,
+        -1.2382509999999998e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.484150033237844e-07,
+        1.8695190473293622e-07,
+        7.398939692550712e-07
+      ],
+      "reaction_dof_norm_fraction": 4.085215114838231e-12,
+      "force_balance_fraction": 4.517005110969348e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/99178fada7ba79a07cf4/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.493080834639841e-08,
+        4.279451104594045e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.984762800000001e-08,
+        -6.622147e-08,
+        -9.251200000000019e-10
+      ],
+      "balance_residual_n": [
+        4.9168196536016005e-09,
+        -2.3426958954059552e-08,
+        -9.251200000000019e-10
+      ],
+      "balance_moment_n_mm": [
+        3.182854443169891e-07,
+        -5.681262844833919e-08,
+        -1.5817234072274094e-06
+      ],
+      "reaction_dof_norm_fraction": 6.487789695593051e-12,
+      "force_balance_fraction": 7.494062874118581e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/9969f201ff07cff87e11/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.914426116580216e-08,
+        -4.312298074182763e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.293119999999999e-08,
+        5.333927e-08,
+        -1.6313100000000027e-09
+      ],
+      "balance_residual_n": [
+        -3.7869388341978234e-09,
+        1.0216289258172366e-08,
+        -1.6313100000000027e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.1859850771333716e-07,
+        1.5405146751468025e-07,
+        8.972586787464369e-07
+      ],
+      "reaction_dof_norm_fraction": 1.4354335219301118e-11,
+      "force_balance_fraction": 3.4218547332600757e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/9bd5ce6c34ed18aee4ec/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.6134330255445093e-08,
+        9.921620858222013e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.8848699999999993e-08,
+        -1.077554e-08,
+        -1.7526627e-09
+      ],
+      "balance_residual_n": [
+        2.7143697445549e-09,
+        -8.539191417779873e-10,
+        -1.7526627e-09
+      ],
+      "balance_moment_n_mm": [
+        4.1664809429272345e-09,
+        2.714361999600002e-07,
+        -1.102344137287734e-07
+      ],
+      "reaction_dof_norm_fraction": 5.739542093453079e-12,
+      "force_balance_fraction": 1.1543675288076683e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/9c84e0acd2c0c381154f/result.json",
+    "audit": {
+      "applied_total_n": [
+        9.689166802218097e-09,
+        9.299668590756482e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.0406760000000005e-08,
+        -1.420849e-08,
+        -1.6341499999999998e-09
+      ],
+      "balance_residual_n": [
+        -7.175931977819081e-10,
+        -4.908821409243517e-09,
+        -1.6341499999999998e-09
+      ],
+      "balance_moment_n_mm": [
+        7.824831637773877e-08,
+        -8.604684653179063e-08,
+        -6.245792419291554e-07
+      ],
+      "reaction_dof_norm_fraction": 9.85797543370437e-12,
+      "force_balance_fraction": 3.3766200062821034e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a01e91ce763e0af1cc63/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.783232381872949e-08,
+        6.019723741701455e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        6.468444000000006e-08,
+        -5.982766e-08,
+        3.634499999999992e-10
+      ],
+      "balance_residual_n": [
+        6.852116181270568e-09,
+        3.6957741701455293e-10,
+        3.634499999999992e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.9029627669200944e-08,
+        2.2434902081018128e-07,
+        5.511114662269849e-08
+      ],
+      "reaction_dof_norm_fraction": 2.3410834081139998e-11,
+      "force_balance_fraction": 1.964334718978611e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a0482afe79c8478b54fc/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.1075521772218053e-08,
+        -2.2953486222831998e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.0778529999999993e-08,
+        2.405565e-08,
+        -1.3294809999999993e-09
+      ],
+      "balance_residual_n": [
+        2.9699177221806046e-10,
+        1.1021637771680034e-09,
+        -1.3294809999999993e-09
+      ],
+      "balance_moment_n_mm": [
+        -7.469789469670322e-09,
+        1.5111036272080897e-07,
+        1.1926253454993265e-07
+      ],
+      "reaction_dof_norm_fraction": 4.159021594634641e-12,
+      "force_balance_fraction": 9.28975661352123e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a18a9c51bd563989b73e/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.8964527725984226e-08,
+        -1.0905921499215765e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.205473000000001e-08,
+        8.978436e-09,
+        -8.054119999999998e-10
+      ],
+      "balance_residual_n": [
+        -3.090202274015785e-09,
+        -1.9274854992157655e-09,
+        -8.054119999999998e-10
+      ],
+      "balance_moment_n_mm": [
+        7.109678925097567e-08,
+        -7.87347660822713e-08,
+        -1.2711841499404018e-07
+      ],
+      "reaction_dof_norm_fraction": 5.323948234789266e-12,
+      "force_balance_fraction": 1.2035749786241904e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a2896d82d78501ed4ad4/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.7800118712330004e-08,
+        -1.4028671557753114e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.511112e-08,
+        2.223399e-08,
+        7.740227e-09
+      ],
+      "balance_residual_n": [
+        7.311001287669997e-09,
+        8.205318442246885e-09,
+        7.740227e-09
+      ],
+      "balance_moment_n_mm": [
+        -3.8294827790536056e-09,
+        -6.846920994008507e-07,
+        1.148466045916946e-06
+      ],
+      "reaction_dof_norm_fraction": 2.0825816347059838e-12,
+      "force_balance_fraction": 4.834445839062329e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a32447b65698525e7fd5/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.6955319754051743e-08,
+        -4.872200065619836e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.0355104e-08,
+        4.625081e-08,
+        1.4808500000000003e-09
+      ],
+      "balance_residual_n": [
+        3.39978424594826e-09,
+        -2.4711906561983603e-09,
+        1.4808500000000003e-09
+      ],
+      "balance_moment_n_mm": [
+        6.671098258140072e-09,
+        -1.3160090955458418e-07,
+        -4.149837517628259e-07
+      ],
+      "reaction_dof_norm_fraction": 6.205830641922442e-12,
+      "force_balance_fraction": 2.190671762613945e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a399b749485a239ae2a8/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.757610838623805e-08,
+        -2.7099133603769587e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.0399610000000006e-08,
+        9.382465e-09,
+        -2.0259499999999984e-09
+      ],
+      "balance_residual_n": [
+        -7.1764983862380416e-09,
+        -1.7716668603769587e-08,
+        -2.0259499999999984e-09
+      ],
+      "balance_moment_n_mm": [
+        8.876707920917745e-08,
+        3.3351657617625597e-07,
+        -1.3650889148826398e-06
+      ],
+      "reaction_dof_norm_fraction": 1.111157937261993e-11,
+      "force_balance_fraction": 8.02281380231006e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a600dedb9b4715b4db89/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.7509249654086325e-09,
+        2.7420977488645804e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.4288609999999991e-08,
+        -2.213406e-08,
+        1.2257000000000008e-09
+      ],
+      "balance_residual_n": [
+        -8.537685034591359e-09,
+        5.286917488645803e-09,
+        1.2257000000000008e-09
+      ],
+      "balance_moment_n_mm": [
+        -7.152292393408333e-08,
+        -1.7333058551531302e-07,
+        4.0046503696826436e-07
+      ],
+      "reaction_dof_norm_fraction": 1.1301403645674393e-11,
+      "force_balance_fraction": 6.561141418376941e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a6adc8e8b41e9204b23b/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.371218326719827e-08,
+        -4.820063281840703e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        4.128939500000001e-08,
+        5.998768e-08,
+        -8.518800000000014e-10
+      ],
+      "balance_residual_n": [
+        7.57721173280174e-09,
+        1.1787047181592968e-08,
+        -8.518800000000014e-10
+      ],
+      "balance_moment_n_mm": [
+        -9.012319083949673e-08,
+        2.4199446235757723e-07,
+        9.017321805012746e-07
+      ],
+      "reaction_dof_norm_fraction": 5.02771969759971e-12,
+      "force_balance_fraction": 4.1809624719235363e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a747367b0b392c78802b/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.834079530586678e-08,
+        2.1258045990180108e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.3741353000000007e-08,
+        -8.314194e-09,
+        4.275699999999992e-10
+      ],
+      "balance_residual_n": [
+        -3.4599442305866767e-08,
+        1.2943851990180108e-08,
+        4.275699999999992e-10
+      ],
+      "balance_moment_n_mm": [
+        -8.138092211826365e-08,
+        -8.659672824227488e-07,
+        1.5512641664363644e-06
+      ],
+      "reaction_dof_norm_fraction": 7.1100059722166936e-12,
+      "force_balance_fraction": 1.9832822007943184e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a7732a96016f5f3c330f/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.323820602612159e-08,
+        1.190090159752799e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.8015009999999996e-08,
+        -1.229e-09,
+        2.2551700000000006e-09
+      ],
+      "balance_residual_n": [
+        5.223196026121592e-09,
+        1.067190159752799e-08,
+        2.2551700000000006e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.9398755092851562e-07,
+        -1.510330516355249e-07,
+        8.85469476488182e-07
+      ],
+      "reaction_dof_norm_fraction": 3.003279274755296e-12,
+      "force_balance_fraction": 6.027699974469602e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a77e2999a7c3a2553826/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.3323898429007386e-08,
+        1.3997521364217391e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.3677190999999995e-08,
+        -1.027047e-08,
+        -1.757404e-09
+      ],
+      "balance_residual_n": [
+        3.532925709926095e-10,
+        3.727051364217392e-09,
+        -1.757404e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.27274429855697e-08,
+        6.480920565815721e-08,
+        2.574173680230126e-07
+      ],
+      "reaction_dof_norm_fraction": 1.4985736024509244e-11,
+      "force_balance_fraction": 2.6836469347783467e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a81f5e1eb0cd889351f5/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.898321037671849e-08,
+        7.213499131353274e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.3060180000000004e-08,
+        -7.62536e-09,
+        1.3745269000000002e-10
+      ],
+      "balance_residual_n": [
+        4.0769696232815154e-09,
+        -4.118608686467257e-10,
+        1.3745269000000002e-10
+      ],
+      "balance_moment_n_mm": [
+        2.8863598722844197e-09,
+        8.842985791116675e-08,
+        -6.387920082221305e-08
+      ],
+      "reaction_dof_norm_fraction": 3.23496734664387e-12,
+      "force_balance_fraction": 2.0358579325275875e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a8e7723f46630b8f0333/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.0527239180380121e-07,
+        -2.5935698033663357e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.364519999999999e-08,
+        4.727565e-08,
+        -2.0765999999999976e-09
+      ],
+      "balance_residual_n": [
+        -2.1627191803801223e-08,
+        2.1339951966336643e-08,
+        -2.0765999999999976e-09
+      ],
+      "balance_moment_n_mm": [
+        -3.5761540820982516e-07,
+        -1.252289579735373e-07,
+        1.3634050467795636e-06
+      ],
+      "reaction_dof_norm_fraction": 5.920862638061645e-12,
+      "force_balance_fraction": 8.51478093548725e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/a98642a9d339accc1b62/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.4216327549074776e-09,
+        2.490088490958442e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.9472000000001274e-10,
+        -2.86258e-08,
+        1.1134350000000011e-09
+      ],
+      "balance_residual_n": [
+        -3.226912754907465e-09,
+        -3.7249150904155803e-09,
+        1.1134350000000011e-09
+      ],
+      "balance_moment_n_mm": [
+        1.1412071572601567e-08,
+        -1.5681780193772986e-07,
+        -4.011650871470527e-07
+      ],
+      "reaction_dof_norm_fraction": 7.015114054369121e-12,
+      "force_balance_fraction": 1.8267571626058295e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/aa3e2a9a697f6877348f/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.1292323399156885e-08,
+        1.1942589139835036e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.8772720000000026e-08,
+        -1.39953e-08,
+        1.1114000000000042e-09
+      ],
+      "balance_residual_n": [
+        -1.748039660084314e-08,
+        -2.0527108601649644e-09,
+        1.1114000000000042e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.1851604547323443e-07,
+        -8.2243885650914e-08,
+        -2.148359262751974e-06
+      ],
+      "reaction_dof_norm_fraction": 5.048008555647574e-12,
+      "force_balance_fraction": 4.4242315523617374e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/aee65f670e210c202b08/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.4509930085514497e-08,
+        5.992575324853533e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.4155729999999995e-08,
+        -3.798231e-09,
+        2.112299999999999e-10
+      ],
+      "balance_residual_n": [
+        -3.5420008551450277e-10,
+        -3.198973467514647e-09,
+        2.112299999999999e-10
+      ],
+      "balance_moment_n_mm": [
+        4.038217190499423e-08,
+        -5.349675698133874e-08,
+        -1.94673711007689e-07
+      ],
+      "reaction_dof_norm_fraction": 8.321345721381695e-12,
+      "force_balance_fraction": 1.8516880174756245e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/b3b8a152d73e6c93e1f1/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.982965944895113e-08,
+        2.489608164069068e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        6.517338e-08,
+        -1.922599e-08,
+        -2.9358100000000013e-09
+      ],
+      "balance_residual_n": [
+        5.343720551048866e-09,
+        5.670091640690682e-09,
+        -2.9358100000000013e-09
+      ],
+      "balance_moment_n_mm": [
+        -6.078947505632468e-08,
+        2.2575616638126906e-07,
+        1.6882845419833334e-06
+      ],
+      "reaction_dof_norm_fraction": 6.25826004935642e-12,
+      "force_balance_fraction": 2.2335506406392424e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/b917c8c8553e7f764da1/result.json",
+    "audit": {
+      "applied_total_n": [
+        7.747807728719636e-09,
+        -3.750244559341809e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.8678940000000005e-08,
+        6.224583e-09,
+        -9.404661e-10
+      ],
+      "balance_residual_n": [
+        -1.093113227128037e-08,
+        5.849558544065819e-09,
+        -9.404661e-10
+      ],
+      "balance_moment_n_mm": [
+        -2.0243711710443885e-09,
+        -2.611457906923523e-08,
+        3.166942764015506e-07
+      ],
+      "reaction_dof_norm_fraction": 8.778747048447912e-12,
+      "force_balance_fraction": 5.164431380961689e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/ba76226e9d4fe24dc1e3/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.6581188333475438e-07,
+        8.622635050414829e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.6023181999999998e-07,
+        1.650511e-09,
+        -1.1382654e-09
+      ],
+      "balance_residual_n": [
+        5.5800633347544e-09,
+        1.027314605041483e-08,
+        -1.1382654e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.38022860014349e-07,
+        1.7943375291011103e-07,
+        2.4684255517186437e-07
+      ],
+      "reaction_dof_norm_fraction": 2.395607098348195e-12,
+      "force_balance_fraction": 2.88898849097655e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/beda6aa562ded08938f5/result.json",
+    "audit": {
+      "applied_total_n": [
+        9.232394404534716e-08,
+        -3.996746045231703e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.2036979e-07,
+        3.026449e-08,
+        5.519579999999998e-09
+      ],
+      "balance_residual_n": [
+        -2.804584595465283e-08,
+        -9.702970452317024e-09,
+        5.519579999999998e-09
+      ],
+      "balance_moment_n_mm": [
+        6.54496475276897e-08,
+        -8.796294593978595e-07,
+        -7.753565200805924e-07
+      ],
+      "reaction_dof_norm_fraction": 5.006530526900664e-12,
+      "force_balance_fraction": 7.767517917949485e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/bfb127216eecdc643e42/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.8150062664499274e-08,
+        3.456696617831767e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.0847277999999999e-07,
+        -2.948605e-08,
+        5.887099999999997e-10
+      ],
+      "balance_residual_n": [
+        7.032271733550072e-08,
+        5.080916178317671e-09,
+        5.887099999999997e-10
+      ],
+      "balance_moment_n_mm": [
+        6.677749964114221e-08,
+        9.804679108857642e-07,
+        6.412336672904613e-07
+      ],
+      "reaction_dof_norm_fraction": 3.301803408332311e-12,
+      "force_balance_fraction": 1.5967850303193225e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/c14d4131f4f4308f3126/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.670478416177957e-08,
+        -1.95184668427828e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.554263999999998e-08,
+        -1.010876e-08,
+        9.381109999999997e-10
+      ],
+      "balance_residual_n": [
+        -1.1162144161779591e-08,
+        -2.9627226842782798e-08,
+        9.381109999999997e-10
+      ],
+      "balance_moment_n_mm": [
+        3.912589156635501e-07,
+        -2.1376285368872535e-07,
+        -1.993976887415655e-06
+      ],
+      "reaction_dof_norm_fraction": 9.447620257171507e-12,
+      "force_balance_fraction": 8.0667381472094e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/c1c096f6fcd4fccc5590/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.0975501153516234e-08,
+        6.791765372327063e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.0756390000000007e-08,
+        8.893881e-10,
+        5.0522199999999985e-09
+      ],
+      "balance_residual_n": [
+        -2.1911115351622736e-10,
+        7.681153472327063e-09,
+        5.0522199999999985e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.654138428401787e-08,
+        -1.648109734486274e-07,
+        1.1000000173837271e-07
+      ],
+      "reaction_dof_norm_fraction": 5.295416032973732e-12,
+      "force_balance_fraction": 3.590380072282129e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/c4d0b12c933768883a4e/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.492989091886557e-09,
+        -2.5502600919935503e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        5.803087100000002e-09,
+        3.007676e-08,
+        -9.137500000000005e-10
+      ],
+      "balance_residual_n": [
+        1.3100980081134453e-09,
+        4.5741590800644985e-09,
+        -9.137500000000005e-10
+      ],
+      "balance_moment_n_mm": [
+        -4.305599394345869e-08,
+        1.3165494731581178e-07,
+        3.429514125114441e-07
+      ],
+      "reaction_dof_norm_fraction": 1.972357334495281e-12,
+      "force_balance_fraction": 1.63087066908296e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/c60f8a90b690ecc4a55f/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.887066834020516e-09,
+        -2.1913422187935794e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.836233000000001e-08,
+        -1.614245e-08,
+        6.1678220000000005e-09
+      ],
+      "balance_residual_n": [
+        1.2475263165979493e-08,
+        -1.833379221879358e-08,
+        6.1678220000000005e-09
+      ],
+      "balance_moment_n_mm": [
+        8.279349793567307e-08,
+        -1.9431007334598262e-07,
+        -1.8557864454225754e-06
+      ],
+      "reaction_dof_norm_fraction": 6.526622920994399e-12,
+      "force_balance_fraction": 1.0360160704351323e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/c68334f9af736873a210/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.017715476336889e-07,
+        4.410134124555043e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -9.354765e-08,
+        -5.958599e-08,
+        2.1011799999999996e-09
+      ],
+      "balance_residual_n": [
+        8.223897633688898e-09,
+        -1.548464875444957e-08,
+        2.1011799999999996e-09
+      ],
+      "balance_moment_n_mm": [
+        6.519981341242959e-08,
+        -1.0800619383980964e-07,
+        -1.0233319615147828e-06
+      ],
+      "reaction_dof_norm_fraction": 5.261780883257648e-12,
+      "force_balance_fraction": 4.615235601533938e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/ca121560169471f72012/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.807200078474125e-08,
+        -1.723918785501155e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.1835710000000005e-08,
+        1.391284e-08,
+        -3.91061e-10
+      ],
+      "balance_residual_n": [
+        -3.763709215258756e-09,
+        -3.32634785501155e-09,
+        -3.91061e-10
+      ],
+      "balance_moment_n_mm": [
+        4.048077436639403e-08,
+        1.0755948794727542e-08,
+        -3.964479298345064e-07
+      ],
+      "reaction_dof_norm_fraction": 7.389537221245511e-12,
+      "force_balance_fraction": 3.0044476028824834e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/ce1b066999b243ec3384/result.json",
+    "audit": {
+      "applied_total_n": [
+        -8.388411742998869e-09,
+        -2.2696582391290576e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.4104580000000008e-08,
+        1.430215e-08,
+        7.202400000000029e-10
+      ],
+      "balance_residual_n": [
+        5.716168257001139e-09,
+        -8.394432391290577e-09,
+        7.202400000000029e-10
+      ],
+      "balance_moment_n_mm": [
+        1.1176058530712382e-07,
+        1.2078941258716758e-07,
+        -7.929617982058313e-07
+      ],
+      "reaction_dof_norm_fraction": 8.813456415926254e-12,
+      "force_balance_fraction": 4.2971048620639017e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/cf4a395a7989fdafa9a3/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.0497988013376016e-08,
+        2.3606602894687967e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.502987e-08,
+        -2.647089e-08,
+        9.071090000000003e-10
+      ],
+      "balance_residual_n": [
+        5.468118013376018e-09,
+        -2.8642871053120337e-09,
+        9.071090000000003e-10
+      ],
+      "balance_moment_n_mm": [
+        1.2856653052274353e-08,
+        -9.302516584725018e-08,
+        -1.0453803475183758e-07
+      ],
+      "reaction_dof_norm_fraction": 1.6075777138889182e-12,
+      "force_balance_fraction": 1.9102747337329917e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/d179c5a57399b25c0963/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.049360479210009e-08,
+        -3.280968563501574e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -6.160700999999999e-08,
+        3.314807e-08,
+        5.594390000000004e-10
+      ],
+      "balance_residual_n": [
+        -1.1134052078999007e-09,
+        3.38384364984263e-10,
+        5.594390000000004e-10
+      ],
+      "balance_moment_n_mm": [
+        -2.424458758836081e-09,
+        -8.063922114910183e-08,
+        -5.446185350911685e-09
+      ],
+      "reaction_dof_norm_fraction": 1.0651941446940819e-11,
+      "force_balance_fraction": 5.157016102902769e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/d390a517beeec675eb85/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.2293577356103924e-07,
+        -4.196630953856584e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.1969132e-07,
+        4.924378e-08,
+        -8.737400000000016e-10
+      ],
+      "balance_residual_n": [
+        -3.2444535610392354e-09,
+        7.277470461434159e-09,
+        -8.737400000000016e-10
+      ],
+      "balance_moment_n_mm": [
+        -1.3150944723870468e-07,
+        -9.270266002341188e-09,
+        1.2129019756886252e-06
+      ],
+      "reaction_dof_norm_fraction": 4.412953330765214e-12,
+      "force_balance_fraction": 2.2713215353586844e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/d4328e572ed831e2bc3e/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.004076004093804e-08,
+        3.2119388038154284e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.357146999999999e-08,
+        -3.329198e-08,
+        1.7690800000000015e-09
+      ],
+      "balance_residual_n": [
+        -1.3530709959061949e-08,
+        -1.1725919618457142e-09,
+        1.7690800000000015e-09
+      ],
+      "balance_moment_n_mm": [
+        -2.9062638047509824e-09,
+        -3.6287350217626763e-07,
+        -8.784753154904398e-08
+      ],
+      "reaction_dof_norm_fraction": 9.050001893878902e-12,
+      "force_balance_fraction": 6.417888445262802e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/d4388b157f3e43acc235/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.542545646771032e-09,
+        2.6279636244908033e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.087229999999999e-09,
+        -2.681299e-08,
+        1.631700000000008e-10
+      ],
+      "balance_residual_n": [
+        -2.5446843532289674e-09,
+        -5.333537550919667e-10,
+        1.631700000000008e-10
+      ],
+      "balance_moment_n_mm": [
+        6.793194642075289e-09,
+        -4.0646591695628037e-08,
+        6.523707133841225e-08
+      ],
+      "reaction_dof_norm_fraction": 2.7370465082240493e-12,
+      "force_balance_fraction": 1.3915680732517072e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/d62d6fa4d148e320b32e/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.654472572975578e-08,
+        -6.274234820580205e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.558397e-08,
+        6.041251e-08,
+        -1.0363799999999989e-09
+      ],
+      "balance_residual_n": [
+        1.0960755729755782e-08,
+        -2.3298382058020497e-09,
+        -1.0363799999999989e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.6062369575316164e-08,
+        1.3470910489741177e-07,
+        8.420837218402824e-08
+      ],
+      "reaction_dof_norm_fraction": 3.889678108757723e-12,
+      "force_balance_fraction": 5.175947623699479e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/d68d642b9c1552859709/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.235693040754995e-08,
+        -3.840779072561418e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.561111e-08,
+        4.199109e-08,
+        1.4900999999999678e-10
+      ],
+      "balance_residual_n": [
+        -3.254179592450046e-09,
+        3.5832992743858205e-09,
+        1.4900999999999678e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.774230501140934e-08,
+        -9.296121206874287e-08,
+        9.914257169335807e-08
+      ],
+      "reaction_dof_norm_fraction": 1.173118775057563e-11,
+      "force_balance_fraction": 1.1076954191255247e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/dc083549132fcd12b6cb/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.076632530493953e-10,
+        2.1399301886049216e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.244260000000001e-09,
+        -2.185916e-08,
+        -2.2091200000000003e-09
+      ],
+      "balance_residual_n": [
+        -4.636596746950605e-09,
+        -4.598581139507831e-10,
+        -2.2091200000000003e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.866558820883393e-09,
+        3.455073745529379e-08,
+        -2.5633210261075297e-07
+      ],
+      "reaction_dof_norm_fraction": 5.52987829418221e-12,
+      "force_balance_fraction": 2.8422407966275295e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e207be53c30d55f45e2f/result.json",
+    "audit": {
+      "applied_total_n": [
+        7.069684215821326e-08,
+        -8.501501724822447e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -7.280328999999999e-08,
+        6.491055e-09,
+        2.342100000000001e-09
+      ],
+      "balance_residual_n": [
+        -2.106447841786729e-09,
+        -2.0104467248224465e-09,
+        2.342100000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        6.827128453974365e-08,
+        -2.0281328236985407e-07,
+        -2.435865487184347e-07
+      ],
+      "reaction_dof_norm_fraction": 7.737143364220872e-12,
+      "force_balance_fraction": 9.667111529751856e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e2109aaeec0b7c49a32a/result.json",
+    "audit": {
+      "applied_total_n": [
+        -8.37718516777386e-09,
+        1.4229897260520374e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.771419999999996e-10,
+        -1.837323e-08,
+        -5.354490000000002e-09
+      ],
+      "balance_residual_n": [
+        -8.75432716777386e-09,
+        -1.695024027394796e-08,
+        -5.354490000000002e-09
+      ],
+      "balance_moment_n_mm": [
+        1.6000788297223374e-07,
+        1.2294008346819423e-07,
+        -1.5563373235429056e-06
+      ],
+      "reaction_dof_norm_fraction": 2.6187343084756473e-12,
+      "force_balance_fraction": 1.1842290544910523e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e35bff1086499e75c5cb/result.json",
+    "audit": {
+      "applied_total_n": [
+        9.249475851902389e-09,
+        7.031701443338534e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.4532290000000007e-08,
+        -2.526679e-09,
+        1.2533999999999998e-09
+      ],
+      "balance_residual_n": [
+        -5.282814148097618e-09,
+        4.5050224433385336e-09,
+        1.2533999999999998e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.0736014868704374e-08,
+        -5.121581093372743e-07,
+        5.670719698157934e-07
+      ],
+      "reaction_dof_norm_fraction": 5.127395240207251e-12,
+      "force_balance_fraction": 1.941422790836013e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e37a7764bc50358484a1/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.2936425264342688e-09,
+        1.5356249605247285e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.6034399999999992e-10,
+        4.969872e-09,
+        -6.805770000000004e-10
+      ],
+      "balance_residual_n": [
+        -1.4539865264342687e-09,
+        6.505496960524728e-09,
+        -6.805770000000004e-10
+      ],
+      "balance_moment_n_mm": [
+        7.708033066208093e-08,
+        3.321039921435336e-07,
+        9.399128988138399e-07
+      ],
+      "reaction_dof_norm_fraction": 1.831082203521168e-12,
+      "force_balance_fraction": 1.5871881099678483e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e629348b6cd91d7cbe05/result.json",
+    "audit": {
+      "applied_total_n": [
+        7.319763994928508e-08,
+        -3.9171561994066906e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -6.855382000000002e-08,
+        3.42167e-08,
+        6.62724e-10
+      ],
+      "balance_residual_n": [
+        4.643819949285061e-09,
+        -4.9548619940669075e-09,
+        6.62724e-10
+      ],
+      "balance_moment_n_mm": [
+        4.7667396817234586e-08,
+        1.0408030571852959e-07,
+        -7.765287516007013e-07
+      ],
+      "reaction_dof_norm_fraction": 4.935693959859119e-12,
+      "force_balance_fraction": 1.7453112766739558e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e64e627314e491b4c27f/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.852859720154811e-08,
+        2.8916019800817594e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.2225730000000013e-08,
+        -3.436899e-08,
+        1.535340000000001e-09
+      ],
+      "balance_residual_n": [
+        -6.302867201548096e-09,
+        -5.4529701991824044e-09,
+        1.535340000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        2.156763408840101e-08,
+        -2.579373099900544e-07,
+        -3.2563086097030634e-07
+      ],
+      "reaction_dof_norm_fraction": 1.0158391996135987e-11,
+      "force_balance_fraction": 3.122489308707687e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e81df378a2680262290c/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.48112753967689e-08,
+        4.190030722384108e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        9.664283999999999e-08,
+        -5.291926e-08,
+        -4.3964599999999995e-09
+      ],
+      "balance_residual_n": [
+        2.1831564603231083e-08,
+        -1.101895277615892e-08,
+        -4.3964599999999995e-09
+      ],
+      "balance_moment_n_mm": [
+        -5.564877791177015e-10,
+        4.089318375176231e-07,
+        -7.451208925752161e-07
+      ],
+      "reaction_dof_norm_fraction": 8.557900832983966e-12,
+      "force_balance_fraction": 8.095599727790448e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e8c519b3bcc395bda161/result.json",
+    "audit": {
+      "applied_total_n": [
+        3.477532573015196e-08,
+        2.8303119847805647e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.635959999999999e-08,
+        -2.733246e-08,
+        -2.8155600000000006e-09
+      ],
+      "balance_residual_n": [
+        -1.1584274269848029e-08,
+        9.706598478056462e-10,
+        -2.8155600000000006e-09
+      ],
+      "balance_moment_n_mm": [
+        -2.2763370589512083e-09,
+        2.8639688473321167e-09,
+        -2.4769067220200488e-08
+      ],
+      "reaction_dof_norm_fraction": 7.99994309766626e-12,
+      "force_balance_fraction": 4.2200467743204266e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/e98b976c13e5b07fa2ac/result.json",
+    "audit": {
+      "applied_total_n": [
+        5.023292715122807e-08,
+        -8.02054955784115e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.4683879999999987e-08,
+        3.97914e-09,
+        1.4404999999999724e-10
+      ],
+      "balance_residual_n": [
+        5.549047151228082e-09,
+        -4.04140955784115e-09,
+        1.4404999999999724e-10
+      ],
+      "balance_moment_n_mm": [
+        5.8981725478190624e-08,
+        -3.675546111247964e-08,
+        -2.196490986529021e-07
+      ],
+      "reaction_dof_norm_fraction": 1.1695458232866577e-11,
+      "force_balance_fraction": 2.344221736806391e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/eba1c385af921cac216b/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.566324373125099e-09,
+        -4.198392389298533e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.865551600000001e-08,
+        5.861391e-08,
+        2.5905609999999997e-09
+      ],
+      "balance_residual_n": [
+        2.5221840373125108e-08,
+        1.662998610701467e-08,
+        2.5905609999999997e-09
+      ],
+      "balance_moment_n_mm": [
+        -7.245277286311629e-08,
+        -1.6437852399869693e-07,
+        -9.130829788161142e-07
+      ],
+      "reaction_dof_norm_fraction": 2.8877708943552456e-12,
+      "force_balance_fraction": 9.070212746036504e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/eba904e573306310d70f/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.782822351970026e-07,
+        -3.7802692531840876e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.1821343999999998e-07,
+        2.783265e-08,
+        -2.974188000000001e-09
+      ],
+      "balance_residual_n": [
+        -3.9931204802997386e-08,
+        -9.970042531840876e-09,
+        -2.974188000000001e-09
+      ],
+      "balance_moment_n_mm": [
+        1.3925482162735066e-07,
+        -2.966674508970544e-07,
+        -1.3934955937272683e-06
+      ],
+      "reaction_dof_norm_fraction": 7.255657044143552e-12,
+      "force_balance_fraction": 1.1097965448426072e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/f1cb3fe16b7752621375/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.8141940333625826e-08,
+        -1.8026256043413014e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -3.6229540000000006e-08,
+        -1.753981e-09,
+        -1.8009999999999999e-09
+      ],
+      "balance_residual_n": [
+        -8.08759966637418e-09,
+        -3.5566066043413015e-09,
+        -1.8009999999999999e-09
+      ],
+      "balance_moment_n_mm": [
+        4.071672484645266e-08,
+        5.882261996556014e-09,
+        3.6969648154373276e-08
+      ],
+      "reaction_dof_norm_fraction": 5.707084475255127e-12,
+      "force_balance_fraction": 3.92799850204276e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/f58763a6c36508ff533e/result.json",
+    "audit": {
+      "applied_total_n": [
+        -2.990407210745616e-08,
+        3.010029558936367e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.498943000000001e-08,
+        -1.780037e-08,
+        -4.119825e-09
+      ],
+      "balance_residual_n": [
+        5.085357892543849e-09,
+        -1.4790340441063633e-08,
+        -4.119825e-09
+      ],
+      "balance_moment_n_mm": [
+        1.637423775024656e-07,
+        4.2391465856396957e-07,
+        -9.420396876007862e-07
+      ],
+      "reaction_dof_norm_fraction": 6.063641009744385e-12,
+      "force_balance_fraction": 4.786764017867629e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/f9dae0aeee4ac5914487/result.json",
+    "audit": {
+      "applied_total_n": [
+        -4.8125116336450446e-08,
+        1.0635062608344015e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.003422000000002e-08,
+        -7.102497e-09,
+        5.859396e-09
+      ],
+      "balance_residual_n": [
+        -1.8090896336450426e-08,
+        3.5325656083440146e-09,
+        5.859396e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.291042568711277e-08,
+        -8.134637983179085e-07,
+        -2.058897487884713e-07
+      ],
+      "reaction_dof_norm_fraction": 8.297879910510429e-12,
+      "force_balance_fraction": 4.742450082530094e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/fa4ad8f730062a4788aa/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.9501356973705697e-08,
+        -4.39897007709078e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.8792649999999996e-08,
+        7.053663e-09,
+        -2.0998000000000014e-10
+      ],
+      "balance_residual_n": [
+        -7.08706973705701e-10,
+        2.6546929229092197e-09,
+        -2.0998000000000014e-10
+      ],
+      "balance_moment_n_mm": [
+        -5.3661314477656034e-08,
+        -6.780990250073934e-10,
+        4.2350089669939015e-08
+      ],
+      "reaction_dof_norm_fraction": 6.381978654817977e-12,
+      "force_balance_fraction": 1.2975831849547307e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/fde9d452168630b8f55e/result.json",
+    "audit": {
+      "applied_total_n": [
+        4.310183499001141e-08,
+        -7.846239213904482e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -4.4662720000000004e-08,
+        2.123309e-09,
+        -8.07403e-09
+      ],
+      "balance_residual_n": [
+        -1.5608850099885926e-09,
+        -5.722930213904483e-09,
+        -8.07403e-09
+      ],
+      "balance_moment_n_mm": [
+        -4.011235934720779e-08,
+        5.149465057787563e-07,
+        -6.700610003759734e-07
+      ],
+      "reaction_dof_norm_fraction": 6.789961471322799e-12,
+      "force_balance_fraction": 2.496696736322067e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/fe438778eac1e9f460e2/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.0206602496509731e-07,
+        -1.7712054045659897e-10,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.0481648e-07,
+        5.377756e-09,
+        -1.546918e-09
+      ],
+      "balance_residual_n": [
+        -2.750455034902685e-09,
+        5.200635459543401e-09,
+        -1.546918e-09
+      ],
+      "balance_moment_n_mm": [
+        -7.173606263490567e-08,
+        8.920054603219276e-08,
+        4.694769447502858e-07
+      ],
+      "reaction_dof_norm_fraction": 4.047467085327651e-12,
+      "force_balance_fraction": 1.6712890678117722e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/coarse/cases/feda17b233ebba801ac0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -9.293040648117312e-08,
+        -4.640128281607758e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        9.554836e-08,
+        4.01205e-08,
+        5.106600000000012e-10
+      ],
+      "balance_residual_n": [
+        2.6179535188268763e-09,
+        -6.280782816077584e-09,
+        5.106600000000012e-10
+      ],
+      "balance_moment_n_mm": [
+        -7.142557830819585e-08,
+        -8.530613652547603e-09,
+        -1.1134736969889862e-07
+      ],
+      "reaction_dof_norm_fraction": 9.018571112042886e-12,
+      "force_balance_fraction": 1.9748910367781298e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/36fe9a0384e9cc38fe10/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.4036986562568927e-09,
+        1.1847461678371474e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.8614249999999997e-08,
+        2.026728e-08,
+        2.517733e-09
+      ],
+      "balance_residual_n": [
+        -2.201794865625689e-08,
+        3.2114741678371476e-08,
+        2.517733e-09
+      ],
+      "balance_moment_n_mm": [
+        -3.9895135623736834e-07,
+        -4.453650776010451e-07,
+        1.0636893261580596e-06
+      ],
+      "reaction_dof_norm_fraction": 4.919528195851622e-12,
+      "force_balance_fraction": 9.163122944737625e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/b1558f3242bfd276fac4/result.json",
+    "audit": {
+      "applied_total_n": [
+        -6.04332277553965e-08,
+        -2.795172271419233e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        8.528197e-08,
+        3.996364e-08,
+        -7.963849999999996e-10
+      ],
+      "balance_residual_n": [
+        2.4848742244603505e-08,
+        1.2011917285807669e-08,
+        -7.963849999999996e-10
+      ],
+      "balance_moment_n_mm": [
+        -8.777467665004778e-08,
+        -1.5044127103908503e-07,
+        9.800222815478583e-07
+      ],
+      "reaction_dof_norm_fraction": 3.4755751708318567e-12,
+      "force_balance_fraction": 1.0118520953989948e-12,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/c75982a4df8bb68a6eb2/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.3324218173238478e-08,
+        3.697256723000919e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.0029289999999996e-08,
+        -3.65754e-08,
+        1.7019903e-09
+      ],
+      "balance_residual_n": [
+        2.3353508173238474e-08,
+        3.9716723000919334e-10,
+        1.7019903e-09
+      ],
+      "balance_moment_n_mm": [
+        6.874964635027391e-08,
+        1.8699975369828795e-07,
+        1.4516719397905574e-07
+      ],
+      "reaction_dof_norm_fraction": 2.57190544129843e-12,
+      "force_balance_fraction": 5.381919260352498e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/ca3399f26475637cb3d0/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.8669924273240213e-08,
+        4.203901227128881e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.6809090000000004e-08,
+        -1.594611e-08,
+        -1.563061e-09
+      ],
+      "balance_residual_n": [
+        -1.8608342732402086e-09,
+        -1.174220877287112e-08,
+        -1.563061e-09
+      ],
+      "balance_moment_n_mm": [
+        1.3798524132171301e-07,
+        9.353110157502133e-08,
+        -9.703405567910665e-07
+      ],
+      "reaction_dof_norm_fraction": 8.357176392140875e-12,
+      "force_balance_fraction": 7.776809459820388e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/d973baf5bb9151b5d83e/result.json",
+    "audit": {
+      "applied_total_n": [
+        2.3335424259585125e-08,
+        1.299005703003786e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.2423729e-08,
+        -3.392352e-09,
+        3.8067350000000005e-09
+      ],
+      "balance_residual_n": [
+        9.116952595851255e-10,
+        9.59770503003786e-09,
+        3.8067350000000005e-09
+      ],
+      "balance_moment_n_mm": [
+        -1.1505805401358483e-07,
+        -3.023807123188965e-07,
+        9.618961172308369e-08
+      ],
+      "reaction_dof_norm_fraction": 1.1485760832020835e-12,
+      "force_balance_fraction": 5.713256944707575e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/da07c7d521ca7ff24e8f/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.118853840802018e-09,
+        6.830044974037719e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        2.1272070000000013e-09,
+        -3.248326e-09,
+        -9.987699999999974e-12
+      ],
+      "balance_residual_n": [
+        -2.9916468408020166e-09,
+        3.581718974037719e-09,
+        -9.987699999999974e-12
+      ],
+      "balance_moment_n_mm": [
+        -3.332400500432151e-08,
+        -1.383431850316349e-08,
+        3.541736546018453e-07
+      ],
+      "reaction_dof_norm_fraction": 9.735185408357078e-13,
+      "force_balance_fraction": 2.839762254927581e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/e6f403a2af4cd35d217a/result.json",
+    "audit": {
+      "applied_total_n": [
+        -3.47983510617933e-08,
+        2.4109500174063214e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.351104e-08,
+        -2.850707e-08,
+        -2.3340939999999998e-09
+      ],
+      "balance_residual_n": [
+        -1.287311061793297e-09,
+        -4.397569825936787e-09,
+        -2.3340939999999998e-09
+      ],
+      "balance_moment_n_mm": [
+        5.413507369797683e-08,
+        1.482357799580704e-07,
+        -3.90395718417932e-07
+      ],
+      "reaction_dof_norm_fraction": 2.8099822021732613e-12,
+      "force_balance_fraction": 1.6616903867287109e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "data/phase2/fine/cases/f38773468baaaa367b47/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.003386315318494e-09,
+        4.019927946075086e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -2.6561999999999983e-09,
+        -3.179478e-08,
+        -8.769800000000004e-10
+      ],
+      "balance_residual_n": [
+        -9.659586315318492e-09,
+        8.404499460750861e-09,
+        -8.769800000000004e-10
+      ],
+      "balance_moment_n_mm": [
+        -6.876746058470224e-08,
+        -2.396578590194729e-08,
+        2.3167287828753806e-07
+      ],
+      "reaction_dof_norm_fraction": 3.488168256337716e-12,
+      "force_balance_fraction": 3.3667610834131217e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/phase2-diagnostic-verification/candidate-0-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        -7.625068576544436e-09,
+        3.7801264340942e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.0409643999999998e-08,
+        -3.691143e-08,
+        5.943399999999994e-10
+      ],
+      "balance_residual_n": [
+        2.7845754234555617e-09,
+        8.898343409420011e-10,
+        5.943399999999994e-10
+      ],
+      "balance_moment_n_mm": [
+        -2.5425993711238114e-08,
+        -2.6246851824799152e-08,
+        -3.4460717984541506e-08
+      ],
+      "reaction_dof_norm_fraction": 1.6911271721311358e-12,
+      "force_balance_fraction": 1.0653940465108992e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/phase2-diagnostic-verification/candidate-0-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.0996462740386903e-08,
+        3.4506317803106867e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.7287012e-08,
+        1.469911e-10,
+        -4.6247999999998867e-11
+      ],
+      "balance_residual_n": [
+        -6.290549259613095e-09,
+        3.597622880310687e-09,
+        -4.6247999999998867e-11
+      ],
+      "balance_moment_n_mm": [
+        1.582269243921148e-08,
+        -1.6995647951389463e-08,
+        2.009861635872751e-07
+      ],
+      "reaction_dof_norm_fraction": 2.551778358170577e-12,
+      "force_balance_fraction": 4.0259972790302016e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/phase2-diagnostic-verification/candidate-1-compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        1.3982767654852069e-07,
+        -1.041030373016838e-08,
+        0.0
+      ],
+      "reaction_total_n": [
+        -1.4267247e-07,
+        6.454326e-09,
+        -4.1268710000000006e-10
+      ],
+      "balance_residual_n": [
+        -2.844793451479321e-09,
+        -3.95597773016838e-09,
+        -4.1268710000000006e-10
+      ],
+      "balance_moment_n_mm": [
+        5.526016006393504e-08,
+        2.517599465492465e-08,
+        -3.5442227362523944e-07
+      ],
+      "reaction_dof_norm_fraction": 4.365963429621158e-12,
+      "force_balance_fraction": 1.7464585239059503e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/phase2-diagnostic-verification/candidate-1-tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        -1.3496226358711283e-08,
+        -7.528420553626347e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        1.537976e-08,
+        6.509139e-09,
+        1.1206439999999996e-09
+      ],
+      "balance_residual_n": [
+        1.883533641288716e-09,
+        -1.0192815536263469e-09,
+        1.1206439999999996e-09
+      ],
+      "balance_moment_n_mm": [
+        1.398336480929588e-08,
+        1.6988118522073307e-08,
+        -1.7750707953248805e-07
+      ],
+      "reaction_dof_norm_fraction": 5.261306943113414e-12,
+      "force_balance_fraction": 1.3428453343651745e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/engine-example/compression/result.json",
+    "audit": {
+      "applied_total_n": [
+        -5.130864622060471e-10,
+        -6.432413268697701e-09,
+        0.0
+      ],
+      "reaction_total_n": [
+        3.716880000000014e-10,
+        6.517194e-09,
+        -2.418500000000016e-11
+      ],
+      "balance_residual_n": [
+        -1.4139846220604573e-10,
+        8.478073130229944e-11,
+        -2.418500000000016e-11
+      ],
+      "balance_moment_n_mm": [
+        1.3930770442762247e-08,
+        -9.868788830411162e-09,
+        -3.968848433310006e-09
+      ],
+      "reaction_dof_norm_fraction": 5.063702249394288e-12,
+      "force_balance_fraction": 2.5340075953085834e-14,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  },
+  {
+    "path": "runs/engine-example/tension/result.json",
+    "audit": {
+      "applied_total_n": [
+        6.243493499979991e-10,
+        2.0321522242738865e-11,
+        0.0
+      ],
+      "reaction_total_n": [
+        -5.496044e-10,
+        5.85479e-11,
+        -1.8691116e-10
+      ],
+      "balance_residual_n": [
+        7.474494999799907e-11,
+        7.886942224273886e-11,
+        -1.8691116e-10
+      ],
+      "balance_moment_n_mm": [
+        -3.002900738767097e-09,
+        9.742257491759263e-09,
+        -1.5958612883832677e-10
+      ],
+      "reaction_dof_norm_fraction": 2.139746350368239e-12,
+      "force_balance_fraction": 2.0113216133909806e-13,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    }
+  }
+]

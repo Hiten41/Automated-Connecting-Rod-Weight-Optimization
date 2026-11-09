@@ -103,7 +103,7 @@ def optimize(
     output,
     constraints=Constraints(),
     mesh=MeshSettings(),
-    starts=3,
+    starts=5,
     seed=42,
     mass_function=None,
     solver=solve,
@@ -124,6 +124,12 @@ def optimize(
     out = Path(output)
     out.mkdir(parents=True, exist_ok=True)
     start = time.perf_counter()
+    if (
+        hasattr(surrogate, "metadata")
+        and surrogate.metadata.get("mesh_configuration", {}).get("boundary_mode")
+        != mesh.boundary_mode
+    ):
+        raise ValueError("Surrogate and verification boundary conditions differ")
     own_mass = mass_function is None
     mass = mass_function or CADMass(m)
     diagnostics = []
@@ -190,6 +196,11 @@ def optimize(
                 seeds.append(z)
             if len(seeds) >= starts:
                 break
+        if not seeds:
+            trial = [rng.uniform(0, 1, 5) for _ in range(100)]
+            seeds = sorted(
+                trial, key=lambda z: float(np.sum(np.minimum(cons(z), 0) ** 2))
+            )[:starts]
         for start_index, z in enumerate(seeds):
             print(f"Optimization start {start_index + 1}/{len(seeds)}", flush=True)
 
@@ -259,7 +270,11 @@ def optimize(
             if safe:
                 final = verified[-1]
                 break
-        status = "VERIFIED" if final else "NO_VERIFIED_FEASIBLE_DESIGN"
+        status = (
+            "PROVISIONAL_FEA_PASS_NOT_QUALIFIED"
+            if final
+            else "NO_VERIFIED_FEASIBLE_DESIGN"
+        )
         baseline_results = (
             [
                 solver(g, m, load_case, mesh, out / f"baseline-{load_case.kind}")
@@ -270,6 +285,9 @@ def optimize(
         )
         report = dict(
             status=status,
+            mechanically_qualified=False,
+            convergence_status="INSUFFICIENT COMPUTE / VALIDATION",
+            stress_guard_claim="1.2 heuristic, not calibrated confidence; observed validation residual added separately",
             mesh_qualification="Constraint pass at specified mesh only; peak-stress convergence requires a separate study",
             baseline_geometry=g.to_dict(),
             baseline_mass_kg=baseline,

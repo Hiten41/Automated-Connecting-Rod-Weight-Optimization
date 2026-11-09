@@ -1,0 +1,15 @@
+# Bearing-load approximation
+
+LEGACY_CLAMPED_BORE preserves all translations fixed on the big-end bore and constant global-axis traction on the whole small-end bore. It permits unphysical tensile contact traction and suppresses big-end deformation.
+
+COSINE_BEARING prescribes radial outward force from each bore center into the rod material. For desired axial sign s, q(phi)=q0 max(s*cos(phi),0). Pressure is nonnegative on one semicylinder, zero on the other. Compression loads the facing bore halves; tension loads the opposite halves. For radius R and thickness H, integrating the axial component gives F=q0*R*H*pi/2, hence q0=2*abs(F)/(pi*R*H). No tensile bearing pressure is imposed. This is a contact-free approximation, not nonlinear pin-bearing contact.
+
+Discrete implementation uses planar quadratic triangle area weights at midside nodes, multiplied by the cosine and radial direction. A minimum relative correction enforces the desired axial resultant, zero lateral resultant and zero moments. The correction is explicitly recorded and rejected if any weight becomes negative or relative correction exceeds25%. This is a nodal quadrature approximation to prescribed pressure; it is not exact curved-face consistent pressure integration. Surface discretization therefore requires convergence evidence.
+
+Equal and opposite loads are applied at both bores. Six scalar point constraints remove the six rigid-body modes: all translations at A near(0,-R,0), x/z at B near(0,+R,0), x at C near(0,-R,H). The rigid-mode constraint matrix must have rank6. Since the applied loads are self-equilibrated, these are displacement gauges, not a stiff bore clamp. CalculiX reactions are checked at these constrained DOFs, with a1% force tolerance. Maximum displacement is reported in this gauge frame and must not be equated to displacement of a fully clamped assembly.
+
+Actual comparison records are in `runs/phase2-experiments`. The geometry/material/resultants are matched, but independent meshes can differ slightly. Bearing loads allow ring deformation and shift the dominant hotspot to the big-end/shank junction. Lower load does not imply lower peak stress when the loaded semicylinder changes. A tension/compression comparison is not simply sign reversal of the same contact region.
+
+CalculiX RF is the sum of applied load and reaction, so the audit subtracts actual deck CLOAD values at constrained DOFs before computing support reaction and force/moment balance. See the [CalculiX manual, NODE PRINT](https://www.feacluster.com/CalculiX/ccx_2.18/doc/ccx/node307.html). This model has no MPC or DLOAD terms. Earlier raw records are retained; a separate audit can reconstruct the corrected quantity from the unchanged input deck and DAT.
+
+The legacy comparison decks were rerun with RF output only, preserving original geometry, mesh and loads. Peak stresses were unchanged. Summed reactions were +28000.00009 N in compression and -18000.00009 N in tension; normalized force residuals were below5e-9. See `evidence/phase2/legacy-reaction-audit.json`. The186 bearing cases audited from raw decks/DAT had maximum normalized force residual below2e-12.

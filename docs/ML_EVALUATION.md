@@ -1,31 +1,79 @@
-# Machine-learning evaluation
+# Phase 2 ML evaluation
 
-## Provenance and scope
-The active model uses 120 actual CalculiX analyses from 60 batch-LHS geometries (seed 44), each solved in compression and tension at a 5 mm maximum mesh size. Generation took 349.43 s, with zero failed analyses. Packaging is fixed to 145/50/24 mm; no packaging generalization is claimed.
+Historical 120 Phase 1 analyses are excluded from Phase 2 training. Geometry/BC/fidelity/version mismatch raises an error. Radius is fixed 1 mm; five other section dimensions vary. Learned targets use exact linear-static stress/F and displacement*E/F scaling to remove known load/modulus dependence. Geometry groups prevent related compression/tension cases leaking across splits.
 
-The pilot (24 analyses) and initial unstratified expansion (120 analyses) are retained as separately labelled experiments and are **not** part of the active model. The one-point-at-a-time sampling issue was found and corrected before final model training. Original 300-row analytical-response data remains separate and unused.
+Dataset: 120 actual solver analyses. Split {'train': 72, 'validation': 24, 'test': 24}; selected mlp. Group separation: True.
 
-Dataset SHA256: `ef2f8d2769ca7e8205429e5ef581dc4e48a5fa480021f85a08d8803c05c69fe1`.
+## ridge
 
-## Split and selection
-Geometry groups include all load/material variants and any geometries within 1% of each dimensional span, using transitive neighbour grouping. Train/validation/test counts are 72/24/24, representing 36/12/12 disjoint geometry groups. Train-only fitting/scaling prevents target leakage. Supported feature envelopes derive from training data only, and material combinations must have appeared in training.
+- max_von_mises_mpa: MAE 139.88, RMSE 176.559, R² 0.927453.
+- max_displacement_mm: MAE 0.14324, RMSE 0.185698, R² 0.836736.
 
-Selected model: **mlp**, chosen by average validation MAE normalized by training-output standard deviation. The selected estimator remains fitted only to the training partition; validation is reserved for model selection and observed underprediction margins. Test results are not used for selection.
+## extra_trees
 
-| Model | Test stress MAE / RMSE (MPa) | Test stress R² | Test displacement MAE / RMSE (mm) | Test displacement R² |
-|---|---|---|---|---|
-| ridge | 24.7848 / 31.5116 | 0.95225 | 0.039656 / 0.051558 | 0.80837 |
-| extra_trees | 48.5886 / 64.5477 | 0.79964 | 0.045484 / 0.048608 | 0.82967 |
-| mlp | 14.9736 / 16.9187 | 0.98623 | 0.007304 / 0.009402 | 0.99363 |
+- max_von_mises_mpa: MAE 145.436, RMSE 185.471, R² 0.919944.
+- max_displacement_mm: MAE 0.062641, RMSE 0.0966484, R² 0.955775.
 
-## Uncertainty and constraints
-Observed validation maximum underprediction margins: 38.0113 MPa and 0.065922 mm. These are additive optimization guards, not calibrated confidence intervals or a guarantee on unseen geometry. They do not include mesh discretization error.
+## mlp
 
-Constraint-region definition: FoS in [1.4,2.2] or displacement in [0.28,0.42] mm. There are 9 test cases in this region. Metrics: `{"max_von_mises_mpa": {"MAE": 12.958601494211653, "RMSE": 15.356900405589592, "R2": 0.9267748912828164}, "max_displacement_mm": {"MAE": 0.007294494200267591, "RMSE": 0.009340089008928902, "R2": 0.991524971581352}}`.
+- max_von_mises_mpa: MAE 28.7433, RMSE 41.5103, R² 0.99599.
+- max_displacement_mm: MAE 0.0145794, RMSE 0.0206051, R² 0.99799.
 
-![Held-out predictions and residuals](../models/fea_surrogate.evaluation.png)
+## analytical_nominal_screening
 
-## Reproducibility and limitations
-`models/fea_surrogate.json` stores all feature definitions, training hyperparameters, software versions, dataset fingerprint, split sample IDs, supported ranges, train/validation/test metrics and residual guards. The trusted local joblib file contains fitted scalers and estimator. Test predictions are in the adjacent `.test.csv`. Mass is never learned: it is computed from CAD volume and material density.
+- max_von_mises_mpa: MAE 1082.03, RMSE 1253.72, R² -2.65801.
+- max_displacement_mm: MAE 0.458444, RMSE 0.617999, R² -0.808222.
 
-Only 36 training geometries and one nominal mesh fidelity are represented. Strong held-out R² is evidence for this bounded experiment, not engine-life validation. The MLP can violate physics outside its sampled domain, so inference rejects nonpositive values and out-of-range inputs; final FEA remains mandatory. The alternate tree model is not selected just because it is available.
+Near-constraint test count: 6; metrics: {'max_von_mises_mpa': {'MAE': 20.302694875877666, 'RMSE': 23.33633121406941, 'R2': 0.9904804461135376}, 'max_displacement_mm': {'MAE': 0.004492162051473419, 'RMSE': 0.004944405009537216, 'R2': 0.997379183900376}}. Sparse coverage is not proof of accurate feasibility-boundary prediction. Observed residual allowance [41.354871222562906, 0.12295013066798077] is not calibrated confidence. The1.2 multiplier remains a labelled heuristic. Coarse8 mm training is not converged truth.
+
+## Paired-fidelity investigation
+
+```json
+{
+  "status": "EXPLORATORY_SMALL_SAMPLE",
+  "coarse_mesh_mm": 8,
+  "fine_mesh_mm": 4,
+  "coarse_train_cases": 32,
+  "fine_train_cases": 4,
+  "held_out_fine_cases": 4,
+  "held_out_geometry_groups": [
+    34,
+    22
+  ],
+  "geometry_leakage": false,
+  "coarse_prediction_on_fine": {
+    "max_von_mises_mpa": {
+      "MAE": 99.70016112494483,
+      "RMSE": 109.59368875167524,
+      "R2": 0.9146369238355451
+    },
+    "max_displacement_mm": {
+      "MAE": 0.3793317592077799,
+      "RMSE": 0.38991816981142235,
+      "R2": 0.1489411911852777
+    }
+  },
+  "additive_ridge_correction_on_fine": {
+    "max_von_mises_mpa": {
+      "MAE": 99.55070763894561,
+      "RMSE": 113.5450202617204,
+      "R2": 0.9083705348347519
+    },
+    "max_displacement_mm": {
+      "MAE": 0.17323626939292291,
+      "RMSE": 0.20301336362894182,
+      "R2": 0.7692924122810676
+    }
+  },
+  "mean_fine_minus_coarse": {
+    "max_von_mises_mpa": 59.81366271166119,
+    "max_displacement_mm": 0.01259950656835562
+  },
+  "selected_for_optimization": false,
+  "limitation": "Two held-out geometry groups only. 4mm is finer than 8mm, not independently converged. Correction is not promoted from this small investigation.",
+  "coarse_source": "data\\phase2\\initial36\\verified.jsonl",
+  "coarse_sha256": "ba3fe87b74dc08ad5534772edeb76782ba27f73b1acd9158c51ffe90080bb199"
+}
+```
+
+The correction is not promoted to optimization based on this small test.

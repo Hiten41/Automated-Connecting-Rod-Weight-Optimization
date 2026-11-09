@@ -5,10 +5,16 @@ from pathlib import Path
 from scipy.stats import qmc
 from .schemas import Geometry, LoadCase, MeshSettings, BOUNDS, GEOMETRY_VERSION
 from .materials import MATERIALS
-from .fea import solve, fingerprint
+from .fea import solve, fingerprint, configuration
+import hashlib
 
 
 def validate_record(r):
+    if (
+        r.get("geometry_version") != GEOMETRY_VERSION
+        or r.get("simulation_version") != "phase2-bearing-v1"
+    ):
+        raise ValueError("Incompatible Phase 2 geometry/simulation provenance")
     if (
         r.get("status") != "FEA_SUCCESS"
         or r.get("data_source") != "FreeCAD/Gmsh/CalculiX"
@@ -78,6 +84,7 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
             k: lo + (hi - lo) * sample[i]
             for i, (k, (lo, hi)) in enumerate(BOUNDS.items())
         }
+        values["transition_radius_mm"] = 1.0
         if fixed_packaging:
             values.update(length_cc=145.0, big_end_id=50.0, small_end_id=24.0)
         try:
@@ -95,6 +102,13 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
             mesh = MeshSettings(size_mm)
             case = fingerprint(
                 dict(
+                    geometry_version=GEOMETRY_VERSION,
+                    simulation_version="phase2-bearing-v1",
+                    solver_sha256=hashlib.sha256(
+                        Path(configuration()["ccx"]).read_bytes()
+                    ).hexdigest()
+                    if Path(configuration()["ccx"]).is_file()
+                    else "unavailable",
                     geometry=g.to_dict(),
                     material=m.to_dict(),
                     load=load.to_dict(),
@@ -108,6 +122,8 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
                 not r
                 or r.get("status") != "FEA_SUCCESS"
                 or r.get("geometry_version") != GEOMETRY_VERSION
+                or r.get("simulation_version") != "phase2-bearing-v1"
+                or r.get("mesh") != mesh.to_dict()
             ):
                 r = solve(g, m, load, mesh, folder)
             try:
@@ -128,6 +144,11 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
         rejected_geometry_samples=rejected,
         seed=seed,
         sampling_method="Batch Latin Hypercube with rejection replenishment",
+        geometry_version=GEOMETRY_VERSION,
+        simulation_version="phase2-bearing-v1",
+        boundary_mode="COSINE_BEARING",
+        load_provenance="Sampled manual axial forces; actual FEA labels, not measured combustion",
+        fixed_transition_radius_mm=1.0,
         fixed_packaging=fixed_packaging,
         elapsed_s=time.perf_counter() - start,
         mesh_size_mm=size_mm,

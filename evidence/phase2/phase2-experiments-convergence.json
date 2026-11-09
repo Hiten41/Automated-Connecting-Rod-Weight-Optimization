@@ -1,0 +1,10 @@
+{
+  "compression": {
+    "status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "count": 1
+  },
+  "tension": {
+    "status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "count": 1
+  }
+}

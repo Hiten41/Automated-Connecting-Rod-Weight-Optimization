@@ -1,0 +1,297 @@
+{
+  "model_version": "fea-2-bearing",
+  "software_versions": {
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "selected_model": "mlp",
+  "dataset_sha256": "ba3fe87b74dc08ad5534772edeb76782ba27f73b1acd9158c51ffe90080bb199",
+  "supported_materials": [
+    "{\"density_kg_per_mm3\": 2.81e-06, \"name\": \"Forged Aluminum (7075-T6)\", \"poissons_ratio\": 0.33, \"yield_strength_mpa\": 503.0, \"youngs_modulus_mpa\": 71700.0}",
+    "{\"density_kg_per_mm3\": 7.85e-06, \"name\": \"Forged Steel (AISI 4340)\", \"poissons_ratio\": 0.29, \"yield_strength_mpa\": 710.0, \"youngs_modulus_mpa\": 205000.0}",
+    "{\"density_kg_per_mm3\": 4.43e-06, \"name\": \"Titanium Alloy (Ti-6Al-4V)\", \"poissons_ratio\": 0.34, \"yield_strength_mpa\": 880.0, \"youngs_modulus_mpa\": 113800.0}"
+  ],
+  "constraint_region": "FoS in [1.4,2.2] or displacement in [0.28,0.42] mm",
+  "sample_count": 36,
+  "split_counts": {
+    "train": 20,
+    "validation": 8,
+    "test": 8
+  },
+  "groups_disjoint": true,
+  "comparisons": {
+    "ridge": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 193.7967968495176,
+          "RMSE": 246.31571433148738,
+          "R2": 0.9131202924464533
+        },
+        "max_displacement_mm": {
+          "MAE": 0.2125732327011265,
+          "RMSE": 0.26737531805838727,
+          "R2": 0.8755501618630036
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 243.02598494001762,
+          "RMSE": 320.1263062201215,
+          "R2": 0.8319589830207799
+        },
+        "max_displacement_mm": {
+          "MAE": 0.7937915597635076,
+          "RMSE": 0.8904789790410338,
+          "R2": 0.21429247489818026
+        }
+      },
+      "selection_score": 0.6690720297206618,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 228.15640955340768,
+          "RMSE": 262.8148116602461,
+          "R2": 0.7261578238285884
+        },
+        "max_displacement_mm": {
+          "MAE": 0.5237092260384396,
+          "RMSE": 0.7300940436377219,
+          "R2": -2.315432475111109
+        }
+      }
+    },
+    "extra_trees": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 104.6171491481163,
+          "RMSE": 154.78710541642164,
+          "R2": 0.965691346897119
+        },
+        "max_displacement_mm": {
+          "MAE": 0.12839415410372315,
+          "RMSE": 0.24501437343145518,
+          "R2": 0.8954955383147608
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 387.8838391202412,
+          "RMSE": 441.5185499449835,
+          "R2": 0.6803531098118363
+        },
+        "max_displacement_mm": {
+          "MAE": 0.4642721092831764,
+          "RMSE": 0.6516882892760569,
+          "R2": 0.5791828771630116
+        }
+      },
+      "selection_score": 0.5383604192501807,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 343.8833222650302,
+          "RMSE": 550.2193042195834,
+          "R2": -0.2002516432420478
+        },
+        "max_displacement_mm": {
+          "MAE": 0.35034232368846685,
+          "RMSE": 0.44344870708091066,
+          "R2": -0.22312083035621355
+        }
+      }
+    },
+    "mlp": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 13.805322011846295,
+          "RMSE": 20.736019728476897,
+          "R2": 0.9993842776675713
+        },
+        "max_displacement_mm": {
+          "MAE": 0.014160492937144508,
+          "RMSE": 0.020375345290532504,
+          "R2": 0.999277293996887
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 371.4219237270362,
+          "RMSE": 412.1955434818611,
+          "R2": 0.7214012534345998
+        },
+        "max_displacement_mm": {
+          "MAE": 0.45166423647784854,
+          "RMSE": 0.5406573258907349,
+          "R2": 0.7103605240209578
+        }
+      },
+      "selection_score": 0.5201934440518082,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 245.0789688651199,
+          "RMSE": 309.14941228961834,
+          "R2": 0.6210887385555575
+        },
+        "max_displacement_mm": {
+          "MAE": 0.3972854386346602,
+          "RMSE": 0.567418569722407,
+          "R2": -1.0025790380482285
+        }
+      }
+    },
+    "analytical_nominal_screening": {
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 1026.6404107384938,
+          "RMSE": 1137.9282273620124,
+          "R2": -4.133699027342733
+        },
+        "max_displacement_mm": {
+          "MAE": 0.4889777400593627,
+          "RMSE": 0.5974364817164528,
+          "R2": -1.2200668599125888
+        }
+      },
+      "note": "Nominal beam response, not a local stress predictor; excluded from learned-model selection"
+    }
+  },
+  "held_out_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 245.0789688651199,
+      "RMSE": 309.14941228961834,
+      "R2": 0.6210887385555575
+    },
+    "max_displacement_mm": {
+      "MAE": 0.3972854386346602,
+      "RMSE": 0.567418569722407,
+      "R2": -1.0025790380482285
+    }
+  },
+  "near_constraint_test_count": 1,
+  "near_constraint_metrics": null,
+  "residual_margin": [
+    394.2903181364866,
+    0.34347381240810904
+  ],
+  "margin_claim": "Observed validation maximum underprediction; not calibrated confidence",
+  "seed": 42,
+  "training_configuration": {
+    "ridge_alpha": 1.0,
+    "trees": 150,
+    "tree_min_samples_leaf": 2,
+    "mlp_hidden": [
+      32,
+      16
+    ],
+    "mlp_solver": "lbfgs",
+    "mlp_alpha": 0.1,
+    "mlp_max_iter": 1500,
+    "scaling": "StandardScaler X for Ridge/MLP; StandardScaler y for all"
+  },
+  "supported_min": [
+    145.0,
+    50.0,
+    24.0,
+    4.611490964115237,
+    16.827543025189694,
+    14.447422940082241,
+    2.3640416420992465,
+    2.9261733248763857,
+    1.0,
+    18172.681729744167,
+    0.0,
+    71700.0,
+    0.29,
+    2.81e-06,
+    503.0
+  ],
+  "supported_max": [
+    145.0,
+    50.0,
+    24.0,
+    8.441515128533664,
+    27.957892464335675,
+    23.649843003822838,
+    5.712534720496293,
+    5.583009185498269,
+    1.0,
+    41409.51751322075,
+    1.0,
+    205000.0,
+    0.34,
+    7.85e-06,
+    880.0
+  ],
+  "features": [
+    "length_cc",
+    "big_end_id",
+    "small_end_id",
+    "ring_thickness",
+    "shank_width",
+    "beam_thickness",
+    "pocket_depth",
+    "flange_thickness",
+    "transition_radius_mm",
+    "force_n",
+    "compression",
+    "youngs_modulus_mpa",
+    "poissons_ratio",
+    "density_kg_per_mm3",
+    "yield_strength_mpa"
+  ],
+  "targets": [
+    "max_von_mises_mpa",
+    "max_displacement_mm"
+  ],
+  "geometry_version": "rod-2-filleted-pocket",
+  "mesh_configuration": {
+    "size_mm": 8,
+    "order": 2,
+    "boundary_mode": "COSINE_BEARING",
+    "local_refinement": true,
+    "hotspot_size_mm": null
+  },
+  "simulation_version": "phase2-bearing-v1",
+  "split_ids": {
+    "train": [
+      "50eebc046993fa6d2d41",
+      "20798d5925b4e566aa54",
+      "13ebbbea8b597221643d",
+      "8b086175edf24f9a879f",
+      "d5697dc02d4bb3785bc0",
+      "3b44d4e014efe149d60f",
+      "74d69d650ffa767677f3",
+      "e970b91bfe4d0d09ce3c",
+      "558accf8deb7c8f72f82",
+      "52baea30ff9d19da1906",
+      "935c49c3c2d63b7e243b",
+      "a59acea9d5202561b3de",
+      "708344d45c74a0262fc6",
+      "f31bed0987c1155fa048",
+      "2ff8ef361c3684764833",
+      "e1e41f2d49212ad4f604",
+      "1495804e8c5a34b1f0f9",
+      "b6acbbc5f1bd09dd33e2",
+      "0dc9d57402f660c323e3",
+      "b1214770e7972eae6d6c"
+    ],
+    "validation": [
+      "e6f403a2af4cd35d217a",
+      "b1558f3242bfd276fac4",
+      "80160a8c5adf7e185c93",
+      "d1469d86973fb2d5a09d",
+      "c10fbb4f46f5cfe722b8",
+      "454325c75666dfab3076",
+      "c75982a4df8bb68a6eb2",
+      "ca3399f26475637cb3d0"
+    ],
+    "test": [
+      "f38773468baaaa367b47",
+      "36fe9a0384e9cc38fe10",
+      "6562f2dd841934f3b0f5",
+      "270fe83b5fe5c628305a",
+      "da07c7d521ca7ff24e8f",
+      "d973baf5bb9151b5d83e",
+      "36e6d5dfffda074c51c2",
+      "c4eae813e28931d8276c"
+    ]
+  }
+}

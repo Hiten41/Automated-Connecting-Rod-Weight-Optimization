@@ -1,0 +1,421 @@
+{
+  "status": "ILLUSTRATIVE_LITERATURE_PLOT_DERIVED_NOT_VALIDATED_COMBUSTION",
+  "source_report": "runs/reference-engine/report.json",
+  "limitations": [
+    "1500 rpm, half load; exact torque, spark timing, air/fuel ratio and thermal conditions not specified in Fig7.2 caption.",
+    "Dimensions supplemented from same research-family publication; cannot establish identical build configuration from unavailable thesis CD-ROM.",
+    "577.8g is Fig7.4 piston assembly incl rod section A; published 2009 whole effective mass 0.64kg is a different definition and is not substituted.",
+    "Related Dyson engine has 1mm pin offset; present model is explicitly zero-offset.",
+    "Gas force digitization is converted to differential pressure, not an original absolute cylinder-pressure sensor trace.",
+    "Measured strain-gauge rod force has additional rod-section dynamics, friction and gravity; it is not identical to the ideal piston-side axial force.",
+    "Sparse plot readings cannot resolve peak timing or provide experimental combustion validation."
+  ],
+  "results": [
+    {
+      "sample_id": "ed7f31d0c00e6fa68228",
+      "geometry": {
+        "length_cc": 143.5,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.0,
+        "shank_width": 25.0,
+        "beam_thickness": 22.0,
+        "pocket_depth": 2.2,
+        "flange_thickness": 5.5,
+        "transition_radius_mm": 1.0
+      },
+      "material": {
+        "name": "Forged Steel (AISI 4340)",
+        "youngs_modulus_mpa": 205000.0,
+        "poissons_ratio": 0.29,
+        "density_kg_per_mm3": 7.85e-06,
+        "yield_strength_mpa": 710.0
+      },
+      "load": {
+        "kind": "compression",
+        "force_n": 6575.8273671856705
+      },
+      "mesh": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": null
+      },
+      "geometry_version": "rod-2-filleted-pocket",
+      "mode": "FEA",
+      "simulation_version": "phase2-bearing-v1",
+      "solver_configuration": {
+        "analysis": "linear static",
+        "threads": 2,
+        "timeout_s": 600,
+        "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+      },
+      "mesh_configuration": {
+        "size_min_mm": 1.8,
+        "size_max_mm": 4,
+        "curvature_points": 12,
+        "quadratic_curved": true,
+        "high_order_optimization": true,
+        "threads": 2
+      },
+      "output_dir": "runs/engine-example/compression",
+      "data_source": "FreeCAD/Gmsh/CalculiX",
+      "timestamp": "2026-11-09T17:29:10.595477+00:00",
+      "cad": {
+        "status": "CAD_SUCCESS",
+        "measured_web_thickness_mm": 17.6,
+        "measured_flange_thicknesses_mm": [
+          5.5,
+          5.5
+        ],
+        "volume_mm3": 92938.32304537046,
+        "valid_topology": true,
+        "solid_count": 1,
+        "bores": [
+          {
+            "face": 11,
+            "center_x_mm": 143.5,
+            "diameter_mm": 24.0,
+            "area_mm2": 1658.7609210954106
+          },
+          {
+            "face": 20,
+            "center_x_mm": 0,
+            "diameter_mm": 50.0,
+            "area_mm2": 3455.7519189487716
+          }
+        ],
+        "web_thickness_mm": 17.6,
+        "flange_thickness_mm": 5.5,
+        "transition_radius_mm": 1.0,
+        "junction_fillet_edge_count": 4,
+        "geometry_version": "rod-2-filleted-pocket",
+        "freecad_version": [
+          "1",
+          "1",
+          "4",
+          "20260928 (Git shallow)",
+          "Unknown",
+          "2026/09/28 13:46:34",
+          "(HEAD detached at 4fd3bf320)",
+          "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+        ],
+        "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+      },
+      "mass_kg": 0.7295658359061581,
+      "node_count": 81219,
+      "element_count": 52082,
+      "mesh_quality": {
+        "minSICN_min": 0.02881256033220311,
+        "minSICN_p01": 0.33631130571657913,
+        "element_count": 52082
+      },
+      "status": "FEA_SUCCESS",
+      "max_von_mises_mpa": 109.95549299574817,
+      "max_displacement_mm": 0.023124220130688274,
+      "factor_of_safety": 6.457158079655509,
+      "boundary_conditions": {
+        "model": "COSINE_BEARING",
+        "resultant_n": [
+          -6575.827367185669,
+          -2.913225216616411e-13,
+          0.0
+        ],
+        "opposite_bore": {
+          "resultant_n": [
+            6575.827367185665,
+            -2.55351295663786e-14,
+            0.0
+          ],
+          "moment_n_mm": [
+            1.8491874698156607e-12,
+            3.993250174971763e-12,
+            -7.520529338167492e-13
+          ],
+          "max_relative_quadrature_correction": 0.00011320671456364077,
+          "minimum_pressure_weight_n": 0.06038399224106225,
+          "loaded_node_count": 652
+        },
+        "loaded_bore": {
+          "resultant_n": [
+            -6575.827367185669,
+            -2.913225216616411e-13,
+            0.0
+          ],
+          "moment_n_mm": [
+            -1.1368683772161603e-12,
+            1.4210854715202004e-13,
+            -6.172970121176569e-14
+          ],
+          "max_relative_quadrature_correction": 0.0015492146390858673,
+          "minimum_pressure_weight_n": 0.045933197866682894,
+          "loaded_node_count": 207
+        },
+        "total_applied_n": [
+          -3.637978807091713e-12,
+          -3.168576512280197e-13,
+          0.0
+        ],
+        "gauges": [
+          [
+            888,
+            1
+          ],
+          [
+            888,
+            2
+          ],
+          [
+            888,
+            3
+          ],
+          [
+            868,
+            1
+          ],
+          [
+            868,
+            3
+          ],
+          [
+            1283,
+            1
+          ]
+        ],
+        "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+        "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+        "gauge_reaction_n": [
+          3.716880000000014e-10,
+          6.517194e-09,
+          -2.418500000000016e-11
+        ],
+        "gauge_reaction_dof_norm_fraction": 5.063702249394288e-12,
+        "gauge_reaction_fraction": 9.927008222964568e-13
+      },
+      "gmsh_version": "4.15.2",
+      "solver_version": "This is Version 2.22",
+      "fields_path": "runs/engine-example/compression/fields.json",
+      "hotspot": {
+        "element_id": 61173,
+        "integration_point": 3,
+        "coordinates_mm": [
+          30.85726279839003,
+          -12.362559716023407,
+          10.996633566648025
+        ],
+        "region": "big-end/shank transition",
+        "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+        "local_2mm_ip_mean_mpa": 52.83559981940446,
+        "local_2mm_point_count": 153,
+        "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+      },
+      "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+      "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+      "runtime_s": 110.52443219999986
+    },
+    {
+      "sample_id": "a040096de5a7a7489c82",
+      "geometry": {
+        "length_cc": 143.5,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.0,
+        "shank_width": 25.0,
+        "beam_thickness": 22.0,
+        "pocket_depth": 2.2,
+        "flange_thickness": 5.5,
+        "transition_radius_mm": 1.0
+      },
+      "material": {
+        "name": "Forged Steel (AISI 4340)",
+        "youngs_modulus_mpa": 205000.0,
+        "poissons_ratio": 0.29,
+        "density_kg_per_mm3": 7.85e-06,
+        "yield_strength_mpa": 710.0
+      },
+      "load": {
+        "kind": "tension",
+        "force_n": 1074.9212654382795
+      },
+      "mesh": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": null
+      },
+      "geometry_version": "rod-2-filleted-pocket",
+      "mode": "FEA",
+      "simulation_version": "phase2-bearing-v1",
+      "solver_configuration": {
+        "analysis": "linear static",
+        "threads": 2,
+        "timeout_s": 600,
+        "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+      },
+      "mesh_configuration": {
+        "size_min_mm": 1.8,
+        "size_max_mm": 4,
+        "curvature_points": 12,
+        "quadratic_curved": true,
+        "high_order_optimization": true,
+        "threads": 2
+      },
+      "output_dir": "runs/engine-example/tension",
+      "data_source": "FreeCAD/Gmsh/CalculiX",
+      "timestamp": "2026-11-09T17:31:01.346434+00:00",
+      "cad": {
+        "status": "CAD_SUCCESS",
+        "measured_web_thickness_mm": 17.6,
+        "measured_flange_thicknesses_mm": [
+          5.5,
+          5.5
+        ],
+        "volume_mm3": 92938.32304537046,
+        "valid_topology": true,
+        "solid_count": 1,
+        "bores": [
+          {
+            "face": 11,
+            "center_x_mm": 143.5,
+            "diameter_mm": 24.0,
+            "area_mm2": 1658.7609210954106
+          },
+          {
+            "face": 20,
+            "center_x_mm": 0,
+            "diameter_mm": 50.0,
+            "area_mm2": 3455.7519189487716
+          }
+        ],
+        "web_thickness_mm": 17.6,
+        "flange_thickness_mm": 5.5,
+        "transition_radius_mm": 1.0,
+        "junction_fillet_edge_count": 4,
+        "geometry_version": "rod-2-filleted-pocket",
+        "freecad_version": [
+          "1",
+          "1",
+          "4",
+          "20260928 (Git shallow)",
+          "Unknown",
+          "2026/09/28 13:46:34",
+          "(HEAD detached at 4fd3bf320)",
+          "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+        ],
+        "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+      },
+      "mass_kg": 0.7295658359061581,
+      "node_count": 81182,
+      "element_count": 52041,
+      "mesh_quality": {
+        "minSICN_min": 0.0282624922344443,
+        "minSICN_p01": 0.3364061845452181,
+        "element_count": 52041
+      },
+      "status": "FEA_SUCCESS",
+      "max_von_mises_mpa": 37.791801833728904,
+      "max_displacement_mm": 0.010486063069337982,
+      "factor_of_safety": 18.787143389557315,
+      "boundary_conditions": {
+        "model": "COSINE_BEARING",
+        "resultant_n": [
+          1074.9212654382789,
+          4.1744385725905886e-14,
+          0.0
+        ],
+        "opposite_bore": {
+          "resultant_n": [
+            -1074.9212654382786,
+            7.149836278586008e-14,
+            0.0
+          ],
+          "moment_n_mm": [
+            -2.113864638886298e-13,
+            -1.7985612998927536e-13,
+            -4.279736287582381e-14
+          ],
+          "max_relative_quadrature_correction": 0.00017441892978373183,
+          "minimum_pressure_weight_n": 0.027739603086528914,
+          "loaded_node_count": 431
+        },
+        "loaded_bore": {
+          "resultant_n": [
+            1074.9212654382789,
+            4.1744385725905886e-14,
+            0.0
+          ],
+          "moment_n_mm": [
+            -3.979039320256561e-13,
+            2.842170943040401e-14,
+            -1.6375710045063576e-14
+          ],
+          "max_relative_quadrature_correction": 0.001720906574517555,
+          "minimum_pressure_weight_n": 0.00045010848750770826,
+          "loaded_node_count": 221
+        },
+        "total_applied_n": [
+          2.2737367544323206e-13,
+          1.1324274851176597e-13,
+          0.0
+        ],
+        "gauges": [
+          [
+            888,
+            1
+          ],
+          [
+            888,
+            2
+          ],
+          [
+            888,
+            3
+          ],
+          [
+            868,
+            1
+          ],
+          [
+            868,
+            3
+          ],
+          [
+            1283,
+            1
+          ]
+        ],
+        "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+        "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+        "gauge_reaction_n": [
+          -5.496044e-10,
+          5.85479e-11,
+          -1.8691116e-10
+        ],
+        "gauge_reaction_dof_norm_fraction": 2.139746350368239e-12,
+        "gauge_reaction_fraction": 5.427956854204977e-13
+      },
+      "gmsh_version": "4.15.2",
+      "solver_version": "This is Version 2.22",
+      "fields_path": "runs/engine-example/tension/fields.json",
+      "hotspot": {
+        "element_id": 57510,
+        "integration_point": 4,
+        "coordinates_mm": [
+          30.421130343583336,
+          -12.735035570224355,
+          0.7370586612347371
+        ],
+        "region": "big-end/shank transition",
+        "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+        "local_2mm_ip_mean_mpa": 17.334201122385863,
+        "local_2mm_point_count": 151,
+        "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+      },
+      "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+      "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+      "runtime_s": 99.9005997000022
+    }
+  ]
+}

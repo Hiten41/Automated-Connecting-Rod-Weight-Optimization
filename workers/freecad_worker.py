@@ -20,11 +20,19 @@ def main():
         import MeshPart
 
         if job.get("preflight"):
+            import importlib
+
+            fem_path = Path(FreeCAD.getResourceDir()) / "Mod" / "Fem"
+            sys.path.insert(0, str(fem_path))
+            modules = ["Fem", "femtools.femutils", "femmesh.meshtools"]
+            imported = {
+                name: importlib.import_module(name).__name__ for name in modules
+            }
             result = dict(
                 status="PREFLIGHT_SUCCESS",
                 freecad_version=FreeCAD.Version(),
                 python_version=sys.version,
-                fem_modules=True,
+                fem_modules=imported,
             )
         else:
             shape, meta = build_connecting_rod(Geometry(**job["geometry"]))

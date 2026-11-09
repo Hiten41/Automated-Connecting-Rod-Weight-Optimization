@@ -1,6 +1,6 @@
 import pytest
 from conrod.dataset import validate_record, load_verified
-from conrod.schemas import Geometry, LoadCase, MeshSettings
+from conrod.schemas import Geometry, LoadCase, MeshSettings, GEOMETRY_VERSION
 from conrod.materials import MATERIALS
 import json
 
@@ -20,7 +20,8 @@ def record():
         node_count=100,
         element_count=20,
         solver_version="test fixture",
-        geometry_version="test",
+        geometry_version=GEOMETRY_VERSION,
+        simulation_version="phase2-bearing-v1",
         fields_path="fixture",
         sample_id="one",
     )

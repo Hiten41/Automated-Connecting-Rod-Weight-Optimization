@@ -1,0 +1,393 @@
+{
+  "model_version": "fea-2-bearing-physics-scaled",
+  "software_versions": {
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "target_physics_scaling": "Learn stress/F and displacement*E/F; restore dimensional responses at prediction",
+  "selected_model": "mlp",
+  "dataset_sha256": "6062f5dc0af2c44df1b58cff740bd106128fc59596f8b15038a508500d3492d1",
+  "supported_materials": [
+    "{\"density_kg_per_mm3\": 4.43e-06, \"name\": \"Titanium Alloy (Ti-6Al-4V)\", \"poissons_ratio\": 0.34, \"yield_strength_mpa\": 880.0, \"youngs_modulus_mpa\": 113800.0}",
+    "{\"density_kg_per_mm3\": 7.85e-06, \"name\": \"Forged Steel (AISI 4340)\", \"poissons_ratio\": 0.29, \"yield_strength_mpa\": 710.0, \"youngs_modulus_mpa\": 205000.0}",
+    "{\"density_kg_per_mm3\": 2.81e-06, \"name\": \"Forged Aluminum (7075-T6)\", \"poissons_ratio\": 0.33, \"yield_strength_mpa\": 503.0, \"youngs_modulus_mpa\": 71700.0}"
+  ],
+  "constraint_region": "FoS in [1.4,2.2] or displacement in [0.28,0.42] mm",
+  "sample_count": 120,
+  "split_counts": {
+    "train": 72,
+    "validation": 24,
+    "test": 24
+  },
+  "groups_disjoint": true,
+  "comparisons": {
+    "ridge": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 121.89948179098499,
+          "RMSE": 166.22605649526403,
+          "R2": 0.9429188344889642
+        },
+        "max_displacement_mm": {
+          "MAE": 0.19763857971741938,
+          "RMSE": 0.27629646618875187,
+          "R2": 0.8925815774224248
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 110.76993689296346,
+          "RMSE": 138.3948977311668,
+          "R2": 0.9376547458567683
+        },
+        "max_displacement_mm": {
+          "MAE": 0.20183066938372385,
+          "RMSE": 0.23766149545590265,
+          "R2": 0.8796758504834267
+        }
+      },
+      "selection_score": 0.1993122558178373,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 139.87999790246954,
+          "RMSE": 176.55872617693635,
+          "R2": 0.9274529325390317
+        },
+        "max_displacement_mm": {
+          "MAE": 0.14323971751067613,
+          "RMSE": 0.18569816132501724,
+          "R2": 0.8367355376186021
+        }
+      }
+    },
+    "extra_trees": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 45.71676193550996,
+          "RMSE": 67.75380977447652,
+          "R2": 0.9905166436670988
+        },
+        "max_displacement_mm": {
+          "MAE": 0.04344038892547708,
+          "RMSE": 0.07906204482797635,
+          "R2": 0.9912044258352044
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 121.69216587114063,
+          "RMSE": 157.70455639334887,
+          "R2": 0.9190435000525825
+        },
+        "max_displacement_mm": {
+          "MAE": 0.0872602938954649,
+          "RMSE": 0.1152431978590454,
+          "R2": 0.9717078630655077
+        }
+      },
+      "selection_score": 0.1392088640070032,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 145.435583776469,
+          "RMSE": 185.47089213842517,
+          "R2": 0.9199441616031837
+        },
+        "max_displacement_mm": {
+          "MAE": 0.06264097703289706,
+          "RMSE": 0.09664839173122815,
+          "R2": 0.9557752161993591
+        }
+      }
+    },
+    "mlp": {
+      "training": {
+        "max_von_mises_mpa": {
+          "MAE": 10.715215029094184,
+          "RMSE": 14.534203836122183,
+          "R2": 0.9995636076570467
+        },
+        "max_displacement_mm": {
+          "MAE": 0.008846089794284508,
+          "RMSE": 0.013965421610530463,
+          "R2": 0.9997255670761674
+        }
+      },
+      "validation": {
+        "max_von_mises_mpa": {
+          "MAE": 38.41417986231672,
+          "RMSE": 64.59550384355403,
+          "R2": 0.9864178719185125
+        },
+        "max_displacement_mm": {
+          "MAE": 0.039970249865003075,
+          "RMSE": 0.06501119839472914,
+          "R2": 0.9909964974258624
+        }
+      },
+      "selection_score": 0.05131303337016576,
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 28.74330705531771,
+          "RMSE": 41.510272083671616,
+          "R2": 0.9959899235880931
+        },
+        "max_displacement_mm": {
+          "MAE": 0.01457943448443126,
+          "RMSE": 0.020605117478540748,
+          "R2": 0.9979898584286298
+        }
+      }
+    },
+    "analytical_nominal_screening": {
+      "test": {
+        "max_von_mises_mpa": {
+          "MAE": 1082.026786165033,
+          "RMSE": 1253.7227505046371,
+          "R2": -2.658006743251213
+        },
+        "max_displacement_mm": {
+          "MAE": 0.4584436220446588,
+          "RMSE": 0.6179987868710476,
+          "R2": -0.8082217984667153
+        }
+      },
+      "note": "Nominal beam response, not a local stress predictor; excluded from learned-model selection"
+    }
+  },
+  "held_out_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 28.74330705531771,
+      "RMSE": 41.510272083671616,
+      "R2": 0.9959899235880931
+    },
+    "max_displacement_mm": {
+      "MAE": 0.01457943448443126,
+      "RMSE": 0.020605117478540748,
+      "R2": 0.9979898584286298
+    }
+  },
+  "near_constraint_test_count": 6,
+  "near_constraint_metrics": {
+    "max_von_mises_mpa": {
+      "MAE": 20.302694875877666,
+      "RMSE": 23.33633121406941,
+      "R2": 0.9904804461135376
+    },
+    "max_displacement_mm": {
+      "MAE": 0.004492162051473419,
+      "RMSE": 0.004944405009537216,
+      "R2": 0.997379183900376
+    }
+  },
+  "residual_margin": [
+    41.354871222562906,
+    0.12295013066798077
+  ],
+  "margin_claim": "Observed validation maximum underprediction; not calibrated confidence",
+  "seed": 42,
+  "training_configuration": {
+    "ridge_alpha": 1.0,
+    "trees": 150,
+    "tree_min_samples_leaf": 2,
+    "mlp_hidden": [
+      32,
+      16
+    ],
+    "mlp_solver": "lbfgs",
+    "mlp_alpha": 0.1,
+    "mlp_max_iter": 1500,
+    "scaling": "StandardScaler X for Ridge/MLP; StandardScaler y for all"
+  },
+  "supported_min": [
+    145.0,
+    50.0,
+    24.0,
+    4.5711900402206345,
+    15.183056684099746,
+    14.023441086266994,
+    2.01316025966677,
+    2.5663220754784426,
+    1.0,
+    15410.827447928968,
+    0.0,
+    71700.0,
+    0.29,
+    2.81e-06,
+    503.0
+  ],
+  "supported_max": [
+    145.0,
+    50.0,
+    24.0,
+    8.934140601195436,
+    27.91950540231437,
+    23.9587142932633,
+    5.877578637920921,
+    5.898524773846255,
+    1.0,
+    44689.81242583202,
+    1.0,
+    205000.0,
+    0.34,
+    7.85e-06,
+    880.0
+  ],
+  "features": [
+    "length_cc",
+    "big_end_id",
+    "small_end_id",
+    "ring_thickness",
+    "shank_width",
+    "beam_thickness",
+    "pocket_depth",
+    "flange_thickness",
+    "transition_radius_mm",
+    "force_n",
+    "compression",
+    "youngs_modulus_mpa",
+    "poissons_ratio",
+    "density_kg_per_mm3",
+    "yield_strength_mpa"
+  ],
+  "targets": [
+    "max_von_mises_mpa",
+    "max_displacement_mm"
+  ],
+  "geometry_version": "rod-2-filleted-pocket",
+  "mesh_configuration": {
+    "size_mm": 8,
+    "order": 2,
+    "boundary_mode": "COSINE_BEARING",
+    "local_refinement": true,
+    "hotspot_size_mm": null
+  },
+  "simulation_version": "phase2-bearing-v1",
+  "split_ids": {
+    "train": [
+      "df217125c3b0d632db12",
+      "01c157375959e8ecf38b",
+      "e781159c66b4cecfacef",
+      "850f76f6e8757f9a49f9",
+      "e83b13def73ce826166b",
+      "619a7d00b16f46b0df33",
+      "d3d6d564f1a822b8e782",
+      "e84ea057b0445ceee756",
+      "f3623b5f5af796d9f3a2",
+      "73302db335001b557145",
+      "8b89701e94ca64e9a9e6",
+      "acb990e185c20f61273d",
+      "cf7c3308e22fedbd086d",
+      "eb1a921ada6a54753d3a",
+      "89e1e8c7c20f4a4a10cf",
+      "e9f18341483399360602",
+      "955eafdd5046c6ea32b7",
+      "d2588f7c2667113f78ad",
+      "cfe37ad432bde822e8fb",
+      "31584cc63c4fcea40f81",
+      "5a3bd86db71270dc18dc",
+      "a4ced1a7f7008f18e9ae",
+      "be04535994bcd512d917",
+      "35a69503f09f0c194cc7",
+      "2b61a54f18e228962d2d",
+      "b92955d79e33182a81de",
+      "241bf39044ccab65379d",
+      "ecf0a5ecd45dd5401e6a",
+      "feacf802bc5f8150a3a7",
+      "1b09c5de040ccc9884a9",
+      "9d3328ece5e99d7c3a3d",
+      "a46e892d3cb7a74217f3",
+      "ee001791e8536ed8c95b",
+      "495525867ad4ffbdaf32",
+      "f2dbadda17f728ed35bc",
+      "2607cc059eb6cb739758",
+      "bd4e85f6ed40644628e3",
+      "d5ad1dca13ae5fc69cc0",
+      "287409f57c7b5ab56759",
+      "ddf0c15978103f894624",
+      "c4375350d4fe4e32db2e",
+      "9bd0988366bc1a977b72",
+      "ce6c9d02578caed55c72",
+      "6f2bbe72eb2b3d3ab1e7",
+      "5d0f6796128b04b65a84",
+      "4243f872014b5ecd3587",
+      "54f9f85e107e554b293d",
+      "448428d248fe7d7fdfeb",
+      "e53b770cc090967dfb50",
+      "e65b7279c83e83853fd2",
+      "4978e3baae7ce91dc43c",
+      "19a626e86af5366c9698",
+      "6cb95c42ec822d0e0ec9",
+      "6e27395181d2973f132b",
+      "7fa3d8171d08b8181db3",
+      "2bbd3086f70a08f72354",
+      "2a4e3bf3816cd9ba6ccc",
+      "00f15eb4abc5dd0b3fcf",
+      "c8f982fa09530655e612",
+      "d240ada15833a848d719",
+      "aad8d5c1b987f9caff95",
+      "61da0bd458f41a0bbcc7",
+      "026d0b3b3dbde2f743dd",
+      "25071b2dce4efef512d9",
+      "f469e00d3e888428dacf",
+      "52dc94efb69925bb952a",
+      "f6daefb5c308b8089c8f",
+      "2bafd236cb0aa047f4a4",
+      "c1dd63458ea6c91db095",
+      "09a0601f77cc4ec74de0",
+      "5d3fab2a1f83a921f7db",
+      "e8530dfede217ee83577"
+    ],
+    "validation": [
+      "97bed05431451a4f5b39",
+      "4ef4432576ba37856766",
+      "9c9517de93b47fa9dfc8",
+      "56f3768ede58a45168c3",
+      "4f86190eef1b675e6b29",
+      "83cffb84afb716bc84de",
+      "35e1c3bc9f1af81ccb9f",
+      "e3a1091fd4dbb5526fa8",
+      "939c5abfb782cf6dcf52",
+      "741d1edb45baa6b4c3c1",
+      "0a1d73d44d0361fd9a0e",
+      "64f6d37b4bb556be644c",
+      "2f604f681aba89b040ce",
+      "e56682b057b9e13f49d5",
+      "207ba22a79b66a1531f4",
+      "8e3699be3b926f1c3628",
+      "0087a12d444bac71c1d7",
+      "e3e25d8ae77f6ea954e8",
+      "7d2d17047206b6b74af9",
+      "a61d2f5adc035db9dbdf",
+      "e0f136b784bf2f46c801",
+      "19f9888eae2ca80fea62",
+      "ec0ccf82e4f9975459a9",
+      "5451ad332ba16c8bd648"
+    ],
+    "test": [
+      "c1affe2e9695e3ada9e7",
+      "09d79750d59d3aeffe2d",
+      "90f65eb0ceacf4c022e6",
+      "93917ab4451ed998472a",
+      "33a7a6de11b2e8f3d66a",
+      "4cde64b89d077e9b0e1a",
+      "f6ae2638fb67a2987790",
+      "421b0c7d619b736aed8b",
+      "aa8b1ccf2b3492cea209",
+      "00a1beac64864619e622",
+      "6a0901d74dc4ab5c7d7c",
+      "f4cbf61b4e23590fd970",
+      "67510f49fed296f19a52",
+      "0ed6aa83e42ee0df1f52",
+      "34e0e03a45d2b6051bae",
+      "e21fc42b9c6191d1c2b7",
+      "a69e4e66aaa696e74e83",
+      "c46169b5384a101cde2f",
+      "0be0ba90fcdf93fb76c1",
+      "9a998bbcc565e3c26929",
+      "f4803901ab64c4db08ae",
+      "b8bbd0ed664081e68791",
+      "24450814488ce08b8262",
+      "e2bdad52c7d94316c2b6"
+    ]
+  }
+}

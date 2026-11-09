@@ -1,36 +1,13 @@
-# Architecture
+# Phase 2 architecture
 
-The public Python package is `src/conrod`. Units are mm, N, MPa and kg for reporting.
-The solver static deck has no inertial mass term; density is used for CAD mass only.
+`schemas.py`: geometry version, radius bounds, mesh/BC configuration and material/load contracts. `geometry.py`: sole solid constructor shared by worker exports and exact CAD-mass server. `engine.py`: exact slider-crank derivatives, pressure validation, signed loads and Plotly cycles. `bearing.py`: pressure-equivalent nodal loads, rank-checked rigid-body gauges and reaction parsing. `fea.py`: isolated FreeCAD -> STEP -> Gmsh -> CalculiX orchestration, strict failures, configuration hashes and raw evidence. `fields.py`: actual quadratic Gauss-point coordinates, hotspots and explicit convergence assessment.
 
-```mermaid
-flowchart LR
- UI[Streamlit form] --> JOB[Background process]
- JOB --> CAD[FreeCAD Python worker]
- CAD --> STEP[Authoritative STEP solid]
- STEP --> GMSH[Gmsh quadratic tetrahedra]
- GMSH --> CCX[CalculiX static solve]
- CCX --> FIELDS[Validated DAT fields and metadata]
- FIELDS --> DATA[Verified records]
- DATA --> ML[Grouped train/validation/test]
- ML --> OPT[Scaled multistart SLSQP]
- OPT --> CAD
- OPT --> CCX
-```
+`dataset.py`: deterministic batched Latin hypercube sampling, geometry rejection, both load cases, compatible Phase 2 records only. `surrogate.py`: geometry-grouped train/validation/test, Ridge/ExtraTrees/MLP and nominal analytical comparison; training-domain rejection. `optimizer.py`: full-precision five-variable scaled multistart SLSQP, exact CAD volume objective, residual allowance plus labelled1.2 heuristic guard, bounded final FEA attempts. No Phase 1 optimum reuse.
 
-- `schemas`: typed, immutable geometry/material/load/mesh/constraint inputs.
-- `geometry`: the sole solid-building implementation. Only executed inside FreeCAD Python.
-- `analytical`: independently testable shank estimates and Euler rejection screen.
-- `fea`: explicit modes, command diagnostics, geometric bore recognition, mesh transfer, deck construction, result parsing.
-- `dataset`: seeded LHS, rejection rather than clipping, resumable cases, separate failures.
-- `surrogate`: trusted local serialization, grouped splits, baseline/model comparison and residual margin.
-- `optimizer`: persistent isolated CAD mass process, full-precision SLSQP, bounded final verification.
-- `visualization`: neutral CAD tessellation and real element stress sample cloud.
+`app.py`: eight-section Streamlit workspace. Explicit submissions spawn `scripts/run_job.py` in unique UUID directories with frozen inputs and load provenance. Refresh reads results atomically written by workers. UI reruns do not train or solve. Each session prevents overlapping jobs; different sessions use distinct directories. Solver threads=2 and timeout=600s; automatic solve budget250000 nodes. Global fine meshes exceeding the budget are retained as failed validation attempts.
 
-The main UI never imports FreeCAD. FreeCAD 1.1.4's bundled Python 3.11 imports its own binary modules; the application uses Python 3.13. JSON separates the runtimes. This was tested rather than injecting FreeCAD binaries into incompatible system Python.
+`phase2_experiments.py`: matched legacy/bearing comparisons and global refinement. `focused_refinement.py`: fixed4 mm bulk with local ball fields around critical junctions and pocket corners. `phase2_learning.py`: pilot, expansion, model comparison and new optimization. `multifidelity.py`: paired coarse/fine investigation with geometry-held-out test. `reference_engine.py` and `engine_fea_example.py`: sourced approximate reference comparison and clearly illustrative structural example.
 
-The direct CalculiX deck avoids GUI-dependent FreeCAD FEM writer state. Preflight imports `ObjectsFem`, `femmesh.gmshtools` and `femtools.ccxtools`; FreeCAD owns geometry, Gmsh meshes that exact exported STEP, and CalculiX owns all FEA response values. This is a deliberate module-boundary adjustment permitted by the implementation brief.
+`package_evidence.py`: project-relative exported metadata plus raw/export SHA256 manifests and optional ZIP; original raw records are preserved. Full solver field files are optional because they are large. Input decks, logs and raw fields remain in local run folders. Historical Phase 1 data/models remain preserved but are incompatible with the Phase 2 feature schema.
 
-Every solver case keeps request, CAD metadata, BREP, STEP, STL, FCStd, mesh, INP, DAT, FRD, logs, fields and result metadata in a unique directory. Cache keys do not round geometry. No optimization or model training occurs when an ordinary input control changes.
-
-External processes have timeouts. The optimizer permits at most three candidate verifications (two cases each), plus baseline solves when a candidate passes. Solver errors remain failures; no analytical fallback exists.
+The shipped surrogate is restricted to145/50/24 mm packaging,1 mm fillets and its observed force/material/section domain. Engine-derived FEA supports other valid CAD configurations; optimizing the143.5 mm reference-engine geometry requires a separately compatible training domain. Out-of-domain requests fail explicitly.

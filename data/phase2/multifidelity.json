@@ -1,0 +1,45 @@
+{
+  "status": "EXPLORATORY_SMALL_SAMPLE",
+  "coarse_mesh_mm": 8,
+  "fine_mesh_mm": 4,
+  "coarse_train_cases": 32,
+  "fine_train_cases": 4,
+  "held_out_fine_cases": 4,
+  "held_out_geometry_groups": [
+    34,
+    22
+  ],
+  "geometry_leakage": false,
+  "coarse_prediction_on_fine": {
+    "max_von_mises_mpa": {
+      "MAE": 99.70016112494483,
+      "RMSE": 109.59368875167524,
+      "R2": 0.9146369238355451
+    },
+    "max_displacement_mm": {
+      "MAE": 0.3793317592077799,
+      "RMSE": 0.38991816981142235,
+      "R2": 0.1489411911852777
+    }
+  },
+  "additive_ridge_correction_on_fine": {
+    "max_von_mises_mpa": {
+      "MAE": 99.55070763894561,
+      "RMSE": 113.5450202617204,
+      "R2": 0.9083705348347519
+    },
+    "max_displacement_mm": {
+      "MAE": 0.17323626939292291,
+      "RMSE": 0.20301336362894182,
+      "R2": 0.7692924122810676
+    }
+  },
+  "mean_fine_minus_coarse": {
+    "max_von_mises_mpa": 59.81366271166119,
+    "max_displacement_mm": 0.01259950656835562
+  },
+  "selected_for_optimization": false,
+  "limitation": "Two held-out geometry groups only. 4mm is finer than 8mm, not independently converged. Correction is not promoted from this small investigation.",
+  "coarse_source": "data\\phase2\\initial36\\verified.jsonl",
+  "coarse_sha256": "ba3fe87b74dc08ad5534772edeb76782ba27f73b1acd9158c51ffe90080bb199"
+}

@@ -1,0 +1,21 @@
+{
+  "local_full_suite": {
+    "passed": 61,
+    "failed": 0,
+    "external_integration_tests": 3,
+    "artifact": "local-tests.xml"
+  },
+  "final_unit_suite": {
+    "passed": 58,
+    "failed": 0,
+    "deselected_external": 3,
+    "artifact": "final-unit-tests.xml"
+  },
+  "lint": "ruff --isolated --select E9,F passed",
+  "compile": "compileall passed",
+  "browser_visual_qa": "BLOCKED: Local browser use is disabled in Work settings",
+  "http_health": "http://localhost:8503/_stcore/health returned ok",
+  "raw_project_fea_success_records": 189,
+  "global_mesh_budget_rejections": 6,
+  "mechanically_qualified": false
+}

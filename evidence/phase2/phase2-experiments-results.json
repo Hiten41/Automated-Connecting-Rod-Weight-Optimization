@@ -1,0 +1,1256 @@
+[
+  {
+    "sample_id": "6b0d572ca50bca9b189a",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2,
+      "boundary_mode": "LEGACY_CLAMPED_BORE",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 1.8,
+      "size_max_mm": 4.0,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/LEGACY_CLAMPED_BORE-4.0-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T16:59:24.526857+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_SUCCESS",
+    "max_von_mises_mpa": 289.15629627709063,
+    "max_displacement_mm": 0.0607842396616823,
+    "factor_of_safety": 2.4554194708581627,
+    "node_count": 82590,
+    "element_count": 52978,
+    "boundary_conditions": {
+      "resultant_n": [
+        -28000.0,
+        0.0,
+        0.0
+      ],
+      "fixed_node_count": 1472,
+      "loaded_node_count": 427,
+      "model": "LEGACY_CLAMPED_BORE",
+      "limitations": "Academic clamp/traction model; not pin contact. Full bore permits tensile traction."
+    },
+    "gmsh_version": "4.15.2",
+    "solver_version": "This is Version 2.22",
+    "fields_path": "runs/phase2-experiments/LEGACY_CLAMPED_BORE-4.0-compression/fields.json",
+    "mesh_quality": {
+      "minSICN_min": 0.027877486552597305,
+      "minSICN_p01": 0.3379055801113548,
+      "element_count": 52978
+    },
+    "hotspot": {
+      "element_id": 56420,
+      "integration_point": 1,
+      "coordinates_mm": [
+        130.51840462686084,
+        -12.376722512934364,
+        1.1076297644711062
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 162.1929475002959,
+      "local_2mm_point_count": 151,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    },
+    "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+    "runtime_s": 102.09162540000034
+  },
+  {
+    "sample_id": "8fa74ad17e78d4a89f9e",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2,
+      "boundary_mode": "LEGACY_CLAMPED_BORE",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 1.8,
+      "size_max_mm": 4.0,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/LEGACY_CLAMPED_BORE-4.0-tension",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:01:06.680784+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_SUCCESS",
+    "max_von_mises_mpa": 191.400174741384,
+    "max_displacement_mm": 0.03906085924393862,
+    "factor_of_safety": 3.709505495276258,
+    "node_count": 82788,
+    "element_count": 53145,
+    "boundary_conditions": {
+      "resultant_n": [
+        18000.0,
+        0.0,
+        0.0
+      ],
+      "fixed_node_count": 1472,
+      "loaded_node_count": 427,
+      "model": "LEGACY_CLAMPED_BORE",
+      "limitations": "Academic clamp/traction model; not pin contact. Full bore permits tensile traction."
+    },
+    "gmsh_version": "4.15.2",
+    "solver_version": "This is Version 2.22",
+    "fields_path": "runs/phase2-experiments/LEGACY_CLAMPED_BORE-4.0-tension/fields.json",
+    "mesh_quality": {
+      "minSICN_min": 0.03047297413013244,
+      "minSICN_p01": 0.33632557350143866,
+      "element_count": 53145
+    },
+    "hotspot": {
+      "element_id": 58963,
+      "integration_point": 2,
+      "coordinates_mm": [
+        130.69915068188664,
+        -12.332000976016475,
+        16.076923076923066
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 111.84958663155444,
+      "local_2mm_point_count": 120,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    },
+    "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+    "runtime_s": 105.77711859999908
+  },
+  {
+    "sample_id": "badd6dc393c9fe6a0c9d",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 1.8,
+      "size_max_mm": 4.0,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-4.0-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:02:52.524561+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_SUCCESS",
+    "max_von_mises_mpa": 462.2684560016519,
+    "max_displacement_mm": 0.0988226686300748,
+    "factor_of_safety": 1.535904063498252,
+    "node_count": 82723,
+    "element_count": 53095,
+    "boundary_conditions": {
+      "model": "COSINE_BEARING",
+      "resultant_n": [
+        -27999.999999999985,
+        1.1084466677857563e-12,
+        0.0
+      ],
+      "opposite_bore": {
+        "resultant_n": [
+          28000.0,
+          -8.171241461241152e-14,
+          0.0
+        ],
+        "moment_n_mm": [
+          6.0680349633912556e-12,
+          7.673861546209082e-13,
+          -2.758689110482493e-12
+        ],
+        "max_relative_quadrature_correction": 0.00011131244849328259,
+        "minimum_pressure_weight_n": 0.25711568409256735,
+        "loaded_node_count": 652
+      },
+      "loaded_bore": {
+        "resultant_n": [
+          -27999.999999999985,
+          1.1084466677857563e-12,
+          0.0
+        ],
+        "moment_n_mm": [
+          5.684341886080801e-13,
+          4.490630090003833e-12,
+          -7.229770167954674e-13
+        ],
+        "max_relative_quadrature_correction": 0.0016217326575648284,
+        "minimum_pressure_weight_n": 0.1955647611134231,
+        "loaded_node_count": 207
+      },
+      "total_applied_n": [
+        1.4551915228366852e-11,
+        1.0267342531733448e-12,
+        0.0
+      ],
+      "gauges": [
+        [
+          898,
+          1
+        ],
+        [
+          898,
+          2
+        ],
+        [
+          898,
+          3
+        ],
+        [
+          878,
+          1
+        ],
+        [
+          878,
+          3
+        ],
+        [
+          1295,
+          1
+        ]
+      ],
+      "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+      "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+      "gauge_reaction_n": [
+        -1.5273379999999996e-08,
+        -2.008988e-09,
+        -5.892000000000004e-11
+      ],
+      "gauge_reaction_fraction": 5.50180444628591e-13
+    },
+    "gmsh_version": "4.15.2",
+    "solver_version": "This is Version 2.22",
+    "fields_path": "runs/phase2-experiments/COSINE_BEARING-4.0-compression/fields.json",
+    "mesh_quality": {
+      "minSICN_min": 0.027572656552831615,
+      "minSICN_p01": 0.33514573729954766,
+      "element_count": 53095
+    },
+    "hotspot": {
+      "element_id": 64594,
+      "integration_point": 1,
+      "coordinates_mm": [
+        30.757047673131044,
+        -12.514288048770458,
+        21.496812509899897
+      ],
+      "region": "big-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 212.9648156751044,
+      "local_2mm_point_count": 159,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    },
+    "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+    "runtime_s": 103.33495640000183
+  },
+  {
+    "sample_id": "05fea0d670d021461a13",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 1.8,
+      "size_max_mm": 4.0,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-4.0-tension",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:04:35.921926+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_SUCCESS",
+    "max_von_mises_mpa": 632.1711602145264,
+    "max_displacement_mm": 0.1755865816335343,
+    "factor_of_safety": 1.1231135563967558,
+    "node_count": 82625,
+    "element_count": 53022,
+    "boundary_conditions": {
+      "model": "COSINE_BEARING",
+      "resultant_n": [
+        18000.0,
+        2.5579538487363607e-13,
+        0.0
+      ],
+      "opposite_bore": {
+        "resultant_n": [
+          -18000.0,
+          3.588240815588506e-13,
+          0.0
+        ],
+        "moment_n_mm": [
+          -1.5063505998114124e-12,
+          1.6193268947972683e-11,
+          -1.2241249680577937e-12
+        ],
+        "max_relative_quadrature_correction": 0.00017511634959656197,
+        "minimum_pressure_weight_n": 0.46451343397252537,
+        "loaded_node_count": 431
+      },
+      "loaded_bore": {
+        "resultant_n": [
+          18000.0,
+          2.5579538487363607e-13,
+          0.0
+        ],
+        "moment_n_mm": [
+          1.3642420526593924e-12,
+          -4.547473508864641e-13,
+          8.260365505621577e-14
+        ],
+        "max_relative_quadrature_correction": 0.0017209065745175311,
+        "minimum_pressure_weight_n": 0.007537252295250969,
+        "loaded_node_count": 221
+      },
+      "total_applied_n": [
+        0.0,
+        6.146194664324867e-13,
+        0.0
+      ],
+      "gauges": [
+        [
+          898,
+          1
+        ],
+        [
+          898,
+          2
+        ],
+        [
+          898,
+          3
+        ],
+        [
+          878,
+          1
+        ],
+        [
+          878,
+          3
+        ],
+        [
+          1295,
+          1
+        ]
+      ],
+      "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+      "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+      "gauge_reaction_n": [
+        1.0042200000000007e-08,
+        7.581374e-09,
+        1.5854720000000001e-09
+      ],
+      "gauge_reaction_fraction": 7.045634626732615e-13
+    },
+    "gmsh_version": "4.15.2",
+    "solver_version": "This is Version 2.22",
+    "fields_path": "runs/phase2-experiments/COSINE_BEARING-4.0-tension/fields.json",
+    "mesh_quality": {
+      "minSICN_min": 0.030960397342524277,
+      "minSICN_p01": 0.33650558747306786,
+      "element_count": 53022
+    },
+    "hotspot": {
+      "element_id": 58809,
+      "integration_point": 4,
+      "coordinates_mm": [
+        30.42123179844592,
+        -12.735056639661902,
+        0.7370586612347371
+      ],
+      "region": "big-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 281.37441436471636,
+      "local_2mm_point_count": 169,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    },
+    "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+    "runtime_s": 99.69064680000156
+  },
+  {
+    "sample_id": "b47c75f091064d23d696",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 2.5,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 1.125,
+      "size_max_mm": 2.5,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-2.5-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:06:15.671770+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \".\\src\\conrod\\fea.py\", line 385, in solve\n    if not cfg[\"ccx\"]:\n        ^^^^^^^^^^^^^^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 13.055688699998427
+  },
+  {
+    "sample_id": "806179af782803ad7b31",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 2.5,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 1.125,
+      "size_max_mm": 2.5,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-2.5-tension",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:06:28.796485+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \".\\src\\conrod\\fea.py\", line 385, in solve\n    if not cfg[\"ccx\"]:\n        ^^^^^^^^^^^^^^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 13.325717400002759
+  },
+  {
+    "sample_id": "f04218655880af99c7e4",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 1.75,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.7875,
+      "size_max_mm": 1.75,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-1.75-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:06:42.189535+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \".\\src\\conrod\\fea.py\", line 385, in solve\n    if not cfg[\"ccx\"]:\n        ^^^^^^^^^^^^^^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 38.32880490000025
+  },
+  {
+    "sample_id": "384479c704f6192e20f6",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 1.75,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.7875,
+      "size_max_mm": 1.75,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-1.75-tension",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:07:20.677801+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \".\\src\\conrod\\fea.py\", line 385, in solve\n    if not cfg[\"ccx\"]:\n        ^^^^^^^^^^^^^^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 39.21089440000287
+  },
+  {
+    "sample_id": "e6f037a79d0b7e689b50",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 1.25,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.5625,
+      "size_max_mm": 1.25,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-1.25-compression",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:08:00.083691+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \".\\src\\conrod\\fea.py\", line 385, in solve\n    settings: MeshSettings = MeshSettings(),\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 123.67609660000016
+  },
+  {
+    "sample_id": "95b6d5d0a0574d4f3a0e",
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5,
+      "transition_radius_mm": 1.0
+    },
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 1.25,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true
+    },
+    "geometry_version": "rod-2-filleted-pocket",
+    "mode": "FEA",
+    "simulation_version": "phase2-bearing-v1",
+    "solver_configuration": {
+      "analysis": "linear static",
+      "threads": 2,
+      "timeout_s": 600,
+      "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+    },
+    "mesh_configuration": {
+      "size_min_mm": 0.5625,
+      "size_max_mm": 1.25,
+      "curvature_points": 12,
+      "quadratic_curved": true,
+      "high_order_optimization": true,
+      "threads": 2
+    },
+    "output_dir": "runs/phase2-experiments/COSINE_BEARING-1.25-tension",
+    "data_source": "FreeCAD/Gmsh/CalculiX",
+    "timestamp": "2026-11-09T17:10:04.167329+00:00",
+    "cad": {
+      "status": "CAD_SUCCESS",
+      "measured_web_thickness_mm": 17.6,
+      "measured_flange_thicknesses_mm": [
+        5.5,
+        5.5
+      ],
+      "volume_mm3": 93672.21065639016,
+      "valid_topology": true,
+      "solid_count": 1,
+      "bores": [
+        {
+          "face": 11,
+          "center_x_mm": 145.0,
+          "diameter_mm": 24.0,
+          "area_mm2": 1658.7609210954106
+        },
+        {
+          "face": 20,
+          "center_x_mm": 0,
+          "diameter_mm": 50.0,
+          "area_mm2": 3455.7519189487716
+        }
+      ],
+      "web_thickness_mm": 17.6,
+      "flange_thickness_mm": 5.5,
+      "transition_radius_mm": 1.0,
+      "junction_fillet_edge_count": 4,
+      "geometry_version": "rod-2-filleted-pocket",
+      "freecad_version": [
+        "1",
+        "1",
+        "4",
+        "20260928 (Git shallow)",
+        "Unknown",
+        "2026/09/28 13:46:34",
+        "(HEAD detached at 4fd3bf320)",
+        "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+      ],
+      "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "mass_kg": 0.7353268536526627,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved",
+    "traceback": "Traceback (most recent call last):\n  File \".\\src\\conrod\\fea.py\", line 385, in solve\n    settings: MeshSettings = MeshSettings(),\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved\n",
+    "runtime_s": 125.86358920000202
+  }
+]

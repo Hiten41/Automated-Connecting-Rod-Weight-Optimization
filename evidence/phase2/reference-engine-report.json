@@ -1,0 +1,119 @@
+{
+  "status": "PARTIAL_REFERENCE_COMPARISON_NOT_EXPERIMENTALLY_VALIDATED",
+  "peaks": {
+    "compression_n": 6575.8273671856705,
+    "tension_n": 1074.9212654382795,
+    "compression_angle_deg": 25.0,
+    "tension_angle_deg": 380.0,
+    "compression_components": {
+      "angle_deg": 25.0,
+      "displacement_m": 0.00518408789425695,
+      "velocity_m_s": 3.636061991664411,
+      "acceleration_m_s2": 1171.8844117317972,
+      "approximate_acceleration_m_s2": 1165.9349677206146,
+      "beta_rad": 0.12697917906771,
+      "pressure_pa": 1239785.96944051,
+      "reference_pa": 0.0,
+      "gas_force_n": 7199.999999999999,
+      "inertia_force_n": -677.1148130986323,
+      "rod_compression_n": 6575.8273671856705
+    },
+    "tension_components": {
+      "angle_deg": 380.0,
+      "displacement_m": 0.0033488370747464247,
+      "velocity_m_s": 2.964085170108671,
+      "acceleration_m_s2": 1244.8271267152159,
+      "approximate_acceleration_m_s2": 1240.5421275619449,
+      "beta_rad": 0.10266713838680187,
+      "pressure_pa": -60267.37351446924,
+      "reference_pa": 0.0,
+      "gas_force_n": -349.99999999999994,
+      "inertia_force_n": -719.2611138160516,
+      "rod_compression_n": -1074.9212654382795
+    },
+    "max_abs_acceleration_m_s2": 1378.9075347480157,
+    "max_abs_inclination_deg": 17.43667669550125,
+    "sign_convention": "Rod compression positive; FEA tension positive = negative rod force",
+    "engine": {
+      "bore_mm": 85.99,
+      "stroke_mm": 86,
+      "rod_length_mm": 143.5,
+      "rpm": 1500,
+      "reciprocating_mass_kg": 0.5778,
+      "cycle_deg": 720
+    },
+    "step_deg": 0.25
+  },
+  "observed_rod_peak_n": 7200.0,
+  "rod_comparison_mae_n": 412.60560393403,
+  "gas_force_check": "Round trip F/A to pressure to F is a unit consistency check, NOT independent validation",
+  "inertia_comparison": {
+    "angle_deg": [
+      0,
+      90,
+      180,
+      270,
+      360
+    ],
+    "published_approximate_n": [
+      -780,
+      200,
+      440,
+      200,
+      -800
+    ],
+    "calculated_n": [
+      -796.7327735774035,
+      192.54478205382463,
+      429.33857235672417,
+      192.54478205382483,
+      -796.7327735774035
+    ],
+    "reading_uncertainty_n": 50
+  },
+  "kinematics": {
+    "max_finite_difference_error_m_s2": 0.00018638499773260264,
+    "tdc_m": 0.0,
+    "bdc_m": 0.08600000000000001
+  },
+  "metadata": {
+    "name": "Ricardo Hydra gasoline, GM 2.0 litre Cavalier-derived research engine",
+    "engine": {
+      "bore_mm": 85.99,
+      "stroke_mm": 86,
+      "rod_length_mm": 143.5,
+      "rpm": 1500,
+      "reciprocating_mass_kg": 0.5778,
+      "cycle_deg": 720
+    },
+    "source_type": "APPROXIMATE_MANUAL_PLOT_READINGS_NOT_RAW_PRESSURE",
+    "force_reading_uncertainty_n": 150,
+    "angle_reading_uncertainty_deg": 5,
+    "sources": [
+      {
+        "title": "Mufti (2004), Total and component friction in a motored and firing engine",
+        "url": "https://etheses.whiterose.ac.uk/id/eprint/5354/1/414535.pdf",
+        "locations": "printed pp114,143 Fig7.2,146 Fig7.4; PDF pp139,168,171"
+      },
+      {
+        "title": "Mufti and Priest (2009), Effect of Engine Operating Conditions and Lubricant Rheology on the Distribution of Losses in an Internal Combustion Engine, Table1",
+        "url": "https://doi.org/10.1115/1.3176988",
+        "mirror": "https://citeseerx.ist.psu.edu/document?doi=7067fabec0c2fbf5a2c4c7a293ee0e0a131718dd&repid=rep1&type=pdf"
+      },
+      {
+        "title": "Dyson (2011), Table6.1, related Leeds Hydra engine",
+        "url": "https://etheses.whiterose.ac.uk/id/eprint/2772/1/Dyson_CJ_Mechanical_Engineering_PhD_2011.pdf"
+      }
+    ],
+    "limitations": [
+      "1500 rpm, half load; exact torque, spark timing, air/fuel ratio and thermal conditions not specified in Fig7.2 caption.",
+      "Dimensions supplemented from same research-family publication; cannot establish identical build configuration from unavailable thesis CD-ROM.",
+      "577.8g is Fig7.4 piston assembly incl rod section A; published 2009 whole effective mass 0.64kg is a different definition and is not substituted.",
+      "Related Dyson engine has 1mm pin offset; present model is explicitly zero-offset.",
+      "Gas force digitization is converted to differential pressure, not an original absolute cylinder-pressure sensor trace.",
+      "Measured strain-gauge rod force has additional rod-section dynamics, friction and gravity; it is not identical to the ideal piston-side axial force.",
+      "Sparse plot readings cannot resolve peak timing or provide experimental combustion validation."
+    ],
+    "thesis_pdf_sha256": "537afce92f6895773d5f45eb90dc89e2feaaa04f86bd919a4bfeb8e5b25a9855"
+  }
+}

@@ -20,14 +20,15 @@ if __name__ == "__main__":
                 g,
                 m,
                 loads,
-                Surrogate(ROOT / "models/fea_surrogate.joblib"),
+                Surrogate(ROOT / "models/phase2_surrogate.joblib"),
                 out,
                 Constraints(**job["constraints"]),
                 mesh,
             )
         else:
             rows = [
-                solve(g, m, load_case, mesh, out / load_case.kind, mode=job["action"]) for load_case in loads
+                solve(g, m, load_case, mesh, out / load_case.kind, mode=job["action"])
+                for load_case in loads
             ]
             result = dict(
                 status="COMPLETED"
@@ -38,6 +39,7 @@ if __name__ == "__main__":
             )
     except Exception as exc:
         result = dict(status="FAILED", error=str(exc), traceback=traceback.format_exc())
+    result["load_provenance"] = job.get("load_provenance", "MANUAL")
     temp = out / "ui-result.tmp"
     temp.write_text(json.dumps(result, indent=2))
     temp.replace(out / "ui-result.json")

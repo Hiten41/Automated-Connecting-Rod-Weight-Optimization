@@ -25,6 +25,14 @@ from .materials import mass_from_volume
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def portable_path(path):
+    path = Path(path).resolve()
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def fingerprint(obj):
     return hashlib.sha256(
         json.dumps(obj, sort_keys=True, allow_nan=False).encode()
@@ -146,6 +154,63 @@ def mesh_step(step, g, settings, out):
         gmsh.option.setNumber("Mesh.ElementOrder", 2)
         gmsh.option.setNumber("Mesh.SecondOrderLinear", 0)
         gmsh.option.setNumber("General.NumThreads", 2)
+        if settings.local_refinement:
+            # Refine geometric fillet curves and pocket boundaries by distance.
+            curves = []
+            for _, tag in gmsh.model.getEntities(1):
+                bb = gmsh.model.getBoundingBox(1, tag)
+                if bb[0] > 1 and bb[3] < g.length_cc - 1:
+                    curves.append(tag)
+            field = gmsh.model.mesh.field.add("Distance")
+            gmsh.model.mesh.field.setNumbers(field, "CurvesList", curves)
+            gmsh.model.mesh.field.setNumber(field, "Sampling", 50)
+            threshold = gmsh.model.mesh.field.add("Threshold")
+            for key, value in dict(
+                InField=field,
+                SizeMin=settings.size_mm * 0.45,
+                SizeMax=settings.size_mm,
+                DistMin=1,
+                DistMax=5,
+            ).items():
+                gmsh.model.mesh.field.setNumber(threshold, key, value)
+            gmsh.model.mesh.field.setAsBackgroundMesh(threshold)
+        if settings.hotspot_size_mm is not None:
+            # Focused feature refinement: local control independent of bulk size.
+            gmsh.option.setNumber("Mesh.MeshSizeMin", settings.hotspot_size_mm)
+            gmsh.option.setNumber("Mesh.MeshSizeFromCurvature", 0)
+            rb = g.big_end_id / 2 + g.ring_thickness
+            rs = g.small_end_id / 2 + 0.85 * g.ring_thickness
+            xb = np.sqrt(rb**2 - (g.shank_width / 2) ** 2)
+            xs = g.length_cc - np.sqrt(rs**2 - (g.shank_width / 2) ** 2)
+            centers = [
+                [x, y, z]
+                for x in [xb, xs]
+                for y in [-g.shank_width / 2, g.shank_width / 2]
+                for z in [0, g.beam_thickness]
+            ]
+            centers += [
+                [x, y, z]
+                for x in [rb + 2, rb + 2 + g.pocket_length]
+                for y in [-g.pocket_width / 2, g.pocket_width / 2]
+                for z in [g.pocket_depth, g.beam_thickness - g.pocket_depth]
+            ]
+            balls = []
+            for x, y, z in centers:
+                ball = gmsh.model.mesh.field.add("Ball")
+                balls.append(ball)
+                for key, value in dict(
+                    VIn=settings.hotspot_size_mm,
+                    VOut=settings.size_mm,
+                    XCenter=x,
+                    YCenter=y,
+                    ZCenter=z,
+                    Radius=3,
+                    Thickness=3,
+                ).items():
+                    gmsh.model.mesh.field.setNumber(ball, key, value)
+            minimum = gmsh.model.mesh.field.add("Min")
+            gmsh.model.mesh.field.setNumbers(minimum, "FieldsList", balls)
+            gmsh.model.mesh.field.setAsBackgroundMesh(minimum)
         gmsh.model.mesh.generate(3)
         gmsh.model.mesh.optimize("HighOrder")
         tags, xyz, _ = gmsh.model.mesh.getNodes()
@@ -185,6 +250,18 @@ def mesh_step(step, g, settings, out):
             if list(typ) != [9]:
                 raise ValueError("Require six-node surface triangles")
             surfaces[label] = np.asarray(con[0]).reshape(-1, 6).astype(int).tolist()
+        quality = gmsh.model.mesh.getElementQualities(list(elements), "minSICN")
+        if not np.isfinite(quality).all() or min(quality) <= 0:
+            raise ValueError("Nonpositive/nonfinite mesh quality")
+        (Path(out) / "mesh-quality.json").write_text(
+            json.dumps(
+                dict(
+                    minSICN_min=float(min(quality)),
+                    minSICN_p01=float(np.quantile(quality, 0.01)),
+                    element_count=len(elements),
+                )
+            )
+        )
         gmsh.write(str(Path(out) / "mesh.msh"))
         return nodes, elements, surfaces, gmsh.__version__
     finally:
@@ -235,6 +312,8 @@ def write_input(path, nodes, elements, fixed, weights, material, load):
         "S",
         "*NODE PRINT,NSET=ALLN",
         "U",
+        "*NODE PRINT,NSET=ALLN",
+        "RF",
         "*EL PRINT,ELSET=ALLE",
         "S",
         "*END STEP",
@@ -266,6 +345,9 @@ def parse_dat(path):
         low = line.lower().strip()
         if low.startswith("displacements"):
             state = "u"
+            continue
+        if low.startswith("forces"):
+            state = "rf"
             continue
         if low.startswith("stresses"):
             state = "s"
@@ -322,6 +404,17 @@ def solve(
         mesh=settings.to_dict(),
         geometry_version=GEOMETRY_VERSION,
         mode=mode.value,
+        simulation_version="phase2-bearing-v1",
+        solver_configuration=dict(
+            analysis="linear static",
+            threads=2,
+            timeout_s=600,
+            ccx_sha256=hashlib.sha256(
+                Path(configuration()["ccx"]).read_bytes()
+            ).hexdigest()
+            if Path(configuration()["ccx"]).is_file()
+            else "unavailable",
+        ),
     )
     sid = fingerprint(request)[:20]
     out = Path(out or ROOT / "runs" / sid).resolve()
@@ -332,15 +425,14 @@ def solve(
         sample_id=sid,
         **request,
         mesh_configuration=dict(
-            size_min_mm=0.45 * settings.size_mm,
+            size_min_mm=settings.hotspot_size_mm or 0.45 * settings.size_mm,
             size_max_mm=settings.size_mm,
-            curvature_points=12,
+            curvature_points=0 if settings.hotspot_size_mm else 12,
             quadratic_curved=True,
             high_order_optimization=True,
             threads=2,
         ),
-        solver_configuration=dict(analysis="linear static", threads=2, timeout_s=600),
-        output_dir=str(out),
+        output_dir=portable_path(out),
         data_source="FreeCAD/Gmsh/CalculiX",
         timestamp=__import__("datetime")
         .datetime.now(__import__("datetime").timezone.utc)
@@ -358,11 +450,28 @@ def solve(
             nodes, elements, surfaces, version = mesh_step(
                 out / "geometry.step", g, settings, out
             )
+            base.update(
+                node_count=len(nodes),
+                element_count=len(elements),
+                mesh_quality=json.loads((out / "mesh-quality.json").read_text()),
+            )
+            if len(nodes) > 250000:
+                raise RuntimeError(
+                    "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+                )
             fixed = {n for t in surfaces["fixed"] for n in t}
             weights = surface_weights(surfaces["loaded"], nodes)
-            boundary = write_input(
-                out / "job.inp", nodes, elements, fixed, weights, m, load
-            )
+            if settings.boundary_mode == "COSINE_BEARING":
+                from .bearing import write_bearing_input
+
+                boundary = write_bearing_input(
+                    out / "job.inp", nodes, elements, surfaces, g, m, load
+                )
+            else:
+                boundary = write_input(
+                    out / "job.inp", nodes, elements, fixed, weights, m, load
+                )
+                boundary["model"] = "LEGACY_CLAMPED_BORE"
             if (
                 abs(boundary["resultant_n"][0] - load.signed_force)
                 > 1e-7 * load.force_n
@@ -379,6 +488,44 @@ def solve(
             u, s = parse_dat(out / "job.dat")
             if len(u) != len(nodes) or set(int(row[0]) for row in s) != set(elements):
                 raise ValueError("Incomplete solver field coverage")
+            if settings.boundary_mode == "COSINE_BEARING":
+                from .bearing import equilibrium_audit
+
+                audit = equilibrium_audit(
+                    out / "job.inp",
+                    out / "job.dat",
+                    nodes,
+                    boundary["gauges"],
+                    load.force_n,
+                )
+                boundary["equilibrium"] = audit
+                (out / "equilibrium.json").write_text(json.dumps(audit, indent=2))
+                if (
+                    max(
+                        audit["reaction_dof_norm_fraction"],
+                        audit["force_balance_fraction"],
+                    )
+                    > 0.01
+                    or np.linalg.norm(audit["balance_moment_n_mm"])
+                    / (load.force_n * g.length_cc)
+                    > 0.01
+                ):
+                    raise ValueError(
+                        "Reaction/equilibrium residual exceeds 1% tolerance"
+                    )
+            if settings.boundary_mode == "LEGACY_CLAMPED_BORE":
+                from .bearing import equilibrium_audit
+
+                audit = equilibrium_audit(
+                    out / "job.inp",
+                    out / "job.dat",
+                    nodes,
+                    [(n, d) for n in fixed for d in (1, 2, 3)],
+                    load.force_n,
+                )
+                boundary["equilibrium"] = audit
+                if audit["force_balance_fraction"] > 0.01:
+                    raise ValueError("Clamped-bore reaction balance exceeds 1%")
             vm = von_mises(np.asarray(s)[:, 2:])
             disp = np.linalg.norm(list(u.values()), axis=1)
             if vm.max() <= 0 or disp.max() <= 0:
@@ -402,7 +549,12 @@ def solve(
                 boundary_conditions=boundary,
                 gmsh_version=version,
                 solver_version=solver_version,
-                fields_path=str(out / "fields.json"),
+                fields_path=portable_path(out / "fields.json"),
+                mesh_quality=json.loads((out / "mesh-quality.json").read_text()),
+                hotspot=__import__("conrod.fields", fromlist=["hotspot"]).hotspot(
+                    nodes, elements, s, g
+                ),
+                convergence_status="INSUFFICIENT COMPUTE / VALIDATION",
                 stress_measure="Maximum unaveraged integration-point von Mises; singularity-sensitive",
             )
     except Exception as exc:

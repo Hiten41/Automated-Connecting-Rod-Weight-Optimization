@@ -26,6 +26,39 @@ FEATURES = list(BOUNDS) + [
 TARGETS = ["max_von_mises_mpa", "max_displacement_mm"]
 
 
+class PhysicsScaledModel:
+    """Linear-static dimensional scaling; geometry/Poisson ratio remain learned.
+
+    Stress/F and displacement*E/F are independent of force and modulus for
+    this linear isotropic model with force-proportional bearing pressure.
+    """
+
+    def __init__(self, base):
+        self.base = base
+        self.input_indices = [
+            FEATURES.index(k) for k in list(BOUNDS) + ["compression", "poissons_ratio"]
+        ]
+
+    def scales(self, X):
+        X = np.asarray(X)
+        force = X[:, FEATURES.index("force_n")]
+        modulus = X[:, FEATURES.index("youngs_modulus_mpa")]
+        if np.any(force <= 0) or np.any(modulus <= 0):
+            raise ValueError("Positive force/modulus required")
+        return np.column_stack([force, force / modulus])
+
+    def fit(self, X, y):
+        X = np.asarray(X)
+        self.model = TransformedTargetRegressor(
+            regressor=self.base, transformer=StandardScaler()
+        ).fit(X[:, self.input_indices], np.asarray(y) / self.scales(X))
+        return self
+
+    def predict(self, X):
+        X = np.asarray(X)
+        return self.model.predict(X[:, self.input_indices]) * self.scales(X)
+
+
 def features(g, m, load):
     d = {
         **g.to_dict(),
@@ -120,9 +153,7 @@ def train(dataset, output, seed=42):
     fitted = {}
     scales = np.std(y[train_idx], axis=0)
     for name, base in models.items():
-        model = TransformedTargetRegressor(
-            regressor=base, transformer=StandardScaler()
-        ).fit(X[train_idx], y[train_idx])
+        model = PhysicsScaledModel(base).fit(X[train_idx], y[train_idx])
         pred = model.predict(X[val])
         scores[name] = dict(
             training=metrics(y[train_idx], model.predict(X[train_idx])),
@@ -138,6 +169,25 @@ def train(dataset, output, seed=42):
     test_metrics = metrics(y[test], test_pred)
     for name, model_i in fitted.items():
         scores[name]["test"] = metrics(y[test], model_i.predict(X[test]))
+    from .analytical import evaluate
+
+    analytical_predictions = np.array(
+        [
+            [
+                evaluate(
+                    Geometry(**rows[i]["geometry"]),
+                    Material(**rows[i]["material"]),
+                    LoadCase(**rows[i]["load"]),
+                )[key]
+                for key in ["estimated_nominal_stress_mpa", "estimated_displacement_mm"]
+            ]
+            for i in test
+        ]
+    )
+    scores["analytical_nominal_screening"] = {
+        "test": metrics(y[test], analytical_predictions),
+        "note": "Nominal beam response, not a local stress predictor; excluded from learned-model selection",
+    }
     boundary = np.array(
         [
             1.4 <= rows[i]["factor_of_safety"] <= 2.2
@@ -146,10 +196,11 @@ def train(dataset, output, seed=42):
         ]
     )
     report = dict(
-        model_version="fea-1",
+        model_version="fea-2-bearing-physics-scaled",
         software_versions=dict(
             numpy=np.__version__, sklearn=__import__("sklearn").__version__
         ),
+        target_physics_scaling="Learn stress/F and displacement*E/F; restore dimensional responses at prediction",
         selected_model=winner,
         dataset_sha256=hashlib.sha256(Path(dataset).read_bytes()).hexdigest(),
         supported_materials=list(
@@ -187,6 +238,8 @@ def train(dataset, output, seed=42):
         features=FEATURES,
         targets=TARGETS,
         geometry_version=GEOMETRY_VERSION,
+        mesh_configuration=rows[0]["mesh"],
+        simulation_version=rows[0]["simulation_version"],
         split_ids={
             name: [rows[i]["sample_id"] for i in idx]
             for name, idx in [("train", train_idx), ("validation", val), ("test", test)]

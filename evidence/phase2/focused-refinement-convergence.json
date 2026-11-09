@@ -1,0 +1,48 @@
+{
+  "compression": {
+    "status": "NOT CONVERGED",
+    "relative_changes": {
+      "max_von_mises_mpa": [
+        0.10371357116641776,
+        0.12671018413372587,
+        0.07636827366058384
+      ],
+      "max_displacement_mm": [
+        0.0032838514646267433,
+        0.0012863017992894303,
+        0.00023754037659503728
+      ]
+    },
+    "tolerance": 0.05,
+    "mesh_sizes_mm": [
+      1.75,
+      1.25,
+      1.0,
+      0.75
+    ],
+    "rule": "Both peak stress and maximum displacement change <5% in two successive refinements; limited to this geometry/configuration"
+  },
+  "tension": {
+    "status": "NOT CONVERGED",
+    "relative_changes": {
+      "max_von_mises_mpa": [
+        0.12288918316253503,
+        0.1127391121127916,
+        0.06284470979247732
+      ],
+      "max_displacement_mm": [
+        0.001159486144046062,
+        0.00035449521401326417,
+        0.0007080695378146621
+      ]
+    },
+    "tolerance": 0.05,
+    "mesh_sizes_mm": [
+      1.75,
+      1.25,
+      1.0,
+      0.75
+    ],
+    "rule": "Both peak stress and maximum displacement change <5% in two successive refinements; limited to this geometry/configuration"
+  }
+}

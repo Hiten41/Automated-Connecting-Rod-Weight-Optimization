@@ -1,0 +1,272 @@
+[
+  {
+    "source": "runs/refinement-final/2.5-compression/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    "mesh": {
+      "size_mm": 2.5,
+      "order": 2
+    },
+    "max_von_mises_mpa": 316.8515845660705,
+    "hotspot": {
+      "element_id": 25819,
+      "integration_point": 3,
+      "coordinates_mm": [
+        131.82572047619004,
+        13.681352641190049,
+        13.468001394140073
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 221.32299286549312,
+      "local_2mm_point_count": 30,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/refinement-final/2.5-tension/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "tension",
+      "force_n": 18000.0
+    },
+    "mesh": {
+      "size_mm": 2.5,
+      "order": 2
+    },
+    "max_von_mises_mpa": 206.33105619864395,
+    "hotspot": {
+      "element_id": 25820,
+      "integration_point": 1,
+      "coordinates_mm": [
+        131.8440257516761,
+        -13.687823227805033,
+        13.468001394140073
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 139.9710734266737,
+      "local_2mm_point_count": 30,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/refinement-final/4.0-compression/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2
+    },
+    "max_von_mises_mpa": 285.2765094583035,
+    "hotspot": {
+      "element_id": 7708,
+      "integration_point": 1,
+      "coordinates_mm": [
+        131.6215151397157,
+        -13.53642571537707,
+        13.195786274707396
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 214.3495578500525,
+      "local_2mm_point_count": 12,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/refinement-final/4.0-tension/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "tension",
+      "force_n": 18000.0
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2
+    },
+    "max_von_mises_mpa": 183.39463737766872,
+    "hotspot": {
+      "element_id": 7687,
+      "integration_point": 1,
+      "coordinates_mm": [
+        131.6215151397157,
+        -13.53642571537707,
+        13.195786274707396
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 137.79857947066986,
+      "local_2mm_point_count": 12,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/refinement-final/6.0-compression/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    "mesh": {
+      "size_mm": 6.0,
+      "order": 2
+    },
+    "max_von_mises_mpa": 278.6224121129753,
+    "hotspot": {
+      "element_id": 4084,
+      "integration_point": 3,
+      "coordinates_mm": [
+        131.41844186480822,
+        13.479429869872705,
+        12.952240679767684
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 196.86916825192358,
+      "local_2mm_point_count": 7,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/refinement-final/6.0-tension/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "tension",
+      "force_n": 18000.0
+    },
+    "mesh": {
+      "size_mm": 6.0,
+      "order": 2
+    },
+    "max_von_mises_mpa": 178.96761350076335,
+    "hotspot": {
+      "element_id": 4067,
+      "integration_point": 3,
+      "coordinates_mm": [
+        131.41844186480822,
+        13.479429869872705,
+        12.952240679767684
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 126.79984351869923,
+      "local_2mm_point_count": 7,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/optimization-guarded/baseline-compression/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 1.75,
+      "order": 2
+    },
+    "max_von_mises_mpa": 266.00570182673334,
+    "hotspot": {
+      "element_id": 102847,
+      "integration_point": 3,
+      "coordinates_mm": [
+        130.67206967166373,
+        12.257143234654851,
+        7.225576050697018
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 155.0594668116869,
+      "local_2mm_point_count": 86,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/optimization-guarded/baseline-tension/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 1.75,
+      "order": 2
+    },
+    "max_von_mises_mpa": 170.99253895249475,
+    "hotspot": {
+      "element_id": 104011,
+      "integration_point": 3,
+      "coordinates_mm": [
+        130.73630151880465,
+        12.252479251621489,
+        18.167849787563668
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 100.67169240323281,
+      "local_2mm_point_count": 90,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/optimization-guarded/candidate-0-compression/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "compression",
+      "force_n": 28000
+    },
+    "mesh": {
+      "size_mm": 1.75,
+      "order": 2
+    },
+    "max_von_mises_mpa": 352.9309148195747,
+    "hotspot": {
+      "element_id": 60048,
+      "integration_point": 3,
+      "coordinates_mm": [
+        131.9452256883759,
+        -13.78185034296072,
+        13.655679447481603
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 219.21285010829106,
+      "local_2mm_point_count": 79,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  },
+  {
+    "source": "runs/optimization-guarded/candidate-0-tension/result.json",
+    "geometry_version": "rod-1-sharp-pocket",
+    "load": {
+      "kind": "tension",
+      "force_n": 18000
+    },
+    "mesh": {
+      "size_mm": 1.75,
+      "order": 2
+    },
+    "max_von_mises_mpa": 226.97379908912168,
+    "hotspot": {
+      "element_id": 59982,
+      "integration_point": 3,
+      "coordinates_mm": [
+        131.9452256883759,
+        -13.78185034296072,
+        13.655679447481603
+      ],
+      "region": "small-end/shank transition",
+      "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+      "local_2mm_ip_mean_mpa": 140.48833162678002,
+      "local_2mm_point_count": 70,
+      "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+    }
+  }
+]

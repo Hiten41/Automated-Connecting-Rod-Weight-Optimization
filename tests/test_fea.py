@@ -69,7 +69,7 @@ def test_real_solver_load_scaling(g, m, tmp_path):
             continue
         if active:
             n, dof, f = line.split(",")
-            line = f"{n},{dof},{-2 * float(f):.12e}"
+            line = f"{n},{dof},{2 * float(f):.12e}"
         scaled.append(line)
     (tmp_path / "a/scaled.inp").write_text("\n".join(scaled) + "\n")
     fea.command(

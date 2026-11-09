@@ -1,0 +1,11 @@
+{
+  "geometries": 3,
+  "successful_analyses": 6,
+  "failed_analyses": 0,
+  "rejected_geometry_samples": 0,
+  "seed": 42,
+  "sampling_method": "Batch Latin Hypercube with rejection replenishment",
+  "fixed_packaging": true,
+  "elapsed_s": 35.61551220000183,
+  "mesh_size_mm": 8
+}

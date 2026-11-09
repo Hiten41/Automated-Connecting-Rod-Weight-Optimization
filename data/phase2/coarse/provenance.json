@@ -1,0 +1,26 @@
+{
+  "geometry_version": [
+    "rod-2-filleted-pocket"
+  ],
+  "simulation_version": [
+    "phase2-bearing-v1"
+  ],
+  "mesh_configuration": {
+    "size_mm": 8,
+    "order": 2,
+    "boundary_mode": "COSINE_BEARING",
+    "local_refinement": true,
+    "hotspot_size_mm": null
+  },
+  "solver_versions": [
+    "This is Version 2.22"
+  ],
+  "gmsh_versions": [
+    "4.15.2"
+  ],
+  "load_provenance": "Latin-hypercube sampled manual axial force magnitudes; actual FEA labels, not measured engine combustion",
+  "dataset_sha256": "6062f5dc0af2c44df1b58cff740bd106128fc59596f8b15038a508500d3492d1",
+  "successful_analyses": 120,
+  "fixed_transition_radius_mm": 1,
+  "convergence_qualification": "Coarse response model only; unconverged peak stress is not a certified strength prediction"
+}

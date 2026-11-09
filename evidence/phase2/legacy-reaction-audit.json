@@ -1,0 +1,60 @@
+[
+  {
+    "load": "compression",
+    "audit": {
+      "applied_total_n": [
+        -28000.000000000007,
+        0.0,
+        0.0
+      ],
+      "reaction_total_n": [
+        28000.000091579685,
+        4.117667394276658e-06,
+        1.09193487620729e-05
+      ],
+      "balance_residual_n": [
+        9.157967724604532e-05,
+        4.117667394276658e-06,
+        1.09193487620729e-05
+      ],
+      "balance_moment_n_mm": [
+        -8.622649488643219e-05,
+        0.0007581460815799801,
+        0.002441302924523825
+      ],
+      "reaction_dof_norm_fraction": 0.05168907448418157,
+      "force_balance_fraction": 3.2971510287577275e-09,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    },
+    "unchanged_stress_mpa": 289.15629627709063
+  },
+  {
+    "load": "tension",
+    "audit": {
+      "applied_total_n": [
+        18000.000000000015,
+        0.0,
+        0.0
+      ],
+      "reaction_total_n": [
+        -18000.000087015174,
+        1.040851737221793e-05,
+        8.8211198425725e-06
+      ],
+      "balance_residual_n": [
+        -8.701515980646946e-05,
+        1.040851737221793e-05,
+        8.8211198425725e-06
+      ],
+      "balance_moment_n_mm": [
+        -0.00013787029199008316,
+        -0.0013632993302508112,
+        0.0007442931167531697
+      ],
+      "reaction_dof_norm_fraction": 0.05168096573987313,
+      "force_balance_fraction": 4.893239044817129e-09,
+      "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+    },
+    "unchanged_stress_mpa": 191.400174741384
+  }
+]

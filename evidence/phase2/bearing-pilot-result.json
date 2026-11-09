@@ -1,0 +1,197 @@
+{
+  "sample_id": "4f35c7bd745312a10973",
+  "geometry": {
+    "length_cc": 145.0,
+    "big_end_id": 50.0,
+    "small_end_id": 24.0,
+    "ring_thickness": 8.0,
+    "shank_width": 25.0,
+    "beam_thickness": 22.0,
+    "pocket_depth": 2.2,
+    "flange_thickness": 5.5,
+    "transition_radius_mm": 1.0
+  },
+  "material": {
+    "name": "Forged Steel (AISI 4340)",
+    "youngs_modulus_mpa": 205000.0,
+    "poissons_ratio": 0.29,
+    "density_kg_per_mm3": 7.85e-06,
+    "yield_strength_mpa": 710.0
+  },
+  "load": {
+    "kind": "compression",
+    "force_n": 28000.0
+  },
+  "mesh": {
+    "size_mm": 4,
+    "order": 2,
+    "boundary_mode": "COSINE_BEARING",
+    "local_refinement": true
+  },
+  "geometry_version": "rod-2-filleted-pocket",
+  "mode": "FEA",
+  "simulation_version": "phase2-bearing-v1",
+  "solver_configuration": {
+    "analysis": "linear static",
+    "threads": 2,
+    "timeout_s": 600,
+    "ccx_sha256": "a7c351a332373e3075029b7986ea4c9e878789c5b4d2feaed1ef83703624fff5"
+  },
+  "mesh_configuration": {
+    "size_min_mm": 1.8,
+    "size_max_mm": 4,
+    "curvature_points": 12,
+    "quadratic_curved": true,
+    "high_order_optimization": true,
+    "threads": 2
+  },
+  "output_dir": "runs/bearing-pilot",
+  "data_source": "FreeCAD/Gmsh/CalculiX",
+  "timestamp": "2026-11-09T16:56:49.283498+00:00",
+  "cad": {
+    "status": "CAD_SUCCESS",
+    "measured_web_thickness_mm": 17.6,
+    "measured_flange_thicknesses_mm": [
+      5.5,
+      5.5
+    ],
+    "volume_mm3": 93672.21065639016,
+    "valid_topology": true,
+    "solid_count": 1,
+    "bores": [
+      {
+        "face": 11,
+        "center_x_mm": 145.0,
+        "diameter_mm": 24.0,
+        "area_mm2": 1658.7609210954106
+      },
+      {
+        "face": 20,
+        "center_x_mm": 0,
+        "diameter_mm": 50.0,
+        "area_mm2": 3455.7519189487716
+      }
+    ],
+    "web_thickness_mm": 17.6,
+    "flange_thickness_mm": 5.5,
+    "transition_radius_mm": 1.0,
+    "junction_fillet_edge_count": 4,
+    "geometry_version": "rod-2-filleted-pocket",
+    "freecad_version": [
+      "1",
+      "1",
+      "4",
+      "20260928 (Git shallow)",
+      "Unknown",
+      "2026/09/28 13:46:34",
+      "(HEAD detached at 4fd3bf320)",
+      "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+    ],
+    "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 13 2025, 14:00:26) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "mass_kg": 0.7353268536526627,
+  "status": "FEA_SUCCESS",
+  "max_von_mises_mpa": 477.7304218349201,
+  "max_displacement_mm": 0.09879710361369153,
+  "factor_of_safety": 1.4861938188339632,
+  "node_count": 82831,
+  "element_count": 53179,
+  "boundary_conditions": {
+    "model": "COSINE_BEARING",
+    "resultant_n": [
+      -27999.99999999998,
+      -1.9895196601282805e-13,
+      0.0
+    ],
+    "opposite_bore": {
+      "resultant_n": [
+        28000.00000000002,
+        2.41140440948584e-12,
+        0.0
+      ],
+      "moment_n_mm": [
+        -1.0906830993917538e-11,
+        2.2595258997171186e-11,
+        -3.7991953333316175e-12
+      ],
+      "max_relative_quadrature_correction": 0.00010668507138834997,
+      "minimum_pressure_weight_n": 0.2571152904193264,
+      "loaded_node_count": 652
+    },
+    "loaded_bore": {
+      "resultant_n": [
+        -27999.99999999998,
+        -1.9895196601282805e-13,
+        0.0
+      ],
+      "moment_n_mm": [
+        -4.774847184307873e-12,
+        -1.5518253349000588e-11,
+        4.014579467470636e-13
+      ],
+      "max_relative_quadrature_correction": 0.0015388830676777983,
+      "minimum_pressure_weight_n": 0.19558011172706796,
+      "loaded_node_count": 207
+    },
+    "total_applied_n": [
+      3.637978807091713e-11,
+      2.212452443473012e-12,
+      0.0
+    ],
+    "gauges": [
+      [
+        898,
+        1
+      ],
+      [
+        898,
+        2
+      ],
+      [
+        898,
+        3
+      ],
+      [
+        878,
+        1
+      ],
+      [
+        878,
+        3
+      ],
+      [
+        1295,
+        1
+      ]
+    ],
+    "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+    "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+    "gauge_reaction_n": [
+      -2.3739977e-08,
+      3.438279e-09,
+      1.5117000000000042e-10
+    ],
+    "gauge_reaction_fraction": 8.567194808640258e-13
+  },
+  "gmsh_version": "4.15.2",
+  "solver_version": "This is Version 2.22",
+  "fields_path": "runs/bearing-pilot/fields.json",
+  "mesh_quality": {
+    "minSICN_min": 0.02992393914477173,
+    "minSICN_p01": 0.3390306995785168,
+    "element_count": 53179
+  },
+  "hotspot": {
+    "element_id": 60764,
+    "integration_point": 1,
+    "element_centroid_mm": [
+      30.984835260750057,
+      -12.381007642943636,
+      21.362036364579705
+    ],
+    "location_type": "element centroid; actual integration point mapping pending"
+  },
+  "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+  "stress_measure": "Maximum unaveraged integration-point von Mises; singularity-sensitive",
+  "runtime_s": 113.17525790000218
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "case": "COSINE_BEARING-1.25-compression",
+    "node_count": 1880545,
+    "element_count": 1345103,
+    "mesh_quality": {
+      "minSICN_min": 0.22921485815075,
+      "minSICN_p01": 0.37096056331002336,
+      "element_count": 1345103
+    },
+    "runtime_s": 123.67609660000016,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+  },
+  {
+    "case": "COSINE_BEARING-1.25-tension",
+    "node_count": 1874364,
+    "element_count": 1340357,
+    "mesh_quality": {
+      "minSICN_min": 0.20681746680146698,
+      "minSICN_p01": 0.37205221760021057,
+      "element_count": 1340357
+    },
+    "runtime_s": 125.86358920000202,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+  },
+  {
+    "case": "COSINE_BEARING-1.75-compression",
+    "node_count": 688239,
+    "element_count": 480640,
+    "mesh_quality": {
+      "minSICN_min": 0.043486940628034085,
+      "minSICN_p01": 0.3723235784497567,
+      "element_count": 480640
+    },
+    "runtime_s": 38.32880490000025,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+  },
+  {
+    "case": "COSINE_BEARING-1.75-tension",
+    "node_count": 686651,
+    "element_count": 479433,
+    "mesh_quality": {
+      "minSICN_min": 0.03875547195266808,
+      "minSICN_p01": 0.37122612834957674,
+      "element_count": 479433
+    },
+    "runtime_s": 39.21089440000287,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+  },
+  {
+    "case": "COSINE_BEARING-2.5-compression",
+    "node_count": 261289,
+    "element_count": 176573,
+    "mesh_quality": {
+      "minSICN_min": 0.006669780880425725,
+      "minSICN_p01": 0.3670621115511171,
+      "element_count": 176573
+    },
+    "runtime_s": 13.055688699998427,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+  },
+  {
+    "case": "COSINE_BEARING-2.5-tension",
+    "node_count": 261729,
+    "element_count": 176928,
+    "mesh_quality": {
+      "minSICN_min": 0.04845565183399005,
+      "minSICN_p01": 0.3674293656724679,
+      "element_count": 176928
+    },
+    "runtime_s": 13.325717400002759,
+    "status": "FEA_FAILED",
+    "error": "INSUFFICIENT COMPUTE / VALIDATION: node budget 250000 exceeded; mesh preserved"
+  }
+]

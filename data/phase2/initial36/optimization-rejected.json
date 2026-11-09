@@ -1,0 +1,6 @@
+{
+  "status": "OPTIMIZATION_FAILED",
+  "error": "Outside demonstrated training ranges",
+  "diagnostics": [],
+  "verification_attempts": []
+}

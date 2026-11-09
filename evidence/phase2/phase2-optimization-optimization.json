@@ -1,0 +1,180 @@
+{
+  "status": "NO_VERIFIED_FEASIBLE_DESIGN",
+  "mechanically_qualified": false,
+  "convergence_status": "INSUFFICIENT COMPUTE / VALIDATION",
+  "stress_guard_claim": "1.2 heuristic, not calibrated confidence; observed validation residual added separately",
+  "mesh_qualification": "Constraint pass at specified mesh only; peak-stress convergence requires a separate study",
+  "baseline_geometry": {
+    "length_cc": 145.0,
+    "big_end_id": 50.0,
+    "small_end_id": 24.0,
+    "ring_thickness": 8.0,
+    "shank_width": 25.0,
+    "beam_thickness": 22.0,
+    "pocket_depth": 2.2,
+    "flange_thickness": 5.5,
+    "transition_radius_mm": 1.0
+  },
+  "baseline_mass_kg": 0.7353268536526627,
+  "baseline_fea": [],
+  "constraints": {
+    "min_fos": 1.8,
+    "max_displacement_mm": 0.35,
+    "min_buckling_margin": 1.8
+  },
+  "stress_guard_factor": 1.2,
+  "material": {
+    "name": "Forged Steel (AISI 4340)",
+    "youngs_modulus_mpa": 205000.0,
+    "poissons_ratio": 0.29,
+    "density_kg_per_mm3": 7.85e-06,
+    "yield_strength_mpa": 710.0
+  },
+  "loads": [
+    {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    {
+      "kind": "tension",
+      "force_n": 18000
+    }
+  ],
+  "diagnostics": [
+    {
+      "success": false,
+      "message": "Positive directional derivative for linesearch",
+      "iterations": 22,
+      "objective": 1.040066292911178,
+      "scaled_margins": [
+        0.8703557017421456,
+        1.8786861251357485,
+        -0.21282752988098075,
+        0.42367000616186334,
+        16.820950301960064,
+        -0.39285548650590707,
+        0.31918706262234653
+      ],
+      "x": {
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.934140601176157,
+        "shank_width": 27.91950540231437,
+        "beam_thickness": 23.9587142932633,
+        "pocket_depth": 5.877578637920921,
+        "flange_thickness": 2.566322075478443,
+        "transition_radius_mm": 1.0
+      }
+    },
+    {
+      "success": false,
+      "message": "Positive directional derivative for linesearch",
+      "iterations": 18,
+      "objective": 1.229449716320676,
+      "scaled_margins": [
+        1.6432393773919458,
+        1.2122455854630219,
+        -0.2037289826143629,
+        0.4487348829377791,
+        45.12979132757533,
+        -0.47175353120703334,
+        0.34972369711169593
+      ],
+      "x": {
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.93414060119239,
+        "shank_width": 27.91950540231437,
+        "beam_thickness": 23.958714293252996,
+        "pocket_depth": 2.01316025966677,
+        "flange_thickness": 5.898524773842077,
+        "transition_radius_mm": 1.0
+      }
+    },
+    {
+      "success": false,
+      "message": "Positive directional derivative for linesearch",
+      "iterations": 29,
+      "objective": 1.1944943069691876,
+      "scaled_margins": [
+        1.5964134472260683,
+        1.8786861251357485,
+        -0.163706179851286,
+        0.44369669942455836,
+        36.96744301852594,
+        -0.4885905036763256,
+        0.3215038494286796
+      ],
+      "x": {
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.934140601195436,
+        "shank_width": 27.91950540231437,
+        "beam_thickness": 23.9587142932633,
+        "pocket_depth": 2.2472899105013076,
+        "flange_thickness": 2.5663220754784426,
+        "transition_radius_mm": 1.0
+      }
+    },
+    {
+      "success": false,
+      "message": "Inequality constraints incompatible",
+      "iterations": 45,
+      "objective": 1.20445389249611,
+      "scaled_margins": [
+        1.6432393723985725,
+        1.8786861239242563,
+        -0.16138651582995034,
+        0.44464713438677383,
+        38.94384056262286,
+        -0.49553084975774864,
+        0.32093754736619595
+      ],
+      "x": {
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.934140600682195,
+        "shank_width": 27.919505390985982,
+        "beam_thickness": 23.95871428423024,
+        "pocket_depth": 2.013160280122258,
+        "flange_thickness": 2.566322075871711,
+        "transition_radius_mm": 1.0
+      }
+    },
+    {
+      "success": false,
+      "message": "Iteration limit reached",
+      "iterations": 60,
+      "objective": 1.0400662929128848,
+      "scaled_margins": [
+        0.870355701743604,
+        1.8786861251357485,
+        -0.21282752987762255,
+        0.42367000616264916,
+        16.8209503019837,
+        -0.3928554865024836,
+        0.31918706262386576
+      ],
+      "x": {
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 8.934140601195436,
+        "shank_width": 27.91950540231437,
+        "beam_thickness": 23.9587142932633,
+        "pocket_depth": 5.877578637913629,
+        "flange_thickness": 2.5663220754784426,
+        "transition_radius_mm": 1.0
+      }
+    }
+  ],
+  "verification_attempts": [],
+  "result": null,
+  "optimization_runtime_s": 175.1621574000019,
+  "seed": 42,
+  "rounding": "None: full precision exported; manufacturing rounding requires reverification"
+}

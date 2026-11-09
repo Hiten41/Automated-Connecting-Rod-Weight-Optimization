@@ -1,0 +1,230 @@
+[
+  {
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5
+    },
+    "geometry_version": "rod-1-sharp-pocket",
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    "mesh": {
+      "size_mm": 2.5,
+      "order": 2
+    },
+    "mass_kg": 0.7345768912277665,
+    "max_von_mises_mpa": 241.87085898481868,
+    "max_displacement_mm": 0.0611966872062742,
+    "factor_of_safety": 2.9354507731109685,
+    "node_count": 53417,
+    "element_count": 32186,
+    "runtime_s": 25.84697199999937,
+    "source_commit": "1f5b5c44e929dc4a2079105632ee108226d69ab8",
+    "source_path": "runs/refinement-baseline/2.5-compression/result.json",
+    "raw_sha256": "294ec8b83673f4c373a56813ae9bf556a0be786425b922853cc8091cb13798b7"
+  },
+  {
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5
+    },
+    "geometry_version": "rod-1-sharp-pocket",
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000.0
+    },
+    "mesh": {
+      "size_mm": 2.5,
+      "order": 2
+    },
+    "mass_kg": 0.7345768912277665,
+    "max_von_mises_mpa": 156.89595927085225,
+    "max_displacement_mm": 0.03934903756977131,
+    "factor_of_safety": 4.525291813120021,
+    "node_count": 53356,
+    "element_count": 32132,
+    "runtime_s": 25.215820899997198,
+    "source_commit": "1f5b5c44e929dc4a2079105632ee108226d69ab8",
+    "source_path": "runs/refinement-baseline/2.5-tension/result.json",
+    "raw_sha256": "6e368a7ee8cd3304b6c87f1d861bfcd1134fea2d45598673253dadca1ba317fd"
+  },
+  {
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5
+    },
+    "geometry_version": "rod-1-sharp-pocket",
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2
+    },
+    "mass_kg": 0.7345768912277665,
+    "max_von_mises_mpa": 225.59727174827998,
+    "max_displacement_mm": 0.06065267850938873,
+    "factor_of_safety": 3.1472011806606135,
+    "node_count": 17153,
+    "element_count": 9387,
+    "runtime_s": 5.628456399997958,
+    "source_commit": "1f5b5c44e929dc4a2079105632ee108226d69ab8",
+    "source_path": "runs/refinement-baseline/4.0-compression/result.json",
+    "raw_sha256": "e8d6afe43af7b651372a38efe56223b05908ea35cb3a3b794624ea06fc3cb846"
+  },
+  {
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5
+    },
+    "geometry_version": "rod-1-sharp-pocket",
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000.0
+    },
+    "mesh": {
+      "size_mm": 4.0,
+      "order": 2
+    },
+    "mass_kg": 0.7345768912277665,
+    "max_von_mises_mpa": 145.03143161975024,
+    "max_displacement_mm": 0.038988212478684454,
+    "factor_of_safety": 4.895490529677105,
+    "node_count": 17155,
+    "element_count": 9387,
+    "runtime_s": 5.356889099999535,
+    "source_commit": "1f5b5c44e929dc4a2079105632ee108226d69ab8",
+    "source_path": "runs/refinement-baseline/4.0-tension/result.json",
+    "raw_sha256": "bdc850283bce25fffeb83ca42ba95897f115e2e015397b450911297c6b077bee"
+  },
+  {
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5
+    },
+    "geometry_version": "rod-1-sharp-pocket",
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "compression",
+      "force_n": 28000.0
+    },
+    "mesh": {
+      "size_mm": 6.0,
+      "order": 2
+    },
+    "mass_kg": 0.7345768912277665,
+    "max_von_mises_mpa": 199.15145328135125,
+    "max_displacement_mm": 0.059955536346075665,
+    "factor_of_safety": 3.565125879332386,
+    "node_count": 6423,
+    "element_count": 3211,
+    "runtime_s": 2.563927100000001,
+    "source_commit": "1f5b5c44e929dc4a2079105632ee108226d69ab8",
+    "source_path": "runs/refinement-baseline/6.0-compression/result.json",
+    "raw_sha256": "a683200d67f8e6d57f3541a3bed1f2e157a7e53d3959f9c3312e0227d397d244"
+  },
+  {
+    "geometry": {
+      "length_cc": 145.0,
+      "big_end_id": 50.0,
+      "small_end_id": 24.0,
+      "ring_thickness": 8.0,
+      "shank_width": 25.0,
+      "beam_thickness": 22.0,
+      "pocket_depth": 2.2,
+      "flange_thickness": 5.5
+    },
+    "geometry_version": "rod-1-sharp-pocket",
+    "material": {
+      "name": "Forged Steel (AISI 4340)",
+      "youngs_modulus_mpa": 205000.0,
+      "poissons_ratio": 0.29,
+      "density_kg_per_mm3": 7.85e-06,
+      "yield_strength_mpa": 710.0
+    },
+    "load": {
+      "kind": "tension",
+      "force_n": 18000.0
+    },
+    "mesh": {
+      "size_mm": 6.0,
+      "order": 2
+    },
+    "mass_kg": 0.7345768912277665,
+    "max_von_mises_mpa": 128.11618993402521,
+    "max_displacement_mm": 0.03854172567074628,
+    "factor_of_safety": 5.541844480120912,
+    "node_count": 6445,
+    "element_count": 3221,
+    "runtime_s": 2.3207031000019924,
+    "source_commit": "1f5b5c44e929dc4a2079105632ee108226d69ab8",
+    "source_path": "runs/refinement-baseline/6.0-tension/result.json",
+    "raw_sha256": "4ad2832e3e1567dd640f7a4f7358cfcebedbcac9db7225215df708846ab5b510"
+  }
+]
