@@ -74,6 +74,6 @@ PASS below means evidence for the explicitly stated numerical scope, not full en
 - **FAIL — provisional peak-stress convergence target:** stable displacement does not establish converged maximum stress. This prevents full engineering acceptance. Resolve sharp transitions and revalidate the governing stress measure before hardware use. The 20% search allowance is not a substitute.
 - **BLOCKED — screenshots and browser visual QA:** local browser use is disabled. Functional UI checks passed; a person can open the local URL and review layout/interaction.
 - **Not demonstrated — fresh meshing of a bundled FreeCAD FEM benchmark:** its provided deck was solved; the independent bar and actual rod were meshed and solved through the implemented path.
-- **Not yet executed — hosted CI:** workflow is committed; local equivalent tests pass. No claim is made about a remote CI run before its status is observed.
+- **PASS — hosted CI:** [GitHub Actions run 42650420767](https://github.com/Hiten41/Automated-Connecting-Rod-Weight-Optimization/actions/runs/42650420767) passed on implementation commit `363e520e`. The hosted job runs ordinary Python tests; the real external-solver tests passed locally and are not claimed as hosted solver validation.
 
 The isolated branch is ready for **technical review of the research implementation**. Do not merge or label it a fully validated mechanical design. Review peak-stress treatment and visually inspect the application before deciding whether to open a PR. The user will decide; no PR is opened by this work.

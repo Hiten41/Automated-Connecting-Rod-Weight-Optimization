@@ -1,0 +1,7 @@
+{
+  "run_id": 42650420767,
+  "commit": "363e520e26bec1bbb63c307b9db55b8686bb80d7",
+  "conclusion": "success",
+  "url": "https://github.com/Hiten41/Automated-Connecting-Rod-Weight-Optimization/actions/runs/42650420767",
+  "scope": "Python tests, excluding external integration tests"
+}
