@@ -1,0 +1,11 @@
+{
+  "compression": {
+    "status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "count": 2
+  },
+  "tension": {
+    "status": "INSUFFICIENT COMPUTE / VALIDATION",
+    "count": 2
+  },
+  "method_limit": "Independently generated nonnested meshes. No Richardson or GCI estimate for an unsuitable/nonmonotonic sequence. Local maxima supplement unaveraged global peak."
+}

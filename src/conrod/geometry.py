@@ -99,6 +99,13 @@ def build_connecting_rod(g):
         measured_web_thickness_mm=measured_web,
         measured_flange_thicknesses_mm=measured_flanges,
         volume_mm3=solid.Volume,
+        center_of_mass_mm=[
+            solid.Solids[0].CenterOfMass.x,
+            solid.Solids[0].CenterOfMass.y,
+            solid.Solids[0].CenterOfMass.z,
+        ],
+        equivalent_small_end_mass_fraction=solid.Solids[0].CenterOfMass.x / L,
+        mass_partition_note="Uniform-density CAD center of mass, not measured reference engine rod data; end lumping does not preserve full inertia tensor",
         valid_topology=solid.isValid(),
         solid_count=len(solid.Solids),
         bores=bores,

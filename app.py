@@ -258,6 +258,18 @@ elif section == "Engine Loading":
                 format="%.4f",
             )
             cycle = c.selectbox("Cycle (degrees)", [720, 360])
+            rod_mass = a.number_input(
+                "Additional rod mass (kg)", min_value=0.0, value=0.0
+            )
+            rod_cg = b.number_input(
+                "Rod CG fraction from crank pin",
+                min_value=0.0,
+                max_value=1.0,
+                value=0.5,
+            )
+            st.caption(
+                "Optional two-end mass approximation: leave additional rod mass zero if effective reciprocating mass already includes its share. Reference rod mass/CG are not measured inputs here."
+            )
             unit = st.selectbox("CSV pressure unit", ["bar", "MPa", "Pa"])
             upload = st.file_uploader(
                 "CSV: angle_deg, pressure, optional reference_pressure", type="csv"
@@ -268,7 +280,7 @@ elif section == "Engine Loading":
             run = st.form_submit_button("Calculate cycle")
         if run:
             try:
-                e = Engine(bore, stroke, rod, rpm, mass, cycle)
+                e = Engine(bore, stroke, rod, rpm, mass, cycle, rod_mass, rod_cg)
                 if source.startswith("Published"):
                     if e != Engine(**metadata["engine"]):
                         raise ValueError(

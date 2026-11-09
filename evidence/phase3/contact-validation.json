@@ -1,0 +1,174 @@
+{
+  "patch_tests": [
+    {
+      "n": 2,
+      "penalty_mpa_per_mm": 1000000.0,
+      "status": "SOLVER_COMPLETED_UNVALIDATED",
+      "analytical_force_n": 181.81818181818178,
+      "note": "Flat contact patch test only; reaction and contact-output audit required",
+      "audit": {
+        "top_reaction_n": [
+          -3.83090219e-14,
+          -2.5662205998e-13,
+          -181.59279999999998
+        ],
+        "bottom_reaction_n": [
+          -2.463831735e-14,
+          -2.5311565215999996e-13,
+          181.59279999999998
+        ],
+        "relative_analytical_error": 0.0012395999999999109,
+        "relative_equilibrium_error": 2.824853236287751e-15,
+        "pressure_range_mpa": [
+          181.5928,
+          181.5928
+        ],
+        "signed_gap_range_mm": [
+          -0.0001815928,
+          -0.0001815928
+        ],
+        "status": "PATCH_TEST_PASSED",
+        "limit": "Uniform frictionless closed flat interface only; does not validate curved pin contact, sliding, separation or rod stress"
+      }
+    },
+    {
+      "n": 4,
+      "penalty_mpa_per_mm": 1000000.0,
+      "status": "SOLVER_COMPLETED_UNVALIDATED",
+      "analytical_force_n": 181.81818181818178,
+      "note": "Flat contact patch test only; reaction and contact-output audit required",
+      "audit": {
+        "top_reaction_n": [
+          -1.2501057907e-13,
+          3.4212013971000006e-14,
+          -181.59279800000002
+        ],
+        "bottom_reaction_n": [
+          -1.2576991957239997e-13,
+          4.0726652075e-14,
+          181.59279800000002
+        ],
+        "relative_analytical_error": 0.0012396109999997266,
+        "relative_equilibrium_error": 1.4395577552097598e-15,
+        "pressure_range_mpa": [
+          181.5928,
+          181.5928
+        ],
+        "signed_gap_range_mm": [
+          -0.0001815928,
+          -0.0001815928
+        ],
+        "status": "PATCH_TEST_PASSED",
+        "limit": "Uniform frictionless closed flat interface only; does not validate curved pin contact, sliding, separation or rod stress"
+      }
+    },
+    {
+      "n": 4,
+      "penalty_mpa_per_mm": 10000000.0,
+      "status": "SOLVER_COMPLETED_UNVALIDATED",
+      "analytical_force_n": 198.019801980198,
+      "note": "Flat contact patch test only; reaction and contact-output audit required",
+      "audit": {
+        "top_reaction_n": [
+          4.2795387390000003e-14,
+          -5.682832339000003e-14,
+          -197.72866799999997
+        ],
+        "bottom_reaction_n": [
+          4.966494093100001e-14,
+          -5.409068553e-14,
+          197.72866799999997
+        ],
+        "relative_analytical_error": 0.0014702266000000323,
+        "relative_equilibrium_error": 7.292301218402856e-16,
+        "pressure_range_mpa": [
+          197.7287,
+          197.7287
+        ],
+        "signed_gap_range_mm": [
+          -1.977287e-05,
+          -1.977287e-05
+        ],
+        "status": "PATCH_TEST_PASSED",
+        "limit": "Uniform frictionless closed flat interface only; does not validate curved pin contact, sliding, separation or rod stress"
+      }
+    }
+  ],
+  "pin_tests": [
+    {
+      "angular_elements": 32,
+      "penalty": 1000000.0,
+      "status": "COMPLETED_UNQUALIFIED_PIN_BENCHMARK",
+      "pin_force_n": [
+        8682.3299666944,
+        1.3373835372476606e-09,
+        1.2111705037015005e-09
+      ],
+      "outer_force_n": [
+        -8682.33023966,
+        -7.721268957538996e-09,
+        -1.7053025658242404e-13
+      ],
+      "equilibrium_fraction": 3.143921044796044e-08,
+      "peak_contact_pressure_mpa": 1182.748,
+      "active_contact_samples": 398
+    },
+    {
+      "angular_elements": 64,
+      "penalty": 1000000.0,
+      "status": "COMPLETED_UNQUALIFIED_PIN_BENCHMARK",
+      "pin_force_n": [
+        8379.3526255448,
+        4.831512967484741e-10,
+        -3.6220006257119985e-10
+      ],
+      "outer_force_n": [
+        -8379.352010374,
+        1.5306511613744078e-09,
+        -5.684341886080802e-14
+      ],
+      "equilibrium_fraction": 7.341507486267393e-08,
+      "peak_contact_pressure_mpa": 896.6715,
+      "active_contact_samples": 952
+    },
+    {
+      "angular_elements": 96,
+      "penalty": 1000000.0,
+      "status": "COMPLETED_UNQUALIFIED_PIN_BENCHMARK",
+      "pin_force_n": [
+        8312.070587623284,
+        -1.361005530498005e-09,
+        -9.599100632806603e-10
+      ],
+      "outer_force_n": [
+        -8312.070770068,
+        7.890577080615913e-11,
+        -4.263256414560601e-13
+      ],
+      "equilibrium_fraction": 2.1949370313443585e-08,
+      "peak_contact_pressure_mpa": 777.1206,
+      "active_contact_samples": 1520
+    },
+    {
+      "angular_elements": 96,
+      "penalty": 10000000.0,
+      "status": "COMPLETED_UNQUALIFIED_PIN_BENCHMARK",
+      "pin_force_n": [
+        9003.595653008799,
+        -2.5556445848451403e-11,
+        -5.373414503660001e-12
+      ],
+      "outer_force_n": [
+        -9003.596046065997,
+        2.803055565436807e-10,
+        2.842170943040401e-14
+      ],
+      "equilibrium_fraction": 4.365558089548944e-08,
+      "peak_contact_pressure_mpa": 2251.179,
+      "active_contact_samples": 848
+    }
+  ],
+  "pin_status": "NOT VALIDATED FOR ROD INTEGRATION",
+  "primary_model": "COSINE_BEARING equivalent-pressure approximation",
+  "reason": "Angular refinement changes peak pressure from1182.748 to777.121MPa; tenfold penalty change at96 sectors changes peak to2251.179MPa and resultant from8312.071 to9003.596N. Equilibrium passes but contact pressure and penalty independence do not. No integrated rod-contact claim."
+}

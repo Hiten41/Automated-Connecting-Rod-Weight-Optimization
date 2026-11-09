@@ -10,3 +10,5 @@ local_config.json
 data/verified/*/cases/
 
 data/phase2/*/cases/
+data/phase3/*/cases/
+evidence/phase3/*.html

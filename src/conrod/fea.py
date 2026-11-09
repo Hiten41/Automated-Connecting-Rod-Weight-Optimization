@@ -153,7 +153,12 @@ def mesh_step(step, g, settings, out):
         gmsh.option.setNumber("Mesh.MeshSizeFromCurvature", 12)
         gmsh.option.setNumber("Mesh.ElementOrder", 2)
         gmsh.option.setNumber("Mesh.SecondOrderLinear", 0)
-        gmsh.option.setNumber("General.NumThreads", 2)
+        gmsh.option.setNumber("General.NumThreads", 1)
+        for dimension in (1, 2, 3):
+            gmsh.option.setNumber(f"Mesh.MaxNumThreads{dimension}D", 1)
+        gmsh.option.setNumber("Mesh.RandomSeed", 42)
+        gmsh.option.setNumber("Mesh.Algorithm", 6)
+        gmsh.option.setNumber("Mesh.Algorithm3D", 1)
         if settings.local_refinement:
             # Refine geometric fillet curves and pocket boundaries by distance.
             curves = []
@@ -211,6 +216,32 @@ def mesh_step(step, g, settings, out):
             minimum = gmsh.model.mesh.field.add("Min")
             gmsh.model.mesh.field.setNumbers(minimum, "FieldsList", balls)
             gmsh.model.mesh.field.setAsBackgroundMesh(minimum)
+            if settings.refinement_region == "big_end_transition":
+                # Preserve resolution along the entire finite-radius fillet, not
+                # only at the two free faces. Fixed physical ROI at every level.
+                boxes = []
+                for y in [-g.shank_width / 2, g.shank_width / 2]:
+                    box = gmsh.model.mesh.field.add("Box")
+                    boxes.append(box)
+                    for key, value in dict(
+                        VIn=settings.hotspot_size_mm,
+                        VOut=settings.size_mm,
+                        XMin=xb - 2,
+                        XMax=xb + 2,
+                        YMin=y - 2,
+                        YMax=y + 2,
+                        ZMin=-1,
+                        ZMax=g.beam_thickness + 1,
+                        Thickness=3,
+                    ).items():
+                        gmsh.model.mesh.field.setNumber(box, key, value)
+                focused = gmsh.model.mesh.field.add("Min")
+                gmsh.model.mesh.field.setNumbers(
+                    focused,
+                    "FieldsList",
+                    boxes + ([threshold] if settings.local_refinement else []),
+                )
+                gmsh.model.mesh.field.setAsBackgroundMesh(focused)
         gmsh.model.mesh.generate(3)
         gmsh.model.mesh.optimize("HighOrder")
         tags, xyz, _ = gmsh.model.mesh.getNodes()
@@ -263,6 +294,37 @@ def mesh_step(step, g, settings, out):
             )
         )
         gmsh.write(str(Path(out) / "mesh.msh"))
+        (Path(out) / "mesh-topology.json").write_text(
+            json.dumps(
+                dict(
+                    nodes=nodes,
+                    elements=elements,
+                    surfaces=surfaces,
+                    geometry=g.to_dict(),
+                    settings=settings.to_dict(),
+                    gmsh_version=gmsh.__version__,
+                )
+            ),
+            encoding="utf-8",
+        )
+        (Path(out) / "mesh-provenance.json").write_text(
+            json.dumps(
+                dict(
+                    gmsh_version=gmsh.__version__,
+                    threads=1,
+                    random_seed=42,
+                    mesh_sha256=hashlib.sha256(
+                        (Path(out) / "mesh.msh").read_bytes()
+                    ).hexdigest(),
+                    topology_sha256=fingerprint(elements),
+                    coordinates_sha256=fingerprint(nodes),
+                    step_sha256=hashlib.sha256(Path(step).read_bytes()).hexdigest(),
+                    settings=settings.to_dict(),
+                ),
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
         return nodes, elements, surfaces, gmsh.__version__
     finally:
         gmsh.finalize()
@@ -387,6 +449,7 @@ def solve(
     settings: MeshSettings = MeshSettings(),
     out=None,
     mode=Mode.FEA,
+    mesh_source=None,
 ) -> FEAResult | AnalyticalResult:
     g.validate()
     m.validate()
@@ -404,7 +467,17 @@ def solve(
         mesh=settings.to_dict(),
         geometry_version=GEOMETRY_VERSION,
         mode=mode.value,
-        simulation_version="phase2-bearing-v1",
+        simulation_version="phase3-deterministic-bearing-v1",
+        implementation_sha256={
+            name: hashlib.sha256((ROOT / "src/conrod" / name).read_bytes()).hexdigest()
+            for name in [
+                "fea.py",
+                "geometry.py",
+                "bearing.py",
+                "schemas.py",
+                "fields.py",
+            ]
+        },
         solver_configuration=dict(
             analysis="linear static",
             threads=2,
@@ -430,7 +503,10 @@ def solve(
             curvature_points=0 if settings.hotspot_size_mm else 12,
             quadratic_curved=True,
             high_order_optimization=True,
-            threads=2,
+            threads=1,
+            random_seed=42,
+            algorithm_2d=6,
+            algorithm_3d=1,
         ),
         output_dir=portable_path(out),
         data_source="FreeCAD/Gmsh/CalculiX",
@@ -447,9 +523,32 @@ def solve(
             cfg = configuration()
             if not cfg["ccx"]:
                 raise RuntimeError("CalculiX unavailable")
-            nodes, elements, surfaces, version = mesh_step(
-                out / "geometry.step", g, settings, out
-            )
+            if mesh_source is None:
+                nodes, elements, surfaces, version = mesh_step(
+                    out / "geometry.step", g, settings, out
+                )
+            else:
+                source = Path(mesh_source).resolve()
+                topology = json.loads(
+                    (source / "mesh-topology.json").read_text(encoding="utf-8")
+                )
+                if (
+                    topology["geometry"] != g.to_dict()
+                    or topology["settings"] != settings.to_dict()
+                ):
+                    raise ValueError("Reused mesh geometry/settings mismatch")
+                nodes = {int(k): v for k, v in topology["nodes"].items()}
+                elements = {int(k): v for k, v in topology["elements"].items()}
+                surfaces = topology["surfaces"]
+                version = topology["gmsh_version"]
+                for name in [
+                    "mesh.msh",
+                    "mesh-quality.json",
+                    "mesh-provenance.json",
+                    "mesh-topology.json",
+                ]:
+                    shutil.copy2(source / name, out / name)
+                base["mesh_reuse_source"] = portable_path(source)
             base.update(
                 node_count=len(nodes),
                 element_count=len(elements),
@@ -538,6 +637,12 @@ def solve(
                 stress_components=["xx", "yy", "zz", "xy", "xz", "yz"],
             )
             (out / "fields.json").write_text(json.dumps(fields))
+            from .fields import regional_stress_report
+
+            (out / "regional-stress.json").write_text(
+                json.dumps(regional_stress_report(nodes, elements, s, g), indent=2),
+                encoding="utf-8",
+            )
             result = dict(
                 base,
                 status="FEA_SUCCESS",

@@ -1,0 +1,66 @@
+{
+  "records": [
+    {
+      "gmsh_version": "4.15.2",
+      "threads": 1,
+      "random_seed": 42,
+      "mesh_sha256": "ddc1c82080ad84064236639fb498a895aee5aa843326ce8b5e33f872e8a07aed",
+      "topology_sha256": "259dce4bd8cb6a64097d5487130048301c69ca8252bb6c5b82aced1890dc5e6a",
+      "coordinates_sha256": "b4aa7d8dd5ff98672daf0f604ea92b242d066a1841a580c032656f038122aa44",
+      "step_sha256": "573924634f9b0d1a5765fa9aafcb406b832dd042ec1443380daa638ef60228ab",
+      "settings": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": 0.75
+      },
+      "name": "repeat-a",
+      "node_count": 56944,
+      "element_count": 35417
+    },
+    {
+      "gmsh_version": "4.15.2",
+      "threads": 1,
+      "random_seed": 42,
+      "mesh_sha256": "9dc29259134d823acf8e0e4594c5b14e6b5c0fc81f0c5051273979d19f161d51",
+      "topology_sha256": "259dce4bd8cb6a64097d5487130048301c69ca8252bb6c5b82aced1890dc5e6a",
+      "coordinates_sha256": "493aee6d5ca03c2902d009f094ac0225b9e144996466517f5b31c4e1bf53d2f6",
+      "step_sha256": "573924634f9b0d1a5765fa9aafcb406b832dd042ec1443380daa638ef60228ab",
+      "settings": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": 0.75
+      },
+      "name": "repeat-b",
+      "node_count": 56944,
+      "element_count": 35417
+    },
+    {
+      "gmsh_version": "4.15.2",
+      "threads": 1,
+      "random_seed": 42,
+      "mesh_sha256": "8557c861ce179f22985ee2b8952af1a350af1a6b0bd546edadf16bd20fb59daf",
+      "topology_sha256": "86d03d826d87790c757431994b76f023d097f12be73411cf683f5fa727e8306b",
+      "coordinates_sha256": "cdcc22db90da266e1569864b99ff066a32b9e2400fbb4b05bd33da37b88def4e",
+      "step_sha256": "573924634f9b0d1a5765fa9aafcb406b832dd042ec1443380daa638ef60228ab",
+      "settings": {
+        "size_mm": 4,
+        "order": 2,
+        "boundary_mode": "COSINE_BEARING",
+        "local_refinement": true,
+        "hotspot_size_mm": 0.5
+      },
+      "name": "fine-pilot",
+      "node_count": 113546,
+      "element_count": 75098
+    }
+  ],
+  "repeatable_coordinates": false,
+  "repeatable_connectivity": true,
+  "node_budget": 250000,
+  "solver_timeout_s": 600,
+  "note": "Identical STEP used for repeatability; different refinement levels are independently remeshed, not nested."
+}

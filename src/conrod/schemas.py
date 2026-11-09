@@ -131,8 +131,11 @@ class MeshSettings:
     boundary_mode: str = "COSINE_BEARING"
     local_refinement: bool = True
     hotspot_size_mm: float | None = None
+    refinement_region: str = "all_features"
 
     def validate(self):
+        if self.refinement_region not in ("all_features", "big_end_transition"):
+            raise ValueError("Unknown refinement region")
         if self.hotspot_size_mm is not None and (
             not math.isfinite(self.hotspot_size_mm)
             or not 0 < self.hotspot_size_mm <= self.size_mm

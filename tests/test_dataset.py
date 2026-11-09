@@ -67,6 +67,7 @@ def test_batch_lhs_stratification_and_resume(monkeypatch, tmp_path):
             mesh=mesh.to_dict(),
             sample_id=dataset.fingerprint([g.to_dict(), load.to_dict()]),
             geometry_version=dataset.GEOMETRY_VERSION,
+            simulation_version="phase3-deterministic-bearing-v1",
         )
         r["factor_of_safety"] = m.yield_strength_mpa / r["max_von_mises_mpa"]
         out.mkdir(parents=True, exist_ok=True)

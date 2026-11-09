@@ -9,12 +9,12 @@ from .fea import solve, fingerprint, configuration
 import hashlib
 
 
-def validate_record(r):
+def validate_record(r, simulation_version="phase2-bearing-v1"):
     if (
         r.get("geometry_version") != GEOMETRY_VERSION
-        or r.get("simulation_version") != "phase2-bearing-v1"
+        or r.get("simulation_version") != simulation_version
     ):
-        raise ValueError("Incompatible Phase 2 geometry/simulation provenance")
+        raise ValueError("Incompatible geometry/simulation provenance")
     if (
         r.get("status") != "FEA_SUCCESS"
         or r.get("data_source") != "FreeCAD/Gmsh/CalculiX"
@@ -54,8 +54,14 @@ def validate_record(r):
 def load_verified(path):
     records = []
     seen = set()
+    version = None
     for line in Path(path).read_text().splitlines():
-        r = validate_record(json.loads(line))
+        raw = json.loads(line)
+        if version is None:
+            version = raw.get("simulation_version")
+            if version not in ("phase2-bearing-v1", "phase3-deterministic-bearing-v1"):
+                raise ValueError("Unsupported simulation version")
+        r = validate_record(raw, version)
         if r["sample_id"] in seen:
             raise ValueError("Duplicate simulation ID")
         seen.add(r["sample_id"])
@@ -103,7 +109,7 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
             case = fingerprint(
                 dict(
                     geometry_version=GEOMETRY_VERSION,
-                    simulation_version="phase2-bearing-v1",
+                    simulation_version="phase3-deterministic-bearing-v1",
                     solver_sha256=hashlib.sha256(
                         Path(configuration()["ccx"]).read_bytes()
                     ).hexdigest()
@@ -122,12 +128,12 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
                 not r
                 or r.get("status") != "FEA_SUCCESS"
                 or r.get("geometry_version") != GEOMETRY_VERSION
-                or r.get("simulation_version") != "phase2-bearing-v1"
+                or r.get("simulation_version") != "phase3-deterministic-bearing-v1"
                 or r.get("mesh") != mesh.to_dict()
             ):
                 r = solve(g, m, load, mesh, folder)
             try:
-                records.append(validate_record(r))
+                records.append(validate_record(r, "phase3-deterministic-bearing-v1"))
             except (ValueError, KeyError) as exc:
                 failed.append(dict(result=r, quarantine_reason=str(exc)))
             (output / "verified.jsonl").write_text(
@@ -145,7 +151,7 @@ def generate(output, count=12, seed=42, size_mm=5.0, fixed_packaging=True):
         seed=seed,
         sampling_method="Batch Latin Hypercube with rejection replenishment",
         geometry_version=GEOMETRY_VERSION,
-        simulation_version="phase2-bearing-v1",
+        simulation_version="phase3-deterministic-bearing-v1",
         boundary_mode="COSINE_BEARING",
         load_provenance="Sampled manual axial forces; actual FEA labels, not measured combustion",
         fixed_transition_radius_mm=1.0,

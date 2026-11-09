@@ -18,6 +18,8 @@ class Engine:
     rpm: float = 1500.0
     reciprocating_mass_kg: float = 0.5778
     cycle_deg: int = 720
+    rod_mass_kg: float = 0.0
+    rod_cg_fraction_from_crank: float = 0.5
 
     def validate(self):
         if not all(math.isfinite(v) for v in asdict(self).values()):
@@ -31,6 +33,8 @@ class Engine:
             720,
         ):
             raise ValueError("Nonnegative RPM/mass and 360/720 degree cycle required")
+        if self.rod_mass_kg < 0 or not 0 <= self.rod_cg_fraction_from_crank <= 1:
+            raise ValueError("Rod mass must be nonnegative and CG fraction in [0,1]")
         return self
 
 
@@ -106,7 +110,13 @@ def calculate(engine, pressure, step_deg=0.25):
     cylinder = np.interp(angle, p.angle_deg, p.pressure_pa)
     reference = np.interp(angle, p.angle_deg, p.reference_pa)
     gas = (cylinder - reference) * np.pi * (e.bore_mm / 1000) ** 2 / 4
-    inertia = -e.reciprocating_mass_kg * k["acceleration_m_s2"]
+    # Two-end lumping preserves total mass and center of mass, but generally
+    # not the rod's mass moment of inertia. The rotating share does not act as
+    # piston reciprocating mass and is not added to this axial-force model.
+    rod_reciprocating_mass = e.rod_mass_kg * e.rod_cg_fraction_from_crank
+    piston_inertia = -e.reciprocating_mass_kg * k["acceleration_m_s2"]
+    rod_inertia = -rod_reciprocating_mass * k["acceleration_m_s2"]
+    inertia = piston_inertia + rod_inertia
     rod = (gas + inertia) / np.cos(k["beta_rad"])
     frame = pd.DataFrame(
         dict(
@@ -116,6 +126,8 @@ def calculate(engine, pressure, step_deg=0.25):
             reference_pa=reference,
             gas_force_n=gas,
             inertia_force_n=inertia,
+            piston_inertia_force_n=piston_inertia,
+            rod_reciprocating_inertia_force_n=rod_inertia,
             rod_compression_n=rod,
         )
     )
@@ -131,6 +143,12 @@ def calculate(engine, pressure, step_deg=0.25):
         max_abs_inclination_deg=float(np.rad2deg(np.max(np.abs(k["beta_rad"])))),
         sign_convention="Rod compression positive; FEA tension positive = negative rod force",
         engine=asdict(e),
+        rod_mass_partition=dict(
+            reciprocating_kg=rod_reciprocating_mass,
+            rotating_kg=e.rod_mass_kg - rod_reciprocating_mass,
+            model="Two-end lumping; input reciprocating_mass_kg must exclude any separately specified rod share",
+            limitation="Does not preserve general rod rotary inertia or resolve distributed rod bending; reference rod mass/CG not independently known",
+        ),
         step_deg=step_deg,
     )
     return frame, peaks
