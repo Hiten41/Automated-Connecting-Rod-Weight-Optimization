@@ -1,24 +1,31 @@
-# Machine-learning evaluation
+# Phase 4 grouped machine-learning evaluation
 
-## Dataset and split
+## Dataset and leakage controls
 
-`data/phase4/fea-dataset.jsonl` contains 86 provenance-preserving solver records: 60 coarse load-case rows from 30 distinct CAD geometries and 26 refined load-case rows across six refined geometries. It records family, parameters, CAD mass, load, boundary model, mesh fidelity/settings, stress, displacement, FoS, solver status/version, geometry hash, sample ID and raw result/field paths. Mesh levels and paired load cases are repeated observations, not independent geometry samples.
+`data/phase4/fea-dataset.jsonl` contains 86 stored load-case records: 60 coarse records from 30 geometry groups and 26 refined records across six geometries. Five-fold coarse evaluation groups on canonical `geometry_hash`; fold audits assert disjoint hashes. The six fine-holdout hashes are held out from coarse training. The checked-in evaluation stores 216 genuine row-level predictions: 180 coarse out-of-fold predictions (three models × 60 rows) and 36 fine-holdout predictions (three models × 12 rows).
 
-Three model families were compared using the same numeric geometry/load features and one-hot family/load indicators:
+The predictions include model, candidate ID, geometry hash, load case, fidelity, actual FEA stress, predicted stress, residual and fold ID for the coarse folds. Fine-holdout rows have no fold ID because they are a separate geometry holdout. Dataset rows across load cases and mesh levels are repeated records, not independent geometries.
 
-| Evaluation | Model | MAE (MPa) | RMSE (MPa) | R² |
-|---|---|---:|---:|---:|
-| 5-fold geometry-grouped out-of-fold coarse screen | Ridge | 168.5 | 238.4 | 0.449 |
-|  | Extra Trees | 173.8 | 263.1 | 0.330 |
-|  | MLP | 136.3 | 199.5 | 0.614 |
-| Coarse-trained, geometry-held-out refined test (6 geometries, 12 load rows) | Ridge | 114.4 | 169.3 | −2.720 |
-|  | Extra Trees | 69.0 | 90.7 | −0.068 |
-|  | MLP | 104.7 | 117.9 | −0.804 |
+## Coarse grouped 5-fold out-of-fold results
 
-The fine test intentionally excludes each refined geometry from coarse training. It also changes mesh fidelity, so these scores measure combined geometry and fidelity generalization. The holdout has only six distinct geometries and is too small to validate a surrogate. The MLP also reached its iteration limit in the grouped run. The historical Phase 3 MLP was worse still (MAE about 208.86 MPa, R² about 0.031 on its held-out evaluation).
+| Model | Rows | MAE (MPa) | RMSE (MPa) | R² |
+|---|---:|---:|---:|---:|
+| Ridge | 60 | 143.320 | 192.046 | 0.643 |
+| Extra Trees | 60 | 155.782 | 228.666 | 0.493 |
+| MLP | 60 | 151.829 | 190.869 | 0.647 |
 
-![Grouped ML diagnostics](figures/phase4-ml-model-comparison.png)
+## Coarse-trained, fine-geometry holdout
 
-## Decision
+| Model | Rows | MAE (MPa) | RMSE (MPa) | R² |
+|---|---:|---:|---:|---:|
+| Ridge | 12 | 114.353 | 169.281 | −2.720 |
+| Extra Trees | 12 | 69.017 | 90.725 | −0.068 |
+| MLP | 12 | 104.670 | 117.872 | −0.804 |
 
-No model is used to enforce constraints, choose a final feasible design, or replace CalculiX. The best model’s fine-holdout MAE (Extra Trees, 69.0 MPa) exceeds P4-0065’s 28.44 MPa tension headroom to the allowable; its fine-holdout R² is negative. FEA remains mandatory for all final claims. The generated dataset supports future research but does not support a constraint-authoritative surrogate.
+This holdout has only six independent geometry groups and also changes mesh fidelity. Its error therefore reflects geometry extrapolation together with a fidelity shift; it is not a large external validation set. The MLP reached its 1,500-iteration limit without convergence. Historical Phase 3/Phase 2 scores are separate and are not relabeled as Phase 4 predictions.
+
+![Phase 4 grouped-model evaluation](figures/phase4-ml-model-comparison.png)
+
+## Use boundary
+
+The best fine-holdout MAE (Extra Trees, 69.017 MPa) is greater than P4-0065's 28.4386 MPa tension headroom to the 394.444 MPa allowable. All models remain exploratory. They do not enforce stress, displacement, buckling or optimization constraints, and they do not replace CalculiX results.

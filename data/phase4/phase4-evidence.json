@@ -7,6 +7,27 @@
     "minimum_buckling_factor": 1.8,
     "allowable_stress_mpa": 394.44444444444446
   },
+  "matched_fidelity_candidate_comparison": {
+    "candidate_ids": [
+      "P4-0055",
+      "P4-0065"
+    ],
+    "local_target_mm": 0.5,
+    "mesh_settings_equal": true,
+    "mesh_settings": {
+      "size_mm": 4.0,
+      "order": 2,
+      "boundary_mode": "COSINE_BEARING",
+      "local_refinement": true,
+      "hotspot_size_mm": 0.5,
+      "refinement_region": "big_end_transition"
+    },
+    "distinct_candidate_geometries_meshed_separately": true,
+    "comparison_scope": "Matched target/settings/load model/solver workflow; geometries and resulting meshes are distinct, nonnested discretizations.",
+    "mass_difference_percent_p4_0065_vs_p4_0055": -3.8349232757683933,
+    "p4_0055_max_stress_mpa": 280.5462058197996,
+    "p4_0065_max_stress_mpa": 366.00586097470153
+  },
   "baseline_phase3": {
     "mass_g": 735.326854,
     "compression": {
@@ -81,6 +102,12 @@
         "pocket_length_mm": 44.773338333026174,
         "pocket_width_mm": 11.196117007209894
       },
+      "mesh_levels_coarse_to_fine_mm": [
+        1.25,
+        0.75,
+        0.5
+      ],
+      "assessment_mesh_level_mm": 0.5,
       "mesh_levels": {
         "1.25": {
           "compression": {
@@ -206,6 +233,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0055/local-1.25mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0055/local-1.25mm/compression"
           },
@@ -332,6 +369,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0055/local-1.25mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0055/local-1.25mm/tension"
           }
@@ -460,6 +507,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0055/local-0.75mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0055/local-0.75mm/compression"
           },
@@ -586,67 +643,389 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0055/local-0.75mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0055/local-0.75mm/tension"
           }
-        }
-      },
-      "successive_change_percent": {
-        "1.25_to_0.75": {
+        },
+        "0.5": {
           "compression": {
-            "max_von_mises_mpa": 2.750339140710762,
-            "max_displacement_mm": 0.02192826801216091
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 218.34651790558766,
+            "max_displacement_mm": 0.06608140885510323,
+            "factor_of_safety_710_mpa": 3.251712034661353,
+            "nodes": 135793,
+            "elements": 85362,
+            "runtime_s": 117.46495579999828,
+            "mesh_quality": {
+              "minSICN_min": 0.06386312697833144,
+              "minSICN_p01": 0.36406530770453255,
+              "element_count": 85362
+            },
+            "hotspot": {
+              "element_id": 100287,
+              "integration_point": 2,
+              "coordinates_mm": [
+                32.474881250497745,
+                -13.627100452348266,
+                15.301468583268164
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 129.33193581236205,
+              "local_2mm_point_count": 2779,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.999999999985,
+                2.3803181647963356e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  28000.000000000015,
+                  -7.238654120556021e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -1.2718714970105793e-12,
+                  6.991740519879386e-12,
+                  -2.1847385012208065e-12
+                ],
+                "max_relative_quadrature_correction": 0.0002589524716665989,
+                "minimum_pressure_weight_n": 0.6300644965426738,
+                "loaded_node_count": 877
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.999999999985,
+                  2.3803181647963356e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.3358203432289883e-12,
+                  -2.2737367544323206e-12,
+                  7.957870473696005e-13
+                ],
+                "max_relative_quadrature_correction": 0.0007186340639524415,
+                "minimum_pressure_weight_n": 0.8261590601723122,
+                "loaded_node_count": 272
+              },
+              "total_applied_n": [
+                2.9103830456733704e-11,
+                1.6564527527407336e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1996,
+                  1
+                ],
+                [
+                  1996,
+                  2
+                ],
+                [
+                  1996,
+                  3
+                ],
+                [
+                  1976,
+                  1
+                ],
+                [
+                  1976,
+                  3
+                ],
+                [
+                  851,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -1.5691178134602524e-08,
+                  -2.4761019457031352e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  1.634373e-08,
+                  2.761074e-08,
+                  -1.0876090000000006e-09
+                ],
+                "balance_residual_n": [
+                  6.52551865397477e-10,
+                  2.849720542968649e-09,
+                  -1.0876090000000006e-09
+                ],
+                "balance_moment_n_mm": [
+                  5.350337116300087e-07,
+                  2.6339931459405384e-07,
+                  -4.8110274377778275e-06
+                ],
+                "reaction_dof_norm_fraction": 2.2708115578043026e-12,
+                "force_balance_fraction": 1.1140123546866168e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.5,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
+            "fields_path": "runs/phase4-refined/P4-0055/local-0.5mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0055/local-0.5mm/compression"
           },
           "tension": {
-            "max_von_mises_mpa": 4.918298392765726,
-            "max_displacement_mm": 0.020763805936413287
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 280.5462058197996,
+            "max_displacement_mm": 0.09428337524062078,
+            "factor_of_safety_710_mpa": 2.5307774094654736,
+            "nodes": 135793,
+            "elements": 85362,
+            "runtime_s": 107.30961479999678,
+            "mesh_quality": {
+              "minSICN_min": 0.06386312697833144,
+              "minSICN_p01": 0.36406530770453255,
+              "element_count": 85362
+            },
+            "hotspot": {
+              "element_id": 78502,
+              "integration_point": 2,
+              "coordinates_mm": [
+                31.943708033224567,
+                13.963606634218019,
+                15.322208129221123
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 165.9501392588808,
+              "local_2mm_point_count": 3041,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.000000000007,
+                5.400124791776761e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -18000.0,
+                  -4.82280881897168e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.3642420526593924e-12,
+                  -4.53681536782824e-12,
+                  -1.3940378799232045e-12
+                ],
+                "max_relative_quadrature_correction": 0.00039271187812845153,
+                "minimum_pressure_weight_n": 0.015594960225719455,
+                "loaded_node_count": 584
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.000000000007,
+                  5.400124791776761e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -1.0231815394945443e-12,
+                  -7.048583938740194e-12,
+                  7.896183774652905e-13
+                ],
+                "max_relative_quadrature_correction": 0.0007537591175335942,
+                "minimum_pressure_weight_n": 1.3527001909241402e-12,
+                "loaded_node_count": 285
+              },
+              "total_applied_n": [
+                7.275957614183426e-12,
+                5.773159728050814e-14,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1996,
+                  1
+                ],
+                [
+                  1996,
+                  2
+                ],
+                [
+                  1996,
+                  3
+                ],
+                [
+                  1976,
+                  1
+                ],
+                [
+                  1976,
+                  3
+                ],
+                [
+                  851,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -2.1298344532461044e-08,
+                  -8.798814121746545e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  1.99693087e-08,
+                  3.391555e-09,
+                  9.653e-10
+                ],
+                "balance_residual_n": [
+                  -1.3290358324610452e-09,
+                  -5.407259121746545e-09,
+                  9.653e-10
+                ],
+                "balance_moment_n_mm": [
+                  1.3740827047645506e-07,
+                  -5.637095572617343e-07,
+                  -1.029487527846875e-06
+                ],
+                "reaction_dof_norm_fraction": 1.466641978083817e-12,
+                "force_balance_fraction": 3.139581612040947e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.5,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
+            "fields_path": "runs/phase4-refined/P4-0055/local-0.5mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0055/local-0.5mm/tension"
           }
         }
+      },
+      "mesh_refinement": {
+        "status": "PASS",
+        "pair_levels_mm": [
+          0.75,
+          0.5
+        ],
+        "stress_change_percent": {
+          "compression": 2.0359872477450796,
+          "tension": 1.2530747047340887
+        },
+        "displacement_change_percent": {
+          "compression": 0.003501764225207209,
+          "tension": 0.04227092494933147
+        },
+        "maximum_peak_stress_change_percent": 2.0359872477450796,
+        "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+        "reason": "SUCCESSIVE_NONNESTED_STRESS_CHANGE_BELOW_LIMIT"
       },
       "stress_trend_pass_lt_5_percent": true,
       "buckling": {
         "status": "BUCKLING_SUCCESS",
         "method": "CalculiX linear eigenvalue buckling; C3D10; proportional 28 kN COSINE_BEARING load pattern",
-        "lowest_positive_factor": 8.772048,
+        "lowest_positive_factor": 8.695871,
         "positive_factors": [
-          8.772048,
-          24.49963,
-          126.7613,
-          136.8433,
-          165.0051
+          8.695871,
+          24.31569,
+          126.6939,
+          136.6468,
+          160.0189
         ],
         "reference_compression_n": 28000.0,
-        "linear_eigenvalue_load_n": 245617.34399999998,
+        "linear_eigenvalue_load_n": 243484.388,
         "limitations": [
           "Linear bifurcation only; no geometric imperfections or nonlinear collapse",
           "COSINE_BEARING equivalent pressure and six rigid-body gauge DOFs are retained",
           "An eigenvalue below zero is not used as a positive buckling margin"
         ],
-        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.75mm\\buckling\\buckle.inp",
-        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.75mm\\buckling\\buckle.dat",
-        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.75mm\\buckling\\buckle.log"
+        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.5mm\\buckling\\buckle.inp",
+        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.5mm\\buckling\\buckle.dat",
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.5mm\\buckling\\buckle.log",
+        "mesh_level_mm": 0.5,
+        "mesh_association_status": "PASS"
       },
       "normalized_constraint_margins": {
-        "compression_stress": 0.4574908643823268,
-        "tension_stress": 0.29755821820479406,
-        "displacement": 0.7307327496412529,
-        "buckling": 3.87336
+        "compression_stress": 0.4464454475632989,
+        "tension_stress": 0.28875609792163487,
+        "displacement": 0.7306189278839406,
+        "buckling": 3.8310394444444444
       },
       "assessment": {
-        "feasibility_status": "FEASIBLE",
+        "cad_validity_status": "PASS",
+        "fea_execution_status": "PASS",
+        "recorded_screen_status": "PASS",
+        "buckling_screen_status": "PASS",
+        "mesh_refinement_status": "PASS",
+        "independent_solver_status": "NOT_PERFORMED",
+        "mechanical_qualification_status": "NOT_QUALIFIED",
+        "optimization_eligibility": "NOT_QUALIFIED",
+        "finest_mesh_level_mm": 0.5,
+        "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
         "constraints": {
           "minimum_factor_of_safety": 1.8,
           "maximum_displacement_mm": 0.35,
           "minimum_buckling_factor": 1.8,
           "allowable_stress_mpa": 394.44444444444446
         },
-        "maximum_stress_mpa": 277.0742583747757,
-        "maximum_displacement_mm": 0.09424353762556148,
-        "minimum_factor_of_safety": 2.56248994101661,
-        "linear_buckling_factor": 8.772048,
-        "reasons": [],
-        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
-        "mesh_stress_trend_max_percent": 4.918298392765726
+        "maximum_stress_mpa": 280.5462058197996,
+        "maximum_displacement_mm": 0.09428337524062078,
+        "minimum_factor_of_safety": 2.5307774094654736,
+        "linear_buckling_factor": 8.695871,
+        "reasons": [
+          "INDEPENDENT_SOLVER_VERIFICATION_NOT_PERFORMED",
+          "MECHANICAL_QUALIFICATION_NOT_ESTABLISHED",
+          "OPTIMIZATION_NOT_ELIGIBLE"
+        ],
+        "feasibility_note": "Legacy feasibility_status is non-passing by design. recorded_screen_status describes only the recorded numerical screen; independent verification and mechanical qualification were not performed.",
+        "mesh_refinement": {
+          "status": "PASS",
+          "pair_levels_mm": [
+            0.75,
+            0.5
+          ],
+          "stress_change_percent": {
+            "compression": 2.0359872477450796,
+            "tension": 1.2530747047340887
+          },
+          "displacement_change_percent": {
+            "compression": 0.003501764225207209,
+            "tension": 0.04227092494933147
+          },
+          "maximum_peak_stress_change_percent": 2.0359872477450796,
+          "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+          "reason": "SUCCESSIVE_NONNESTED_STRESS_CHANGE_BELOW_LIMIT"
+        }
       }
     },
     {
@@ -672,6 +1051,11 @@
         "pocket_length_mm": 28.813883644969135,
         "pocket_width_mm": 13.037480895330654
       },
+      "mesh_levels_coarse_to_fine_mm": [
+        1.25,
+        0.75
+      ],
+      "assessment_mesh_level_mm": 0.75,
       "mesh_levels": {
         "1.25": {
           "compression": {
@@ -797,6 +1181,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0026/local-1.25mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0026/local-1.25mm/compression"
           },
@@ -923,6 +1317,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0026/local-1.25mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0026/local-1.25mm/tension"
           }
@@ -1051,6 +1455,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0026/local-0.75mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0026/local-0.75mm/compression"
           },
@@ -1177,22 +1591,38 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0026/local-0.75mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0026/local-0.75mm/tension"
           }
         }
       },
-      "successive_change_percent": {
-        "1.25_to_0.75": {
-          "compression": {
-            "max_von_mises_mpa": 9.192746113447546,
-            "max_displacement_mm": 0.024625016978390268
-          },
-          "tension": {
-            "max_von_mises_mpa": 7.296587406497673,
-            "max_displacement_mm": 0.08131851162850634
-          }
-        }
+      "mesh_refinement": {
+        "status": "FAIL",
+        "pair_levels_mm": [
+          1.25,
+          0.75
+        ],
+        "stress_change_percent": {
+          "compression": 9.192746113447546,
+          "tension": 7.296587406497673
+        },
+        "displacement_change_percent": {
+          "compression": 0.024625016978390268,
+          "tension": 0.08131851162850634
+        },
+        "maximum_peak_stress_change_percent": 9.192746113447546,
+        "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+        "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
       },
       "stress_trend_pass_lt_5_percent": false,
       "buckling": {
@@ -1215,7 +1645,9 @@
         ],
         "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.inp",
         "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.dat",
-        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.log"
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.log",
+        "mesh_level_mm": 0.75,
+        "mesh_association_status": "PASS"
       },
       "normalized_constraint_margins": {
         "compression_stress": 0.34313034592428887,
@@ -1224,6 +1656,15 @@
         "buckling": 4.198841666666667
       },
       "assessment": {
+        "cad_validity_status": "PASS",
+        "fea_execution_status": "PASS",
+        "recorded_screen_status": "FAIL",
+        "buckling_screen_status": "PASS",
+        "mesh_refinement_status": "FAIL",
+        "independent_solver_status": "NOT_PERFORMED",
+        "mechanical_qualification_status": "NOT_QUALIFIED",
+        "optimization_eligibility": "NOT_QUALIFIED",
+        "finest_mesh_level_mm": 0.75,
         "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
         "constraints": {
           "minimum_factor_of_safety": 1.8,
@@ -1237,11 +1678,29 @@
         "linear_buckling_factor": 9.357915,
         "reasons": [
           "TENSION_STRESS_EXCEEDS_ALLOWABLE",
-          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
-          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+          "INDEPENDENT_SOLVER_VERIFICATION_NOT_PERFORMED",
+          "MECHANICAL_QUALIFICATION_NOT_ESTABLISHED",
+          "OPTIMIZATION_NOT_ELIGIBLE"
         ],
-        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
-        "mesh_stress_trend_max_percent": 9.192746113447546
+        "feasibility_note": "Legacy feasibility_status is non-passing by design. recorded_screen_status describes only the recorded numerical screen; independent verification and mechanical qualification were not performed.",
+        "mesh_refinement": {
+          "status": "FAIL",
+          "pair_levels_mm": [
+            1.25,
+            0.75
+          ],
+          "stress_change_percent": {
+            "compression": 9.192746113447546,
+            "tension": 7.296587406497673
+          },
+          "displacement_change_percent": {
+            "compression": 0.024625016978390268,
+            "tension": 0.08131851162850634
+          },
+          "maximum_peak_stress_change_percent": 9.192746113447546,
+          "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+          "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
+        }
       }
     },
     {
@@ -1267,6 +1726,11 @@
         "pocket_length_mm": 19.326655884889753,
         "pocket_width_mm": 12.239792105423529
       },
+      "mesh_levels_coarse_to_fine_mm": [
+        1.25,
+        0.75
+      ],
+      "assessment_mesh_level_mm": 0.75,
       "mesh_levels": {
         "1.25": {
           "compression": {
@@ -1392,6 +1856,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0059/local-1.25mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0059/local-1.25mm/compression"
           },
@@ -1518,6 +1992,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0059/local-1.25mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0059/local-1.25mm/tension"
           }
@@ -1646,6 +2130,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0059/local-0.75mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0059/local-0.75mm/compression"
           },
@@ -1772,32 +2266,52 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0059/local-0.75mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0059/local-0.75mm/tension"
           }
         }
       },
-      "successive_change_percent": {
-        "1.25_to_0.75": {
-          "compression": {
-            "max_von_mises_mpa": 8.15309763520144,
-            "max_displacement_mm": 0.05288497282687568
-          },
-          "tension": {
-            "max_von_mises_mpa": 10.874721220596188,
-            "max_displacement_mm": 0.022291204287163035
-          }
-        }
+      "mesh_refinement": {
+        "status": "FAIL",
+        "pair_levels_mm": [
+          1.25,
+          0.75
+        ],
+        "stress_change_percent": {
+          "compression": 8.15309763520144,
+          "tension": 10.874721220596188
+        },
+        "displacement_change_percent": {
+          "compression": 0.05288497282687568,
+          "tension": 0.022291204287163035
+        },
+        "maximum_peak_stress_change_percent": 10.874721220596188,
+        "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+        "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
       },
       "stress_trend_pass_lt_5_percent": false,
       "buckling": null,
-      "normalized_constraint_margins": {
-        "compression_stress": 0.23172737682730637,
-        "tension_stress": -0.2899615176498091,
-        "displacement": 0.5884921809810328,
-        "buckling": null
-      },
+      "normalized_constraint_margins": null,
       "assessment": {
+        "cad_validity_status": "PASS",
+        "fea_execution_status": "PASS",
+        "recorded_screen_status": "FAIL",
+        "buckling_screen_status": "UNVERIFIED",
+        "mesh_refinement_status": "FAIL",
+        "independent_solver_status": "NOT_PERFORMED",
+        "mechanical_qualification_status": "NOT_QUALIFIED",
+        "optimization_eligibility": "NOT_QUALIFIED",
+        "finest_mesh_level_mm": 0.75,
         "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
         "constraints": {
           "minimum_factor_of_safety": 1.8,
@@ -1811,12 +2325,31 @@
         "linear_buckling_factor": null,
         "reasons": [
           "TENSION_STRESS_EXCEEDS_ALLOWABLE",
-          "BUCKLING_NOT_VERIFIED",
-          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
-          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+          "POSITIVE_BUCKLING_FACTOR_MISSING_OR_INVALID",
+          "BUCKLING_MESH_ASSOCIATION_NOT_VERIFIED",
+          "INDEPENDENT_SOLVER_VERIFICATION_NOT_PERFORMED",
+          "MECHANICAL_QUALIFICATION_NOT_ESTABLISHED",
+          "OPTIMIZATION_NOT_ELIGIBLE"
         ],
-        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
-        "mesh_stress_trend_max_percent": 10.874721220596188
+        "feasibility_note": "Legacy feasibility_status is non-passing by design. recorded_screen_status describes only the recorded numerical screen; independent verification and mechanical qualification were not performed.",
+        "mesh_refinement": {
+          "status": "FAIL",
+          "pair_levels_mm": [
+            1.25,
+            0.75
+          ],
+          "stress_change_percent": {
+            "compression": 8.15309763520144,
+            "tension": 10.874721220596188
+          },
+          "displacement_change_percent": {
+            "compression": 0.05288497282687568,
+            "tension": 0.022291204287163035
+          },
+          "maximum_peak_stress_change_percent": 10.874721220596188,
+          "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+          "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
+        }
       }
     },
     {
@@ -1842,6 +2375,11 @@
         "pocket_length_mm": 27.017512959471134,
         "pocket_width_mm": 14.362873241923772
       },
+      "mesh_levels_coarse_to_fine_mm": [
+        1.25,
+        0.75
+      ],
+      "assessment_mesh_level_mm": 0.75,
       "mesh_levels": {
         "1.25": {
           "compression": {
@@ -1967,6 +2505,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0016/local-1.25mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0016/local-1.25mm/compression"
           },
@@ -2093,6 +2641,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0016/local-1.25mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0016/local-1.25mm/tension"
           }
@@ -2221,6 +2779,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0016/local-0.75mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0016/local-0.75mm/compression"
           },
@@ -2347,22 +2915,38 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0016/local-0.75mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0016/local-0.75mm/tension"
           }
         }
       },
-      "successive_change_percent": {
-        "1.25_to_0.75": {
-          "compression": {
-            "max_von_mises_mpa": 5.596134394551062,
-            "max_displacement_mm": 0.055794824149239725
-          },
-          "tension": {
-            "max_von_mises_mpa": 8.233325897208838,
-            "max_displacement_mm": 0.10461918622154179
-          }
-        }
+      "mesh_refinement": {
+        "status": "FAIL",
+        "pair_levels_mm": [
+          1.25,
+          0.75
+        ],
+        "stress_change_percent": {
+          "compression": 5.596134394551062,
+          "tension": 8.233325897208838
+        },
+        "displacement_change_percent": {
+          "compression": 0.055794824149239725,
+          "tension": 0.10461918622154179
+        },
+        "maximum_peak_stress_change_percent": 8.233325897208838,
+        "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+        "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
       },
       "stress_trend_pass_lt_5_percent": false,
       "buckling": {
@@ -2385,7 +2969,9 @@
         ],
         "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.inp",
         "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.dat",
-        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.log"
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.log",
+        "mesh_level_mm": 0.75,
+        "mesh_association_status": "PASS"
       },
       "normalized_constraint_margins": {
         "compression_stress": 0.505219793622092,
@@ -2394,6 +2980,15 @@
         "buckling": 5.080783333333334
       },
       "assessment": {
+        "cad_validity_status": "PASS",
+        "fea_execution_status": "PASS",
+        "recorded_screen_status": "PASS",
+        "buckling_screen_status": "PASS",
+        "mesh_refinement_status": "FAIL",
+        "independent_solver_status": "NOT_PERFORMED",
+        "mechanical_qualification_status": "NOT_QUALIFIED",
+        "optimization_eligibility": "NOT_QUALIFIED",
+        "finest_mesh_level_mm": 0.75,
         "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
         "constraints": {
           "minimum_factor_of_safety": 1.8,
@@ -2406,11 +3001,29 @@
         "minimum_factor_of_safety": 2.4142349615765486,
         "linear_buckling_factor": 10.94541,
         "reasons": [
-          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
-          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+          "INDEPENDENT_SOLVER_VERIFICATION_NOT_PERFORMED",
+          "MECHANICAL_QUALIFICATION_NOT_ESTABLISHED",
+          "OPTIMIZATION_NOT_ELIGIBLE"
         ],
-        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
-        "mesh_stress_trend_max_percent": 8.233325897208838
+        "feasibility_note": "Legacy feasibility_status is non-passing by design. recorded_screen_status describes only the recorded numerical screen; independent verification and mechanical qualification were not performed.",
+        "mesh_refinement": {
+          "status": "FAIL",
+          "pair_levels_mm": [
+            1.25,
+            0.75
+          ],
+          "stress_change_percent": {
+            "compression": 5.596134394551062,
+            "tension": 8.233325897208838
+          },
+          "displacement_change_percent": {
+            "compression": 0.055794824149239725,
+            "tension": 0.10461918622154179
+          },
+          "maximum_peak_stress_change_percent": 8.233325897208838,
+          "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+          "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
+        }
       }
     },
     {
@@ -2436,6 +3049,11 @@
         "pocket_length_mm": 16.304939009361167,
         "pocket_width_mm": 10.825351261447247
       },
+      "mesh_levels_coarse_to_fine_mm": [
+        1.25,
+        0.75
+      ],
+      "assessment_mesh_level_mm": 0.75,
       "mesh_levels": {
         "1.25": {
           "compression": {
@@ -2561,6 +3179,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0060/local-1.25mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0060/local-1.25mm/compression"
           },
@@ -2687,6 +3315,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0060/local-1.25mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0060/local-1.25mm/tension"
           }
@@ -2815,6 +3453,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0060/local-0.75mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0060/local-0.75mm/compression"
           },
@@ -2941,22 +3589,38 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0060/local-0.75mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0060/local-0.75mm/tension"
           }
         }
       },
-      "successive_change_percent": {
-        "1.25_to_0.75": {
-          "compression": {
-            "max_von_mises_mpa": 9.1131253888594,
-            "max_displacement_mm": 0.053846725556498824
-          },
-          "tension": {
-            "max_von_mises_mpa": 10.889240734620763,
-            "max_displacement_mm": 0.04258399969126689
-          }
-        }
+      "mesh_refinement": {
+        "status": "FAIL",
+        "pair_levels_mm": [
+          1.25,
+          0.75
+        ],
+        "stress_change_percent": {
+          "compression": 9.1131253888594,
+          "tension": 10.889240734620763
+        },
+        "displacement_change_percent": {
+          "compression": 0.053846725556498824,
+          "tension": 0.04258399969126689
+        },
+        "maximum_peak_stress_change_percent": 10.889240734620763,
+        "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+        "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
       },
       "stress_trend_pass_lt_5_percent": false,
       "buckling": {
@@ -2979,7 +3643,9 @@
         ],
         "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.inp",
         "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.dat",
-        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.log"
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.log",
+        "mesh_level_mm": 0.75,
+        "mesh_association_status": "PASS"
       },
       "normalized_constraint_margins": {
         "compression_stress": 0.40292148120657945,
@@ -2988,6 +3654,15 @@
         "buckling": 5.211288888888888
       },
       "assessment": {
+        "cad_validity_status": "PASS",
+        "fea_execution_status": "PASS",
+        "recorded_screen_status": "PASS",
+        "buckling_screen_status": "PASS",
+        "mesh_refinement_status": "FAIL",
+        "independent_solver_status": "NOT_PERFORMED",
+        "mechanical_qualification_status": "NOT_QUALIFIED",
+        "optimization_eligibility": "NOT_QUALIFIED",
+        "finest_mesh_level_mm": 0.75,
         "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
         "constraints": {
           "minimum_factor_of_safety": 1.8,
@@ -3000,11 +3675,29 @@
         "minimum_factor_of_safety": 2.2738731445451568,
         "linear_buckling_factor": 11.18032,
         "reasons": [
-          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
-          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+          "INDEPENDENT_SOLVER_VERIFICATION_NOT_PERFORMED",
+          "MECHANICAL_QUALIFICATION_NOT_ESTABLISHED",
+          "OPTIMIZATION_NOT_ELIGIBLE"
         ],
-        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
-        "mesh_stress_trend_max_percent": 10.889240734620763
+        "feasibility_note": "Legacy feasibility_status is non-passing by design. recorded_screen_status describes only the recorded numerical screen; independent verification and mechanical qualification were not performed.",
+        "mesh_refinement": {
+          "status": "FAIL",
+          "pair_levels_mm": [
+            1.25,
+            0.75
+          ],
+          "stress_change_percent": {
+            "compression": 9.1131253888594,
+            "tension": 10.889240734620763
+          },
+          "displacement_change_percent": {
+            "compression": 0.053846725556498824,
+            "tension": 0.04258399969126689
+          },
+          "maximum_peak_stress_change_percent": 10.889240734620763,
+          "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+          "reason": "SUCCESSIVE_STRESS_CHANGE_AT_OR_ABOVE_LIMIT"
+        }
       }
     },
     {
@@ -3030,6 +3723,12 @@
         "pocket_length_mm": 38.92224761865715,
         "pocket_width_mm": 11.42132612690911
       },
+      "mesh_levels_coarse_to_fine_mm": [
+        1.25,
+        0.75,
+        0.5
+      ],
+      "assessment_mesh_level_mm": 0.5,
       "mesh_levels": {
         "1.25": {
           "compression": {
@@ -3155,6 +3854,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0065/local-1.25mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0065/local-1.25mm/compression"
           },
@@ -3281,6 +3990,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 1.25,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0065/local-1.25mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0065/local-1.25mm/tension"
           }
@@ -3409,6 +4128,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0065/local-0.75mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0065/local-0.75mm/compression"
           },
@@ -3535,6 +4264,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.75,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0065/local-0.75mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0065/local-0.75mm/tension"
           }
@@ -3663,6 +4402,16 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.5,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0065/local-0.5mm/compression/fields.json",
             "output_dir": "runs/phase4-refined/P4-0065/local-0.5mm/compression"
           },
@@ -3789,32 +4538,38 @@
                 "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
               }
             },
+            "mesh_settings": {
+              "size_mm": 4.0,
+              "order": 2,
+              "boundary_mode": "COSINE_BEARING",
+              "local_refinement": true,
+              "hotspot_size_mm": 0.5,
+              "refinement_region": "big_end_transition"
+            },
+            "gmsh_version": "4.15.2",
+            "solver_version": "This is Version 2.22",
             "fields_path": "runs/phase4-refined/P4-0065/local-0.5mm/tension/fields.json",
             "output_dir": "runs/phase4-refined/P4-0065/local-0.5mm/tension"
           }
         }
       },
-      "successive_change_percent": {
-        "1.25_to_0.75": {
-          "compression": {
-            "max_von_mises_mpa": 6.969439484081104,
-            "max_displacement_mm": 0.026826517229076148
-          },
-          "tension": {
-            "max_von_mises_mpa": 10.23371285871814,
-            "max_displacement_mm": 0.052490863685173215
-          }
+      "mesh_refinement": {
+        "status": "PASS",
+        "pair_levels_mm": [
+          0.75,
+          0.5
+        ],
+        "stress_change_percent": {
+          "compression": 3.527258949102874,
+          "tension": 4.8395340452215265
         },
-        "0.75_to_0.5": {
-          "compression": {
-            "max_von_mises_mpa": 3.527258949102874,
-            "max_displacement_mm": 0.047085191188243114
-          },
-          "tension": {
-            "max_von_mises_mpa": 4.8395340452215265,
-            "max_displacement_mm": 0.06615222035994962
-          }
-        }
+        "displacement_change_percent": {
+          "compression": 0.047085191188243114,
+          "tension": 0.06615222035994962
+        },
+        "maximum_peak_stress_change_percent": 4.8395340452215265,
+        "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+        "reason": "SUCCESSIVE_NONNESTED_STRESS_CHANGE_BELOW_LIMIT"
       },
       "stress_trend_pass_lt_5_percent": true,
       "buckling": {
@@ -3837,31 +4592,71 @@
         ],
         "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.inp",
         "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.dat",
-        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.log"
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.log",
+        "mesh_level_mm": 0.5,
+        "mesh_association_status": "PASS"
       },
       "normalized_constraint_margins": {
-        "compression_stress": 0.44390396070470484,
-        "tension_stress": 0.11493103131064783,
-        "displacement": 0.7389962680070086,
+        "compression_stress": 0.4242890133930549,
+        "tension_stress": 0.07209781724723557,
+        "displacement": 0.7388236082430728,
         "buckling": 2.9979144444444445
       },
       "assessment": {
-        "feasibility_status": "FEASIBLE",
+        "cad_validity_status": "PASS",
+        "fea_execution_status": "PASS",
+        "recorded_screen_status": "PASS",
+        "buckling_screen_status": "PASS",
+        "mesh_refinement_status": "PASS",
+        "independent_solver_status": "NOT_PERFORMED",
+        "mechanical_qualification_status": "NOT_QUALIFIED",
+        "optimization_eligibility": "NOT_QUALIFIED",
+        "finest_mesh_level_mm": 0.5,
+        "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
         "constraints": {
           "minimum_factor_of_safety": 1.8,
           "maximum_displacement_mm": 0.35,
           "minimum_buckling_factor": 1.8,
           "allowable_stress_mpa": 394.44444444444446
         },
-        "maximum_stress_mpa": 349.1105376496889,
-        "maximum_displacement_mm": 0.09135130619754701,
-        "minimum_factor_of_safety": 2.0337398142717813,
+        "maximum_stress_mpa": 366.00586097470153,
+        "maximum_displacement_mm": 0.09141173711492451,
+        "minimum_factor_of_safety": 1.9398596462614446,
         "linear_buckling_factor": 7.196246,
-        "reasons": [],
-        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
-        "mesh_stress_trend_max_percent": 4.8395340452215265
+        "reasons": [
+          "INDEPENDENT_SOLVER_VERIFICATION_NOT_PERFORMED",
+          "MECHANICAL_QUALIFICATION_NOT_ESTABLISHED",
+          "OPTIMIZATION_NOT_ELIGIBLE"
+        ],
+        "feasibility_note": "Legacy feasibility_status is non-passing by design. recorded_screen_status describes only the recorded numerical screen; independent verification and mechanical qualification were not performed.",
+        "mesh_refinement": {
+          "status": "PASS",
+          "pair_levels_mm": [
+            0.75,
+            0.5
+          ],
+          "stress_change_percent": {
+            "compression": 3.527258949102874,
+            "tension": 4.8395340452215265
+          },
+          "displacement_change_percent": {
+            "compression": 0.047085191188243114,
+            "tension": 0.06615222035994962
+          },
+          "maximum_peak_stress_change_percent": 4.8395340452215265,
+          "interpretation": "CONTINUUM_MESH_ERROR_NOT_ESTABLISHED",
+          "reason": "SUCCESSIVE_NONNESTED_STRESS_CHANGE_BELOW_LIMIT"
+        }
       }
     }
   ],
-  "convergence_note": "Two independently generated local meshes (1.25 and 0.75 mm targets) are nonnested. The <5% successive peak-stress test is provisional and not a GCI or continuum error bound. The maximum unaveraged integration-point peak is retained without smoothing."
+  "status_semantics": {
+    "recorded_screen_status": "Recorded stress, displacement and associated linear buckling limits only.",
+    "mesh_refinement_status": "Adjacent nonnested mesh peak-stress trend only; not continuum convergence.",
+    "independent_solver_status": "NOT_PERFORMED for every candidate.",
+    "mechanical_qualification_status": "NOT_QUALIFIED for every candidate.",
+    "optimization_eligibility": "NOT_QUALIFIED for every candidate.",
+    "feasibility_status": "Legacy field retained as non-passing; use explicit status fields."
+  },
+  "convergence_note": "Mesh targets are numerically ordered coarse to fine and the last adjacent pair is used for the trend. The meshes are nonnested; a <5% successive peak-stress change is not a GCI or continuum error bound. The maximum unaveraged integration-point peak is retained without smoothing."
 }

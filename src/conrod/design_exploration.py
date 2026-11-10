@@ -36,19 +36,19 @@ def lhs_designs(family: str, count: int, seed: int = 20261110) -> list[FamilyDes
         web = 3.5 + (web_hi - 3.5) * u[4]
         radius_hi = min(3.8, ring / 2 - 0.1, flange - 0.1)
         radius = 0.8 + (radius_hi - 0.8) * u[5]
-        values = dict(
-            family=family,
-            ring_thickness=ring,
-            shank_width=width,
-            beam_thickness=depth,
-            flange_thickness_mm=flange,
-            web_thickness_mm=web,
-            transition_radius_mm=radius,
-            pocket_length_mm=15.0 + 31.0 * u[6],
-            pocket_width_mm=8.0 + (min(16.0, width - 2 * flange - 2.0) - 8.0) * u[7],
-            rib_height_mm=1.5 + 4.0 * u[8],
-            rib_length_mm=10.0 + 22.0 * u[9],
-        )
+        values = {
+            "family": family,
+            "ring_thickness": ring,
+            "shank_width": width,
+            "beam_thickness": depth,
+            "flange_thickness_mm": flange,
+            "web_thickness_mm": web,
+            "transition_radius_mm": radius,
+            "pocket_length_mm": 15.0 + 31.0 * u[6],
+            "pocket_width_mm": 8.0 + (min(16.0, width - 2 * flange - 2.0) - 8.0) * u[7],
+            "rib_height_mm": 1.5 + 4.0 * u[8],
+            "rib_length_mm": 10.0 + 22.0 * u[9],
+        }
         if family == "tapered":
             big_lo, big_hi = max(28.0, web + 7.0), min(43.0, width + 5.0)
             big = big_lo + (big_hi - big_lo) * u[10]
@@ -70,7 +70,10 @@ def mass_stratified_candidates(candidates, per_family: int = 3):
     """Return low/mid/high actual-mass candidates from each family."""
     grouped = defaultdict(list)
     for row in candidates:
-        if row.get("status") == "CAD_VALID" and row.get("actual_cad_mass_g") is not None:
+        if (
+            row.get("status") == "CAD_VALID"
+            and row.get("actual_cad_mass_g") is not None
+        ):
             grouped[row["family"]].append(row)
     selected = []
     for family in FAMILIES:
@@ -88,9 +91,10 @@ def normalized_constraint_margins(
     tension_stress_mpa: float,
     max_displacement_mm: float,
     buckling_factor: float | None,
-    constraints: Phase4Constraints = Phase4Constraints(),
+    constraints: Phase4Constraints | None = None,
 ):
     """Compute normalized nonnegative margins for the project constraints."""
+    constraints = constraints or Phase4Constraints()
     allow = constraints.allowable_stress_mpa
     return {
         "compression_stress": (allow - compression_stress_mpa) / allow,
@@ -104,12 +108,22 @@ def normalized_constraint_margins(
     }
 
 
-def rank_verified_feasible(candidates):
-    """Sort only fully verified feasible candidates by actual CAD mass."""
+def rank_recorded_screen_passes(candidates):
+    """Sort recorded numerical screen passes by actual CAD mass.
+
+    This is a finite-study ranking helper. It does not certify candidates or
+    make them eligible for a mechanical optimization objective.
+    """
     return sorted(
         (
-            row for row in candidates
-            if row.get("assessment", {}).get("feasibility_status") == "FEASIBLE"
+            row
+            for row in candidates
+            if row.get("assessment", {}).get("recorded_screen_status") == "PASS"
         ),
         key=lambda row: row["actual_cad_mass_g"],
     )
+
+
+def rank_verified_feasible(candidates):
+    """Deprecated compatibility alias; results are recorded-screen passes only."""
+    return rank_recorded_screen_passes(candidates)

@@ -18,5 +18,11 @@ The <5% result is a provisional successive-mesh trend, not a continuum error bou
 
 The final raw field is 227.086 MPa compression and 366.006 MPa tension at the same element/IP in the 0.5 mm mesh. At the controlling integration point, the tension tensor in the saved order xx, yy, zz, xy, xz, yz is (349.261, 77.192, 97.814, −147.335, −0.282, 0.594) MPa; the compression tensor is (−221.370, −45.907, −64.130, 88.780, 0.175, −0.392) MPa. The raw field JSON is authoritative.
 
+## Matched-target candidate comparison
+
+P4-0055 was additionally solved at a 0.50 mm local target using the same 4 mm bulk target, quadratic tetrahedra, COSINE_BEARING load model, big-end/shank transition refinement and solver workflow as P4-0065. Both load cases and the linear buckling analysis use that candidate's 0.50 mm mesh. These are separately generated meshes for different geometries, not a shared mesh. P4-0055 recorded 218.347 MPa compression, 280.546 MPa tension, 0.094283 mm maximum tension displacement and a 8.695871 linear buckling factor; its CAD mass is 901.429 g. P4-0065 recorded 227.086 MPa, 366.006 MPa, 0.091412 mm and 7.196246, respectively, at 866.860 g. The comparison uses matched settings, while geometry-specific discretization and local element quality remain distinct.
+
+For the P4-0065 tension mesh, the minimum-SICN element is element 105283 near (69.558, −2.527, 13.485) mm, approximately 45.084 mm from the controlling stress point. Only two elements have SICN below 0.05 and five below 0.2; the 1st percentile is 0.3641, median 0.8323, and the peak-stress element's SICN is 0.7632. The low global minimum is retained and disclosed; it is not at the stress hotspot and does not control the reported peak.
+
 ![Final mesh section](figures/phase4-final-mesh.png)
 ![Mesh trend](figures/phase4-mesh-trend.png)
