@@ -1,0 +1,3867 @@
+{
+  "project": "Phase 4 connecting rod redesign",
+  "source_branch_base": "0981e89f8189814041813b26d9dd4c2f1cd35ef1",
+  "constraints": {
+    "minimum_factor_of_safety": 1.8,
+    "maximum_displacement_mm": 0.35,
+    "minimum_buckling_factor": 1.8,
+    "allowable_stress_mpa": 394.44444444444446
+  },
+  "baseline_phase3": {
+    "mass_g": 735.326854,
+    "compression": {
+      "stress_mpa": 566.7176274580186,
+      "displacement_mm": 0.09908715953128197,
+      "fos": 1.2528285085901893
+    },
+    "tension": {
+      "stress_mpa": 770.1385959162053,
+      "displacement_mm": 0.17607778175285438,
+      "fos": 0.9219119828104958
+    },
+    "reference_note": "Unsafe Phase 3 baseline; not used as a safe mass reference."
+  },
+  "design_space": {
+    "studies": [
+      {
+        "sampling_method": "Seeded bounded random sampling",
+        "seed": 20261110,
+        "attempts": 64,
+        "valid_cad": 60,
+        "invalid_or_duplicate": 4,
+        "coarse_candidates": 15,
+        "coarse_load_case_labels": 30
+      },
+      {
+        "sampling_method": "SciPy family-wise Latin hypercube",
+        "seed": 20261111,
+        "attempts": 69,
+        "valid_cad": 60,
+        "invalid_or_duplicate": 9,
+        "coarse_candidates": 15,
+        "coarse_load_case_labels": 30
+      }
+    ],
+    "total_attempts": 133,
+    "total_valid_cad": 120,
+    "total_invalid_or_duplicate": 13,
+    "valid_by_family": {
+      "h_section": 24,
+      "i_section": 24,
+      "pocket_variant": 24,
+      "ribbed": 24,
+      "tapered": 24
+    },
+    "coarse_mass_stratified_candidates": 30,
+    "coarse_load_case_labels": 60,
+    "coarse_mesh_mm": 6.0,
+    "coarse_results_are_feasibility_declarations": false
+  },
+  "refined_candidates": [
+    {
+      "candidate_id": "P4-0055",
+      "family": "pocket_variant",
+      "actual_cad_mass_g": 901.4288886590447,
+      "parameters": {
+        "family": "pocket_variant",
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 9.545409863912603,
+        "shank_width": 26.68077794130679,
+        "beam_thickness": 30.458543960727997,
+        "flange_thickness_mm": 5.265896290286927,
+        "web_thickness_mm": 3.8703090433490446,
+        "transition_radius_mm": 3.241392492852957,
+        "taper_big_width_mm": 31.0,
+        "taper_mid_width_mm": 27.0,
+        "taper_small_width_mm": 23.0,
+        "rib_height_mm": 3.514536946512927,
+        "rib_length_mm": 27.124588623630103,
+        "pocket_length_mm": 44.773338333026174,
+        "pocket_width_mm": 11.196117007209894
+      },
+      "mesh_levels": {
+        "1.25": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 208.2618085685363,
+            "max_displacement_mm": 0.06606923511232321,
+            "factor_of_safety_710_mpa": 3.4091704325440353,
+            "nodes": 84085,
+            "elements": 49328,
+            "runtime_s": 84.84789319999993,
+            "mesh_quality": {
+              "minSICN_min": 0.22965555537933552,
+              "minSICN_p01": 0.35696821845565746,
+              "element_count": 49328
+            },
+            "hotspot": {
+              "element_id": 59728,
+              "integration_point": 3,
+              "coordinates_mm": [
+                32.4428154966909,
+                -13.568303595666181,
+                13.349586058607718
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 133.23323519794297,
+              "local_2mm_point_count": 199,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -28000.000000000004,
+                8.100187187665142e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.999999999935,
+                  2.0476953466186387e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  2.1529444893531036e-12,
+                  -6.59383658785373e-12,
+                  -3.1163960301228144e-13
+                ],
+                "max_relative_quadrature_correction": 0.00018586981410001209,
+                "minimum_pressure_weight_n": 0.3609235962292126,
+                "loaded_node_count": 876
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -28000.000000000004,
+                  8.100187187665142e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -5.7980287238024175e-12,
+                  1.9838353182421997e-11,
+                  5.191055918452033e-13
+                ],
+                "max_relative_quadrature_correction": 0.0007998940917711175,
+                "minimum_pressure_weight_n": 0.0033532391460864446,
+                "loaded_node_count": 273
+              },
+              "total_applied_n": [
+                -6.912159733474255e-11,
+                2.857714065385153e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1672,
+                  1
+                ],
+                [
+                  1672,
+                  2
+                ],
+                [
+                  1672,
+                  3
+                ],
+                [
+                  1652,
+                  1
+                ],
+                [
+                  1652,
+                  3
+                ],
+                [
+                  663,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  2.2144121203382383e-08,
+                  1.6056400209407684e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.9965208e-08,
+                  -1.803394e-08,
+                  -4.782930000000001e-10
+                ],
+                "balance_residual_n": [
+                  2.1789132033823825e-09,
+                  -1.9775397905923145e-09,
+                  -4.782930000000001e-10
+                ],
+                "balance_moment_n_mm": [
+                  2.860520165598586e-07,
+                  2.1518062016709308e-07,
+                  3.526014915106385e-08
+                ],
+                "reaction_dof_norm_fraction": 2.3468916205150813e-12,
+                "force_balance_fraction": 1.0646865595273259e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0055/local-1.25mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0055/local-1.25mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 264.085733965621,
+            "max_displacement_mm": 0.09426311023484027,
+            "factor_of_safety_710_mpa": 2.6885208426004135,
+            "nodes": 84085,
+            "elements": 49328,
+            "runtime_s": 45.73624080000002,
+            "mesh_quality": {
+              "minSICN_min": 0.22965555537933552,
+              "minSICN_p01": 0.35696821845565746,
+              "element_count": 49328
+            },
+            "hotspot": {
+              "element_id": 59728,
+              "integration_point": 3,
+              "coordinates_mm": [
+                32.4428154966909,
+                -13.568303595666181,
+                13.349586058607718
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 168.3483035373578,
+              "local_2mm_point_count": 199,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.000000000004,
+                -2.5579538487363607e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999993,
+                  1.7399415241925453e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -9.194423000735696e-12,
+                  5.1034731995969196e-12,
+                  -4.2806730382594083e-13
+                ],
+                "max_relative_quadrature_correction": 0.00029953367644420343,
+                "minimum_pressure_weight_n": 0.06567580179707848,
+                "loaded_node_count": 579
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.000000000004,
+                  -2.5579538487363607e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -2.9558577807620168e-12,
+                  -5.6843418860808015e-12,
+                  6.831202270518586e-13
+                ],
+                "max_relative_quadrature_correction": 0.0007544478189058264,
+                "minimum_pressure_weight_n": 0.020563326167610824,
+                "loaded_node_count": 284
+              },
+              "total_applied_n": [
+                1.0913936421275139e-11,
+                1.4841461393189093e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1672,
+                  1
+                ],
+                [
+                  1672,
+                  2
+                ],
+                [
+                  1672,
+                  3
+                ],
+                [
+                  1652,
+                  1
+                ],
+                [
+                  1652,
+                  3
+                ],
+                [
+                  663,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  1.4545837423440844e-08,
+                  -1.3530201847800072e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.7832059999999996e-08,
+                  1.633012e-08,
+                  1.4177899999999958e-10
+                ],
+                "balance_residual_n": [
+                  -3.2862225765591526e-09,
+                  2.799918152199928e-09,
+                  1.4177899999999958e-10
+                ],
+                "balance_moment_n_mm": [
+                  -2.3782624321409704e-07,
+                  -6.364929548516422e-08,
+                  -1.913991287288696e-06
+                ],
+                "reaction_dof_norm_fraction": 2.2053477319802674e-12,
+                "force_balance_fraction": 2.3997750516073155e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0055/local-1.25mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0055/local-1.25mm/tension"
+          }
+        },
+        "0.75": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 213.98971460474888,
+            "max_displacement_mm": 0.06608372295127223,
+            "factor_of_safety_710_mpa": 3.31791647702045,
+            "nodes": 100335,
+            "elements": 60329,
+            "runtime_s": 66.90679669999986,
+            "mesh_quality": {
+              "minSICN_min": 0.06386312697833144,
+              "minSICN_p01": 0.36048901480598344,
+              "element_count": 60329
+            },
+            "hotspot": {
+              "element_id": 70710,
+              "integration_point": 3,
+              "coordinates_mm": [
+                32.60859859392207,
+                -13.535637960486142,
+                16.303891165040547
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 130.08983728452006,
+              "local_2mm_point_count": 867,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.99999999998,
+                6.394884621840902e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.99999999997,
+                  6.439293542825908e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -1.8403056856186595e-12,
+                  -2.1714186004828662e-11,
+                  -3.1677577227995357e-12
+                ],
+                "max_relative_quadrature_correction": 0.0001743449426087231,
+                "minimum_pressure_weight_n": 0.36085787593525426,
+                "loaded_node_count": 877
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.99999999998,
+                  6.394884621840902e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -8.526512829121202e-13,
+                  8.640199666842818e-12,
+                  -1.2644911159820358e-12
+                ],
+                "max_relative_quadrature_correction": 0.0007181923078905719,
+                "minimum_pressure_weight_n": 0.25070288011794023,
+                "loaded_node_count": 275
+              },
+              "total_applied_n": [
+                -1.0913936421275139e-11,
+                7.038813976123492e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1820,
+                  1
+                ],
+                [
+                  1820,
+                  2
+                ],
+                [
+                  1820,
+                  3
+                ],
+                [
+                  1800,
+                  1
+                ],
+                [
+                  1800,
+                  3
+                ],
+                [
+                  747,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  1.6811050329579302e-09,
+                  -2.4788353591986834e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  3.841174000000007e-09,
+                  3.771122e-11,
+                  -3.2011000000000087e-10
+                ],
+                "balance_residual_n": [
+                  5.522279032957937e-09,
+                  -2.4411241391986834e-09,
+                  -3.2011000000000087e-10
+                ],
+                "balance_moment_n_mm": [
+                  1.0652040428325314e-06,
+                  -1.6035076874416472e-07,
+                  7.335634259564281e-06
+                ],
+                "reaction_dof_norm_fraction": 7.985057136525266e-12,
+                "force_balance_fraction": 2.1593745313040447e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0055/local-0.75mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0055/local-0.75mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 277.0742583747757,
+            "max_displacement_mm": 0.09424353762556148,
+            "factor_of_safety_710_mpa": 2.56248994101661,
+            "nodes": 100335,
+            "elements": 60329,
+            "runtime_s": 66.49331899999993,
+            "mesh_quality": {
+              "minSICN_min": 0.06386312697833144,
+              "minSICN_p01": 0.36048901480598344,
+              "element_count": 60329
+            },
+            "hotspot": {
+              "element_id": 77775,
+              "integration_point": 3,
+              "coordinates_mm": [
+                32.19075715987704,
+                -13.754852044233173,
+                16.455484146076053
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 164.8531614599161,
+              "local_2mm_point_count": 873,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.0,
+                -3.268496584496461e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.99999999999,
+                  1.9468870959826745e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  4.632738637155853e-12,
+                  -1.6058265828178264e-11,
+                  9.603320742790356e-14
+                ],
+                "max_relative_quadrature_correction": 0.00024216676157953835,
+                "minimum_pressure_weight_n": 0.017803313698282665,
+                "loaded_node_count": 587
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.0,
+                  -3.268496584496461e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  6.821210263296962e-13,
+                  6.821210263296962e-13,
+                  -3.155253835984698e-13
+                ],
+                "max_relative_quadrature_correction": 0.0007762934843432991,
+                "minimum_pressure_weight_n": 3.163851427907596e-13,
+                "loaded_node_count": 284
+              },
+              "total_applied_n": [
+                1.0913936421275139e-11,
+                1.6200374375330284e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1820,
+                  1
+                ],
+                [
+                  1820,
+                  2
+                ],
+                [
+                  1820,
+                  3
+                ],
+                [
+                  1800,
+                  1
+                ],
+                [
+                  1800,
+                  3
+                ],
+                [
+                  747,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  1.3047291247403336e-08,
+                  -5.813898695805619e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -2.052640000000001e-08,
+                  1.06335e-08,
+                  1.0462336e-09
+                ],
+                "balance_residual_n": [
+                  -7.479108752596673e-09,
+                  4.819601304194381e-09,
+                  1.0462336e-09
+                ],
+                "balance_moment_n_mm": [
+                  -3.6993450234786313e-08,
+                  -9.477326434967127e-08,
+                  -4.69022203017429e-06
+                ],
+                "reaction_dof_norm_fraction": 5.476899889152614e-12,
+                "force_balance_fraction": 4.977115196798282e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0055/local-0.75mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0055/local-0.75mm/tension"
+          }
+        }
+      },
+      "successive_change_percent": {
+        "1.25_to_0.75": {
+          "compression": {
+            "max_von_mises_mpa": 2.750339140710762,
+            "max_displacement_mm": 0.02192826801216091
+          },
+          "tension": {
+            "max_von_mises_mpa": 4.918298392765726,
+            "max_displacement_mm": 0.020763805936413287
+          }
+        }
+      },
+      "stress_trend_pass_lt_5_percent": true,
+      "buckling": {
+        "status": "BUCKLING_SUCCESS",
+        "method": "CalculiX linear eigenvalue buckling; C3D10; proportional 28 kN COSINE_BEARING load pattern",
+        "lowest_positive_factor": 8.772048,
+        "positive_factors": [
+          8.772048,
+          24.49963,
+          126.7613,
+          136.8433,
+          165.0051
+        ],
+        "reference_compression_n": 28000.0,
+        "linear_eigenvalue_load_n": 245617.34399999998,
+        "limitations": [
+          "Linear bifurcation only; no geometric imperfections or nonlinear collapse",
+          "COSINE_BEARING equivalent pressure and six rigid-body gauge DOFs are retained",
+          "An eigenvalue below zero is not used as a positive buckling margin"
+        ],
+        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.75mm\\buckling\\buckle.inp",
+        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.75mm\\buckling\\buckle.dat",
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0055\\local-0.75mm\\buckling\\buckle.log"
+      },
+      "normalized_constraint_margins": {
+        "compression_stress": 0.4574908643823268,
+        "tension_stress": 0.29755821820479406,
+        "displacement": 0.7307327496412529,
+        "buckling": 3.87336
+      },
+      "assessment": {
+        "feasibility_status": "FEASIBLE",
+        "constraints": {
+          "minimum_factor_of_safety": 1.8,
+          "maximum_displacement_mm": 0.35,
+          "minimum_buckling_factor": 1.8,
+          "allowable_stress_mpa": 394.44444444444446
+        },
+        "maximum_stress_mpa": 277.0742583747757,
+        "maximum_displacement_mm": 0.09424353762556148,
+        "minimum_factor_of_safety": 2.56248994101661,
+        "linear_buckling_factor": 8.772048,
+        "reasons": [],
+        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
+        "mesh_stress_trend_max_percent": 4.918298392765726
+      }
+    },
+    {
+      "candidate_id": "P4-0026",
+      "family": "h_section",
+      "actual_cad_mass_g": 891.6691896728116,
+      "parameters": {
+        "family": "h_section",
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 7.413192978074124,
+        "shank_width": 32.77446677479682,
+        "beam_thickness": 32.383565191268616,
+        "flange_thickness_mm": 5.257159137929679,
+        "web_thickness_mm": 7.2385701177716815,
+        "transition_radius_mm": 1.484381608824545,
+        "taper_big_width_mm": 31.0,
+        "taper_mid_width_mm": 27.0,
+        "taper_small_width_mm": 23.0,
+        "rib_height_mm": 4.340692126419436,
+        "rib_length_mm": 23.14480476434318,
+        "pocket_length_mm": 28.813883644969135,
+        "pocket_width_mm": 13.037480895330654
+      },
+      "mesh_levels": {
+        "1.25": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 237.28552948481914,
+            "max_displacement_mm": 0.06637927128318946,
+            "factor_of_safety_710_mpa": 2.9921757198659003,
+            "nodes": 98872,
+            "elements": 59404,
+            "runtime_s": 92.46163350000006,
+            "mesh_quality": {
+              "minSICN_min": 0.23260306443610929,
+              "minSICN_p01": 0.36413336279873654,
+              "element_count": 59404
+            },
+            "hotspot": {
+              "element_id": 48567,
+              "integration_point": 2,
+              "coordinates_mm": [
+                28.24038620312773,
+                16.34005314996582,
+                14.567283729021936
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 121.88520854634478,
+              "local_2mm_point_count": 251,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -28000.000000000025,
+                6.252776074688882e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  28000.0,
+                  -1.7070789226636407e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  7.744915819785092e-13,
+                  8.753886504564434e-12,
+                  3.2097241531303666e-13
+                ],
+                "max_relative_quadrature_correction": 0.00012531857876791437,
+                "minimum_pressure_weight_n": 0.43730966021571743,
+                "loaded_node_count": 950
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -28000.000000000025,
+                  6.252776074688882e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  5.002220859751105e-12,
+                  2.2737367544323206e-12,
+                  -7.421563363863015e-13
+                ],
+                "max_relative_quadrature_correction": 0.0014207797467534278,
+                "minimum_pressure_weight_n": 0.6111700447982641,
+                "loaded_node_count": 292
+              },
+              "total_applied_n": [
+                -2.546585164964199e-11,
+                -1.0818013151947525e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1754,
+                  1
+                ],
+                [
+                  1754,
+                  2
+                ],
+                [
+                  1754,
+                  3
+                ],
+                [
+                  1734,
+                  1
+                ],
+                [
+                  1734,
+                  3
+                ],
+                [
+                  928,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -6.574342847898151e-09,
+                  2.0279194323791216e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  6.448489999999997e-09,
+                  -2.146229e-08,
+                  -9.648100000000013e-10
+                ],
+                "balance_residual_n": [
+                  -1.2585284789815476e-10,
+                  -1.1830956762087839e-09,
+                  -9.648100000000013e-10
+                ],
+                "balance_moment_n_mm": [
+                  3.6823553555407847e-07,
+                  1.6883634514362816e-06,
+                  -6.286379647080112e-07
+                ],
+                "reaction_dof_norm_fraction": 5.5987930093377325e-12,
+                "force_balance_fraction": 5.470715934670445e-14,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0026/local-1.25mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0026/local-1.25mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 390.79234776889655,
+            "max_displacement_mm": 0.12721541655489646,
+            "factor_of_safety_710_mpa": 1.8168216549108933,
+            "nodes": 98872,
+            "elements": 59404,
+            "runtime_s": 82.79942410000012,
+            "mesh_quality": {
+              "minSICN_min": 0.23260306443610929,
+              "minSICN_p01": 0.36413336279873654,
+              "element_count": 59404
+            },
+            "hotspot": {
+              "element_id": 62424,
+              "integration_point": 1,
+              "coordinates_mm": [
+                27.8408572109408,
+                -16.549486100563843,
+                15.337634254082637
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 201.94048718079267,
+              "local_2mm_point_count": 232,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.999999999993,
+                4.192202140984591e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999996,
+                  1.9539925233402755e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.6200374375330284e-12,
+                  5.087485988042317e-12,
+                  4.496316513558085e-14
+                ],
+                "max_relative_quadrature_correction": 0.00021273410232596396,
+                "minimum_pressure_weight_n": 0.10353261856053045,
+                "loaded_node_count": 619
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.999999999993,
+                  4.192202140984591e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -5.172751116333529e-12,
+                  -8.526512829121202e-13,
+                  -1.3603658130523242e-13
+                ],
+                "max_relative_quadrature_correction": 0.0013988502498350174,
+                "minimum_pressure_weight_n": 0.20311281031997605,
+                "loaded_node_count": 327
+              },
+              "total_applied_n": [
+                -3.637978807091713e-12,
+                6.146194664324867e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1754,
+                  1
+                ],
+                [
+                  1754,
+                  2
+                ],
+                [
+                  1754,
+                  3
+                ],
+                [
+                  1734,
+                  1
+                ],
+                [
+                  1734,
+                  3
+                ],
+                [
+                  928,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -6.106631644797744e-09,
+                  1.6148504755619797e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  5.703189999999999e-09,
+                  1.064407e-09,
+                  1.3911810000000005e-09
+                ],
+                "balance_residual_n": [
+                  -4.0344164479774503e-10,
+                  2.6792574755619796e-09,
+                  1.3911810000000005e-09
+                ],
+                "balance_moment_n_mm": [
+                  -2.74121574357654e-07,
+                  2.3376940291530132e-07,
+                  -8.298704304003318e-07
+                ],
+                "reaction_dof_norm_fraction": 2.1929969024369943e-12,
+                "force_balance_fraction": 1.692081262447579e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0026/local-1.25mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0026/local-1.25mm/tension"
+          }
+        },
+        "0.75": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 259.0985857743083,
+            "max_displacement_mm": 0.06639561719001308,
+            "factor_of_safety_710_mpa": 2.7402696849084935,
+            "nodes": 113402,
+            "elements": 69136,
+            "runtime_s": 106.69210800000019,
+            "mesh_quality": {
+              "minSICN_min": 0.20818605811617516,
+              "minSICN_p01": 0.3600304412038319,
+              "element_count": 69136
+            },
+            "hotspot": {
+              "element_id": 80933,
+              "integration_point": 1,
+              "coordinates_mm": [
+                28.235558044451626,
+                16.419007781399973,
+                20.09046962943829
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 116.44093776774257,
+              "local_2mm_point_count": 963,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.999999999978,
+                8.890665981198254e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.99999999999,
+                  -5.684341886080801e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  2.6574298317427747e-12,
+                  1.34718902700115e-11,
+                  1.6736525360050436e-12
+                ],
+                "max_relative_quadrature_correction": 2.163676927140182e-05,
+                "minimum_pressure_weight_n": 0.17445584518739438,
+                "loaded_node_count": 940
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.999999999978,
+                  8.890665981198254e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.7479351299698465e-12,
+                  2.114575181622058e-11,
+                  -1.1750322936876496e-12
+                ],
+                "max_relative_quadrature_correction": 0.0007692429818018372,
+                "minimum_pressure_weight_n": 0.16566832892361344,
+                "loaded_node_count": 293
+              },
+              "total_applied_n": [
+                1.0913936421275139e-11,
+                3.206324095117452e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1922,
+                  1
+                ],
+                [
+                  1922,
+                  2
+                ],
+                [
+                  1922,
+                  3
+                ],
+                [
+                  1902,
+                  1
+                ],
+                [
+                  1902,
+                  3
+                ],
+                [
+                  1020,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -6.701480259607706e-09,
+                  -9.052987692825809e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  1.2750050000000001e-08,
+                  4.780048e-09,
+                  -1.3925000000000239e-11
+                ],
+                "balance_residual_n": [
+                  6.048569740392295e-09,
+                  -4.272939692825809e-09,
+                  -1.3925000000000239e-11
+                ],
+                "balance_moment_n_mm": [
+                  3.1598418822803794e-07,
+                  -2.158491927919111e-07,
+                  1.5433890604690513e-06
+                ],
+                "reaction_dof_norm_fraction": 3.5050846405505477e-12,
+                "force_balance_fraction": 2.6448690080922563e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0026/local-0.75mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0026/local-0.75mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 419.30685300175844,
+            "max_displacement_mm": 0.1273188662382009,
+            "factor_of_safety_710_mpa": 1.6932706797354025,
+            "nodes": 113402,
+            "elements": 69136,
+            "runtime_s": 100.48854690000007,
+            "mesh_quality": {
+              "minSICN_min": 0.20818605811617516,
+              "minSICN_p01": 0.3600304412038319,
+              "element_count": 69136
+            },
+            "hotspot": {
+              "element_id": 76127,
+              "integration_point": 3,
+              "coordinates_mm": [
+                27.888450132866698,
+                -16.595332552591497,
+                15.958505672977003
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 194.9937855560575,
+              "local_2mm_point_count": 844,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.000000000004,
+                1.9184653865522705e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -18000.0,
+                  1.4619416788264061e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -1.2789769243681803e-12,
+                  1.4352963262354024e-12,
+                  -1.1694143917106992e-12
+                ],
+                "max_relative_quadrature_correction": 3.745158719941594e-05,
+                "minimum_pressure_weight_n": 0.11534041153822289,
+                "loaded_node_count": 608
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.000000000004,
+                  1.9184653865522705e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.2505552149377763e-12,
+                  8.611777957412414e-12,
+                  3.21132009872823e-14
+                ],
+                "max_relative_quadrature_correction": 0.0005502742025360777,
+                "minimum_pressure_weight_n": 0.014144062771657782,
+                "loaded_node_count": 326
+              },
+              "total_applied_n": [
+                3.637978807091713e-12,
+                1.6537882174816332e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1922,
+                  1
+                ],
+                [
+                  1922,
+                  2
+                ],
+                [
+                  1922,
+                  3
+                ],
+                [
+                  1902,
+                  1
+                ],
+                [
+                  1902,
+                  3
+                ],
+                [
+                  1020,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  5.361542898540961e-08,
+                  5.1445390170101746e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -6.326136000000001e-08,
+                  4.240345e-09,
+                  4.694900000000064e-11
+                ],
+                "balance_residual_n": [
+                  -9.645931014590401e-09,
+                  9.384884017010176e-09,
+                  4.694900000000064e-11
+                ],
+                "balance_moment_n_mm": [
+                  2.3053502964757934e-07,
+                  1.481758799973153e-07,
+                  9.471988967051849e-07
+                ],
+                "reaction_dof_norm_fraction": 2.0968154316704306e-12,
+                "force_balance_fraction": 7.476758997786322e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0026/local-0.75mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0026/local-0.75mm/tension"
+          }
+        }
+      },
+      "successive_change_percent": {
+        "1.25_to_0.75": {
+          "compression": {
+            "max_von_mises_mpa": 9.192746113447546,
+            "max_displacement_mm": 0.024625016978390268
+          },
+          "tension": {
+            "max_von_mises_mpa": 7.296587406497673,
+            "max_displacement_mm": 0.08131851162850634
+          }
+        }
+      },
+      "stress_trend_pass_lt_5_percent": false,
+      "buckling": {
+        "status": "BUCKLING_SUCCESS",
+        "method": "CalculiX linear eigenvalue buckling; C3D10; proportional 28 kN COSINE_BEARING load pattern",
+        "lowest_positive_factor": 9.357915,
+        "positive_factors": [
+          9.357915,
+          29.64331,
+          160.4176,
+          262.1426,
+          296.2381
+        ],
+        "reference_compression_n": 28000.0,
+        "linear_eigenvalue_load_n": 262021.62,
+        "limitations": [
+          "Linear bifurcation only; no geometric imperfections or nonlinear collapse",
+          "COSINE_BEARING equivalent pressure and six rigid-body gauge DOFs are retained",
+          "An eigenvalue below zero is not used as a positive buckling margin"
+        ],
+        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.inp",
+        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.dat",
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0026\\local-0.75mm\\buckling\\buckle.log"
+      },
+      "normalized_constraint_margins": {
+        "compression_stress": 0.34313034592428887,
+        "tension_stress": -0.06303145831431714,
+        "displacement": 0.6362318107479974,
+        "buckling": 4.198841666666667
+      },
+      "assessment": {
+        "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
+        "constraints": {
+          "minimum_factor_of_safety": 1.8,
+          "maximum_displacement_mm": 0.35,
+          "minimum_buckling_factor": 1.8,
+          "allowable_stress_mpa": 394.44444444444446
+        },
+        "maximum_stress_mpa": 419.30685300175844,
+        "maximum_displacement_mm": 0.1273188662382009,
+        "minimum_factor_of_safety": 1.6932706797354025,
+        "linear_buckling_factor": 9.357915,
+        "reasons": [
+          "TENSION_STRESS_EXCEEDS_ALLOWABLE",
+          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
+          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+        ],
+        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
+        "mesh_stress_trend_max_percent": 9.192746113447546
+      }
+    },
+    {
+      "candidate_id": "P4-0059",
+      "family": "pocket_variant",
+      "actual_cad_mass_g": 742.656087163335,
+      "parameters": {
+        "family": "pocket_variant",
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 7.867261578703888,
+        "shank_width": 33.98159427341754,
+        "beam_thickness": 24.11146959894849,
+        "flange_thickness_mm": 7.514792993353424,
+        "web_thickness_mm": 4.417741614921727,
+        "transition_radius_mm": 1.3150190873490537,
+        "taper_big_width_mm": 31.0,
+        "taper_mid_width_mm": 27.0,
+        "taper_small_width_mm": 23.0,
+        "rib_height_mm": 4.836956655244516,
+        "rib_length_mm": 29.81698887950278,
+        "pocket_length_mm": 19.326655884889753,
+        "pocket_width_mm": 12.239792105423529
+      },
+      "mesh_levels": {
+        "1.25": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 280.1961984032865,
+            "max_displacement_mm": 0.07260260915333845,
+            "factor_of_safety_710_mpa": 2.5339387330947893,
+            "nodes": 82710,
+            "elements": 49459,
+            "runtime_s": 65.13248020000015,
+            "mesh_quality": {
+              "minSICN_min": 0.02145725580016725,
+              "minSICN_p01": 0.36193771532897534,
+              "element_count": 49459
+            },
+            "hotspot": {
+              "element_id": 64047,
+              "integration_point": 3,
+              "coordinates_mm": [
+                28.43500980583525,
+                -16.967779151409808,
+                23.526676710663413
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 139.2205822684418,
+              "local_2mm_point_count": 241,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -28000.000000000004,
+                -2.3447910280083306e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  28000.00000000001,
+                  -1.7621459846850485e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -3.979039320256561e-12,
+                  -2.8137492336099967e-11,
+                  -2.204361666076002e-12
+                ],
+                "max_relative_quadrature_correction": 0.00016575700334707928,
+                "minimum_pressure_weight_n": 0.031694597466946035,
+                "loaded_node_count": 689
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -28000.000000000004,
+                  -2.3447910280083306e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.8758328224066645e-12,
+                  -1.5020873433968518e-11,
+                  -8.704304638174069e-13
+                ],
+                "max_relative_quadrature_correction": 0.00041862279429900586,
+                "minimum_pressure_weight_n": 0.5473095909727637,
+                "loaded_node_count": 208
+              },
+              "total_applied_n": [
+                7.275957614183426e-12,
+                -1.9966250874858815e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1700,
+                  1
+                ],
+                [
+                  1700,
+                  2
+                ],
+                [
+                  1700,
+                  3
+                ],
+                [
+                  1680,
+                  1
+                ],
+                [
+                  1680,
+                  3
+                ],
+                [
+                  910,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -9.497945541170338e-09,
+                  1.168803720474898e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  5.8464499999999895e-09,
+                  -7.031268e-09,
+                  5.9419e-10
+                ],
+                "balance_residual_n": [
+                  -3.651495541170349e-09,
+                  4.65676920474898e-09,
+                  5.9419e-10
+                ],
+                "balance_moment_n_mm": [
+                  -1.8502385843006887e-07,
+                  1.6548107419723628e-06,
+                  -3.883581746819874e-06
+                ],
+                "reaction_dof_norm_fraction": 8.430530288077558e-12,
+                "force_balance_fraction": 2.1240838622271124e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0059/local-1.25mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0059/local-1.25mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 458.9126796285219,
+            "max_displacement_mm": 0.14405984933194885,
+            "factor_of_safety_710_mpa": 1.5471352863353587,
+            "nodes": 82710,
+            "elements": 49459,
+            "runtime_s": 57.93949459999999,
+            "mesh_quality": {
+              "minSICN_min": 0.02145725580016725,
+              "minSICN_p01": 0.36193771532897534,
+              "element_count": 49459
+            },
+            "hotspot": {
+              "element_id": 63579,
+              "integration_point": 1,
+              "coordinates_mm": [
+                28.12616130905442,
+                -17.056745699029975,
+                11.116415402889672
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 233.84211455962912,
+              "local_2mm_point_count": 262,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.000000000007,
+                5.684341886080801e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -18000.000000000004,
+                  -8.810729923425242e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.6910917111090384e-12,
+                  -6.181721801112872e-12,
+                  1.1672954269847935e-12
+                ],
+                "max_relative_quadrature_correction": 0.00016802341605408086,
+                "minimum_pressure_weight_n": 0.38168711287005574,
+                "loaded_node_count": 472
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.000000000007,
+                  5.684341886080801e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -2.9842794901924208e-12,
+                  -2.8421709430404007e-13,
+                  1.0267273684895493e-12
+                ],
+                "max_relative_quadrature_correction": 0.00026570060662211523,
+                "minimum_pressure_weight_n": 4.247187951753408e-13,
+                "loaded_node_count": 242
+              },
+              "total_applied_n": [
+                3.637978807091713e-12,
+                -3.126388037344441e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1700,
+                  1
+                ],
+                [
+                  1700,
+                  2
+                ],
+                [
+                  1700,
+                  3
+                ],
+                [
+                  1680,
+                  1
+                ],
+                [
+                  1680,
+                  3
+                ],
+                [
+                  910,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  6.508162009311036e-09,
+                  -6.864802060135844e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  6.486699999999988e-10,
+                  -2.452935e-09,
+                  -1.1723169999999998e-09
+                ],
+                "balance_residual_n": [
+                  7.156832009311035e-09,
+                  -9.317737060135844e-09,
+                  -1.1723169999999998e-09
+                ],
+                "balance_moment_n_mm": [
+                  2.514914368366726e-07,
+                  2.534689702227074e-07,
+                  1.4498516768374118e-06
+                ],
+                "reaction_dof_norm_fraction": 3.3341103584307234e-12,
+                "force_balance_fraction": 6.559669036174085e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0059/local-1.25mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0059/local-1.25mm/tension"
+          }
+        },
+        "0.75": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 303.04086802922916,
+            "max_displacement_mm": 0.0726410050234608,
+            "factor_of_safety_710_mpa": 2.342918315332698,
+            "nodes": 93103,
+            "elements": 56475,
+            "runtime_s": 74.98702390000017,
+            "mesh_quality": {
+              "minSICN_min": 0.0037332944241174875,
+              "minSICN_p01": 0.362530183403948,
+              "element_count": 56475
+            },
+            "hotspot": {
+              "element_id": 71919,
+              "integration_point": 1,
+              "coordinates_mm": [
+                28.438255254390086,
+                -16.979284451106366,
+                3.2841730302956553
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 142.2842229512693,
+              "local_2mm_point_count": 952,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.999999999978,
+                2.984279490192421e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  28000.0,
+                  2.3518964553659316e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  2.7284841053187847e-12,
+                  -6.622258297284134e-12,
+                  6.039602411939127e-14
+                ],
+                "max_relative_quadrature_correction": 0.000721893846735508,
+                "minimum_pressure_weight_n": 0.06348233849740853,
+                "loaded_node_count": 694
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.999999999978,
+                  2.984279490192421e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -7.048583938740194e-12,
+                  -5.7980287238024175e-12,
+                  -6.892576787098644e-13
+                ],
+                "max_relative_quadrature_correction": 0.00042394913535174486,
+                "minimum_pressure_weight_n": 0.8193908617313784,
+                "loaded_node_count": 207
+              },
+              "total_applied_n": [
+                2.1827872842550278e-11,
+                2.6503244043851737e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1832,
+                  1
+                ],
+                [
+                  1832,
+                  2
+                ],
+                [
+                  1832,
+                  3
+                ],
+                [
+                  1812,
+                  1
+                ],
+                [
+                  1812,
+                  3
+                ],
+                [
+                  986,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  8.390147243630963e-08,
+                  -1.3213295346758969e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -8.161653e-08,
+                  1.404253e-08,
+                  -1.7008099999999988e-09
+                ],
+                "balance_residual_n": [
+                  2.284942436309634e-09,
+                  8.292346532410308e-10,
+                  -1.7008099999999988e-09
+                ],
+                "balance_moment_n_mm": [
+                  -4.892352276801134e-07,
+                  1.5580218805102543e-06,
+                  1.0966395125387351e-05
+                ],
+                "reaction_dof_norm_fraction": 1.1141448291951087e-11,
+                "force_balance_fraction": 1.0595379903502545e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0059/local-0.75mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0059/local-0.75mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 508.8181541840914,
+            "max_displacement_mm": 0.14402773665663848,
+            "factor_of_safety_710_mpa": 1.3953904634918366,
+            "nodes": 93103,
+            "elements": 56475,
+            "runtime_s": 70.10009050000008,
+            "mesh_quality": {
+              "minSICN_min": 0.0037332944241174875,
+              "minSICN_p01": 0.362530183403948,
+              "element_count": 56475
+            },
+            "hotspot": {
+              "element_id": 63980,
+              "integration_point": 2,
+              "coordinates_mm": [
+                28.046600095396453,
+                -17.182802277171948,
+                15.861690701465877
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 227.73645958041251,
+              "local_2mm_point_count": 912,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.999999999996,
+                -7.815970093361102e-14,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -18000.0,
+                  -2.3447910280083306e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  2.0463630789890885e-12,
+                  1.432454155292362e-11,
+                  -1.7669177752865917e-13
+                ],
+                "max_relative_quadrature_correction": 0.0007185053201206424,
+                "minimum_pressure_weight_n": 0.07838210103961213,
+                "loaded_node_count": 470
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.999999999996,
+                  -7.815970093361102e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -4.888534022029489e-12,
+                  -1.8189894035458565e-12,
+                  -5.728820196004849e-13
+                ],
+                "max_relative_quadrature_correction": 0.0001727872404187229,
+                "minimum_pressure_weight_n": 4.247888528722746e-13,
+                "loaded_node_count": 239
+              },
+              "total_applied_n": [
+                -3.637978807091713e-12,
+                -3.126388037344441e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1832,
+                  1
+                ],
+                [
+                  1832,
+                  2
+                ],
+                [
+                  1832,
+                  3
+                ],
+                [
+                  1812,
+                  1
+                ],
+                [
+                  1812,
+                  3
+                ],
+                [
+                  986,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -3.5107277085444366e-09,
+                  6.892729942364895e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  1.1744199999999993e-09,
+                  -8.086154e-09,
+                  3.151197e-09
+                ],
+                "balance_residual_n": [
+                  -2.3363077085444373e-09,
+                  -1.1934240576351052e-09,
+                  3.151197e-09
+                ],
+                "balance_moment_n_mm": [
+                  1.66708859706608e-07,
+                  -2.8358951487316243e-07,
+                  -2.6503254989002565e-06
+                ],
+                "reaction_dof_norm_fraction": 3.801957422184048e-12,
+                "force_balance_fraction": 2.2779564444260746e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0059/local-0.75mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0059/local-0.75mm/tension"
+          }
+        }
+      },
+      "successive_change_percent": {
+        "1.25_to_0.75": {
+          "compression": {
+            "max_von_mises_mpa": 8.15309763520144,
+            "max_displacement_mm": 0.05288497282687568
+          },
+          "tension": {
+            "max_von_mises_mpa": 10.874721220596188,
+            "max_displacement_mm": 0.022291204287163035
+          }
+        }
+      },
+      "stress_trend_pass_lt_5_percent": false,
+      "buckling": null,
+      "normalized_constraint_margins": {
+        "compression_stress": 0.23172737682730637,
+        "tension_stress": -0.2899615176498091,
+        "displacement": 0.5884921809810328,
+        "buckling": null
+      },
+      "assessment": {
+        "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
+        "constraints": {
+          "minimum_factor_of_safety": 1.8,
+          "maximum_displacement_mm": 0.35,
+          "minimum_buckling_factor": 1.8,
+          "allowable_stress_mpa": 394.44444444444446
+        },
+        "maximum_stress_mpa": 508.8181541840914,
+        "maximum_displacement_mm": 0.14402773665663848,
+        "minimum_factor_of_safety": 1.3953904634918366,
+        "linear_buckling_factor": null,
+        "reasons": [
+          "TENSION_STRESS_EXCEEDS_ALLOWABLE",
+          "BUCKLING_NOT_VERIFIED",
+          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
+          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+        ],
+        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
+        "mesh_stress_trend_max_percent": 10.874721220596188
+      }
+    },
+    {
+      "candidate_id": "P4-0016",
+      "family": "h_section",
+      "actual_cad_mass_g": 1118.274628910305,
+      "parameters": {
+        "family": "h_section",
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 9.99334109876376,
+        "shank_width": 32.514837080306094,
+        "beam_thickness": 31.788732381865202,
+        "flange_thickness_mm": 7.878937582720044,
+        "web_thickness_mm": 4.496452906770161,
+        "transition_radius_mm": 1.2347571523906313,
+        "taper_big_width_mm": 31.0,
+        "taper_mid_width_mm": 27.0,
+        "taper_small_width_mm": 23.0,
+        "rib_height_mm": 3.4386269675225574,
+        "rib_length_mm": 13.55233835249287,
+        "pocket_length_mm": 27.017512959471134,
+        "pocket_width_mm": 14.362873241923772
+      },
+      "mesh_levels": {
+        "1.25": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 184.82050005507799,
+            "max_displacement_mm": 0.045678032012709625,
+            "factor_of_safety_710_mpa": 3.841565193192391,
+            "nodes": 106721,
+            "elements": 65538,
+            "runtime_s": 103.93204970000033,
+            "mesh_quality": {
+              "minSICN_min": 0.23318053534568303,
+              "minSICN_p01": 0.36084051411060397,
+              "element_count": 65538
+            },
+            "hotspot": {
+              "element_id": 82886,
+              "integration_point": 3,
+              "coordinates_mm": [
+                31.25182850257747,
+                -16.184732521600584,
+                14.031476408063742
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 94.53714661436135,
+              "local_2mm_point_count": 254,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -28000.000000000004,
+                -2.1032064978498966e-12,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.999999999996,
+                  -8.788525462932739e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  4.67892391498026e-12,
+                  -2.3021584638627246e-12,
+                  -8.213438609794288e-13
+                ],
+                "max_relative_quadrature_correction": 0.00021982420892252568,
+                "minimum_pressure_weight_n": 0.15077552652558418,
+                "loaded_node_count": 924
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -28000.000000000004,
+                  -2.1032064978498966e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.3642420526593924e-12,
+                  1.1368683772161603e-11,
+                  1.318793598631407e-12
+                ],
+                "max_relative_quadrature_correction": 0.00019108212381660727,
+                "minimum_pressure_weight_n": 0.2521300392423643,
+                "loaded_node_count": 289
+              },
+              "total_applied_n": [
+                -7.275957614183426e-12,
+                -2.9820590441431705e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1690,
+                  1
+                ],
+                [
+                  1690,
+                  2
+                ],
+                [
+                  1690,
+                  3
+                ],
+                [
+                  1670,
+                  1
+                ],
+                [
+                  1670,
+                  3
+                ],
+                [
+                  904,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  3.839874551658795e-08,
+                  4.042195156372941e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -3.9022821e-08,
+                  -4.019428e-08,
+                  -2.608880000000005e-10
+                ],
+                "balance_residual_n": [
+                  -6.240754834120463e-10,
+                  2.2767156372940895e-10,
+                  -2.608880000000005e-10
+                ],
+                "balance_moment_n_mm": [
+                  -2.950907320160045e-07,
+                  7.734728663523672e-07,
+                  8.235082569544833e-06
+                ],
+                "reaction_dof_norm_fraction": 2.6071475663798346e-12,
+                "force_balance_fraction": 2.5489270913919466e-14,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0016/local-1.25mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0016/local-1.25mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 271.7176249449002,
+            "max_displacement_mm": 0.06850799174262334,
+            "factor_of_safety_710_mpa": 2.6130067938875006,
+            "nodes": 106721,
+            "elements": 65538,
+            "runtime_s": 97.95595019999973,
+            "mesh_quality": {
+              "minSICN_min": 0.23318053534568303,
+              "minSICN_p01": 0.36084051411060397,
+              "element_count": 65538
+            },
+            "hotspot": {
+              "element_id": 82886,
+              "integration_point": 3,
+              "coordinates_mm": [
+                31.25182850257747,
+                -16.184732521600584,
+                14.031476408063742
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 136.2857268883255,
+              "local_2mm_point_count": 254,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.000000000007,
+                4.760636329592671e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.99999999999,
+                  9.139355938714289e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  7.815970093361102e-12,
+                  -1.2398970739013748e-11,
+                  -6.018306512867166e-13
+                ],
+                "max_relative_quadrature_correction": 0.0003086388135519477,
+                "minimum_pressure_weight_n": 0.06972099891225017,
+                "loaded_node_count": 606
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.000000000007,
+                  4.760636329592671e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -3.979039320256561e-12,
+                  -3.552713678800501e-12,
+                  -4.305444889496361e-13
+                ],
+                "max_relative_quadrature_correction": 9.994698407050937e-05,
+                "minimum_pressure_weight_n": 1.919899477326027,
+                "loaded_node_count": 282
+              },
+              "total_applied_n": [
+                1.8189894035458565e-11,
+                1.389999226830696e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1690,
+                  1
+                ],
+                [
+                  1690,
+                  2
+                ],
+                [
+                  1690,
+                  3
+                ],
+                [
+                  1670,
+                  1
+                ],
+                [
+                  1670,
+                  3
+                ],
+                [
+                  904,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  1.0264199934439944e-08,
+                  9.285732183172968e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.0619845000000002e-08,
+                  -9.817492e-09,
+                  3.1584599999999986e-10
+                ],
+                "balance_residual_n": [
+                  -3.556450655600583e-10,
+                  -5.31759816827033e-10,
+                  3.1584599999999986e-10
+                ],
+                "balance_moment_n_mm": [
+                  1.5299711500981814e-07,
+                  3.562436021521082e-07,
+                  2.5181126227915785e-06
+                ],
+                "reaction_dof_norm_fraction": 3.7504270465501925e-12,
+                "force_balance_fraction": 3.963609976814914e-14,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0016/local-1.25mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0016/local-1.25mm/tension"
+          }
+        },
+        "0.75": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 195.16330362684147,
+            "max_displacement_mm": 0.04570351799034595,
+            "factor_of_safety_710_mpa": 3.6379789991541798,
+            "nodes": 121003,
+            "elements": 75371,
+            "runtime_s": 121.75599020000027,
+            "mesh_quality": {
+              "minSICN_min": 0.2418498501387244,
+              "minSICN_p01": 0.36247394793893734,
+              "element_count": 75371
+            },
+            "hotspot": {
+              "element_id": 71808,
+              "integration_point": 2,
+              "coordinates_mm": [
+                31.231765308917147,
+                -16.261912220079033,
+                14.973519655749
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 91.48942824615634,
+              "local_2mm_point_count": 965,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.99999999998,
+                -9.805489753489383e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.999999999993,
+                  -1.0440537323574972e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.340438871011429e-11,
+                  -3.893774191965349e-12,
+                  2.891132645788108e-12
+                ],
+                "max_relative_quadrature_correction": 0.00036567442196445754,
+                "minimum_pressure_weight_n": 0.061980103620686296,
+                "loaded_node_count": 926
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.99999999998,
+                  -9.805489753489383e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -6.821210263296962e-13,
+                  2.5693225325085223e-11,
+                  -6.987552897408378e-14
+                ],
+                "max_relative_quadrature_correction": 0.00046329888778461314,
+                "minimum_pressure_weight_n": 0.25220443465105596,
+                "loaded_node_count": 289
+              },
+              "total_applied_n": [
+                1.0913936421275139e-11,
+                -2.0246027077064355e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1850,
+                  1
+                ],
+                [
+                  1850,
+                  2
+                ],
+                [
+                  1850,
+                  3
+                ],
+                [
+                  1830,
+                  1
+                ],
+                [
+                  1830,
+                  3
+                ],
+                [
+                  992,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -9.927905608719811e-09,
+                  4.7166549332899876e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  8.982630000000001e-09,
+                  -4.966035e-08,
+                  3.2674000000000005e-10
+                ],
+                "balance_residual_n": [
+                  -9.452756087198102e-10,
+                  -2.4938006671001253e-09,
+                  3.2674000000000005e-10
+                ],
+                "balance_moment_n_mm": [
+                  -1.3378816257843312e-07,
+                  4.833474937530432e-07,
+                  2.2993335657526936e-06
+                ],
+                "reaction_dof_norm_fraction": 3.4890980268897828e-12,
+                "force_balance_fraction": 9.59601504456835e-14,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0016/local-0.75mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0016/local-0.75mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 294.08902252676944,
+            "max_displacement_mm": 0.0685796642460812,
+            "factor_of_safety_710_mpa": 2.4142349615765486,
+            "nodes": 121003,
+            "elements": 75371,
+            "runtime_s": 113.32633059999989,
+            "mesh_quality": {
+              "minSICN_min": 0.2418498501387244,
+              "minSICN_p01": 0.36247394793893734,
+              "element_count": 75371
+            },
+            "hotspot": {
+              "element_id": 84458,
+              "integration_point": 2,
+              "coordinates_mm": [
+                30.899989967235197,
+                16.459940030004812,
+                15.674094575479286
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 130.86473364404117,
+              "local_2mm_point_count": 968,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                18000.0,
+                3.979039320256561e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -18000.000000000025,
+                  -2.007283228522283e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  6.0111915445304476e-12,
+                  -9.315215265814913e-12,
+                  7.222417108820878e-13
+                ],
+                "max_relative_quadrature_correction": 0.0004673297880785903,
+                "minimum_pressure_weight_n": 0.0922682574261656,
+                "loaded_node_count": 607
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  18000.0,
+                  3.979039320256561e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -6.195932655828074e-12,
+                  -4.831690603168681e-12,
+                  8.171935350631543e-14
+                ],
+                "max_relative_quadrature_correction": 0.00041934391445819523,
+                "minimum_pressure_weight_n": 0.5758031393268315,
+                "loaded_node_count": 284
+              },
+              "total_applied_n": [
+                -2.546585164964199e-11,
+                -1.609379296496627e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1850,
+                  1
+                ],
+                [
+                  1850,
+                  2
+                ],
+                [
+                  1850,
+                  3
+                ],
+                [
+                  1830,
+                  1
+                ],
+                [
+                  1830,
+                  3
+                ],
+                [
+                  992,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -5.300994110335466e-08,
+                  8.721981359371966e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  5.388631000000001e-08,
+                  -3.553244e-09,
+                  -8.118719999999998e-10
+                ],
+                "balance_residual_n": [
+                  8.763688966453467e-10,
+                  5.168737359371966e-09,
+                  -8.118719999999998e-10
+                ],
+                "balance_moment_n_mm": [
+                  -2.8519203345701318e-09,
+                  4.1061690424333504e-08,
+                  1.0030511131027508e-06
+                ],
+                "reaction_dof_norm_fraction": 3.1308077931094954e-12,
+                "force_balance_fraction": 2.947221147636146e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0016/local-0.75mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0016/local-0.75mm/tension"
+          }
+        }
+      },
+      "successive_change_percent": {
+        "1.25_to_0.75": {
+          "compression": {
+            "max_von_mises_mpa": 5.596134394551062,
+            "max_displacement_mm": 0.055794824149239725
+          },
+          "tension": {
+            "max_von_mises_mpa": 8.233325897208838,
+            "max_displacement_mm": 0.10461918622154179
+          }
+        }
+      },
+      "stress_trend_pass_lt_5_percent": false,
+      "buckling": {
+        "status": "BUCKLING_SUCCESS",
+        "method": "CalculiX linear eigenvalue buckling; C3D10; proportional 28 kN COSINE_BEARING load pattern",
+        "lowest_positive_factor": 10.94541,
+        "positive_factors": [
+          10.94541,
+          35.39619,
+          216.3385,
+          256.8899,
+          356.7997
+        ],
+        "reference_compression_n": 28000.0,
+        "linear_eigenvalue_load_n": 306471.48000000004,
+        "limitations": [
+          "Linear bifurcation only; no geometric imperfections or nonlinear collapse",
+          "COSINE_BEARING equivalent pressure and six rigid-body gauge DOFs are retained",
+          "An eigenvalue below zero is not used as a positive buckling margin"
+        ],
+        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.inp",
+        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.dat",
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0016\\local-0.75mm\\buckling\\buckle.log"
+      },
+      "normalized_constraint_margins": {
+        "compression_stress": 0.505219793622092,
+        "tension_stress": 0.25442219641100705,
+        "displacement": 0.8040581021540537,
+        "buckling": 5.080783333333334
+      },
+      "assessment": {
+        "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
+        "constraints": {
+          "minimum_factor_of_safety": 1.8,
+          "maximum_displacement_mm": 0.35,
+          "minimum_buckling_factor": 1.8,
+          "allowable_stress_mpa": 394.44444444444446
+        },
+        "maximum_stress_mpa": 294.08902252676944,
+        "maximum_displacement_mm": 0.0685796642460812,
+        "minimum_factor_of_safety": 2.4142349615765486,
+        "linear_buckling_factor": 10.94541,
+        "reasons": [
+          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
+          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+        ],
+        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
+        "mesh_stress_trend_max_percent": 8.233325897208838
+      }
+    },
+    {
+      "candidate_id": "P4-0060",
+      "family": "pocket_variant",
+      "actual_cad_mass_g": 1091.421529263978,
+      "parameters": {
+        "family": "pocket_variant",
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 10.384523968317886,
+        "shank_width": 27.90029685088038,
+        "beam_thickness": 32.68665121212687,
+        "flange_thickness_mm": 6.49375991162587,
+        "web_thickness_mm": 4.056896578913767,
+        "transition_radius_mm": 1.115399142223752,
+        "taper_big_width_mm": 31.0,
+        "taper_mid_width_mm": 27.0,
+        "taper_small_width_mm": 23.0,
+        "rib_height_mm": 4.9488457199455205,
+        "rib_length_mm": 26.07307718924324,
+        "pocket_length_mm": 16.304939009361167,
+        "pocket_width_mm": 10.825351261447247
+      },
+      "mesh_levels": {
+        "1.25": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 215.84415604983568,
+            "max_displacement_mm": 0.05111322108565357,
+            "factor_of_safety_710_mpa": 3.2894103458426276,
+            "nodes": 97651,
+            "elements": 58786,
+            "runtime_s": 81.67195790000005,
+            "mesh_quality": {
+              "minSICN_min": 0.06621323483602994,
+              "minSICN_p01": 0.3607716069182286,
+              "element_count": 58786
+            },
+            "hotspot": {
+              "element_id": 50472,
+              "integration_point": 2,
+              "coordinates_mm": [
+                32.77745230481051,
+                -13.910180318427194,
+                19.72563848357589
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 109.10505752215637,
+              "local_2mm_point_count": 265,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -28000.0,
+                1.7621459846850485e-12,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  28000.000000000007,
+                  -6.004086117172847e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -1.4495071809506044e-12,
+                  -7.531752999057062e-13,
+                  -6.157574450327274e-13
+                ],
+                "max_relative_quadrature_correction": 9.19216610527237e-05,
+                "minimum_pressure_weight_n": 0.678691386884157,
+                "loaded_node_count": 978
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -28000.0,
+                  1.7621459846850485e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  2.5011104298755527e-12,
+                  8.185452315956354e-12,
+                  2.2737367544323206e-13
+                ],
+                "max_relative_quadrature_correction": 0.0006579026589908971,
+                "minimum_pressure_weight_n": 0.8729322222863537,
+                "loaded_node_count": 297
+              },
+              "total_applied_n": [
+                7.275957614183426e-12,
+                1.1617373729677638e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1696,
+                  1
+                ],
+                [
+                  1696,
+                  2
+                ],
+                [
+                  1696,
+                  3
+                ],
+                [
+                  1676,
+                  1
+                ],
+                [
+                  1676,
+                  3
+                ],
+                [
+                  683,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -8.485363522936495e-09,
+                  7.028756243698808e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  7.767029999999997e-09,
+                  -7.148516e-09,
+                  7.428099999999978e-10
+                ],
+                "balance_residual_n": [
+                  -7.183335229364981e-10,
+                  -1.1975975630119135e-10,
+                  7.428099999999978e-10
+                ],
+                "balance_moment_n_mm": [
+                  -1.0173123919105532e-06,
+                  3.1201602002088066e-07,
+                  -8.532282372515415e-07
+                ],
+                "reaction_dof_norm_fraction": 2.5886587354885626e-12,
+                "force_balance_fraction": 3.71516498092697e-14,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0060/local-1.25mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0060/local-1.25mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 281.58058468725875,
+            "max_displacement_mm": 0.07356028540484232,
+            "factor_of_safety_710_mpa": 2.52148066525457,
+            "nodes": 97651,
+            "elements": 58786,
+            "runtime_s": 77.11534529999972,
+            "mesh_quality": {
+              "minSICN_min": 0.06621323483602994,
+              "minSICN_p01": 0.3607716069182286,
+              "element_count": 58786
+            },
+            "hotspot": {
+              "element_id": 35102,
+              "integration_point": 1,
+              "coordinates_mm": [
+                32.37492165964747,
+                14.180849556882368,
+                15.390788171160425
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 141.4316794934842,
+              "local_2mm_point_count": 251,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.999999999993,
+                9.14823772291129e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999996,
+                  -3.836930773104541e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.0373923942097463e-11,
+                  1.5404566511278972e-11,
+                  -3.9504163829029437e-13
+                ],
+                "max_relative_quadrature_correction": 6.415609826830056e-05,
+                "minimum_pressure_weight_n": 0.19349150296278614,
+                "loaded_node_count": 624
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.999999999993,
+                  9.14823772291129e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  6.352252057695296e-12,
+                  -5.684341886080801e-13,
+                  3.804456749634253e-13
+                ],
+                "max_relative_quadrature_correction": 0.0009633416116498677,
+                "minimum_pressure_weight_n": 0.16431004479653413,
+                "loaded_node_count": 330
+              },
+              "total_applied_n": [
+                -3.637978807091713e-12,
+                5.311306949806749e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1696,
+                  1
+                ],
+                [
+                  1696,
+                  2
+                ],
+                [
+                  1696,
+                  3
+                ],
+                [
+                  1676,
+                  1
+                ],
+                [
+                  1676,
+                  3
+                ],
+                [
+                  683,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -1.3918640462406984e-08,
+                  5.211170162056078e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  1.5617590000000003e-08,
+                  -4.642865e-09,
+                  -8.346336e-10
+                ],
+                "balance_residual_n": [
+                  1.6989495375930192e-09,
+                  5.683051620560782e-10,
+                  -8.346336e-10
+                ],
+                "balance_moment_n_mm": [
+                  -5.948635231064039e-08,
+                  2.8111742485718447e-07,
+                  -6.443574548391738e-07
+                ],
+                "reaction_dof_norm_fraction": 3.872124957514072e-12,
+                "force_balance_fraction": 1.0979798417773467e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0060/local-1.25mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0060/local-1.25mm/tension"
+          }
+        },
+        "0.75": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 235.51430463518255,
+            "max_displacement_mm": 0.051140743881534646,
+            "factor_of_safety_710_mpa": 3.0146788794838066,
+            "nodes": 114000,
+            "elements": 69952,
+            "runtime_s": 103.20484100000021,
+            "mesh_quality": {
+              "minSICN_min": 0.1624321129867823,
+              "minSICN_p01": 0.3665314288965165,
+              "element_count": 69952
+            },
+            "hotspot": {
+              "element_id": 84112,
+              "integration_point": 1,
+              "coordinates_mm": [
+                32.75032616001306,
+                -13.979762256793176,
+                11.349290824851423
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 102.30935332477027,
+              "local_2mm_point_count": 923,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.999999999975,
+                -4.75175454539567e-14,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  28000.000000000007,
+                  -6.004086117172847e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -1.4495071809506044e-12,
+                  -7.531752999057062e-13,
+                  -6.157574450327274e-13
+                ],
+                "max_relative_quadrature_correction": 9.19216610527237e-05,
+                "minimum_pressure_weight_n": 0.678691386884157,
+                "loaded_node_count": 978
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.999999999975,
+                  -4.75175454539567e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.2576606422953773e-12,
+                  1.1596057447604835e-11,
+                  -8.355538483328928e-13
+                ],
+                "max_relative_quadrature_correction": 0.002130320133655503,
+                "minimum_pressure_weight_n": 0.10949410285337191,
+                "loaded_node_count": 301
+              },
+              "total_applied_n": [
+                3.2741809263825417e-11,
+                -6.479261571712414e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1864,
+                  1
+                ],
+                [
+                  1864,
+                  2
+                ],
+                [
+                  1864,
+                  3
+                ],
+                [
+                  1844,
+                  1
+                ],
+                [
+                  1844,
+                  3
+                ],
+                [
+                  775,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  1.722423270678064e-08,
+                  -2.1101914882137862e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.2395499999999997e-08,
+                  2.217067e-08,
+                  -6.650599999999989e-10
+                ],
+                "balance_residual_n": [
+                  4.828732706780643e-09,
+                  1.068755117862139e-09,
+                  -6.650599999999989e-10
+                ],
+                "balance_moment_n_mm": [
+                  -5.128546183354754e-07,
+                  -1.2337005891128058e-07,
+                  2.3492549872268354e-06
+                ],
+                "reaction_dof_norm_fraction": 5.548313788869398e-12,
+                "force_balance_fraction": 1.7821822876789385e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0060/local-0.75mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0060/local-0.75mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 312.24257241580705,
+            "max_displacement_mm": 0.07359161031655201,
+            "factor_of_safety_710_mpa": 2.2738731445451568,
+            "nodes": 114000,
+            "elements": 69952,
+            "runtime_s": 97.72828410000011,
+            "mesh_quality": {
+              "minSICN_min": 0.1624321129867823,
+              "minSICN_p01": 0.3665314288965165,
+              "element_count": 69952
+            },
+            "hotspot": {
+              "element_id": 83189,
+              "integration_point": 2,
+              "coordinates_mm": [
+                32.47007271009668,
+                -14.16189606884002,
+                15.381096071481108
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 131.90783272839695,
+              "local_2mm_point_count": 982,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.99999999999,
+                3.765876499528531e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999993,
+                  -5.009326287108706e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.0771827874123119e-11,
+                  1.7251977624255233e-11,
+                  7.671398238873195e-13
+                ],
+                "max_relative_quadrature_correction": 6.415609826828305e-05,
+                "minimum_pressure_weight_n": 0.19349150296278614,
+                "loaded_node_count": 624
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.99999999999,
+                  3.765876499528531e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.0231815394945443e-12,
+                  1.290345608140342e-11,
+                  -5.062052122958851e-13
+                ],
+                "max_relative_quadrature_correction": 0.002355475140959632,
+                "minimum_pressure_weight_n": 0.08579760947811255,
+                "loaded_node_count": 330
+              },
+              "total_applied_n": [
+                -3.637978807091713e-12,
+                -1.2434497875801753e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1864,
+                  1
+                ],
+                [
+                  1864,
+                  2
+                ],
+                [
+                  1864,
+                  3
+                ],
+                [
+                  1844,
+                  1
+                ],
+                [
+                  1844,
+                  3
+                ],
+                [
+                  775,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  3.7073668579523655e-09,
+                  3.972893125592236e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -9.618417000000001e-09,
+                  -6.896984e-09,
+                  6.648720000000002e-10
+                ],
+                "balance_residual_n": [
+                  -5.9110501420476355e-09,
+                  -2.924090874407764e-09,
+                  6.648720000000002e-10
+                ],
+                "balance_moment_n_mm": [
+                  -2.850319617328342e-07,
+                  1.6281105786028717e-07,
+                  1.7222917645433042e-07
+                ],
+                "reaction_dof_norm_fraction": 2.415930917871876e-12,
+                "force_balance_fraction": 3.6823266598203235e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0060/local-0.75mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0060/local-0.75mm/tension"
+          }
+        }
+      },
+      "successive_change_percent": {
+        "1.25_to_0.75": {
+          "compression": {
+            "max_von_mises_mpa": 9.1131253888594,
+            "max_displacement_mm": 0.053846725556498824
+          },
+          "tension": {
+            "max_von_mises_mpa": 10.889240734620763,
+            "max_displacement_mm": 0.04258399969126689
+          }
+        }
+      },
+      "stress_trend_pass_lt_5_percent": false,
+      "buckling": {
+        "status": "BUCKLING_SUCCESS",
+        "method": "CalculiX linear eigenvalue buckling; C3D10; proportional 28 kN COSINE_BEARING load pattern",
+        "lowest_positive_factor": 11.18032,
+        "positive_factors": [
+          11.18032,
+          30.3412,
+          171.8796,
+          198.3248,
+          240.2547
+        ],
+        "reference_compression_n": 28000.0,
+        "linear_eigenvalue_load_n": 313048.96,
+        "limitations": [
+          "Linear bifurcation only; no geometric imperfections or nonlinear collapse",
+          "COSINE_BEARING equivalent pressure and six rigid-body gauge DOFs are retained",
+          "An eigenvalue below zero is not used as a positive buckling margin"
+        ],
+        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.inp",
+        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.dat",
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0060\\local-0.75mm\\buckling\\buckle.log"
+      },
+      "normalized_constraint_margins": {
+        "compression_stress": 0.40292148120657945,
+        "tension_stress": 0.20839911218527793,
+        "displacement": 0.7897382562384228,
+        "buckling": 5.211288888888888
+      },
+      "assessment": {
+        "feasibility_status": "NOT_FEASIBLE_OR_UNVERIFIED",
+        "constraints": {
+          "minimum_factor_of_safety": 1.8,
+          "maximum_displacement_mm": 0.35,
+          "minimum_buckling_factor": 1.8,
+          "allowable_stress_mpa": 394.44444444444446
+        },
+        "maximum_stress_mpa": 312.24257241580705,
+        "maximum_displacement_mm": 0.07359161031655201,
+        "minimum_factor_of_safety": 2.2738731445451568,
+        "linear_buckling_factor": 11.18032,
+        "reasons": [
+          "REFINED_INDEPENDENT_VERIFICATION_REQUIRED",
+          "SUCCESSIVE_PEAK_STRESS_CHANGE_AT_OR_ABOVE_5_PERCENT"
+        ],
+        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
+        "mesh_stress_trend_max_percent": 10.889240734620763
+      }
+    },
+    {
+      "candidate_id": "P4-0065",
+      "family": "pocket_variant",
+      "actual_cad_mass_g": 866.8597823933586,
+      "parameters": {
+        "family": "pocket_variant",
+        "length_cc": 145.0,
+        "big_end_id": 50.0,
+        "small_end_id": 24.0,
+        "ring_thickness": 9.151255365495581,
+        "shank_width": 35.58423640555715,
+        "beam_thickness": 26.970405517717,
+        "flange_thickness_mm": 6.676537070009944,
+        "web_thickness_mm": 3.8623447680112655,
+        "transition_radius_mm": 1.3165749172820176,
+        "taper_big_width_mm": 31.0,
+        "taper_mid_width_mm": 27.0,
+        "taper_small_width_mm": 23.0,
+        "rib_height_mm": 4.4554175535895855,
+        "rib_length_mm": 26.90002870852708,
+        "pocket_length_mm": 38.92224761865715,
+        "pocket_width_mm": 11.42132612690911
+      },
+      "mesh_levels": {
+        "1.25": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 205.0576261178143,
+            "max_displacement_mm": 0.05889895140926518,
+            "factor_of_safety_710_mpa": 3.4624413314532125,
+            "nodes": 89219,
+            "elements": 52896,
+            "runtime_s": 68.22721320000073,
+            "mesh_quality": {
+              "minSICN_min": 0.0662611354025901,
+              "minSICN_p01": 0.36009854663214136,
+              "element_count": 52896
+            },
+            "hotspot": {
+              "element_id": 70903,
+              "integration_point": 3,
+              "coordinates_mm": [
+                29.36745562473119,
+                -17.816157889485474,
+                26.5435930121215
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 103.49867577847613,
+              "local_2mm_point_count": 231,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.99999999998,
+                4.604316927725449e-12,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.99999999999,
+                  -2.7213786779611837e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  3.154809746774845e-12,
+                  -1.3869794202037156e-11,
+                  2.6517676265545506e-13
+                ],
+                "max_relative_quadrature_correction": 0.0002495974848566993,
+                "minimum_pressure_weight_n": 0.00792944974974335,
+                "loaded_node_count": 753
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.99999999998,
+                  4.604316927725449e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  9.094947017729282e-13,
+                  -4.547473508864641e-13,
+                  -8.934112130654093e-13
+                ],
+                "max_relative_quadrature_correction": 0.00041729004988173954,
+                "minimum_pressure_weight_n": 0.34749477755710634,
+                "loaded_node_count": 243
+              },
+              "total_applied_n": [
+                7.275957614183426e-12,
+                1.8829382497642655e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1724,
+                  1
+                ],
+                [
+                  1724,
+                  2
+                ],
+                [
+                  1724,
+                  3
+                ],
+                [
+                  1704,
+                  1
+                ],
+                [
+                  1704,
+                  3
+                ],
+                [
+                  659,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -4.175778656190232e-08,
+                  3.6438418504758374e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  4.1577090000000005e-08,
+                  -3.555354e-08,
+                  3.1885000000000123e-10
+                ],
+                "balance_residual_n": [
+                  -1.8069656190231687e-10,
+                  8.848785047583733e-10,
+                  3.1885000000000123e-10
+                ],
+                "balance_moment_n_mm": [
+                  1.1806190557245744e-07,
+                  3.7863566451746053e-07,
+                  2.0686007103839213e-06
+                ],
+                "reaction_dof_norm_fraction": 4.1456435056114775e-12,
+                "force_balance_fraction": 3.420613044333643e-14,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0065/local-1.25mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0065/local-1.25mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 316.7003347670318,
+            "max_displacement_mm": 0.09130338026467233,
+            "factor_of_safety_710_mpa": 2.241866907157783,
+            "nodes": 89219,
+            "elements": 52896,
+            "runtime_s": 59.00247870000021,
+            "mesh_quality": {
+              "minSICN_min": 0.0662611354025901,
+              "minSICN_p01": 0.36009854663214136,
+              "element_count": 52896
+            },
+            "hotspot": {
+              "element_id": 68527,
+              "integration_point": 2,
+              "coordinates_mm": [
+                29.275436344019067,
+                -17.773465656888547,
+                13.767327303978947
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 167.46932656146524,
+              "local_2mm_point_count": 277,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.999999999985,
+                3.552713678800501e-14,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999985,
+                  -9.734435479913373e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  5.9046101341664325e-12,
+                  -9.42934619274638e-12,
+                  2.485511796379569e-13
+                ],
+                "max_relative_quadrature_correction": 0.00020979188782011145,
+                "minimum_pressure_weight_n": 0.03442915880789682,
+                "loaded_node_count": 528
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.999999999985,
+                  3.552713678800501e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -7.389644451905042e-13,
+                  6.139089236967266e-12,
+                  -9.98368054894172e-14
+                ],
+                "max_relative_quadrature_correction": 0.0004089045086496074,
+                "minimum_pressure_weight_n": 3.550206194325152e-13,
+                "loaded_node_count": 252
+              },
+              "total_applied_n": [
+                0.0,
+                -9.379164112033322e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1724,
+                  1
+                ],
+                [
+                  1724,
+                  2
+                ],
+                [
+                  1724,
+                  3
+                ],
+                [
+                  1704,
+                  1
+                ],
+                [
+                  1704,
+                  3
+                ],
+                [
+                  659,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  8.913561222456678e-09,
+                  -4.339743675529917e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.0248163e-08,
+                  1.76448e-09,
+                  -5.402760000000001e-10
+                ],
+                "balance_residual_n": [
+                  -1.3346017775433207e-09,
+                  -2.5752636755299167e-09,
+                  -5.402760000000001e-10
+                ],
+                "balance_moment_n_mm": [
+                  7.730349160500266e-08,
+                  -3.4488649433485637e-09,
+                  -1.913299480988078e-06
+                ],
+                "reaction_dof_norm_fraction": 1.2688812105986612e-12,
+                "force_balance_fraction": 1.639128330842233e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0065/local-1.25mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0065/local-1.25mm/tension"
+          }
+        },
+        "0.75": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 219.34899327758865,
+            "max_displacement_mm": 0.058914751946612734,
+            "factor_of_safety_710_mpa": 3.236850962436317,
+            "nodes": 101108,
+            "elements": 61036,
+            "runtime_s": 68.56954620000033,
+            "mesh_quality": {
+              "minSICN_min": 0.05267868238300904,
+              "minSICN_p01": 0.36199323775782577,
+              "element_count": 61036
+            },
+            "hotspot": {
+              "element_id": 70455,
+              "integration_point": 1,
+              "coordinates_mm": [
+                29.362381209380395,
+                -17.808997104299024,
+                7.708131105853181
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 103.91433427265119,
+              "local_2mm_point_count": 935,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -27999.999999999993,
+                -1.9042545318370685e-12,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.99999999998,
+                  6.750155989720952e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.8758328224066645e-12,
+                  -1.8133050616597757e-11,
+                  -2.167044323459909e-12
+                ],
+                "max_relative_quadrature_correction": 0.0002496047122506395,
+                "minimum_pressure_weight_n": 0.007929449791567882,
+                "loaded_node_count": 753
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -27999.999999999993,
+                  -1.9042545318370685e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  -9.15179043659009e-12,
+                  5.087485988042317e-12,
+                  -1.5390345248222912e-12
+                ],
+                "max_relative_quadrature_correction": 0.0009063460674807357,
+                "minimum_pressure_weight_n": 0.45359253723971976,
+                "loaded_node_count": 241
+              },
+              "total_applied_n": [
+                -1.0913936421275139e-11,
+                -1.836752971939859e-12,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1860,
+                  1
+                ],
+                [
+                  1860,
+                  2
+                ],
+                [
+                  1860,
+                  3
+                ],
+                [
+                  1840,
+                  1
+                ],
+                [
+                  1840,
+                  3
+                ],
+                [
+                  735,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  -9.39863298299315e-09,
+                  -2.464577875116447e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  6.793609999999999e-09,
+                  3.587936e-09,
+                  -2.1608000000000077e-10
+                ],
+                "balance_residual_n": [
+                  -2.60502298299315e-09,
+                  1.1233581248835528e-09,
+                  -2.1608000000000077e-10
+                ],
+                "balance_moment_n_mm": [
+                  -3.0525740290820574e-07,
+                  3.2170256189909096e-07,
+                  1.4844505203659881e-06
+                ],
+                "reaction_dof_norm_fraction": 1.9319685169748854e-12,
+                "force_balance_fraction": 1.0161181124766526e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0065/local-0.75mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0065/local-0.75mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 349.1105376496889,
+            "max_displacement_mm": 0.09135130619754701,
+            "factor_of_safety_710_mpa": 2.0337398142717813,
+            "nodes": 101108,
+            "elements": 61036,
+            "runtime_s": 67.24324909999996,
+            "mesh_quality": {
+              "minSICN_min": 0.05267868238300904,
+              "minSICN_p01": 0.36199323775782577,
+              "element_count": 61036
+            },
+            "hotspot": {
+              "element_id": 73015,
+              "integration_point": 3,
+              "coordinates_mm": [
+                29.071432312404404,
+                -17.977316439273327,
+                15.19693501238049
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 160.7524074835819,
+              "local_2mm_point_count": 982,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.99999999999,
+                -7.105427357601002e-14,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999978,
+                  -4.360956040727615e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.5205614545266144e-12,
+                  -3.1441516057384433e-12,
+                  1.4573967033193469e-12
+                ],
+                "max_relative_quadrature_correction": 0.00015528476884721238,
+                "minimum_pressure_weight_n": 0.03442790923257142,
+                "loaded_node_count": 522
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.99999999999,
+                  -7.105427357601002e-14,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  5.684341886080801e-13,
+                  -4.803268893738277e-12,
+                  -9.681144774731385e-14
+                ],
+                "max_relative_quadrature_correction": 0.0009752914572860241,
+                "minimum_pressure_weight_n": 3.554129778555985e-13,
+                "loaded_node_count": 251
+              },
+              "total_applied_n": [
+                1.0913936421275139e-11,
+                -5.071498776487715e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  1860,
+                  1
+                ],
+                [
+                  1860,
+                  2
+                ],
+                [
+                  1860,
+                  3
+                ],
+                [
+                  1840,
+                  1
+                ],
+                [
+                  1840,
+                  3
+                ],
+                [
+                  735,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  2.0633452446627842e-08,
+                  -1.3499565909569355e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.7066720000000003e-08,
+                  1.076655e-08,
+                  1.5699500000000024e-10
+                ],
+                "balance_residual_n": [
+                  3.566732446627839e-09,
+                  -2.7330159095693552e-09,
+                  1.5699500000000024e-10
+                ],
+                "balance_moment_n_mm": [
+                  3.5655397770050755e-07,
+                  4.4178170719095064e-07,
+                  2.400100283709479e-06
+                ],
+                "reaction_dof_norm_fraction": 4.564825728575347e-12,
+                "force_balance_fraction": 2.4978758715546833e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0065/local-0.75mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0065/local-0.75mm/tension"
+          }
+        },
+        "0.5": {
+          "compression": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 227.08600027273945,
+            "max_displacement_mm": 0.058942492070204876,
+            "factor_of_safety_710_mpa": 3.126568785161839,
+            "nodes": 131286,
+            "elements": 82171,
+            "runtime_s": 150.19942979999996,
+            "mesh_quality": {
+              "minSICN_min": 0.030364415533206984,
+              "minSICN_p01": 0.3641045277142328,
+              "element_count": 82171
+            },
+            "hotspot": {
+              "element_id": 98266,
+              "integration_point": 2,
+              "coordinates_mm": [
+                29.339614580910943,
+                17.845150334619117,
+                13.576491148906424
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 102.29391890392678,
+              "local_2mm_point_count": 3096,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                -28000.00000000001,
+                -1.2931877790833823e-12,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  27999.999999999985,
+                  4.192202140984591e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  4.632738637155853e-12,
+                  -1.7053025658242404e-13,
+                  -5.905553840678023e-13
+                ],
+                "max_relative_quadrature_correction": 0.0002496047122506033,
+                "minimum_pressure_weight_n": 0.007929449791567882,
+                "loaded_node_count": 753
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  -28000.00000000001,
+                  -1.2931877790833823e-12,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  1.0800249583553523e-12,
+                  -5.329070518200751e-12,
+                  2.6057749707986133e-12
+                ],
+                "max_relative_quadrature_correction": 0.0005805454148969696,
+                "minimum_pressure_weight_n": 0.4536912740896992,
+                "loaded_node_count": 240
+              },
+              "total_applied_n": [
+                -2.546585164964199e-11,
+                -8.739675649849232e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  2044,
+                  1
+                ],
+                [
+                  2044,
+                  2
+                ],
+                [
+                  2044,
+                  3
+                ],
+                [
+                  2024,
+                  1
+                ],
+                [
+                  2024,
+                  3
+                ],
+                [
+                  835,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  5.3582056125378585e-08,
+                  2.246604680067321e-09,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -5.293543000000001e-08,
+                  1.332432e-09,
+                  8.346000000000004e-10
+                ],
+                "balance_residual_n": [
+                  6.466261253785769e-10,
+                  3.579036680067321e-09,
+                  8.346000000000004e-10
+                ],
+                "balance_moment_n_mm": [
+                  -6.087129585772599e-07,
+                  -7.049155530482002e-07,
+                  4.407811163971794e-06
+                ],
+                "reaction_dof_norm_fraction": 5.7489125722284145e-12,
+                "force_balance_fraction": 1.3326830608684466e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0065/local-0.5mm/compression/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0065/local-0.5mm/compression"
+          },
+          "tension": {
+            "status": "FEA_SUCCESS",
+            "peak_unaveraged_ip_von_mises_mpa": 366.00586097470153,
+            "max_displacement_mm": 0.09141173711492451,
+            "factor_of_safety_710_mpa": 1.9398596462614446,
+            "nodes": 131286,
+            "elements": 82171,
+            "runtime_s": 105.54518109999935,
+            "mesh_quality": {
+              "minSICN_min": 0.030364415533206984,
+              "minSICN_p01": 0.3641045277142328,
+              "element_count": 82171
+            },
+            "hotspot": {
+              "element_id": 98266,
+              "integration_point": 2,
+              "coordinates_mm": [
+                29.339614580910943,
+                17.845150334619117,
+                13.576491148906424
+              ],
+              "region": "big-end/shank transition",
+              "location_type": "quadratic C3D10 shape mapping, actual Gauss point",
+              "local_2mm_ip_mean_mpa": 162.04495899663624,
+              "local_2mm_point_count": 3096,
+              "local_measure_note": "Unweighted descriptive IP mean within 2mm of moving peak, not an acceptance stress"
+            },
+            "boundary_conditions": {
+              "model": "COSINE_BEARING",
+              "resultant_n": [
+                17999.999999999993,
+                3.126388037344441e-13,
+                0.0
+              ],
+              "opposite_bore": {
+                "resultant_n": [
+                  -17999.999999999985,
+                  2.291500322826323e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  7.105427357601002e-15,
+                  5.81756864903582e-13,
+                  1.9610702493323695e-12
+                ],
+                "max_relative_quadrature_correction": 0.00015528476884719525,
+                "minimum_pressure_weight_n": 0.03442790923257143,
+                "loaded_node_count": 522
+              },
+              "loaded_bore": {
+                "resultant_n": [
+                  17999.999999999993,
+                  3.126388037344441e-13,
+                  0.0
+                ],
+                "moment_n_mm": [
+                  7.389644451905042e-13,
+                  2.6716406864579767e-12,
+                  5.976330541557212e-13
+                ],
+                "max_relative_quadrature_correction": 0.0006632574486203245,
+                "minimum_pressure_weight_n": 3.553111357269405e-13,
+                "loaded_node_count": 252
+              },
+              "total_applied_n": [
+                7.275957614183426e-12,
+                5.417888360170764e-13,
+                0.0
+              ],
+              "gauges": [
+                [
+                  2044,
+                  1
+                ],
+                [
+                  2044,
+                  2
+                ],
+                [
+                  2044,
+                  3
+                ],
+                [
+                  2024,
+                  1
+                ],
+                [
+                  2024,
+                  3
+                ],
+                [
+                  835,
+                  1
+                ]
+              ],
+              "pressure": "q proportional to max(sign(F)*nx,0); radial outward from bore center",
+              "limitations": "Prescribed frictionless pressure approximation; no pin contact solution; six rigid-body gauge DOFs",
+              "equilibrium": {
+                "applied_total_n": [
+                  1.1396624255421983e-08,
+                  -1.5900631922249886e-08,
+                  0.0
+                ],
+                "reaction_total_n": [
+                  -1.3121100000000006e-08,
+                  8.648757e-09,
+                  -1.266897e-09
+                ],
+                "balance_residual_n": [
+                  -1.7244757445780227e-09,
+                  -7.2518749222498855e-09,
+                  -1.266897e-09
+                ],
+                "balance_moment_n_mm": [
+                  8.136793167687628e-08,
+                  1.5976634596020273e-07,
+                  3.348181208678855e-06
+                ],
+                "reaction_dof_norm_fraction": 7.363776574762524e-12,
+                "force_balance_fraction": 4.2005487035096617e-13,
+                "interpretation": "RF minus actual CLOAD at each constrained DOF; no DLOAD or MPC in bearing model"
+              }
+            },
+            "fields_path": "runs/phase4-refined/P4-0065/local-0.5mm/tension/fields.json",
+            "output_dir": "runs/phase4-refined/P4-0065/local-0.5mm/tension"
+          }
+        }
+      },
+      "successive_change_percent": {
+        "1.25_to_0.75": {
+          "compression": {
+            "max_von_mises_mpa": 6.969439484081104,
+            "max_displacement_mm": 0.026826517229076148
+          },
+          "tension": {
+            "max_von_mises_mpa": 10.23371285871814,
+            "max_displacement_mm": 0.052490863685173215
+          }
+        },
+        "0.75_to_0.5": {
+          "compression": {
+            "max_von_mises_mpa": 3.527258949102874,
+            "max_displacement_mm": 0.047085191188243114
+          },
+          "tension": {
+            "max_von_mises_mpa": 4.8395340452215265,
+            "max_displacement_mm": 0.06615222035994962
+          }
+        }
+      },
+      "stress_trend_pass_lt_5_percent": true,
+      "buckling": {
+        "status": "BUCKLING_SUCCESS",
+        "method": "CalculiX linear eigenvalue buckling; C3D10; proportional 28 kN COSINE_BEARING load pattern",
+        "lowest_positive_factor": 7.196246,
+        "positive_factors": [
+          7.196246,
+          32.0378,
+          121.3444,
+          211.2505,
+          240.783
+        ],
+        "reference_compression_n": 28000.0,
+        "linear_eigenvalue_load_n": 201494.888,
+        "limitations": [
+          "Linear bifurcation only; no geometric imperfections or nonlinear collapse",
+          "COSINE_BEARING equivalent pressure and six rigid-body gauge DOFs are retained",
+          "An eigenvalue below zero is not used as a positive buckling margin"
+        ],
+        "input_deck": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.inp",
+        "raw_data": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.dat",
+        "solver_log": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\runs\\phase4-refined\\P4-0065\\local-0.5mm\\buckling\\buckle.log"
+      },
+      "normalized_constraint_margins": {
+        "compression_stress": 0.44390396070470484,
+        "tension_stress": 0.11493103131064783,
+        "displacement": 0.7389962680070086,
+        "buckling": 2.9979144444444445
+      },
+      "assessment": {
+        "feasibility_status": "FEASIBLE",
+        "constraints": {
+          "minimum_factor_of_safety": 1.8,
+          "maximum_displacement_mm": 0.35,
+          "minimum_buckling_factor": 1.8,
+          "allowable_stress_mpa": 394.44444444444446
+        },
+        "maximum_stress_mpa": 349.1105376496889,
+        "maximum_displacement_mm": 0.09135130619754701,
+        "minimum_factor_of_safety": 2.0337398142717813,
+        "linear_buckling_factor": 7.196246,
+        "reasons": [],
+        "feasibility_note": "Coarse-mesh screens are not eligible for FEASIBLE status; provide the refined independent verification and buckling factor.",
+        "mesh_stress_trend_max_percent": 4.8395340452215265
+      }
+    }
+  ],
+  "convergence_note": "Two independently generated local meshes (1.25 and 0.75 mm targets) are nonnested. The <5% successive peak-stress test is provisional and not a GCI or continuum error bound. The maximum unaveraged integration-point peak is retained without smoothing."
+}

@@ -1,0 +1,65 @@
+{
+  "total_attempts": 133,
+  "valid_cad_candidates": 120,
+  "invalid_or_duplicate_candidates": 13,
+  "valid_by_family": {
+    "h_section": 24,
+    "i_section": 24,
+    "pocket_variant": 24,
+    "ribbed": 24,
+    "tapered": 24
+  },
+  "coarse_fea_candidate_ids": [
+    "S-P4-0005",
+    "S-P4-0001",
+    "S-P4-0010",
+    "S-P4-0027",
+    "S-P4-0026",
+    "S-P4-0016",
+    "S-P4-0034",
+    "S-P4-0031",
+    "S-P4-0039",
+    "S-P4-0046",
+    "S-P4-0049",
+    "S-P4-0045",
+    "S-P4-0059",
+    "S-P4-0055",
+    "S-P4-0060",
+    "L-P4-0004",
+    "L-P4-0003",
+    "L-P4-0008",
+    "L-P4-0017",
+    "L-P4-0025",
+    "L-P4-0019",
+    "L-P4-0034",
+    "L-P4-0035",
+    "L-P4-0036",
+    "L-P4-0052",
+    "L-P4-0040",
+    "L-P4-0041",
+    "L-P4-0062",
+    "L-P4-0065",
+    "L-P4-0057"
+  ],
+  "sampling_studies": [
+    {
+      "sampling_method": "Seeded bounded random sampling",
+      "seed": 20261110,
+      "attempts": 64,
+      "valid_cad": 60,
+      "invalid_or_duplicate": 4,
+      "coarse_candidates": 15,
+      "coarse_load_case_labels": 30
+    },
+    {
+      "sampling_method": "SciPy family-wise Latin hypercube",
+      "seed": 20261111,
+      "attempts": 69,
+      "valid_cad": 60,
+      "invalid_or_duplicate": 9,
+      "coarse_candidates": 15,
+      "coarse_load_case_labels": 30
+    }
+  ],
+  "coarse_fea_load_case_labels": 60
+}

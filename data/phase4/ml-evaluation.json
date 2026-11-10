@@ -1,0 +1,73 @@
+{
+  "dataset": {
+    "rows": 86,
+    "coarse_rows": 60,
+    "refined_rows": 26,
+    "coarse_geometry_groups": 30,
+    "fine_holdout_geometry_groups": 6,
+    "fine_holdout_rows": 12,
+    "features": [
+      "length_cc",
+      "big_end_id",
+      "small_end_id",
+      "ring_thickness",
+      "shank_width",
+      "beam_thickness",
+      "flange_thickness_mm",
+      "web_thickness_mm",
+      "transition_radius_mm",
+      "taper_big_width_mm",
+      "taper_mid_width_mm",
+      "taper_small_width_mm",
+      "rib_height_mm",
+      "rib_length_mm",
+      "pocket_length_mm",
+      "pocket_width_mm",
+      "cad_mass_g",
+      "load_force_n",
+      "geometry_family",
+      "load_case"
+    ]
+  },
+  "coarse_grouped_5fold_oof": {
+    "Ridge": {
+      "n": 60,
+      "mae_mpa": 168.46641893168302,
+      "rmse_mpa": 238.38923195552763,
+      "r2": 0.44941006033581987
+    },
+    "Extra Trees": {
+      "n": 60,
+      "mae_mpa": 173.77106446256772,
+      "rmse_mpa": 263.05073264557814,
+      "r2": 0.3295999556703476
+    },
+    "MLP": {
+      "n": 60,
+      "mae_mpa": 136.3295832173912,
+      "rmse_mpa": 199.488968832978,
+      "r2": 0.6144392878307431
+    }
+  },
+  "coarse_trained_fine_geometry_holdout": {
+    "Ridge": {
+      "n": 12,
+      "mae_mpa": 114.35319170109297,
+      "rmse_mpa": 169.28134136300952,
+      "r2": -2.7199312344010655
+    },
+    "Extra Trees": {
+      "n": 12,
+      "mae_mpa": 69.01746082485182,
+      "rmse_mpa": 90.72472961714637,
+      "r2": -0.06848417298122711
+    },
+    "MLP": {
+      "n": 12,
+      "mae_mpa": 104.67045108600699,
+      "rmse_mpa": 117.8717367146613,
+      "r2": -0.8035828345013685
+    }
+  },
+  "authority_note": "Research diagnostics only. Small fine-mesh geometry sample and fidelity shift prohibit surrogate constraint enforcement."
+}

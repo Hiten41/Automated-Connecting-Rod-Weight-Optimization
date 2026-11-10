@@ -1,0 +1,9 @@
+{
+  "records": 86,
+  "coarse_load_case_records": 60,
+  "refined_load_case_records": 26,
+  "distinct_geometry_hashes": 30,
+  "fine_geometry_groups": 6,
+  "output": "C:\\Users\\DELL\\Documents\\Codex\\2026-11-09\\https-github-com-spectra6001-automated-connecting\\work\\phase4-rod\\data\\phase4\\fea-dataset.jsonl",
+  "note": "The file preserves geometry grouping and solver provenance; mesh fidelities and load cases are not statistically independent rows."
+}

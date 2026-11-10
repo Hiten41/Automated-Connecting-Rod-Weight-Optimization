@@ -15,11 +15,100 @@ def test_all_sections_render():
         "Results & Comparison",
         "Model Analytics",
         "Reports & Downloads",
+        "Phase 4 Design Studio",
+        "Topology & Shape Exploration",
     ]:
         app.sidebar.radio[0].set_value(name).run()
         assert not app.exception, (name, app.exception)
     app.sidebar.radio[0].set_value("Geometry Designer").run()
     assert len(app.number_input) == 9
+
+
+def test_phase4_family_selector_updates_without_running_solvers():
+    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
+    app.sidebar.radio[0].set_value("Phase 4 Design Studio").run()
+    family = next(item for item in app.selectbox if item.label == "Geometry family")
+    family.set_value("tapered").run()
+    assert not app.exception
+    assert family.value == "tapered"
+    assert not app.session_state.get("phase4_last_results")
+
+
+def test_dashboard_presents_engineering_metrics_without_raw_json():
+    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
+    assert not app.exception
+    assert not app.get("json")
+    rendered_text = "\n".join(
+        [item.value for item in app.markdown if isinstance(item.value, str)]
+        + [item.value for item in app.caption if isinstance(item.value, str)]
+    )
+    assert '"attempted_geometries"' not in rendered_text
+    assert '"INFEASIBLE_ON_TESTED_MESH"' not in rendered_text
+    metric_values = {metric.label: metric.value for metric in app.metric}
+    assert metric_values["Design attempts"] == "133"
+    assert metric_values["Valid CAD solids"] == "120"
+    assert metric_values["FEA load-case results"] == "86"
+    assert metric_values["Passing recorded screens"] == "2"
+
+
+def test_results_page_formats_nested_job_results_as_engineering_summary(tmp_path):
+    import json
+
+    job_dir = ROOT / "runs/ui-phase3" / f"00-ui-regression-{tmp_path.name}"
+    job_dir.mkdir(parents=True, exist_ok=True)
+    result_path = job_dir / "ui-result.json"
+    result_path.write_text(
+        json.dumps(
+            {
+                "status": "COMPLETED",
+                "load_provenance": "TEST_FIXTURE",
+                "results": [
+                    {
+                        "status": "FEA_SUCCESS",
+                        "load": {"kind": "tension", "force_n": 18000},
+                        "mesh": {"size_mm": 1.0, "order": 2},
+                        "cad": {"valid_topology": True, "solid_count": 1},
+                        "mass_kg": 0.87,
+                        "max_von_mises_mpa": 366.0,
+                        "max_displacement_mm": 0.091,
+                        "runtime_s": 12.5,
+                        "geometry": {"length_cc": 145.0},
+                        "material": {"name": "AISI 4340"},
+                        "implementation_sha256": {"fea.py": "internal-hash"},
+                        "solver_configuration": {"threads": 2},
+                        "mesh_configuration": {"random_seed": 42},
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    try:
+        app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
+        app.sidebar.radio[0].set_value("Results & Comparison").run()
+        job_selector = next(item for item in app.selectbox if item.label == "Application job")
+        job_selector.set_value(result_path)
+        app.run()
+        assert not app.exception
+        columns = [
+            list(widget.value.columns)
+            for widget in app.dataframe
+            if hasattr(widget.value, "columns")
+        ]
+        result_columns = next(cols for cols in columns if "Load case" in cols)
+        assert "Peak stress (MPa)" in result_columns
+        assert not {
+            "geometry",
+            "material",
+            "load",
+            "mesh",
+            "implementation_sha256",
+            "solver_configuration",
+            "mesh_configuration",
+        }.intersection(result_columns)
+    finally:
+        result_path.unlink(missing_ok=True)
+        job_dir.rmdir()
 
 
 def test_reference_engine_graphs():

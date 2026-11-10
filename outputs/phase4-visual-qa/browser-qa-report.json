@@ -1,0 +1,397 @@
+{
+  "application": "http://localhost:8505",
+  "title": "RodLab | Phase 4 engineering workspace",
+  "initialHttpStatus": 200,
+  "playwrightVersion": "1.65.0",
+  "browserVersion": "157.0.8103.40",
+  "cases": [
+    {
+      "page": "Dashboard",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 3307
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\dashboard-desktop.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-desktop.png"
+      ]
+    },
+    {
+      "page": "Geometry Designer",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1135
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Apply geometry",
+        "Generate Preview"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\geometry-designer-desktop.png"
+      ]
+    },
+    {
+      "page": "Engine Loading",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1000
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Loading mode selector",
+        "manual/engine calculation views"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\engine-loading-desktop.png"
+      ]
+    },
+    {
+      "page": "Simulation",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1080
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "material",
+        "mesh size",
+        "boundary conditions",
+        "Run FEA action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\simulation-desktop.png"
+      ]
+    },
+    {
+      "page": "AI Optimization",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1190
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "optimization constraints",
+        "Run Optimization action rendered; disabled until model criteria are met"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\ai-optimization-desktop.png"
+      ]
+    },
+    {
+      "page": "Results & Comparison",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 3348
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\results-comparison-desktop.png"
+      ]
+    },
+    {
+      "page": "Model Analytics",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 3044
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\model-analytics-desktop.png"
+      ]
+    },
+    {
+      "page": "Reports & Downloads",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1262
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "engineering report",
+        "download action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\reports-downloads-desktop.png"
+      ]
+    },
+    {
+      "page": "Phase 4 Design Studio",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1076
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "selected Tapered I section without submitting CAD/FEA"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\phase-4-design-studio-desktop.png"
+      ]
+    },
+    {
+      "page": "Topology & Shape Exploration",
+      "viewport": "desktop",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 3098
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "family distribution chart",
+        "actual mass/stress chart"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\topology-shape-exploration-desktop.png"
+      ]
+    },
+    {
+      "page": "Dashboard",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 6009
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\dashboard-mobile.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-mobile.png"
+      ]
+    },
+    {
+      "page": "Geometry Designer",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1755
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Apply geometry",
+        "Generate Preview"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\geometry-designer-mobile.png"
+      ]
+    },
+    {
+      "page": "Engine Loading",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 844
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Loading mode selector",
+        "manual/engine calculation views"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\engine-loading-mobile.png"
+      ]
+    },
+    {
+      "page": "Simulation",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1233
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "material",
+        "mesh size",
+        "boundary conditions",
+        "Run FEA action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\simulation-mobile.png"
+      ]
+    },
+    {
+      "page": "AI Optimization",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1532
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "optimization constraints",
+        "Run Optimization action rendered; disabled until model criteria are met"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\ai-optimization-mobile.png"
+      ]
+    },
+    {
+      "page": "Results & Comparison",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 3814
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\results-comparison-mobile.png"
+      ]
+    },
+    {
+      "page": "Model Analytics",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 4461
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\model-analytics-mobile.png"
+      ]
+    },
+    {
+      "page": "Reports & Downloads",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1956
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "engineering report",
+        "download action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\reports-downloads-mobile.png"
+      ]
+    },
+    {
+      "page": "Phase 4 Design Studio",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1863
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "selected Tapered I section without submitting CAD/FEA"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\phase-4-design-studio-mobile.png"
+      ]
+    },
+    {
+      "page": "Topology & Shape Exploration",
+      "viewport": "mobile",
+      "layout": {
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 3319
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "family distribution chart",
+        "actual mass/stress chart"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\topology-shape-exploration-mobile.png"
+      ]
+    }
+  ],
+  "dashboardRawJsonVisible": false,
+  "browserIssues": []
+}

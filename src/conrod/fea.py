@@ -88,6 +88,8 @@ def cad(g, out, preflight=False):
             "Configure CONROD_FREECAD_PYTHON to bundled FreeCAD python.exe"
         )
     request = dict(geometry=g.to_dict(), output_dir=str(out), preflight=preflight)
+    if hasattr(g, "family"):
+        request["family_design"] = g.to_dict()
     (out / "cad-request.json").write_text(json.dumps(request))
     command(
         [
@@ -465,7 +467,7 @@ def solve(
         material=m.to_dict(),
         load=load.to_dict(),
         mesh=settings.to_dict(),
-        geometry_version=GEOMETRY_VERSION,
+        geometry_version=getattr(g, "geometry_version", GEOMETRY_VERSION),
         mode=mode.value,
         simulation_version="phase3-deterministic-bearing-v1",
         implementation_sha256={
@@ -476,6 +478,7 @@ def solve(
                 "bearing.py",
                 "schemas.py",
                 "fields.py",
+                *(["design_families/__init__.py"] if hasattr(g, "family") else []),
             ]
         },
         solver_configuration=dict(
