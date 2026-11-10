@@ -6,7 +6,7 @@ Phase 4 implemented physics-guided parametric geometry exploration, recorded CAD
 
 ## Dashboard correction
 
-The dashboard's raw JSON leak was caused by three `st.json(...)` calls in the `Dashboard` branch of `app.py`: the Phase 3 feasibility summary, mesh-convergence record, and search counts. The feasibility summary was the visible `attempted_geometries` object. The dashboard now presents stored data through project-status metrics, exploration counts, structural-check metrics, mass comparisons, and charts. Source records remain accessible in the collapsed **Advanced diagnostics — Developer only** panel and through its developer download.
+The dashboard's raw JSON leak was caused by three `st.json(...)` calls in the former `Dashboard` branch of `app.py`: the Phase 3 feasibility summary, mesh-convergence record, and search counts. The feasibility summary was the visible `attempted_geometries` object. The current renderer is `src/conrod/ui/views/dashboard.py::render_dashboard`; it presents stored data through project-status metrics, exploration counts, structural-check metrics, mass comparisons, and charts. Dashboard source records remain downloadable in the collapsed **Advanced diagnostics — Developer only** panel. Other raw JSON renderers are confined to collapsed developer diagnostics.
 
 The page audit covered Dashboard, Geometry Designer, Engine Loading, Simulation (including boundary-condition controls), AI Optimization, Results & Comparison (structural analysis), Model Analytics, Reports & Downloads, Phase 4 Design Studio, and Topology & Shape Exploration. The only `st.json` renderer is in the collapsed diagnostics helper. Streamlit exceptions and solver logs are not rendered as normal engineering results.
 
@@ -24,19 +24,19 @@ These values are project solver records, not physical test results or an indepen
 
 ## Browser QA and screenshots
 
-Headless Playwright 1.65.0 with Google Chrome 157 inspected all ten application pages at 1440 × 1000 and 390 × 844 viewports. The audit checked navigation and relevant controls, visible JSON renderers, horizontal overflow, Streamlit exceptions, browser console/page errors, HTTP failures, and failed requests. It observed zero visible raw JSON components, zero horizontal overflow, and no browser/network issues. The automated browser report and page screenshots are in `outputs/phase4-visual-qa/` and are included in the evidence archive.
+Headless Playwright 1.65.0 with Microsoft Edge/Chromium 157 inspects ten application pages at 390 × 844, 768 × 1024, 1024 × 768, 1440 × 1000 and 1920 × 1080 viewports (50 route/viewport cases). The audit checks navigation and controls, visible JSON renderers, mobile sidebar closure, horizontal overflow and clipping, Streamlit exceptions, browser console/page errors, HTTP failures and failed requests. The exact final counts are recorded in `outputs/phase4-visual-qa/browser-qa-report.json`; the browser report and page screenshots are in `outputs/phase4-visual-qa/` and the final evidence archive.
 
 ![Before: raw feasibility JSON on the dashboard](../../../outputs/phase4-visual-qa/before/dashboard-desktop.png)
 
-![After: engineering dashboard, desktop](../../../outputs/phase4-visual-qa/dashboard-desktop.png)
+![After: engineering dashboard, desktop](../../../outputs/phase4-visual-qa/dashboard-1440x1000-viewport.png)
 
-![After: engineering dashboard, mobile](../../../outputs/phase4-visual-qa/dashboard-mobile.png)
+![After: engineering dashboard, mobile](../../../outputs/phase4-visual-qa/dashboard-390x844-viewport.png)
 
-![After: dashboard structural and design-space visualizations](../../../outputs/phase4-visual-qa/dashboard-details-desktop.png)
+![After: dashboard structural and design-space visualizations](../../../outputs/phase4-visual-qa/dashboard-details-1440x1000.png)
 
 ## Reproduction and test status
 
-The exact source revision, test reports, raw CalculiX `.frd`/`.dat` fields, input decks, CAD exports, meshes, stress/displacement fields, engine calculations, ML artifacts, and visual-QA evidence are listed and SHA-256 verified in `outputs/phase4-final-solver-evidence.zip`'s manifest. See [Test Results](TEST_RESULTS.md) for the full-suite, CAD/FEA integration, Ruff, compile, and browser-QA outcomes. The archive manifest records the full source Git revision.
+The final source revision, test reports, raw CalculiX `.frd`/`.dat` fields, input decks, CAD exports, meshes, stress/displacement fields, engine calculations, ML artifacts, and visual-QA evidence are listed and SHA-256 verified in `outputs/phase4-final-solver-evidence-final.zip`'s manifest. This final archive is distributed as five independent ZIP parts, each below 512,000,000 bytes. The preserved historical intake archive remains at `outputs/phase4-final-solver-evidence.zip`. The complete source/UI review package is `outputs/phase4-complete-review-bundle/rodLab-phase4-complete-source.zip`. See [Test Results](TEST_RESULTS.md) for the full-suite, CAD/FEA integration, Ruff, compile, and browser-QA outcomes.
 
 ## Engineering limitations
 

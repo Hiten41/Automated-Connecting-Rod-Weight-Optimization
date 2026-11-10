@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from streamlit.testing.v1 import AppTest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -7,26 +8,26 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_all_sections_render():
     app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
     assert not app.exception
-    for name in [
-        "Geometry Designer",
-        "Engine Loading",
-        "Simulation",
-        "AI Optimization",
-        "Results & Comparison",
-        "Model Analytics",
-        "Reports & Downloads",
-        "Phase 4 Design Studio",
-        "Topology & Shape Exploration",
+    for page in [
+        "legacy_geometry_editor",
+        "engine_loading",
+        "simulation",
+        "optimization_feasibility",
+        "results_comparison",
+        "model_analytics",
+        "reports_downloads",
+        "design_studio",
+        "design_space_explorer",
     ]:
-        app.sidebar.radio[0].set_value(name).run()
-        assert not app.exception, (name, app.exception)
-    app.sidebar.radio[0].set_value("Geometry Designer").run()
+        app.switch_page(f"pages/{page}.py").run()
+        assert not app.exception, (page, app.exception)
+    app.switch_page("pages/legacy_geometry_editor.py").run()
     assert len(app.number_input) == 9
 
 
 def test_phase4_family_selector_updates_without_running_solvers():
     app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
-    app.sidebar.radio[0].set_value("Phase 4 Design Studio").run()
+    app.switch_page("pages/design_studio.py").run()
     family = next(item for item in app.selectbox if item.label == "Geometry family")
     family.set_value("tapered").run()
     assert not app.exception
@@ -38,6 +39,11 @@ def test_dashboard_presents_engineering_metrics_without_raw_json():
     app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
     assert not app.exception
     assert not app.get("json")
+    developer_panels = [
+        panel for panel in app.expander if "Advanced diagnostics" in panel.label
+    ]
+    assert developer_panels
+    assert all(not panel.proto.expanded for panel in developer_panels)
     rendered_text = "\n".join(
         [item.value for item in app.markdown if isinstance(item.value, str)]
         + [item.value for item in app.caption if isinstance(item.value, str)]
@@ -45,16 +51,17 @@ def test_dashboard_presents_engineering_metrics_without_raw_json():
     assert '"attempted_geometries"' not in rendered_text
     assert '"INFEASIBLE_ON_TESTED_MESH"' not in rendered_text
     metric_values = {metric.label: metric.value for metric in app.metric}
+    assert metric_values["CAD / FEA solver status"] == "Ready"
     assert metric_values["Design attempts"] == "133"
     assert metric_values["Valid CAD solids"] == "120"
-    assert metric_values["FEA load-case results"] == "86"
-    assert metric_values["Passing recorded screens"] == "2"
+    assert metric_values["Completed FEA load-case records"] == "86"
+    assert metric_values["Passing numerical screens"] == "4"
 
 
 def test_results_page_formats_nested_job_results_as_engineering_summary(tmp_path):
     import json
 
-    job_dir = ROOT / "runs/ui-phase3" / f"00-ui-regression-{tmp_path.name}"
+    job_dir = ROOT / "runs/ui-phase4" / f"00-ui-regression-{tmp_path.name}"
     job_dir.mkdir(parents=True, exist_ok=True)
     result_path = job_dir / "ui-result.json"
     result_path.write_text(
@@ -85,8 +92,10 @@ def test_results_page_formats_nested_job_results_as_engineering_summary(tmp_path
     )
     try:
         app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
-        app.sidebar.radio[0].set_value("Results & Comparison").run()
-        job_selector = next(item for item in app.selectbox if item.label == "Application job")
+        app.switch_page("pages/results_comparison.py").run()
+        job_selector = next(
+            item for item in app.selectbox if item.label == "Application job"
+        )
         job_selector.set_value(result_path)
         app.run()
         assert not app.exception
@@ -113,7 +122,7 @@ def test_results_page_formats_nested_job_results_as_engineering_summary(tmp_path
 
 def test_reference_engine_graphs():
     app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
-    app.sidebar.radio[0].set_value("Engine Loading").run()
+    app.switch_page("pages/engine_loading.py").run()
     next(x for x in app.radio if x.label == "Loading mode").set_value(
         "Engine-derived loading"
     ).run()
@@ -129,12 +138,13 @@ import pytest
 @pytest.mark.integration
 def test_background_cad_job_snapshot_and_exports():
     import json
+
     from conrod.fea import configuration
 
     if not configuration()["freecad_python"]:
         pytest.skip("FreeCAD not configured")
     app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=60).run()
-    app.sidebar.radio[0].set_value("Geometry Designer").run()
+    app.switch_page("pages/legacy_geometry_editor.py").run()
     next(b for b in app.button if b.label == "Generate Preview").click().run()
     assert not app.exception
     directory = Path(app.session_state["job_dir"])

@@ -1,38 +1,67 @@
 {
   "application": "http://localhost:8505",
-  "title": "RodLab | Phase 4 engineering workspace",
+  "title": "Streamlit",
   "initialHttpStatus": 200,
   "playwrightVersion": "1.65.0",
-  "browserVersion": "157.0.8103.40",
+  "browserVersion": "157.0.4341.46",
   "cases": [
     {
       "page": "Dashboard",
-      "viewport": "desktop",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 3307
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 4212,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 246.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\dashboard-desktop.png",
-        "outputs\\phase4-visual-qa\\dashboard-details-desktop.png"
+        "outputs\\phase4-visual-qa\\dashboard-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\dashboard-390x844-full.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-390x844.png"
       ]
     },
     {
-      "page": "Geometry Designer",
-      "viewport": "desktop",
+      "page": "Legacy Geometry Editor",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 1135
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1875,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -40,19 +69,34 @@
         "Generate Preview"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\geometry-designer-desktop.png"
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-390x844-full.png"
       ]
     },
     {
       "page": "Engine Loading",
-      "viewport": "desktop",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 1000
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 844,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -60,19 +104,34 @@
         "manual/engine calculation views"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\engine-loading-desktop.png"
+        "outputs\\phase4-visual-qa\\engine-loading-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\engine-loading-390x844-full.png"
       ]
     },
     {
       "page": "Simulation",
-      "viewport": "desktop",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 1080
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1026,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 246.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -296.62554931640625,
+        "right": -292.68804931640625,
+        "width": 3.9375,
+        "transform": "matrix(1, 0, 0, 1, -296.626, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -82,73 +141,141 @@
         "Run FEA action"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\simulation-desktop.png"
+        "outputs\\phase4-visual-qa\\simulation-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\simulation-390x844-full.png"
       ]
     },
     {
-      "page": "AI Optimization",
-      "viewport": "desktop",
+      "page": "Optimization & Feasibility",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 1190
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1901,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
-        "optimization constraints",
-        "Run Optimization action rendered; disabled until model criteria are met"
+        "ranked actual CAD/FEA candidates",
+        "unqualified status shown"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\ai-optimization-desktop.png"
+        "outputs\\phase4-visual-qa\\optimization-feasibility-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\optimization-feasibility-390x844-full.png"
       ]
     },
     {
       "page": "Results & Comparison",
-      "viewport": "desktop",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 3348
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 6300,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 246.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
-      "controls": [],
+      "controls": [
+        "candidate selector",
+        "mesh and load-case controls",
+        "actual solver-field view"
+      ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\results-comparison-desktop.png"
+        "outputs\\phase4-visual-qa\\results-comparison-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\results-comparison-390x844-full.png"
       ]
     },
     {
       "page": "Model Analytics",
-      "viewport": "desktop",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 3044
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1713,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
-      "controls": [],
+      "controls": [
+        "Phase 4 grouped evaluation",
+        "historical Phase 3 section",
+        "historical Phase 2 section"
+      ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\model-analytics-desktop.png"
+        "outputs\\phase4-visual-qa\\model-analytics-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\model-analytics-390x844-full.png"
       ]
     },
     {
       "page": "Reports & Downloads",
-      "viewport": "desktop",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 1262
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 2375,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -156,38 +283,68 @@
         "download action"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\reports-downloads-desktop.png"
+        "outputs\\phase4-visual-qa\\reports-downloads-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\reports-downloads-390x844-full.png"
       ]
     },
     {
-      "page": "Phase 4 Design Studio",
-      "viewport": "desktop",
+      "page": "Design Studio",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 1076
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 1428,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
         "selected Tapered I section without submitting CAD/FEA"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\phase-4-design-studio-desktop.png"
+        "outputs\\phase4-visual-qa\\design-studio-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\design-studio-390x844-full.png"
       ]
     },
     {
-      "page": "Topology & Shape Exploration",
-      "viewport": "desktop",
+      "page": "Design Space Explorer",
+      "viewport": "390x844",
       "layout": {
-        "viewportWidth": 1440,
-        "documentWidth": 1440,
-        "documentHeight": 1000,
-        "mainClientWidth": 1140,
-        "mainScrollWidth": 1140,
-        "mainScrollHeight": 3098
+        "viewportWidth": 390,
+        "documentWidth": 390,
+        "documentHeight": 844,
+        "mainClientWidth": 390,
+        "mainScrollWidth": 390,
+        "mainScrollHeight": 3182,
+        "mainHeading": {
+          "left": 12.796875,
+          "right": 377.203125,
+          "top": 185.296875,
+          "bottom": 280.484375
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -195,37 +352,67 @@
         "actual mass/stress chart"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\topology-shape-exploration-desktop.png"
+        "outputs\\phase4-visual-qa\\design-space-explorer-390x844-viewport.png",
+        "outputs\\phase4-visual-qa\\design-space-explorer-390x844-full.png"
       ]
     },
     {
       "page": "Dashboard",
-      "viewport": "mobile",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 6009
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 3645,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\dashboard-mobile.png",
-        "outputs\\phase4-visual-qa\\dashboard-details-mobile.png"
+        "outputs\\phase4-visual-qa\\dashboard-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\dashboard-768x1024-full.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-768x1024.png"
       ]
     },
     {
-      "page": "Geometry Designer",
-      "viewport": "mobile",
+      "page": "Legacy Geometry Editor",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 1755
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1564,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -233,19 +420,34 @@
         "Generate Preview"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\geometry-designer-mobile.png"
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-768x1024-full.png"
       ]
     },
     {
       "page": "Engine Loading",
-      "viewport": "mobile",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 844
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1024,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -253,19 +455,34 @@
         "manual/engine calculation views"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\engine-loading-mobile.png"
+        "outputs\\phase4-visual-qa\\engine-loading-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\engine-loading-768x1024-full.png"
       ]
     },
     {
       "page": "Simulation",
-      "viewport": "mobile",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 1233
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1024,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -297.8746032714844,
+        "right": -293.6246032714844,
+        "width": 4.25,
+        "transform": "matrix(1, 0, 0, 1, -297.875, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -275,73 +492,141 @@
         "Run FEA action"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\simulation-mobile.png"
+        "outputs\\phase4-visual-qa\\simulation-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\simulation-768x1024-full.png"
       ]
     },
     {
-      "page": "AI Optimization",
-      "viewport": "mobile",
+      "page": "Optimization & Feasibility",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 1532
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1741,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
-        "optimization constraints",
-        "Run Optimization action rendered; disabled until model criteria are met"
+        "ranked actual CAD/FEA candidates",
+        "unqualified status shown"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\ai-optimization-mobile.png"
+        "outputs\\phase4-visual-qa\\optimization-feasibility-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\optimization-feasibility-768x1024-full.png"
       ]
     },
     {
       "page": "Results & Comparison",
-      "viewport": "mobile",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 3814
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 6016,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
-      "controls": [],
+      "controls": [
+        "candidate selector",
+        "mesh and load-case controls",
+        "actual solver-field view"
+      ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\results-comparison-mobile.png"
+        "outputs\\phase4-visual-qa\\results-comparison-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\results-comparison-768x1024-full.png"
       ]
     },
     {
       "page": "Model Analytics",
-      "viewport": "mobile",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 4461
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1576,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -267.76519775390625,
+        "right": -203.29644775390625,
+        "width": 64.46875,
+        "transform": "matrix(1, 0, 0, 1, -267.765, 0)"
       },
       "visibleJsonCount": 0,
-      "controls": [],
+      "controls": [
+        "Phase 4 grouped evaluation",
+        "historical Phase 3 section",
+        "historical Phase 2 section"
+      ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\model-analytics-mobile.png"
+        "outputs\\phase4-visual-qa\\model-analytics-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\model-analytics-768x1024-full.png"
       ]
     },
     {
       "page": "Reports & Downloads",
-      "viewport": "mobile",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 1956
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1929,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -349,38 +634,68 @@
         "download action"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\reports-downloads-mobile.png"
+        "outputs\\phase4-visual-qa\\reports-downloads-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\reports-downloads-768x1024-full.png"
       ]
     },
     {
-      "page": "Phase 4 Design Studio",
-      "viewport": "mobile",
+      "page": "Design Studio",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 1863
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 1024,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
         "selected Tapered I section without submitting CAD/FEA"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\phase-4-design-studio-mobile.png"
+        "outputs\\phase4-visual-qa\\design-studio-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\design-studio-768x1024-full.png"
       ]
     },
     {
-      "page": "Topology & Shape Exploration",
-      "viewport": "mobile",
+      "page": "Design Space Explorer",
+      "viewport": "768x1024",
       "layout": {
-        "viewportWidth": 390,
-        "documentWidth": 390,
-        "documentHeight": 844,
-        "mainClientWidth": 390,
-        "mainScrollWidth": 390,
-        "mainScrollHeight": 3319
+        "viewportWidth": 768,
+        "documentWidth": 768,
+        "documentHeight": 1024,
+        "mainClientWidth": 767,
+        "mainScrollWidth": 767,
+        "mainScrollHeight": 3017,
+        "mainHeading": {
+          "left": 17,
+          "right": 752,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": false,
+        "overlapsMain": false,
+        "left": -300,
+        "right": -299,
+        "width": 1,
+        "transform": "matrix(1, 0, 0, 1, -300, 0)"
       },
       "visibleJsonCount": 0,
       "controls": [
@@ -388,10 +703,1065 @@
         "actual mass/stress chart"
       ],
       "screenshots": [
-        "outputs\\phase4-visual-qa\\topology-shape-exploration-mobile.png"
+        "outputs\\phase4-visual-qa\\design-space-explorer-768x1024-viewport.png",
+        "outputs\\phase4-visual-qa\\design-space-explorer-768x1024-full.png"
+      ]
+    },
+    {
+      "page": "Dashboard",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 3368,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\dashboard-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\dashboard-1024x768-full.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-1024x768.png"
+      ]
+    },
+    {
+      "page": "Legacy Geometry Editor",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 1576,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Apply geometry",
+        "Generate Preview"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Engine Loading",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 768,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Loading mode selector",
+        "manual/engine calculation views"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\engine-loading-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\engine-loading-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Simulation",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 1003,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "material",
+        "mesh size",
+        "boundary conditions",
+        "Run FEA action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\simulation-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\simulation-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Optimization & Feasibility",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 1593,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "ranked actual CAD/FEA candidates",
+        "unqualified status shown"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\optimization-feasibility-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\optimization-feasibility-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Results & Comparison",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 5875,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "candidate selector",
+        "mesh and load-case controls",
+        "actual solver-field view"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\results-comparison-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\results-comparison-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Model Analytics",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 1508,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Phase 4 grouped evaluation",
+        "historical Phase 3 section",
+        "historical Phase 2 section"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\model-analytics-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\model-analytics-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Reports & Downloads",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 1966,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "engineering report",
+        "download action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\reports-downloads-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\reports-downloads-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Design Studio",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 1029,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "selected Tapered I section without submitting CAD/FEA"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\design-studio-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\design-studio-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Design Space Explorer",
+      "viewport": "1024x768",
+      "layout": {
+        "viewportWidth": 1024,
+        "documentWidth": 1024,
+        "documentHeight": 768,
+        "mainClientWidth": 724,
+        "mainScrollWidth": 724,
+        "mainScrollHeight": 3055,
+        "mainHeading": {
+          "left": 324,
+          "right": 1000,
+          "top": 164.296875,
+          "bottom": 225.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "family distribution chart",
+        "actual mass/stress chart"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\design-space-explorer-1024x768-viewport.png",
+        "outputs\\phase4-visual-qa\\design-space-explorer-1024x768-full.png"
+      ]
+    },
+    {
+      "page": "Dashboard",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 3258,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\dashboard-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\dashboard-1440x1000-full.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-1440x1000.png"
+      ]
+    },
+    {
+      "page": "Legacy Geometry Editor",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1534,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Apply geometry",
+        "Generate Preview"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Engine Loading",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1000,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Loading mode selector",
+        "manual/engine calculation views"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\engine-loading-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\engine-loading-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Simulation",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1000,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "material",
+        "mesh size",
+        "boundary conditions",
+        "Run FEA action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\simulation-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\simulation-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Optimization & Feasibility",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1519,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "ranked actual CAD/FEA candidates",
+        "unqualified status shown"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\optimization-feasibility-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\optimization-feasibility-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Results & Comparison",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 5795,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "candidate selector",
+        "mesh and load-case controls",
+        "actual solver-field view"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\results-comparison-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\results-comparison-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Model Analytics",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1448,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Phase 4 grouped evaluation",
+        "historical Phase 3 section",
+        "historical Phase 2 section"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\model-analytics-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\model-analytics-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Reports & Downloads",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1723,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "engineering report",
+        "download action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\reports-downloads-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\reports-downloads-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Design Studio",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 1000,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "selected Tapered I section without submitting CAD/FEA"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\design-studio-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\design-studio-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Design Space Explorer",
+      "viewport": "1440x1000",
+      "layout": {
+        "viewportWidth": 1440,
+        "documentWidth": 1440,
+        "documentHeight": 1000,
+        "mainClientWidth": 1140,
+        "mainScrollWidth": 1140,
+        "mainScrollHeight": 2995,
+        "mainHeading": {
+          "left": 324,
+          "right": 1416,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "family distribution chart",
+        "actual mass/stress chart"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\design-space-explorer-1440x1000-viewport.png",
+        "outputs\\phase4-visual-qa\\design-space-explorer-1440x1000-full.png"
+      ]
+    },
+    {
+      "page": "Dashboard",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 3212,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\dashboard-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\dashboard-1920x1080-full.png",
+        "outputs\\phase4-visual-qa\\dashboard-details-1920x1080.png"
+      ]
+    },
+    {
+      "page": "Legacy Geometry Editor",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1534,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Apply geometry",
+        "Generate Preview"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\legacy-geometry-editor-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Engine Loading",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1080,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Loading mode selector",
+        "manual/engine calculation views"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\engine-loading-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\engine-loading-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Simulation",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1080,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "material",
+        "mesh size",
+        "boundary conditions",
+        "Run FEA action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\simulation-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\simulation-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Optimization & Feasibility",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1527,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "ranked actual CAD/FEA candidates",
+        "unqualified status shown"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\optimization-feasibility-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\optimization-feasibility-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Results & Comparison",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 5790,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "candidate selector",
+        "mesh and load-case controls",
+        "actual solver-field view"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\results-comparison-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\results-comparison-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Model Analytics",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1452,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "Phase 4 grouped evaluation",
+        "historical Phase 3 section",
+        "historical Phase 2 section"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\model-analytics-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\model-analytics-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Reports & Downloads",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1646,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "engineering report",
+        "download action"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\reports-downloads-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\reports-downloads-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Design Studio",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 1080,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "selected Tapered I section without submitting CAD/FEA"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\design-studio-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\design-studio-1920x1080-full.png"
+      ]
+    },
+    {
+      "page": "Design Space Explorer",
+      "viewport": "1920x1080",
+      "layout": {
+        "viewportWidth": 1920,
+        "documentWidth": 1920,
+        "documentHeight": 1080,
+        "mainClientWidth": 1620,
+        "mainScrollWidth": 1620,
+        "mainScrollHeight": 2999,
+        "mainHeading": {
+          "left": 444,
+          "right": 1776,
+          "top": 143.296875,
+          "bottom": 204.890625
+        }
+      },
+      "sidebar": {
+        "visible": true,
+        "overlapsMain": false,
+        "left": 0,
+        "right": 300,
+        "width": 300,
+        "transform": "none"
+      },
+      "visibleJsonCount": 0,
+      "controls": [
+        "family distribution chart",
+        "actual mass/stress chart"
+      ],
+      "screenshots": [
+        "outputs\\phase4-visual-qa\\design-space-explorer-1920x1080-viewport.png",
+        "outputs\\phase4-visual-qa\\design-space-explorer-1920x1080-full.png"
       ]
     }
   ],
   "dashboardRawJsonVisible": false,
-  "browserIssues": []
+  "browserIssues": [],
+  "reportSha256": "12c2e6bc21cc1bd47cc2b0a2aa144d90324dfaad8aef934da5894519cbdf7997"
 }

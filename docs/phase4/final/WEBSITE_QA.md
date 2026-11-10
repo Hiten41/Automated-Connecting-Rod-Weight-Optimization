@@ -1,34 +1,30 @@
-# Phase 4 Website QA
+# Phase 4 website QA
 
-## Dashboard raw-data regression
+## Dashboard raw-data root cause and fix
 
-The dashboard leak came from three direct renders in the `Dashboard` branch of `app.py`: `st.json(read(data))` for the Phase 3 feasibility summary, `st.json(read(conv))` for the mesh-convergence record, and `st.json(study.get("counts", {}))` for the Phase 3 search counts. The first call produced the visible `attempted_geometries` object reported by the user.
+The raw dictionary came from three direct `st.json()` calls in the former Dashboard branch of `app.py`: the Phase 3 feasibility summary (`read(data)`), the mesh-convergence record (`read(conv)`) and the search-count dictionary (`study.get("counts", {})`). The feasibility summary call produced the visible `attempted_geometries` object. The current dashboard renderer is `src/conrod/ui/views/dashboard.py::render_dashboard`; it now turns stored source records into metrics, constraint tables, candidate comparisons and plots. Its raw source records remain available from a download inside the collapsed **Advanced diagnostics — Developer only** expander. The current dashboard has no raw JSON renderer in its normal presentation.
 
-The dashboard now presents project, design-space, structural and mass-comparison values as metrics, tables and plots driven by the stored Phase 3/Phase 4 records. Raw diagnostic records remain downloadable inside the collapsed **Advanced diagnostics — Developer only** section. Other pages use readable tables and engineering plots; the sole `st.json` call is inside the same collapsed diagnostics helper.
-
-The page audit also found a nested background-job result table on Results & Comparison and a legacy optimizer table that exposed raw solver messages. Both now show curated engineering columns; the full records remain available in the collapsed developer diagnostics. Historical Phase 2 model-evaluation metadata on Model Analytics is presented as holdout metrics and a response-by-statistic comparison table, while its source record remains available in developer diagnostics.
+The application-wide raw-diagnostic helper, `src/conrod/ui/app_shell.py::render_advanced_diagnostics`, renders JSON only inside a collapsed developer expander. Raw solver logs are also inside that collapsed expander. Results-page diagnostic JSON remains opt-in and collapsed. Regular pages show curated values, plots and tables; the underlying engineering records remain intact.
 
 ## Browser method and results
 
-- Application: `http://localhost:8505` (HTTP 200; Streamlit health endpoint returned `ok`).
-- Browser: Playwright 1.65.0 with installed Google Chrome 157.0.8103.40, headless.
-- Desktop viewport: 1440 × 1000 px.
-- Mobile viewport: 390 × 844 px.
-- All 10 workspace pages were opened at both viewports: Dashboard, Geometry Designer, Engine Loading, Simulation, AI Optimization, Results & Comparison, Model Analytics, Reports & Downloads, Phase 4 Design Studio, and Topology & Shape Exploration.
-- Geometry-family selection was changed to Tapered I section and verified without submitting CAD/FEA. Simulation and optimization controls rendered; no additional costly solve was launched by browser QA.
-- No visible raw JSON components or dashboard feasibility keys were found on normal views. No horizontal overflow was measured at either tested width. No JavaScript console errors, uncaught page errors, failed requests, HTTP errors, or Streamlit exceptions were observed.
-- Browser QA validates rendered navigation and controls; it does not replace the recorded CAD/FEA integration suite or establish a production-qualified component.
+- Running application: [http://localhost:8505](http://localhost:8505), verified by successful page loads (HTTP 200).
+- Browser: Playwright 1.65.0 with Microsoft Edge/Chromium 157.0.4341.46, headless.
+- Ten workspace routes were checked at five viewports: 390×844, 768×1024, 1024×768, 1440×1000 and 1920×1080 (50 route/viewport cases).
+- Route checks cover Dashboard, Legacy Geometry Editor, Engine Loading, Simulation, Optimization & Feasibility, Results & Comparison, Model Analytics, Reports & Downloads, Design Studio and Design Space Explorer.
+- Browser QA selects **Tapered I section** and verifies the selection without starting a CAD/FEA job. It checks the stored solver-field view, analytics plots, optimization ranking, design-space plots and report download controls.
+- Assertions check visible JSON, raw internal-data tokens, horizontal overflow, heading clipping, mobile sidebar visibility/occlusion, Streamlit exceptions, browser console/page errors, failed network requests and HTTP status errors. The final machine report records the run's exact issue/case counts and digest.
+
+These are UI interaction and rendering checks against the local research application; they do not validate the engineering model or replace the CAD/FEA test reports.
 
 ## Screenshots
 
-The before image shows the raw summary JSON. The after images show the dashboard at desktop/mobile sizes and the stored solver-data visualization section.
+The before image shows the historical raw summary JSON. The after images are from the current automated run; all page screenshots and the machine-readable report are under `outputs/phase4-visual-qa/`.
 
-![Dashboard before fix: raw Phase 3 feasibility JSON](../../../outputs/phase4-visual-qa/before/dashboard-desktop.png)
+![Dashboard before correction: raw Phase 3 feasibility object](../../../outputs/phase4-visual-qa/before/dashboard-desktop.png)
 
-![Dashboard after fix: desktop](../../../outputs/phase4-visual-qa/dashboard-desktop.png)
+![Dashboard after correction: mobile viewport](../../../outputs/phase4-visual-qa/dashboard-390x844-viewport.png)
 
-![Dashboard after fix: mobile](../../../outputs/phase4-visual-qa/dashboard-mobile.png)
+![Dashboard after correction: desktop viewport](../../../outputs/phase4-visual-qa/dashboard-1440x1000-viewport.png)
 
-![Dashboard after fix: desktop engineering data visualizations](../../../outputs/phase4-visual-qa/dashboard-details-desktop.png)
-
-The machine-readable browser report and all page screenshots are stored under `outputs/phase4-visual-qa/`.
+![Dashboard actual engineering data visualizations](../../../outputs/phase4-visual-qa/dashboard-details-1440x1000.png)
