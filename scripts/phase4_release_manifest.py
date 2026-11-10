@@ -50,7 +50,10 @@ def verify_source_zip(path: Path, revision: str) -> dict:
         if manifest.get("source_revision") != revision:
             raise RuntimeError("Source ZIP identifies a different Git revision")
         entries = {row["path"]: row for row in manifest["files"]}
-        if set(archive.namelist()) != set(entries) | {manifest_name}:
+        names = archive.namelist()
+        if len(names) != len(set(names)) or set(names) != set(entries) | {
+            manifest_name
+        }:
             raise RuntimeError("Source ZIP member list differs from its manifest")
         for name, entry in entries.items():
             with archive.open(name) as stream:
@@ -77,7 +80,9 @@ def junit_counts(path: Path) -> dict:
     }
 
 
-def verify_parts(revision: str, evidence_manifest: dict) -> list[dict]:
+def verify_parts(
+    revision: str, evidence_digest: str, evidence_manifest: dict
+) -> list[dict]:
     expected = {row["path"]: row for row in evidence_manifest["files"]}
     source_names = set(expected) | {"evidence_manifest.json"}
     observed = {}
@@ -96,10 +101,18 @@ def verify_parts(revision: str, evidence_manifest: dict) -> list[dict]:
             if (
                 meta.get("source_revision") != revision
                 or meta.get("part_index") != index
+                or meta.get("source_archive_sha256") != evidence_digest
             ):
                 raise RuntimeError(
                     f"Evidence part revision/index mismatch: {path.name}"
                 )
+            part_names = {row["path"] for row in meta["part_members"]}
+            part_names.add(f"__split__/part-{index:02d}-manifest.json")
+            if index == 1:
+                part_names.add("__split__/README.txt")
+            names = archive.namelist()
+            if len(names) != len(set(names)) or set(names) != part_names:
+                raise RuntimeError(f"Evidence part member list mismatch: {path.name}")
             for entry in meta["part_members"]:
                 name = entry["path"]
                 if name in observed:
@@ -166,7 +179,7 @@ def main() -> None:
         "verified_members": evidence_result["verified_files"],
         "manifest": "evidence_manifest.json",
     }
-    parts = verify_parts(revision, evidence_manifest)
+    parts = verify_parts(revision, evidence_digest, evidence_manifest)
 
     full_tests = junit_counts(ROOT / "data/phase4/all-test-results.xml")
     integration_tests = junit_counts(ROOT / "data/phase4/integration-test-results.xml")

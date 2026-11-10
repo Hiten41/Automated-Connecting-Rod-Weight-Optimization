@@ -86,8 +86,9 @@ def verify_archive(path, source_revision):
                 "Manifest source revision does not match the packaged Git revision"
             )
         entries = {item["path"]: item for item in manifest["files"]}
-        members = set(archive.namelist()) - {"evidence_manifest.json"}
-        if members != set(entries):
+        archive_names = archive.namelist()
+        members = set(archive_names) - {"evidence_manifest.json"}
+        if len(archive_names) != len(set(archive_names)) or members != set(entries):
             missing = sorted(set(entries) - members)
             unexpected = sorted(members - set(entries))
             raise RuntimeError(

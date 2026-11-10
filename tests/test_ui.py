@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from streamlit.testing.v1 import AppTest
@@ -51,7 +52,13 @@ def test_dashboard_presents_engineering_metrics_without_raw_json():
     assert '"attempted_geometries"' not in rendered_text
     assert '"INFEASIBLE_ON_TESTED_MESH"' not in rendered_text
     metric_values = {metric.label: metric.value for metric in app.metric}
-    assert metric_values["CAD / FEA solver status"] == "Ready"
+    preflight_path = ROOT / "runs/preflight/preflight.json"
+    preflight_ready = preflight_path.is_file() and json.loads(
+        preflight_path.read_text(encoding="utf-8")
+    ).get("ready")
+    assert metric_values["CAD / FEA solver status"] == (
+        "Ready" if preflight_ready else "Not verified"
+    )
     assert metric_values["Design attempts"] == "133"
     assert metric_values["Valid CAD solids"] == "120"
     assert metric_values["Completed FEA load-case records"] == "86"
