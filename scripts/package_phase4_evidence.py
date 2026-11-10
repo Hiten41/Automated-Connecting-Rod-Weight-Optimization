@@ -2,18 +2,33 @@
 
 import hashlib
 import json
-from pathlib import Path
 import subprocess
 import zipfile
-
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PHASE3 = ROOT.parent / "phase3-rod"
-OUT = ROOT / "outputs/phase4-final-solver-evidence.zip"
+# Preserve the original intake archive at phase4-final-solver-evidence.zip.
+OUT = ROOT / "outputs/phase4-final-solver-evidence-final.zip"
 INCLUDE_SUFFIXES = {
-    ".json", ".jsonl", ".log", ".inp", ".dat", ".frd", ".sta", ".cvg",
-    ".12d", ".msh", ".brep", ".step", ".stl", ".fcstd", ".md", ".png",
-    ".csv", ".xml",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".inp",
+    ".dat",
+    ".frd",
+    ".sta",
+    ".cvg",
+    ".12d",
+    ".msh",
+    ".brep",
+    ".step",
+    ".stl",
+    ".fcstd",
+    ".md",
+    ".png",
+    ".csv",
+    ".xml",
 }
 DESIGN_IDS = ("P4-0055", "P4-0026", "P4-0059", "P4-0016", "P4-0060", "P4-0065")
 
@@ -67,13 +82,17 @@ def verify_archive(path, source_revision):
     with zipfile.ZipFile(path, "r") as archive:
         manifest = json.loads(archive.read("evidence_manifest.json"))
         if manifest.get("source_revision") != source_revision:
-            raise RuntimeError("Manifest source revision does not match the packaged Git revision")
+            raise RuntimeError(
+                "Manifest source revision does not match the packaged Git revision"
+            )
         entries = {item["path"]: item for item in manifest["files"]}
         members = set(archive.namelist()) - {"evidence_manifest.json"}
         if members != set(entries):
             missing = sorted(set(entries) - members)
             unexpected = sorted(members - set(entries))
-            raise RuntimeError(f"Archive/manifest membership mismatch; missing={missing}, unexpected={unexpected}")
+            raise RuntimeError(
+                f"Archive/manifest membership mismatch; missing={missing}, unexpected={unexpected}"
+            )
         for name, entry in entries.items():
             with archive.open(name, "r") as stream:
                 size, checksum = sha256_stream(stream)
@@ -118,22 +137,37 @@ def main():
         add_tree(files, study_root / "fea", f"phase4/{study}/fea")
 
     add_tree(files, ROOT / "data/phase4", "phase4/analysis-data")
-    add_tree(files, ROOT / "data/reference_engine", "engine/reference-data", suffixes={".json", ".csv"})
+    add_tree(
+        files,
+        ROOT / "data/reference_engine",
+        "engine/reference-data",
+        suffixes={".json", ".csv"},
+    )
     add_tree(files, ROOT / "docs/phase4/final", "phase4/reports")
     add_tree(files, ROOT / "docs/phase4", "phase4/root-cause", suffixes={".md"})
     add_path(files, "docs/ENGINE_LOAD_MODEL.md", "engine/reports/ENGINE_LOAD_MODEL.md")
-    add_path(files, "docs/final/ENGINE_LOAD_VALIDATION.md", "engine/reports/ENGINE_LOAD_VALIDATION.md")
+    add_path(
+        files,
+        "docs/final/ENGINE_LOAD_VALIDATION.md",
+        "engine/reports/ENGINE_LOAD_VALIDATION.md",
+    )
     add_path(files, "docs/final/MATERIAL_BASIS.md", "engine/reports/MATERIAL_BASIS.md")
     add_path(files, "scripts/reference_engine.py", "engine/scripts/reference_engine.py")
-    add_path(files, "scripts/engine_fea_example.py", "engine/scripts/engine_fea_example.py")
-    add_path(files, "scripts/phase4_browser_qa.cjs", "phase4/scripts/phase4_browser_qa.cjs")
+    add_path(
+        files, "scripts/engine_fea_example.py", "engine/scripts/engine_fea_example.py"
+    )
+    add_path(
+        files, "scripts/phase4_browser_qa.cjs", "phase4/scripts/phase4_browser_qa.cjs"
+    )
     add_tree(files, ROOT / "outputs/phase4-visual-qa", "visual-qa")
 
     critical_names = set(files)
     if not any(name.endswith(".frd") for name in critical_names):
         raise RuntimeError("The evidence set has no raw CalculiX .frd fields")
     if not any(name.endswith("fields.json") for name in critical_names):
-        raise RuntimeError("The evidence set has no serialized stress/displacement fields")
+        raise RuntimeError(
+            "The evidence set has no serialized stress/displacement fields"
+        )
     if not any(name.endswith(".msh") for name in critical_names):
         raise RuntimeError("The evidence set has no Gmsh mesh files")
     if not any(name.startswith("engine/reference-data/") for name in critical_names):
@@ -141,7 +175,9 @@ def main():
     if not any(name.endswith("all-test-results.xml") for name in critical_names):
         raise RuntimeError("The complete test report is missing from the evidence set")
     if not any(name.endswith("browser-qa-report.json") for name in critical_names):
-        raise RuntimeError("The Playwright browser report is missing from the evidence set")
+        raise RuntimeError(
+            "The Playwright browser report is missing from the evidence set"
+        )
 
     readme = (
         "Phase 4 solver and visual-QA evidence archive\n"
@@ -157,7 +193,7 @@ def main():
         "The meshes are nonnested and do not establish a GCI or continuum error bound. "
         "COSINE_BEARING is an equivalent pressure approximation, not nonlinear pin contact. "
         "No production qualification, fatigue life or global optimum is claimed.\n"
-    ).encode("utf-8")
+    ).encode()
     manifest = {
         "source_branch": branch,
         "source_revision": revision,

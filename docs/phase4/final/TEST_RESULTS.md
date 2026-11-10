@@ -1,26 +1,33 @@
-# Phase 4 Verification Results
+# Phase 4 verification results
 
-Verification performed against the Phase 4 source tree before packaging.
+Verification was run on the isolated Phase 4 branch. The current source revision is recorded by the Git history and evidence manifests created after the final source commit.
 
-## Automated tests
+## Python and CAD/FEA tests
 
-- Full suite: **100 passed, 0 failed, 0 skipped** (`pytest -q`). JUnit XML: `data/phase4/all-test-results.xml`.
-- Integration marker: **9 passed, 91 deselected** (`pytest -m integration -q`). JUnit XML: `data/phase4/integration-test-results.xml`.
-- Real CAD/FEA coverage includes FreeCAD solid/export checks, CalculiX load scaling and family coarse screening, and the Streamlit background CAD job/export path.
-- Dashboard and Results-page UI regressions check that raw JSON does not appear in normal dashboard output and nested job results are shown as curated engineering columns.
+- Complete suite: **119 passed, 0 failed, 0 skipped** (`pytest -q`). The JUnit report is `data/phase4/all-test-results.xml`.
+- Integration marker: **9 passed, 110 deselected** (`pytest -m integration -q`). The JUnit report is `data/phase4/integration-test-results.xml`.
+- Unit/non-integration marker: **110 passed, 9 deselected** (`pytest -m "not integration" -q`). The JUnit report is `data/phase4/unit-test-results.xml`.
+- Integration coverage exercised the configured local FreeCAD, Gmsh and CalculiX paths, load scaling, design-family screening and background CAD-job exports. These checks validate the recorded software workflows; they are not independent solver verification of the connecting-rod model.
+- `compileall`/module compilation: passed. `git diff --check`: passed.
 
-## Static checks
+## Ruff
 
-- Python `compileall`: passed.
-- `git diff --check`: passed.
-- Ruff did not pass. `ruff check . --statistics` reports **260 findings** across the repository; the Phase 4 and modified-file audit set reports **64 findings**. No engineering requirements or solver constraints were relaxed to clear lint findings.
+- Modified Phase 4/UI/package Python scope: `ruff check` passed.
+- Modified Phase 4/UI/package Python scope: `ruff format --check` passed.
+- Repository-wide `ruff check . --statistics`: **225 findings**. These findings are outside the clean modified-file scope; the implementation does not claim a repository-wide zero-finding result.
 
-## Browser verification
+## Playwright browser QA
 
-- Playwright 1.65.0 with Chrome 157.0.8103.40, headless.
-- Ten user-facing pages checked at desktop (1440 × 1000) and mobile (390 × 844) sizes.
-- 20 page/viewport cases; 22 after-fix page/detail screenshots plus two before-fix dashboard screenshots.
-- 0 visible JSON components, 0 internal-data token leaks, 0 horizontal-overflow cases, 0 console/page errors, 0 failed requests, and 0 HTTP errors.
-- Machine-readable report: `outputs/phase4-visual-qa/browser-qa-report.json`.
+- Playwright **1.65.0**, headless Microsoft Edge/Chromium **157.0.4341.46**.
+- Ten routes checked at five viewport sizes: **50 route/viewport cases** across 390×844, 768×1024, 1024×768, 1440×1000 and 1920×1080.
+- Dashboard, geometry editor and family selection, engine loading, simulation, optimization, results/structural analysis, ML analytics, design-space/topology exploration and reports were inspected. The geometry-family selector was changed and verified without starting CAD/FEA.
+- Browser report: `outputs/phase4-visual-qa/browser-qa-report.json`; screenshots: `outputs/phase4-visual-qa/`.
+- The browser checks verify page content, controls, collapsed diagnostics, visible JSON, raw internal-data tokens, horizontal overflow, mobile sidebar closure/occlusion, Streamlit exceptions, console/page errors, failed requests and HTTP errors. They do not establish engineering qualification.
 
-The UI checks establish that the local application renders and its controls respond at the tested viewports. They do not certify the engineering model or substitute for physical testing and independent solver validation.
+## GitHub Actions
+
+The GitHub Actions result and run URL are recorded after the Phase 4 branch push in `outputs/phase4-visual-qa/github-actions-status.json`. The workflow runs Ruff/format checks for the modified Phase 4 source and non-integration Python tests; CAD/FEA integration checks are run separately on the configured local workstation and are not represented as hosted CI coverage.
+
+## Engineering status
+
+The project records a finite set of candidate screening results. No independently solver-verified, fatigue-qualified, production-suitable or experimentally validated connecting rod is claimed. See `LIMITATIONS.md` and `FINAL_DESIGN_VALIDATION.md`.
